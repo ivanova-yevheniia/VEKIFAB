@@ -12,7 +12,7 @@ Zuordnung zur Aufgabenstellung – Szenario **„KI Fabrikplaner"**
 | B | Claude → Blender | Claude MCP → Blender Python oder meshy.ai zur Erstellung von Werkzeugmaschinen | Blender, Claude Desktop (siehe Aufgabenstellung) | D1 |
 | C | Image to Physics | Erstellung der Fertigungshalle aus Bildmaterial | image-blaster | D1 |
 | D | Pipeline / Szene | Kombination und Animation von A, B und C als Serious Game | Unity | D2 |
-| E | Prozessdokumentation | Dokumentation des Ablaufs als PowerPoint | Copilot / Claude | – |
+| E | Prozessdokumentation | Dokumentation des Ablaufs als PowerPoint | Copilot / Claude | D3 |
 
 ---
 
