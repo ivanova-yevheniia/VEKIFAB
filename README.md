@@ -6,7 +6,7 @@ Zuordnung zur Aufgabenstellung – Szenario **„KI Fabrikplaner"**
 
 ## Kap. 1: Kontext
 
-| # | Task | Beschreibung | Tools | Deliverable |
+| # | WP | Beschreibung | Tools | Deliverable |
 |---|------|--------------|-------|-------------|
 | A | AI-Avatar | Foto → World Labs / Meshy → GLB-Export. Werker/Ingenieur, der die Requirements stellt | readyplayer.me | D1 |
 | B | Claude → Blender | Claude MCP → Blender Python oder meshy.ai zur Erstellung von Werkzeugmaschinen | Blender, Claude Desktop (siehe Aufgabenstellung) | D1 |
@@ -36,7 +36,7 @@ Zuordnung zur Aufgabenstellung – Szenario **„KI Fabrikplaner"**
 
 ## Arbeitspakete
 
-| WP | Verantwortlich | Zugehöriger Task | Konkrete Aufgabe |
+| ToDo | Verantwortlich | Zugehöriges WP | Konkrete Aufgabe |
 |----|-----------------|-------------------|-------------------|
 | 1 | Jenny | B | Werkzeugmaschinen mit Claude in Blender (requirements.json ergänzen) |
 | 2 | Yannic | C | Fertigungshalle (leer) mit image-blast und Claude (requirements.json ergänzen) |
