@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "asset": "aluminium_profile",
+  "category": "structure",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "PROFILE_Beam"
+      ],
+      "geometry": {
+        "note": "asset entry object (local origin)"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "PROFILE_Beam",
+      "children": [],
+      "geometry": {
+        "source": "parameters.components",
+        "primitives": "generic"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "metal_light"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

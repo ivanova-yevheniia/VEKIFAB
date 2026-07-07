@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.2",
+  "units": "meters",
+  "notes": "Reusable station templates. factory_description.json instantiates these by 'type'. All names are Unity-friendly (PascalCase / prefixed).",
+  "station_types": {
+    "loading_station": {
+      "generator": "generate_loading_station.py",
+      "dimensions_m": { "x": 2.0, "y": 2.0, "z": 2.0 },
+      "visual_elements": ["Infeed rack", "Kitting table", "Tray dispenser", "Component bins"],
+      "required_objects": ["STATION_Loading", "PHYS_Loading_Table", "PHYS_Loading_Rack", "INFO_Loading_Panel"],
+      "materials": ["MAT_SteelBrushed", "MAT_PlasticGray", "MAT_TableTop"],
+      "unity_tags": ["Station", "InfoPanel", "InspectionPoint"],
+      "physics_objects": ["PHYS_Loading_Tray"],
+      "collider_objects": ["COLLIDER_Loading_Base"]
+    },
+    "assisted_assembly_station": {
+      "generator": "generate_assembly_station.py",
+      "dimensions_m": { "x": 2.5, "y": 2.0, "z": 2.0 },
+      "visual_elements": ["Workbench", "Pick-to-light bins", "Guided screwdriver", "Operator seat", "Monitor"],
+      "required_objects": ["STATION_Assembly", "PHYS_Assembly_Bench", "PHYS_Assembly_Bins", "INFO_Assembly_Panel"],
+      "materials": ["MAT_SteelBrushed", "MAT_PlasticGray", "MAT_TableTop", "MAT_ScreenEmissive"],
+      "unity_tags": ["Station", "InfoPanel", "InspectionPoint"],
+      "physics_objects": ["PHYS_Assembly_Part"],
+      "collider_objects": ["COLLIDER_Assembly_Base"]
+    },
+    "robot_handling_cell": {
+      "generator": "generate_robot_cell.py",
+      "dimensions_m": { "x": 3.0, "y": 3.0, "z": 2.5 },
+      "visual_elements": ["6-axis robot arm", "Gripper", "Fixture nest", "Safety fence", "Interlock gate"],
+      "required_objects": ["STATION_RobotCell", "PHYS_Robot_Arm", "PHYS_Robot_Base", "PHYS_Fixture_Nest", "INFO_RobotCell_Panel"],
+      "materials": ["MAT_RobotOrange", "MAT_SteelBrushed", "MAT_FenceMesh"],
+      "unity_tags": ["Station", "InfoPanel", "InspectionPoint", "SafetyFence"],
+      "physics_objects": ["PHYS_Robot_Part"],
+      "collider_objects": ["COLLIDER_RobotCell_Base", "COLLIDER_RobotCell_Fence"]
+    },
+    "vision_inspection_station": {
+      "generator": "generate_vision_station.py",
+      "dimensions_m": { "x": 2.0, "y": 2.0, "z": 2.5 },
+      "visual_elements": ["Machine-vision camera", "Ring light", "Inspection nest", "Reject diverter", "Enclosure"],
+      "required_objects": ["STATION_Vision", "PHYS_Vision_Camera", "PHYS_Vision_Enclosure", "INFO_Vision_Panel"],
+      "materials": ["MAT_SteelBrushed", "MAT_PlasticBlack", "MAT_LightEmissive"],
+      "unity_tags": ["Station", "InfoPanel", "InspectionPoint"],
+      "physics_objects": ["PHYS_Vision_Part"],
+      "collider_objects": ["COLLIDER_Vision_Base"]
+    },
+    "functional_test_station": {
+      "generator": "generate_functional_test.py",
+      "dimensions_m": { "x": 2.0, "y": 2.0, "z": 2.0 },
+      "visual_elements": ["Test fixture", "Flow-rate rig", "Test controller", "Status tower light", "Reject bin"],
+      "required_objects": ["STATION_FunctionalTest", "PHYS_Test_Fixture", "PHYS_Test_Controller", "INFO_FunctionalTest_Panel"],
+      "materials": ["MAT_SteelBrushed", "MAT_PlasticGray", "MAT_ScreenEmissive"],
+      "unity_tags": ["Station", "InfoPanel", "InspectionPoint"],
+      "physics_objects": ["PHYS_Test_Part"],
+      "collider_objects": ["COLLIDER_FunctionalTest_Base"]
+    },
+    "packaging_station": {
+      "generator": "generate_packaging_station.py",
+      "dimensions_m": { "x": 2.5, "y": 2.0, "z": 2.0 },
+      "visual_elements": ["Carton erector", "Insertion jig", "Label applicator", "Sealing unit", "Outfeed roller"],
+      "required_objects": ["STATION_Packaging", "PHYS_Packaging_Bench", "PHYS_Packaging_Sealer", "INFO_Packaging_Panel"],
+      "materials": ["MAT_SteelBrushed", "MAT_Cardboard", "MAT_PlasticGray"],
+      "unity_tags": ["Station", "InfoPanel", "InspectionPoint"],
+      "physics_objects": ["PHYS_Packaging_Carton"],
+      "collider_objects": ["COLLIDER_Packaging_Base"]
+    },
+    "finished_goods_storage": {
+      "generator": "generate_storage_area.py",
+      "dimensions_m": { "x": 3.5, "y": 3.5, "z": 3.0 },
+      "visual_elements": ["Pallet rack", "Accumulation conveyor", "Pallets", "Stacked cartons"],
+      "required_objects": ["STATION_Storage", "PHYS_Storage_Rack", "PHYS_Storage_Pallet", "INFO_Storage_Panel"],
+      "materials": ["MAT_RackBlue", "MAT_Cardboard", "MAT_WoodPallet"],
+      "unity_tags": ["Station", "InfoPanel", "InspectionPoint"],
+      "physics_objects": ["PHYS_Storage_Carton"],
+      "collider_objects": ["COLLIDER_Storage_Base", "COLLIDER_Storage_Rack"]
+    }
+  }
+}

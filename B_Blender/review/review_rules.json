@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "description": "Rules and weights for the VEKIFAB Factory Review (deterministic, no Blender).",
+  "safety_assets": [
+    "emergency_stop",
+    "stack_light",
+    "safety_fence"
+  ],
+  "emergency_stop_required_stations": [
+    "S01",
+    "S02A",
+    "S02B",
+    "S03",
+    "S04",
+    "S05",
+    "S06"
+  ],
+  "flow_start": "S01",
+  "flow_end": "S07",
+  "station_order": [
+    "S01",
+    "S02A",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07"
+  ],
+  "walkway_min_clearance_m": 0.5,
+  "allowed_name_prefixes": [
+    "STATION_",
+    "COLLIDER_",
+    "CONVEYOR_",
+    "PHYS_",
+    "TRIGGER_",
+    "INFO_"
+  ],
+  "trigger_roles": [
+    "trigger"
+  ],
+  "physics_roles": [
+    "static",
+    "dynamic",
+    "kinematic",
+    "trigger",
+    "emissive"
+  ],
+  "score_max": 100,
+  "checks": [
+    {
+      "id": "info_panels_present",
+      "weight": 10,
+      "description": "Every station has an information panel."
+    },
+    {
+      "id": "safety_asset_present",
+      "weight": 10,
+      "description": "Every station has at least one safety-related asset."
+    },
+    {
+      "id": "material_flow_connected",
+      "weight": 12,
+      "description": "Material flow is connected from S01 to S07."
+    },
+    {
+      "id": "conveyors_adjacent",
+      "weight": 10,
+      "description": "Conveyors connect adjacent stations."
+    },
+    {
+      "id": "walkway_no_intersection",
+      "weight": 10,
+      "description": "Avatar walkway exists and does not intersect station footprints."
+    },
+    {
+      "id": "emergency_stop_required",
+      "weight": 10,
+      "description": "Emergency stop exists where required."
+    },
+    {
+      "id": "physics_objects_tagged",
+      "weight": 8,
+      "description": "Physics objects (dynamic/kinematic) are tagged."
+    },
+    {
+      "id": "naming_conventions",
+      "weight": 10,
+      "description": "Colliders/triggers/info are named per convention."
+    },
+    {
+      "id": "no_duplicate_instance_ids",
+      "weight": 8,
+      "description": "No duplicate instance ids."
+    },
+    {
+      "id": "no_missing_asset_refs",
+      "weight": 7,
+      "description": "No missing asset references."
+    },
+    {
+      "id": "no_overlapping_footprints",
+      "weight": 5,
+      "description": "No obvious overlapping station footprints."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "project": "VEKIFAB \u2014 AI Factory Planner",
+  "score": 100,
+  "score_max": 100,
+  "verdict": "PASS \u2014 production-ready composition",
+  "checks": [
+    {
+      "id": "info_panels_present",
+      "description": "Every station has an information panel.",
+      "status": "pass",
+      "weight": 10,
+      "earned": 10.0,
+      "detail": "8/8 stations have an info panel"
+    },
+    {
+      "id": "safety_asset_present",
+      "description": "Every station has at least one safety-related asset.",
+      "status": "pass",
+      "weight": 10,
+      "earned": 10.0,
+      "detail": "8/8 stations have a safety asset"
+    },
+    {
+      "id": "material_flow_connected",
+      "description": "Material flow is connected from S01 to S07.",
+      "status": "pass",
+      "weight": 12,
+      "earned": 12.0,
+      "detail": "flow path S01 -> S07 exists"
+    },
+    {
+      "id": "conveyors_adjacent",
+      "description": "Conveyors connect adjacent stations.",
+      "status": "pass",
+      "weight": 10,
+      "earned": 10.0,
+      "detail": "6/6 adjacent station pairs connected by a conveyor"
+    },
+    {
+      "id": "walkway_no_intersection",
+      "description": "Avatar walkway exists and does not intersect station footprints.",
+      "status": "pass",
+      "weight": 10,
+      "earned": 10.0,
+      "detail": "walkway of 9 waypoints clears all footprints"
+    },
+    {
+      "id": "emergency_stop_required",
+      "description": "Emergency stop exists where required.",
+      "status": "pass",
+      "weight": 10,
+      "earned": 10.0,
+      "detail": "7/7 required stations have an emergency stop"
+    },
+    {
+      "id": "physics_objects_tagged",
+      "description": "Physics objects (dynamic/kinematic) are tagged.",
+      "status": "pass",
+      "weight": 8,
+      "earned": 8.0,
+      "detail": "39/39 physics objects tagged"
+    },
+    {
+      "id": "naming_conventions",
+      "description": "Colliders/triggers/info are named per convention.",
+      "status": "pass",
+      "weight": 10,
+      "earned": 10.0,
+      "detail": "171/171 instances follow naming/tag conventions"
+    },
+    {
+      "id": "no_duplicate_instance_ids",
+      "description": "No duplicate instance ids.",
+      "status": "pass",
+      "weight": 8,
+      "earned": 8.0,
+      "detail": "no duplicate instance ids"
+    },
+    {
+      "id": "no_missing_asset_refs",
+      "description": "No missing asset references.",
+      "status": "pass",
+      "weight": 7,
+      "earned": 7.0,
+      "detail": "all asset references resolve"
+    },
+    {
+      "id": "no_overlapping_footprints",
+      "description": "No obvious overlapping station footprints.",
+      "status": "pass",
+      "weight": 5,
+      "earned": 5.0,
+      "detail": "no overlapping footprints"
+    }
+  ],
+  "warnings": [],
+  "recommendations": []
+}

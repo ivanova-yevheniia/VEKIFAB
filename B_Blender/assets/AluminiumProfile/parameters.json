@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "aluminium_profile",
+    "name": "Aluminium Profile",
+    "version": "1.0.0",
+    "category": "structure",
+    "tags": [
+      "frame",
+      "extrusion",
+      "slot-profile",
+      "structural"
+    ]
+  },
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters": {
+    "length_m": {
+      "default": 1.0,
+      "range": "0.1-6.0",
+      "description": "Bar length along local X."
+    },
+    "section_mm": {
+      "default": 40,
+      "options": [
+        20,
+        40,
+        45,
+        80
+      ],
+      "description": "Square section size."
+    },
+    "slot_detail": {
+      "default": true,
+      "type": "bool",
+      "description": "Show T-slot grooves."
+    }
+  },
+  "material_library": {
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "beam": {
+      "naming": "PROFILE_Beam",
+      "primitive": "beam",
+      "dimensions_m": [
+        1.0,
+        0.04,
+        0.04
+      ],
+      "offset_m": [
+        0,
+        0,
+        0
+      ],
+      "bevel_m": 0.003,
+      "material": "metal_light",
+      "collider": "static",
+      "unity_tag": "Frame"
+    }
+  }
+}

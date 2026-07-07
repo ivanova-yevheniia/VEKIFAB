@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.0",
+  "library": "VEKIFAB Industrial Asset Library",
+  "asset_count": 19,
+  "palette_keys": [
+    "blue_accent",
+    "cardboard",
+    "led_amber",
+    "led_green",
+    "led_red",
+    "led_white",
+    "metal_dark",
+    "metal_light",
+    "rubber_black",
+    "safety_yellow",
+    "screen_dark",
+    "warning_black",
+    "white_panel",
+    "wood_pallet"
+  ],
+  "assets": [
+    {
+      "id": "aluminium_profile",
+      "name": "Aluminium Profile",
+      "version": "1.0.0",
+      "folder": "AluminiumProfile",
+      "category": "structure",
+      "tags": [
+        "frame",
+        "extrusion",
+        "slot-profile",
+        "structural"
+      ],
+      "dependencies": [],
+      "typical_usage": "Frames of benches, cells, racks and fences.",
+      "entry_object": "PROFILE_Beam",
+      "collider": "Box (static)",
+      "lod_importance": "high",
+      "performance_budget": {
+        "target_tris": 200,
+        "max_tris": 400
+      }
+    },
+    {
+      "id": "adjustable_foot",
+      "name": "Adjustable Foot",
+      "version": "1.0.0",
+      "folder": "AdjustableFoot",
+      "category": "structure",
+      "tags": [
+        "foot",
+        "levelling",
+        "mounting",
+        "anti-vibration"
+      ],
+      "dependencies": [],
+      "typical_usage": "Terminates every frame/cabinet leg.",
+      "entry_object": "FOOT_Base",
+      "collider": "Box (static)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 120,
+        "max_tris": 200
+      }
+    },
+    {
+      "id": "roller_conveyor",
+      "name": "Roller Conveyor",
+      "version": "1.0.0",
+      "folder": "RollerConveyor",
+      "category": "material_handling",
+      "tags": [
+        "conveyor",
+        "roller",
+        "transport",
+        "transfer"
+      ],
+      "dependencies": [
+        "adjustable_foot"
+      ],
+      "typical_usage": "Inter-station transport segments.",
+      "entry_object": "CONV_Frame",
+      "collider": "Box (static frame) + Box (belt plane)",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 1500,
+        "max_tris": 3000
+      }
+    },
+    {
+      "id": "emergency_stop",
+      "name": "Emergency Stop",
+      "version": "1.0.0",
+      "folder": "EmergencyStop",
+      "category": "safety",
+      "tags": [
+        "safety",
+        "e-stop",
+        "control",
+        "interactive"
+      ],
+      "dependencies": [],
+      "typical_usage": "Every manned station and cell.",
+      "entry_object": "ESTOP_Plate",
+      "collider": "Box (static)",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 300,
+        "max_tris": 500
+      }
+    },
+    {
+      "id": "hmi_panel",
+      "name": "HMI Panel",
+      "version": "1.0.0",
+      "folder": "HMIPanel",
+      "category": "control",
+      "tags": [
+        "hmi",
+        "touchscreen",
+        "control",
+        "guidance"
+      ],
+      "dependencies": [],
+      "typical_usage": "Operator interface at assembly/test stations.",
+      "entry_object": "HMI_Screen",
+      "collider": "Box (static)",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 400,
+        "max_tris": 700
+      }
+    },
+    {
+      "id": "stack_light",
+      "name": "Stack Light",
+      "version": "1.0.0",
+      "folder": "StackLight",
+      "category": "safety",
+      "tags": [
+        "signal",
+        "stack-light",
+        "status",
+        "andon"
+      ],
+      "dependencies": [],
+      "typical_usage": "Status signalling on any station.",
+      "entry_object": "STACK_Base",
+      "collider": "Box (static)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 500,
+        "max_tris": 800
+      }
+    },
+    {
+      "id": "plastic_parts_bin",
+      "name": "Plastic Parts Bin",
+      "version": "1.0.0",
+      "folder": "PlasticPartsBin",
+      "category": "storage",
+      "tags": [
+        "bin",
+        "kanban",
+        "parts",
+        "storage"
+      ],
+      "dependencies": [],
+      "typical_usage": "Manual pick faces at assembly/kitting.",
+      "entry_object": "BIN_Body",
+      "collider": "Box (static)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 200,
+        "max_tris": 350
+      }
+    },
+    {
+      "id": "electrical_cabinet",
+      "name": "Electrical Cabinet",
+      "version": "1.0.0",
+      "folder": "ElectricalCabinet",
+      "category": "electrical",
+      "tags": [
+        "cabinet",
+        "enclosure",
+        "electrical",
+        "control"
+      ],
+      "dependencies": [
+        "cable_chain"
+      ],
+      "typical_usage": "Electrical hub of a station/cell.",
+      "entry_object": "CAB_Body",
+      "collider": "Box (static)",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 600,
+        "max_tris": 1000
+      }
+    },
+    {
+      "id": "barcode_scanner",
+      "name": "Barcode Scanner",
+      "version": "1.0.0",
+      "folder": "BarcodeScanner",
+      "category": "sensor",
+      "tags": [
+        "scanner",
+        "barcode",
+        "sensor",
+        "traceability"
+      ],
+      "dependencies": [],
+      "typical_usage": "Traceability at inspection/test/packaging.",
+      "entry_object": "SCAN_Body",
+      "collider": "Box (static)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 250,
+        "max_tris": 450
+      }
+    },
+    {
+      "id": "task_light",
+      "name": "Task Light",
+      "version": "1.0.0",
+      "folder": "TaskLight",
+      "category": "lighting",
+      "tags": [
+        "light",
+        "task",
+        "machine-light",
+        "led"
+      ],
+      "dependencies": [],
+      "typical_usage": "Worktop/inspection illumination.",
+      "entry_object": "LIGHT_Fixture",
+      "collider": "Box (static)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 200,
+        "max_tris": 350
+      }
+    },
+    {
+      "id": "pallet",
+      "name": "Pallet",
+      "version": "1.0.0",
+      "folder": "Pallet",
+      "category": "logistics",
+      "tags": [
+        "pallet",
+        "logistics",
+        "load-carrier",
+        "wood"
+      ],
+      "dependencies": [],
+      "typical_usage": "Infeed material and finished-goods carriers.",
+      "entry_object": "PALLET_Deck",
+      "collider": "Box (static)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 400,
+        "max_tris": 700
+      }
+    },
+    {
+      "id": "cardboard_box",
+      "name": "Cardboard Box",
+      "version": "1.0.0",
+      "folder": "CardboardBox",
+      "category": "logistics",
+      "tags": [
+        "box",
+        "carton",
+        "product",
+        "load"
+      ],
+      "dependencies": [],
+      "typical_usage": "Kit trays and finished cartons (movable).",
+      "entry_object": "BOX_Body",
+      "collider": "Box (dynamic)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 60,
+        "max_tris": 120
+      }
+    },
+    {
+      "id": "information_panel",
+      "name": "Information Panel",
+      "version": "1.0.0",
+      "folder": "InformationPanel",
+      "category": "ux",
+      "tags": [
+        "signage",
+        "info",
+        "walkthrough",
+        "trigger"
+      ],
+      "dependencies": [],
+      "typical_usage": "Avatar walkthrough signage at every station.",
+      "entry_object": "INFO_Board",
+      "collider": "Box (static) + Box (trigger)",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 300,
+        "max_tris": 600
+      }
+    },
+    {
+      "id": "safety_fence",
+      "name": "Safety Fence",
+      "version": "1.0.0",
+      "folder": "SafetyFence",
+      "category": "safety",
+      "tags": [
+        "fence",
+        "guard",
+        "safety",
+        "perimeter"
+      ],
+      "dependencies": [
+        "aluminium_profile"
+      ],
+      "typical_usage": "Perimeter guarding for robot cells.",
+      "entry_object": "FENCE_Post_1",
+      "collider": "Box per post + Box per panel",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 1200,
+        "max_tris": 2000
+      }
+    },
+    {
+      "id": "cable_chain",
+      "name": "Cable Chain",
+      "version": "1.0.0",
+      "folder": "CableChain",
+      "category": "cable_management",
+      "tags": [
+        "cable",
+        "energy-chain",
+        "drag-chain",
+        "routing"
+      ],
+      "dependencies": [],
+      "typical_usage": "Cable routing along frames and to moving axes.",
+      "entry_object": "CHAIN_Link_1",
+      "collider": "None (visual)",
+      "lod_importance": "low",
+      "performance_budget": {
+        "target_tris": 300,
+        "max_tris": 600
+      }
+    },
+    {
+      "id": "robot_pedestal",
+      "name": "Robot Pedestal",
+      "version": "1.0.0",
+      "folder": "RobotPedestal",
+      "category": "robotics",
+      "tags": [
+        "robot",
+        "pedestal",
+        "mount",
+        "structure"
+      ],
+      "dependencies": [],
+      "typical_usage": "Mounts the robot base in a robot cell.",
+      "entry_object": "ROBOTPEDESTAL_Body",
+      "collider": "Box (static)",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 40,
+        "max_tris": 80
+      }
+    },
+    {
+      "id": "robot_base",
+      "name": "Robot Base",
+      "version": "1.0.0",
+      "folder": "RobotBase",
+      "category": "robotics",
+      "tags": [
+        "robot",
+        "base",
+        "J1",
+        "structure"
+      ],
+      "dependencies": [
+        "robot_pedestal"
+      ],
+      "typical_usage": "Fixed base/J1 of the robot.",
+      "entry_object": "ROBOTBASE_Body",
+      "collider": "Box (static)",
+      "lod_importance": "medium",
+      "performance_budget": {
+        "target_tris": 180,
+        "max_tris": 300
+      }
+    },
+    {
+      "id": "robot_arm",
+      "name": "Robot Arm",
+      "version": "1.0.0",
+      "folder": "RobotArm",
+      "category": "robotics",
+      "tags": [
+        "robot",
+        "arm",
+        "6-axis",
+        "kinematic"
+      ],
+      "dependencies": [
+        "robot_base"
+      ],
+      "typical_usage": "6-axis articulated arm (kinematic chain).",
+      "entry_object": "ROBOTARM_Waist",
+      "collider": "Box per link (static)",
+      "lod_importance": "high",
+      "performance_budget": {
+        "target_tris": 1200,
+        "max_tris": 2000
+      }
+    },
+    {
+      "id": "robot_gripper",
+      "name": "Robot Gripper",
+      "version": "1.0.0",
+      "folder": "RobotGripper",
+      "category": "robotics",
+      "tags": [
+        "robot",
+        "gripper",
+        "end-effector",
+        "tool"
+      ],
+      "dependencies": [
+        "robot_arm"
+      ],
+      "typical_usage": "End-effector that handles the product.",
+      "entry_object": "ROBOTGRIPPER_Palm",
+      "collider": "Box (static)",
+      "lod_importance": "high",
+      "performance_budget": {
+        "target_tris": 120,
+        "max_tris": 250
+      }
+    }
+  ]
+}

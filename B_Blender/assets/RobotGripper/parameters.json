@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "robot_gripper",
+    "name": "Robot Gripper",
+    "version": "1.0.0",
+    "category": "robotics",
+    "tags": [
+      "robot",
+      "gripper",
+      "end-effector",
+      "tool"
+    ]
+  },
+  "local_origin_m": [
+    0,
+    0,
+    0
+  ],
+  "parameters": {},
+  "material_library": {
+    "white_panel": {
+      "base_color": [
+        0.9,
+        0.9,
+        0.92,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "emission_strength": 0.0
+    },
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "palm": {
+      "role": "gripper",
+      "naming": "ROBOTGRIPPER_Palm",
+      "primitive": "box",
+      "dimensions_m": [
+        0.15,
+        0.15,
+        0.1
+      ],
+      "material": "white_panel",
+      "unity_tag": "Gripper",
+      "finger_a": {
+        "role": "finger_a",
+        "naming": "ROBOTGRIPPER_FingerA",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.03,
+          0.17
+        ],
+        "offset_from_parent_m": [
+          0.05,
+          0,
+          -0.13
+        ],
+        "material": "metal_dark"
+      },
+      "finger_b": {
+        "role": "finger_b",
+        "naming": "ROBOTGRIPPER_FingerB",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.03,
+          0.17
+        ],
+        "offset_from_parent_m": [
+          -0.05,
+          0,
+          -0.13
+        ],
+        "material": "metal_dark"
+      }
+    }
+  }
+}

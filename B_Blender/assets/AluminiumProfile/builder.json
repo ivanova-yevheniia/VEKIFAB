@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "aluminium_profile",
+    "name": "Aluminium Profile",
+    "version": "1.0.0"
+  },
+  "entry_object": "PROFILE_Beam",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "end_a",
+      "at": "(-L/2,0,0)",
+      "axis": "-X",
+      "type": "butt/bracket joint"
+    },
+    {
+      "name": "end_b",
+      "at": "(+L/2,0,0)",
+      "axis": "+X",
+      "type": "butt/bracket joint"
+    },
+    {
+      "name": "face_slot",
+      "at": "each face",
+      "axis": "+/-Y,+/-Z",
+      "type": "T-slot mount"
+    }
+  ],
+  "collider": {
+    "type": "Box (static)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static",
+    "rigidbody": false
+  },
+  "lod": {
+    "importance": "high",
+    "note": "high (most repeated element in the plant)"
+  },
+  "performance_budget": {
+    "target_tris": 200,
+    "max_tris": 400,
+    "materials": 1
+  },
+  "unity": {
+    "tags": [
+      "Frame"
+    ],
+    "prefab_hint": "aluminium_profile"
+  }
+}

@@ -1,0 +1,3666 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": "S04",
+    "type": "vision_inspection_station",
+    "name": "STATION_04_VisionInspection",
+    "line": "MF-IP-100 Infusion Pump Line",
+    "world_position_m": [
+      12.5,
+      6.0,
+      0.0
+    ],
+    "envelope_m": {
+      "x": 2.4,
+      "y": 2.2,
+      "z": 2.6
+    },
+    "front_axis": "+Y",
+    "flow_axis": "+X",
+    "work_height_m": 0.9
+  },
+  "conventions": {
+    "units": "meters",
+    "up_axis": "Z",
+    "export_up_axis": "Y",
+    "offset_reference": "component offset_m are [dx,dy,dz] relative to station.world_position at floor; z absolute.",
+    "rotation_units": "degrees",
+    "root_object": "STATION_04_VisionInspection_Root",
+    "root_type": "EMPTY"
+  },
+  "material_library": {
+    "blue_accent": {
+      "base_color": [
+        0.1,
+        0.35,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.1,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "glass_window": {
+      "base_color": [
+        0.6,
+        0.7,
+        0.8,
+        0.22
+      ],
+      "metallic": 0.0,
+      "roughness": 0.1,
+      "alpha": 0.22,
+      "emission_strength": 0.0
+    },
+    "led_amber": {
+      "base_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_green": {
+      "base_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_red": {
+      "base_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_white": {
+      "base_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.3,
+      "emission_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "emission_strength": 2.5
+    },
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    },
+    "rubber_black": {
+      "base_color": [
+        0.05,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "emission_strength": 0.0
+    },
+    "safety_yellow": {
+      "base_color": [
+        0.95,
+        0.8,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "emission_strength": 0.0
+    },
+    "screen_dark": {
+      "base_color": [
+        0.02,
+        0.02,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.2,
+      "emission_color": [
+        0.1,
+        0.35,
+        0.55,
+        1.0
+      ],
+      "emission_strength": 1.0
+    },
+    "warning_black": {
+      "base_color": [
+        0.03,
+        0.03,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "emission_strength": 0.0
+    },
+    "white_panel": {
+      "base_color": [
+        0.9,
+        0.9,
+        0.92,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "base": {
+      "naming": "COLLIDER_Vision_Base",
+      "primitive": "box",
+      "dimensions_m": [
+        2.2,
+        0.7,
+        0.06
+      ],
+      "offset_m": [
+        0.0,
+        0.0,
+        0.32
+      ],
+      "material": "metal_dark",
+      "bevel_m": 0.01,
+      "collider": "static",
+      "unity_tag": "Bench"
+    },
+    "legs": {
+      "naming_pattern": "STATION_04_VisionInspection_Leg_{i}",
+      "primitive": "box",
+      "count": 4,
+      "dimensions_m": [
+        0.06,
+        0.06,
+        0.32
+      ],
+      "material": "metal_light",
+      "collider": "static",
+      "offsets_m": [
+        [
+          -1.0,
+          -0.28,
+          0.16
+        ],
+        [
+          1.0,
+          -0.28,
+          0.16
+        ],
+        [
+          -1.0,
+          0.28,
+          0.16
+        ],
+        [
+          1.0,
+          0.28,
+          0.16
+        ]
+      ]
+    },
+    "feet": {
+      "naming_pattern": "STATION_04_VisionInspection_Foot_{i}",
+      "primitive": "cylinder",
+      "count": 4,
+      "radius_m": 0.05,
+      "depth_m": 0.04,
+      "vertices": 12,
+      "material": "rubber_black",
+      "offsets_m": [
+        [
+          -1.0,
+          -0.28,
+          0.02
+        ],
+        [
+          1.0,
+          -0.28,
+          0.02
+        ],
+        [
+          -1.0,
+          0.28,
+          0.02
+        ],
+        [
+          1.0,
+          0.28,
+          0.02
+        ]
+      ]
+    },
+    "conveyor_in": {
+      "naming": "CONVEYOR_Vision_Input",
+      "primitive": "box",
+      "dimensions_m": [
+        0.9,
+        0.5,
+        0.06
+      ],
+      "offset_m": [
+        -1.05,
+        0.0,
+        0.39
+      ],
+      "material": "rubber_black",
+      "collider": "static",
+      "unity_tag": "Conveyor"
+    },
+    "conveyor_mid": {
+      "naming": "CONVEYOR_Vision_Belt",
+      "primitive": "box",
+      "dimensions_m": [
+        0.9,
+        0.5,
+        0.06
+      ],
+      "offset_m": [
+        0.0,
+        0.0,
+        0.39
+      ],
+      "material": "rubber_black",
+      "collider": "static",
+      "unity_tag": "Conveyor"
+    },
+    "conveyor_out": {
+      "naming": "CONVEYOR_Vision_Output",
+      "primitive": "box",
+      "dimensions_m": [
+        0.9,
+        0.5,
+        0.06
+      ],
+      "offset_m": [
+        1.05,
+        0.0,
+        0.39
+      ],
+      "material": "rubber_black",
+      "collider": "static",
+      "unity_tag": "Conveyor"
+    },
+    "tunnel": {
+      "naming": "STATION_04_VisionInspection_Tunnel",
+      "top": {
+        "naming": "STATION_04_VisionInspection_TunnelTop",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.95,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          1.21
+        ],
+        "material": "metal_dark",
+        "collider": "static",
+        "primary": true
+      },
+      "side_back": {
+        "naming": "STATION_04_VisionInspection_TunnelSide",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.04,
+          0.82
+        ],
+        "offset_m": [
+          0.0,
+          -0.46,
+          0.8
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "window": {
+        "naming": "STATION_04_VisionInspection_TunnelWindow",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.03,
+          0.82
+        ],
+        "offset_m": [
+          0.0,
+          0.46,
+          0.8
+        ],
+        "material": "glass_window"
+      },
+      "post_1": {
+        "naming": "STATION_04_VisionInspection_TunnelPost_1",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.82
+        ],
+        "offset_m": [
+          -0.48,
+          -0.46,
+          0.8
+        ],
+        "material": "metal_light"
+      },
+      "post_2": {
+        "naming": "STATION_04_VisionInspection_TunnelPost_2",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.82
+        ],
+        "offset_m": [
+          0.48,
+          -0.46,
+          0.8
+        ],
+        "material": "metal_light"
+      },
+      "post_3": {
+        "naming": "STATION_04_VisionInspection_TunnelPost_3",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.82
+        ],
+        "offset_m": [
+          -0.48,
+          0.46,
+          0.8
+        ],
+        "material": "metal_light"
+      },
+      "post_4": {
+        "naming": "STATION_04_VisionInspection_TunnelPost_4",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.82
+        ],
+        "offset_m": [
+          0.48,
+          0.46,
+          0.8
+        ],
+        "material": "metal_light"
+      }
+    },
+    "camera": {
+      "naming": "CAMERA_AI_Inspection",
+      "primitive": "box",
+      "dimensions_m": [
+        0.2,
+        0.2,
+        0.16
+      ],
+      "offset_m": [
+        0.0,
+        0.0,
+        1.04
+      ],
+      "material": "metal_dark",
+      "bevel_m": 0.008,
+      "bevel_segments": 1,
+      "unity_tag": "Camera",
+      "mount": {
+        "naming": "STATION_04_VisionInspection_CameraMount",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.12
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          1.15
+        ],
+        "material": "metal_light"
+      },
+      "lens": {
+        "naming": "STATION_04_VisionInspection_CameraLens",
+        "primitive": "cylinder",
+        "radius_m": 0.06,
+        "depth_m": 0.14,
+        "vertices": 16,
+        "axis": "Z",
+        "offset_m": [
+          0.0,
+          0.0,
+          0.87
+        ],
+        "material": "warning_black"
+      },
+      "led": {
+        "naming": "STATION_04_VisionInspection_CameraLed",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.01,
+        "vertices": 8,
+        "axis": "Z",
+        "offset_m": [
+          0.06,
+          -0.06,
+          1.08
+        ],
+        "material": "led_green"
+      }
+    },
+    "ring_light": {
+      "naming": "STATION_04_VisionInspection_RingLight",
+      "primitive": "cylinder",
+      "radius_m": 0.145,
+      "depth_m": 0.05,
+      "vertices": 24,
+      "axis": "Z",
+      "offset_m": [
+        0.0,
+        0.0,
+        0.86
+      ],
+      "material": "metal_light",
+      "unity_tag": "TaskLight",
+      "diffuser": {
+        "naming": "STATION_04_VisionInspection_RingDiffuser",
+        "primitive": "cylinder",
+        "radius_m": 0.118,
+        "depth_m": 0.02,
+        "vertices": 24,
+        "axis": "Z",
+        "offset_m": [
+          0.0,
+          0.0,
+          0.838
+        ],
+        "material": "led_white"
+      },
+      "center_cap": {
+        "naming": "STATION_04_VisionInspection_RingCenter",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.024,
+        "vertices": 16,
+        "axis": "Z",
+        "offset_m": [
+          0.0,
+          0.0,
+          0.837
+        ],
+        "material": "warning_black"
+      },
+      "joint": {
+        "naming": "STATION_04_VisionInspection_RingJoint",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.05,
+        "vertices": 10,
+        "axis": "Y",
+        "offset_m": [
+          -0.13,
+          0.0,
+          0.88
+        ],
+        "material": "metal_dark"
+      },
+      "knob": {
+        "naming": "STATION_04_VisionInspection_RingKnob",
+        "primitive": "cylinder",
+        "radius_m": 0.018,
+        "depth_m": 0.03,
+        "vertices": 10,
+        "axis": "Y",
+        "offset_m": [
+          -0.13,
+          0.06,
+          0.88
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "product_1": {
+      "naming": "PHYS_Vision_Product_1",
+      "primitive": "box",
+      "dimensions_m": [
+        0.1,
+        0.075,
+        0.11
+      ],
+      "offset_m": [
+        0.0,
+        0.0,
+        0.475
+      ],
+      "bevel_m": 0.006,
+      "bevel_segments": 1,
+      "material": "white_panel",
+      "unity_tag": "ProductPart",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.3,
+        "kinematic": true
+      },
+      "screen": {
+        "naming": "PHYS_Vision_Product_1_Screen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.058,
+          0.006,
+          0.035
+        ],
+        "offset_m": [
+          0.0,
+          0.039,
+          0.508
+        ],
+        "material": "screen_dark"
+      },
+      "buttons": {
+        "naming_pattern": "STATION_04_VisionInspection_ProductBtn_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.012,
+          0.006,
+          0.012
+        ],
+        "material": "blue_accent",
+        "offsets_m": [
+          [
+            -0.02,
+            0.039,
+            0.46
+          ],
+          [
+            0.02,
+            0.039,
+            0.46
+          ]
+        ]
+      },
+      "split_line": {
+        "naming": "STATION_04_VisionInspection_ProductSplit",
+        "primitive": "box",
+        "dimensions_m": [
+          0.104,
+          0.079,
+          0.004
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.46
+        ],
+        "material": "warning_black"
+      },
+      "handle": {
+        "naming": "STATION_04_VisionInspection_ProductHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.075,
+          0.02,
+          0.014
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.538
+        ],
+        "material": "metal_dark"
+      },
+      "connector": {
+        "naming": "STATION_04_VisionInspection_ProductConnector",
+        "primitive": "cylinder",
+        "radius_m": 0.01,
+        "depth_m": 0.03,
+        "vertices": 10,
+        "axis": "Y",
+        "offset_m": [
+          0.028,
+          -0.05,
+          0.45
+        ],
+        "material": "metal_light"
+      },
+      "battery_cover": {
+        "naming": "STATION_04_VisionInspection_ProductBattery",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.006,
+          0.055
+        ],
+        "offset_m": [
+          0.0,
+          -0.039,
+          0.47
+        ],
+        "material": "metal_light"
+      }
+    },
+    "product_2": {
+      "naming": "PHYS_Vision_Product_2",
+      "primitive": "box",
+      "dimensions_m": [
+        0.1,
+        0.075,
+        0.1
+      ],
+      "offset_m": [
+        1.05,
+        -0.95,
+        0.3
+      ],
+      "rotation_deg": [
+        8,
+        14,
+        20
+      ],
+      "bevel_m": 0.006,
+      "bevel_segments": 1,
+      "material": "white_panel",
+      "unity_tag": "ProductPart",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.3,
+        "kinematic": false
+      },
+      "screen": {
+        "naming": "PHYS_Vision_Product_2_Screen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.055,
+          0.006,
+          0.033
+        ],
+        "offset_m": [
+          1.05,
+          -0.912,
+          0.33
+        ],
+        "material": "screen_dark"
+      }
+    },
+    "reject_bin": {
+      "naming": "STATION_04_VisionInspection_RejectBin",
+      "primitive": "box",
+      "dimensions_m": [
+        0.32,
+        0.32,
+        0.35
+      ],
+      "offset_m": [
+        1.05,
+        -0.95,
+        0.18
+      ],
+      "material": "blue_accent",
+      "collider": "static",
+      "unity_tag": "RejectBin"
+    },
+    "hmi": {
+      "naming": "STATION_04_VisionInspection_HMI",
+      "primitive": "box",
+      "dimensions_m": [
+        0.34,
+        0.03,
+        0.26
+      ],
+      "offset_m": [
+        0.85,
+        0.6,
+        1.25
+      ],
+      "rotation_deg": [
+        -12,
+        0,
+        0
+      ],
+      "material": "screen_dark",
+      "collider": "static",
+      "unity_tag": "HMI",
+      "bezel": {
+        "naming": "STATION_04_VisionInspection_HMIBezel",
+        "primitive": "box",
+        "dimensions_m": [
+          0.38,
+          0.02,
+          0.3
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_dark",
+        "offset_from_parent_m": [
+          0.0,
+          0.012,
+          0.0
+        ]
+      },
+      "pole": {
+        "naming": "STATION_04_VisionInspection_HMIPole",
+        "primitive": "cylinder",
+        "radius_m": 0.035,
+        "depth_m": 1.05,
+        "vertices": 12,
+        "axis": "Z",
+        "offset_m": [
+          0.85,
+          0.64,
+          0.52
+        ],
+        "material": "metal_dark"
+      },
+      "state": {
+        "naming": "STATION_04_VisionInspection_HMIState",
+        "primitive": "text_mesh",
+        "text": "PASS",
+        "size_m": 0.07,
+        "world_position_m": [
+          13.35,
+          6.63,
+          1.3
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      }
+    },
+    "stack_light": {
+      "naming": "STATION_04_VisionInspection_StackLight",
+      "pole": {
+        "naming": "STATION_04_VisionInspection_StackLightPole",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 1.1,
+        "vertices": 12,
+        "axis": "Z",
+        "offset_m": [
+          -0.85,
+          0.6,
+          0.55
+        ],
+        "material": "metal_dark",
+        "primary": true
+      },
+      "base": {
+        "naming": "STATION_04_VisionInspection_StackLightBase",
+        "primitive": "cylinder",
+        "radius_m": 0.035,
+        "depth_m": 0.05,
+        "vertices": 12,
+        "axis": "Z",
+        "offset_m": [
+          -0.85,
+          0.6,
+          1.14
+        ],
+        "material": "metal_dark"
+      },
+      "segments": {
+        "naming_pattern": "STATION_04_VisionInspection_StackSeg_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.035,
+        "depth_m": 0.06,
+        "vertices": 16,
+        "axis": "Z",
+        "material_cycle": [
+          "led_red",
+          "led_amber",
+          "led_green"
+        ],
+        "start_offset_m": [
+          -0.85,
+          0.6,
+          1.2
+        ],
+        "step_m": [
+          0,
+          0,
+          0.06
+        ]
+      },
+      "dome": {
+        "naming": "STATION_04_VisionInspection_StackDome",
+        "primitive": "cylinder",
+        "radius_m": 0.035,
+        "depth_m": 0.03,
+        "vertices": 16,
+        "axis": "Z",
+        "offset_m": [
+          -0.85,
+          0.6,
+          1.4
+        ],
+        "material": "warning_black"
+      }
+    },
+    "emergency_stop": {
+      "naming": "STATION_04_VisionInspection_EStop",
+      "primitive": "box",
+      "dimensions_m": [
+        0.16,
+        0.05,
+        0.16
+      ],
+      "offset_m": [
+        -0.55,
+        0.62,
+        1.1
+      ],
+      "material": "safety_yellow",
+      "unity_tag": "EmergencyStop",
+      "button": {
+        "naming": "STATION_04_VisionInspection_EStopButton",
+        "primitive": "cylinder",
+        "radius_m": 0.04,
+        "depth_m": 0.05,
+        "vertices": 16,
+        "axis": "Y",
+        "offset_m": [
+          -0.55,
+          0.665,
+          1.1
+        ],
+        "material": "led_red"
+      }
+    },
+    "cabinet": {
+      "naming": "STATION_04_VisionInspection_Cabinet",
+      "primitive": "box",
+      "dimensions_m": [
+        0.5,
+        0.35,
+        1.0
+      ],
+      "offset_m": [
+        -1.15,
+        -0.72,
+        0.5
+      ],
+      "material": "metal_light",
+      "collider": "static",
+      "unity_tag": "Cabinet",
+      "door": {
+        "naming": "STATION_04_VisionInspection_CabinetDoor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.46,
+          0.02,
+          0.86
+        ],
+        "offset_m": [
+          -1.15,
+          -0.905,
+          0.55
+        ],
+        "material": "glass_window"
+      },
+      "handle": {
+        "naming": "STATION_04_VisionInspection_CabinetHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.03,
+          0.16
+        ],
+        "offset_m": [
+          -0.97,
+          -0.918,
+          0.55
+        ],
+        "material": "metal_dark"
+      },
+      "led": {
+        "naming": "STATION_04_VisionInspection_CabinetLed",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.012,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          -1.31,
+          -0.905,
+          0.88
+        ],
+        "material": "led_green"
+      }
+    },
+    "industrial_design": {
+      "window_accent": {
+        "naming": "STATION_04_VisionInspection_WindowAccent",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.0,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.475,
+          0.46
+        ],
+        "material": "blue_accent"
+      },
+      "camera_band": {
+        "naming": "STATION_04_VisionInspection_CameraBand",
+        "primitive": "box",
+        "dimensions_m": [
+          0.205,
+          0.205,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.97
+        ],
+        "material": "blue_accent"
+      },
+      "tunnel_top_trim": {
+        "naming": "STATION_04_VisionInspection_TunnelTrim",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.04,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.475,
+          1.16
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "ergonomics": {
+      "operator_mat": {
+        "naming": "STATION_04_VisionInspection_OperatorMat",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.25,
+          0.6,
+          0.01
+        ],
+        "offset_m": [
+          0.15,
+          0.78,
+          0.006
+        ],
+        "material": "rubber_black",
+        "unity_tag": "FloorMarking"
+      }
+    },
+    "safety_systems": {
+      "andon_housing": {
+        "naming": "STATION_04_VisionInspection_Andon",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.34,
+          0.07,
+          0.16
+        ],
+        "offset_m": [
+          0.3,
+          0.44,
+          1.34
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "andon_pass": {
+        "naming": "STATION_04_VisionInspection_AndonPass",
+        "primitive": "box",
+        "dimensions_m": [
+          0.13,
+          0.02,
+          0.11
+        ],
+        "offset_m": [
+          0.22,
+          0.478,
+          1.34
+        ],
+        "material": "led_green"
+      },
+      "andon_fail": {
+        "naming": "STATION_04_VisionInspection_AndonFail",
+        "primitive": "box",
+        "dimensions_m": [
+          0.13,
+          0.02,
+          0.11
+        ],
+        "offset_m": [
+          0.38,
+          0.478,
+          1.34
+        ],
+        "material": "led_red"
+      },
+      "andon_bracket": {
+        "naming": "STATION_04_VisionInspection_AndonBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.16
+        ],
+        "offset_m": [
+          0.3,
+          0.46,
+          1.26
+        ],
+        "material": "metal_dark"
+      },
+      "drive_guard": {
+        "naming": "STATION_04_VisionInspection_DriveGuard",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.28,
+          0.02
+        ],
+        "offset_m": [
+          1.6,
+          0.33,
+          0.42
+        ],
+        "material": "warning_black"
+      },
+      "drive_guard_side": {
+        "naming": "STATION_04_VisionInspection_DriveGuardSide",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.02,
+          0.18
+        ],
+        "offset_m": [
+          1.6,
+          0.47,
+          0.33
+        ],
+        "material": "warning_black"
+      },
+      "safety_stripe": {
+        "naming": "STATION_04_VisionInspection_SafetyStripe",
+        "primitive": "box",
+        "dimensions_m": [
+          2.8,
+          0.1,
+          0.006
+        ],
+        "offset_m": [
+          0.0,
+          1.3,
+          -0.136
+        ],
+        "material": "safety_yellow",
+        "unity_tag": "FloorMarking"
+      },
+      "work_zone": {
+        "naming": "STATION_04_VisionInspection_WorkZone",
+        "primitive": "box",
+        "dimensions_m": [
+          1.9,
+          0.05,
+          0.005
+        ],
+        "offset_m": [
+          0.0,
+          0.85,
+          -0.136
+        ],
+        "material": "safety_yellow",
+        "unity_tag": "FloorMarking"
+      },
+      "reject_zone": {
+        "naming": "STATION_04_VisionInspection_RejectZone",
+        "primitive": "box",
+        "dimensions_m": [
+          0.5,
+          0.5,
+          0.005
+        ],
+        "offset_m": [
+          1.05,
+          -0.95,
+          -0.136
+        ],
+        "material": "safety_yellow",
+        "unity_tag": "FloorMarking"
+      },
+      "voltage_sticker": {
+        "naming": "STATION_04_VisionInspection_VoltageSticker",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.006,
+          0.07
+        ],
+        "offset_m": [
+          -1.24,
+          -0.912,
+          0.41
+        ],
+        "material": "safety_yellow",
+        "volt_text": {
+          "naming": "STATION_04_VisionInspection_VoltageText",
+          "primitive": "text_mesh",
+          "text": "⚡",
+          "size_m": 0.045,
+          "offset_m": [
+            -1.24,
+            -0.918,
+            0.41
+          ],
+          "rotation_deg": [
+            90.0,
+            0.0,
+            0.0
+          ],
+          "material": "warning_black"
+        }
+      },
+      "reject_sticker": {
+        "naming": "STATION_04_VisionInspection_RejectSticker",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.006,
+          0.07
+        ],
+        "offset_m": [
+          0.85,
+          0.605,
+          0.46
+        ],
+        "material": "safety_yellow",
+        "reject_text": {
+          "naming": "STATION_04_VisionInspection_RejectText",
+          "primitive": "text_mesh",
+          "text": "!",
+          "size_m": 0.05,
+          "offset_m": [
+            0.85,
+            0.611,
+            0.46
+          ],
+          "rotation_deg": [
+            90.0,
+            0.0,
+            180.0
+          ],
+          "material": "warning_black"
+        }
+      }
+    },
+    "service_access": {
+      "hatch_panel": {
+        "naming": "STATION_04_VisionInspection_ServiceHatch",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.52,
+          0.02,
+          0.44
+        ],
+        "offset_m": [
+          0.0,
+          -0.49,
+          0.84
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_light"
+      },
+      "hatch_hinges": {
+        "naming_pattern": "STATION_04_VisionInspection_HatchHinge_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.012,
+        "depth_m": 0.05,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.27,
+            -0.5,
+            0.66
+          ],
+          [
+            -0.27,
+            -0.5,
+            1.02
+          ]
+        ]
+      },
+      "hatch_handle": {
+        "naming": "STATION_04_VisionInspection_HatchHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.03,
+          0.1
+        ],
+        "offset_m": [
+          0.22,
+          -0.51,
+          0.84
+        ],
+        "material": "metal_dark"
+      },
+      "window_frame_top": {
+        "naming": "STATION_04_VisionInspection_WindowFrameTop",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.03,
+          0.04
+        ],
+        "offset_m": [
+          0.0,
+          0.47,
+          1.19
+        ],
+        "material": "metal_light"
+      },
+      "window_frame_bottom": {
+        "naming": "STATION_04_VisionInspection_WindowFrameBottom",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.03,
+          0.04
+        ],
+        "offset_m": [
+          0.0,
+          0.47,
+          0.41
+        ],
+        "material": "metal_light"
+      },
+      "loto_hasp": {
+        "naming": "STATION_04_VisionInspection_LotoHasp",
+        "primitive": "box",
+        "dimensions_m": [
+          0.02,
+          0.03,
+          0.045
+        ],
+        "offset_m": [
+          -1.0,
+          -0.95,
+          0.56
+        ],
+        "material": "safety_yellow"
+      }
+    },
+    "pneumatic_reject": {
+      "pusher_body": {
+        "naming": "STATION_04_VisionInspection_RejectPusher",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.08,
+          0.16,
+          0.08
+        ],
+        "offset_m": [
+          0.85,
+          0.4,
+          0.445
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "blue_accent"
+      },
+      "pusher_rod": {
+        "naming": "STATION_04_VisionInspection_RejectPusherRod",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.2,
+        "vertices": 10,
+        "axis": "Y",
+        "material": "metal_light",
+        "offset_m": [
+          0.85,
+          0.24,
+          0.445
+        ]
+      },
+      "pusher_paddle": {
+        "naming": "STATION_04_VisionInspection_RejectPusherPaddle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.11,
+          0.02,
+          0.1
+        ],
+        "offset_m": [
+          0.85,
+          0.15,
+          0.445
+        ],
+        "material": "metal_dark"
+      },
+      "reject_chute": {
+        "naming": "STATION_04_VisionInspection_RejectChute",
+        "primitive": "box",
+        "dimensions_m": [
+          0.28,
+          0.7,
+          0.015
+        ],
+        "offset_m": [
+          0.95,
+          -0.58,
+          0.33
+        ],
+        "tilt_deg": [
+          -22.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_light"
+      },
+      "frl_body": {
+        "naming": "STATION_04_VisionInspection_FRL",
+        "primitive": "cylinder",
+        "radius_m": 0.028,
+        "depth_m": 0.1,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_light",
+        "offset_m": [
+          1.35,
+          0.35,
+          0.28
+        ]
+      },
+      "frl_bowl": {
+        "naming": "STATION_04_VisionInspection_FRLBowl",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.05,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "screen_dark",
+        "offset_m": [
+          1.35,
+          0.35,
+          0.21
+        ]
+      },
+      "frl_knob": {
+        "naming": "STATION_04_VisionInspection_FRLKnob",
+        "primitive": "cylinder",
+        "radius_m": 0.015,
+        "depth_m": 0.02,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          1.35,
+          0.35,
+          0.345
+        ]
+      },
+      "air_valve": {
+        "naming": "STATION_04_VisionInspection_AirValve",
+        "primitive": "cylinder",
+        "radius_m": 0.02,
+        "depth_m": 0.06,
+        "vertices": 10,
+        "axis": "X",
+        "material": "metal_light",
+        "offset_m": [
+          1.46,
+          0.35,
+          0.28
+        ]
+      },
+      "air_valve_lever": {
+        "naming": "STATION_04_VisionInspection_AirValveLever",
+        "primitive": "box",
+        "dimensions_m": [
+          0.015,
+          0.05,
+          0.015
+        ],
+        "offset_m": [
+          1.46,
+          0.35,
+          0.32
+        ],
+        "material": "safety_yellow"
+      },
+      "reject_valve": {
+        "naming": "STATION_04_VisionInspection_RejectValve",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.06,
+          0.09
+        ],
+        "offset_m": [
+          0.85,
+          0.5,
+          0.38
+        ],
+        "material": "metal_dark",
+        "coil": {
+          "naming": "STATION_04_VisionInspection_RejectValveCoil",
+          "primitive": "box",
+          "dimensions_m": [
+            0.03,
+            0.04,
+            0.035
+          ],
+          "offset_m": [
+            0.85,
+            0.5,
+            0.445
+          ],
+          "material": "blue_accent"
+        }
+      },
+      "air_line_1": {
+        "naming": "STATION_04_VisionInspection_AirLine_1",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.55,
+        "vertices": 6,
+        "axis": "X",
+        "material": "blue_accent",
+        "offset_m": [
+          1.12,
+          0.42,
+          0.26
+        ]
+      },
+      "air_line_2": {
+        "naming": "STATION_04_VisionInspection_AirLine_2",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.1,
+        "vertices": 6,
+        "axis": "Y",
+        "material": "blue_accent",
+        "offset_m": [
+          0.85,
+          0.45,
+          0.41
+        ]
+      }
+    },
+    "electrical": {
+      "main_switch_plate": {
+        "naming": "STATION_04_VisionInspection_MainSwitch",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.1,
+          0.012,
+          0.12
+        ],
+        "offset_m": [
+          -1.05,
+          -0.905,
+          0.7
+        ],
+        "material": "safety_yellow"
+      },
+      "main_switch_knob": {
+        "naming": "STATION_04_VisionInspection_MainSwitchKnob",
+        "primitive": "cylinder",
+        "radius_m": 0.028,
+        "depth_m": 0.035,
+        "vertices": 12,
+        "axis": "Y",
+        "material": "warning_black",
+        "offset_m": [
+          -1.05,
+          -0.928,
+          0.7
+        ]
+      },
+      "main_switch_lever": {
+        "naming": "STATION_04_VisionInspection_MainSwitchLever",
+        "primitive": "box",
+        "dimensions_m": [
+          0.016,
+          0.02,
+          0.07
+        ],
+        "offset_m": [
+          -1.05,
+          -0.945,
+          0.73
+        ],
+        "material": "warning_black"
+      },
+      "cable_duct": {
+        "naming": "STATION_04_VisionInspection_CableDuct",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          -0.8,
+          -0.44,
+          0.62
+        ],
+        "material": "metal_dark"
+      },
+      "camera_cable": {
+        "naming": "STATION_04_VisionInspection_CameraCable",
+        "primitive": "cylinder",
+        "radius_m": 0.01,
+        "depth_m": 0.66,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          -0.46,
+          -0.44,
+          0.97
+        ]
+      },
+      "cabinet_riser": {
+        "naming": "STATION_04_VisionInspection_CabinetRiser",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.3,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          -1.15,
+          -0.58,
+          0.8
+        ]
+      },
+      "ring_cable": {
+        "naming": "STATION_04_VisionInspection_RingCable",
+        "primitive": "cylinder",
+        "radius_m": 0.007,
+        "depth_m": 0.35,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          -0.115,
+          0.02,
+          1.17
+        ]
+      },
+      "hmi_cable": {
+        "naming": "STATION_04_VisionInspection_HMICable",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 1.0,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          0.885,
+          0.66,
+          0.52
+        ]
+      },
+      "sensor_entry": {
+        "naming": "STATION_04_VisionInspection_SensorEntry",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.06,
+          0.09
+        ],
+        "offset_m": [
+          -0.6,
+          0.235,
+          0.63
+        ],
+        "material": "metal_dark",
+        "lens": {
+          "naming": "STATION_04_VisionInspection_SensorEntryLens",
+          "primitive": "cylinder",
+          "radius_m": 0.013,
+          "depth_m": 0.012,
+          "vertices": 10,
+          "axis": "Y",
+          "material": "led_red",
+          "offset_m": [
+            -0.6,
+            0.2,
+            0.63
+          ]
+        }
+      },
+      "sensor_exit": {
+        "naming": "STATION_04_VisionInspection_SensorExit",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.06,
+          0.09
+        ],
+        "offset_m": [
+          0.6,
+          0.235,
+          0.63
+        ],
+        "material": "metal_dark",
+        "lens": {
+          "naming": "STATION_04_VisionInspection_SensorExitLens",
+          "primitive": "cylinder",
+          "radius_m": 0.013,
+          "depth_m": 0.012,
+          "vertices": 10,
+          "axis": "Y",
+          "material": "led_red",
+          "offset_m": [
+            0.6,
+            0.2,
+            0.63
+          ]
+        }
+      },
+      "vision_controller": {
+        "naming": "STATION_04_VisionInspection_VisionController",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.11,
+          0.1
+        ],
+        "offset_m": [
+          -1.15,
+          -0.72,
+          1.06
+        ],
+        "material": "metal_dark",
+        "led": {
+          "naming": "STATION_04_VisionInspection_VisionControllerLed",
+          "primitive": "cylinder",
+          "radius_m": 0.01,
+          "depth_m": 0.012,
+          "vertices": 8,
+          "axis": "Y",
+          "material": "led_green",
+          "offset_m": [
+            -1.2,
+            -0.665,
+            1.09
+          ]
+        }
+      }
+    },
+    "conveyor_detail": {
+      "side_frames": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvSideFrame_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          3.0,
+          0.04,
+          0.11
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            0.0,
+            -0.27,
+            0.36
+          ],
+          [
+            0.0,
+            0.27,
+            0.36
+          ]
+        ]
+      },
+      "guide_rails": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvGuide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          3.0,
+          0.02,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            0.0,
+            -0.22,
+            0.445
+          ],
+          [
+            0.0,
+            0.22,
+            0.445
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvRoller_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.045,
+        "depth_m": 0.5,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -1.48,
+            0.0,
+            0.39
+          ],
+          [
+            -0.52,
+            0.0,
+            0.39
+          ],
+          [
+            0.52,
+            0.0,
+            0.39
+          ],
+          [
+            1.48,
+            0.0,
+            0.39
+          ]
+        ]
+      },
+      "drive_gearbox": {
+        "naming": "STATION_04_VisionInspection_ConvDrive",
+        "primitive": "box",
+        "dimensions_m": [
+          0.13,
+          0.1,
+          0.13
+        ],
+        "offset_m": [
+          1.55,
+          0.33,
+          0.31
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "drive_motor": {
+        "naming": "STATION_04_VisionInspection_ConvMotor",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.14,
+        "vertices": 16,
+        "axis": "X",
+        "material": "metal_dark",
+        "offset_m": [
+          1.64,
+          0.33,
+          0.31
+        ]
+      },
+      "drive_coupling": {
+        "naming": "STATION_04_VisionInspection_ConvCoupling",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.13,
+          0.1
+        ],
+        "offset_m": [
+          1.5,
+          0.2,
+          0.36
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "vision_head": {
+      "heat_sink": {
+        "naming": "STATION_04_VisionInspection_CameraHeatSink",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.2,
+          0.2,
+          0.04
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          1.14
+        ],
+        "material": "metal_light"
+      },
+      "connector": {
+        "naming": "STATION_04_VisionInspection_CameraConnector",
+        "primitive": "cylinder",
+        "radius_m": 0.02,
+        "depth_m": 0.05,
+        "vertices": 10,
+        "axis": "X",
+        "material": "metal_dark",
+        "offset_m": [
+          0.11,
+          0.0,
+          1.06
+        ]
+      },
+      "lens_hood": {
+        "naming": "STATION_04_VisionInspection_CameraLensHood",
+        "primitive": "cylinder",
+        "radius_m": 0.075,
+        "depth_m": 0.04,
+        "vertices": 16,
+        "axis": "Z",
+        "material": "warning_black",
+        "offset_m": [
+          0.0,
+          0.0,
+          0.795
+        ]
+      },
+      "side_camera": {
+        "naming": "STATION_04_VisionInspection_CameraSide",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.1,
+          0.1
+        ],
+        "offset_m": [
+          0.0,
+          0.34,
+          1.0
+        ],
+        "tilt_deg": [
+          32.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_dark"
+      },
+      "side_camera_lens": {
+        "naming": "STATION_04_VisionInspection_CameraSideLens",
+        "primitive": "cylinder",
+        "radius_m": 0.035,
+        "depth_m": 0.07,
+        "vertices": 12,
+        "axis": "Z",
+        "tilt_deg": [
+          32.0,
+          0.0,
+          0.0
+        ],
+        "material": "warning_black",
+        "offset_m": [
+          0.0,
+          0.3,
+          0.92
+        ]
+      },
+      "side_camera_mount": {
+        "naming": "STATION_04_VisionInspection_CameraSideMount",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.06,
+          0.12
+        ],
+        "offset_m": [
+          0.0,
+          0.4,
+          1.1
+        ],
+        "material": "metal_dark"
+      },
+      "tunnel_gussets": {
+        "naming_pattern": "STATION_04_VisionInspection_TunnelGusset_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.06
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -0.46,
+            -0.44,
+            1.16
+          ],
+          [
+            0.46,
+            -0.44,
+            1.16
+          ],
+          [
+            -0.46,
+            0.44,
+            1.16
+          ],
+          [
+            0.46,
+            0.44,
+            1.16
+          ]
+        ]
+      }
+    },
+    "mech_supports": {
+      "camera_crossrail": {
+        "naming": "STATION_04_VisionInspection_CameraRail",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.05,
+          0.96,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          1.16
+        ],
+        "material": "metal_light"
+      },
+      "camera_bracket": {
+        "naming": "STATION_04_VisionInspection_CameraBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.13
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          1.105
+        ],
+        "material": "metal_dark"
+      },
+      "ring_arms": {
+        "naming_pattern": "STATION_04_VisionInspection_RingArm_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.008,
+        "depth_m": 0.33,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.12,
+            0.0,
+            1.03
+          ],
+          [
+            0.12,
+            0.0,
+            1.03
+          ],
+          [
+            0.0,
+            0.12,
+            1.03
+          ]
+        ]
+      },
+      "conv_legs": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.5
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "offsets_m": [
+          [
+            -1.45,
+            -0.24,
+            0.11
+          ],
+          [
+            -1.45,
+            0.24,
+            0.11
+          ],
+          [
+            1.45,
+            -0.24,
+            0.11
+          ],
+          [
+            1.45,
+            0.24,
+            0.11
+          ]
+        ]
+      },
+      "conv_feet": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvFoot_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.04,
+        "depth_m": 0.03,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -1.45,
+            -0.24,
+            -0.125
+          ],
+          [
+            -1.45,
+            0.24,
+            -0.125
+          ],
+          [
+            1.45,
+            -0.24,
+            -0.125
+          ],
+          [
+            1.45,
+            0.24,
+            -0.125
+          ]
+        ]
+      },
+      "estop_post": {
+        "naming": "STATION_04_VisionInspection_EStopPost",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 1.06,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -0.55,
+          0.62,
+          0.39
+        ]
+      },
+      "estop_post_foot": {
+        "naming": "STATION_04_VisionInspection_EStopPostFoot",
+        "primitive": "cylinder",
+        "radius_m": 0.06,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "material": "metal_dark",
+        "offset_m": [
+          -0.55,
+          0.62,
+          -0.128
+        ]
+      },
+      "hmi_foot": {
+        "naming": "STATION_04_VisionInspection_HMIFoot",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.16,
+          0.02
+        ],
+        "offset_m": [
+          0.85,
+          0.64,
+          -0.128
+        ],
+        "material": "metal_dark"
+      },
+      "stacklight_foot": {
+        "naming": "STATION_04_VisionInspection_StackLightFoot",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.16,
+          0.02
+        ],
+        "offset_m": [
+          -0.85,
+          0.6,
+          -0.128
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "conveyor_premium": {
+      "motor_plate": {
+        "naming": "STATION_04_VisionInspection_ConvMotorPlate",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.15,
+          0.15,
+          0.02
+        ],
+        "offset_m": [
+          1.6,
+          0.33,
+          0.235
+        ],
+        "material": "metal_light"
+      },
+      "bearings": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvBearing_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.055,
+          0.05,
+          0.07
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.48,
+            -0.27,
+            0.39
+          ],
+          [
+            -1.48,
+            0.27,
+            0.39
+          ],
+          [
+            1.48,
+            -0.27,
+            0.39
+          ],
+          [
+            1.48,
+            0.27,
+            0.39
+          ]
+        ]
+      },
+      "guide_brackets": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvGuideBracket_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.03,
+          0.05,
+          0.05
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.65,
+            -0.24,
+            0.46
+          ],
+          [
+            -0.65,
+            0.24,
+            0.46
+          ],
+          [
+            0.65,
+            -0.24,
+            0.46
+          ],
+          [
+            0.65,
+            0.24,
+            0.46
+          ]
+        ]
+      },
+      "track_bolts": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvTrackBolt_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.008,
+        "depth_m": 0.03,
+        "vertices": 6,
+        "axis": "X",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.57,
+            -0.2,
+            0.39
+          ],
+          [
+            -1.57,
+            0.2,
+            0.39
+          ]
+        ]
+      },
+      "takeup": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvTakeup_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.05,
+          0.06,
+          0.08
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -1.54,
+            -0.24,
+            0.39
+          ],
+          [
+            -1.54,
+            0.24,
+            0.39
+          ]
+        ]
+      },
+      "drive_cover": {
+        "naming": "STATION_04_VisionInspection_ConvDriveCover",
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.2,
+          0.02
+        ],
+        "offset_m": [
+          1.6,
+          0.33,
+          0.405
+        ],
+        "material": "metal_dark"
+      },
+      "inspection_cover": {
+        "naming": "STATION_04_VisionInspection_ConvInspectionCover",
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.02,
+          0.09
+        ],
+        "offset_m": [
+          -0.9,
+          -0.29,
+          0.36
+        ],
+        "material": "metal_light"
+      },
+      "cover_screws": {
+        "naming_pattern": "STATION_04_VisionInspection_ConvCoverScrew_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.008,
+        "depth_m": 0.012,
+        "vertices": 6,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.03,
+            -0.3,
+            0.36
+          ],
+          [
+            -0.77,
+            -0.3,
+            0.36
+          ]
+        ]
+      },
+      "motor_cable": {
+        "naming": "STATION_04_VisionInspection_ConvMotorCable",
+        "primitive": "cylinder",
+        "radius_m": 0.01,
+        "depth_m": 0.36,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          1.64,
+          0.42,
+          0.1
+        ]
+      }
+    },
+    "electrical_din": {
+      "din_rail": {
+        "naming": "STATION_04_VisionInspection_DinRail",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.15,
+          -0.62,
+          0.75
+        ],
+        "material": "metal_light"
+      },
+      "din_rail_2": {
+        "naming": "STATION_04_VisionInspection_DinRail2",
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.15,
+          -0.62,
+          0.48
+        ],
+        "material": "metal_light"
+      },
+      "switch_mod": {
+        "naming": "STATION_04_VisionInspection_DinSwitch",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.055,
+          0.09
+        ],
+        "offset_m": [
+          -1.29,
+          -0.63,
+          0.75
+        ],
+        "material": "blue_accent"
+      },
+      "psu": {
+        "naming": "STATION_04_VisionInspection_DinPSU",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.11
+        ],
+        "offset_m": [
+          -1.21,
+          -0.63,
+          0.73
+        ],
+        "material": "metal_light",
+        "led": {
+          "naming": "STATION_04_VisionInspection_DinPSULed",
+          "primitive": "cylinder",
+          "radius_m": 0.006,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -1.21,
+            -0.665,
+            0.77
+          ],
+          "material": "led_green"
+        }
+      },
+      "mcb": {
+        "naming_pattern": "STATION_04_VisionInspection_DinMCB_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.03,
+          0.045,
+          0.06
+        ],
+        "material": "warning_black",
+        "start_offset_m": [
+          -1.12,
+          -0.63,
+          0.75
+        ],
+        "step_m": [
+          0.036,
+          0.0,
+          0.0
+        ]
+      },
+      "terminals": {
+        "naming_pattern": "STATION_04_VisionInspection_DinTerminal_{i}",
+        "primitive": "box",
+        "count": 6,
+        "dimensions_m": [
+          0.012,
+          0.045,
+          0.05
+        ],
+        "material": "metal_light",
+        "start_offset_m": [
+          -1.28,
+          -0.63,
+          0.48
+        ],
+        "step_m": [
+          0.03,
+          0.0,
+          0.0
+        ]
+      },
+      "vision_pc": {
+        "naming": "STATION_04_VisionInspection_DinVisionPC",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.07,
+          0.13
+        ],
+        "offset_m": [
+          -1.0,
+          -0.63,
+          0.55
+        ],
+        "material": "metal_dark",
+        "pcled": {
+          "naming": "STATION_04_VisionInspection_DinVisionPCLed",
+          "primitive": "cylinder",
+          "radius_m": 0.007,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -1.0,
+            -0.668,
+            0.6
+          ],
+          "material": "led_green"
+        },
+        "pcaccent": {
+          "naming": "STATION_04_VisionInspection_DinVisionPCAccent",
+          "primitive": "box",
+          "dimensions_m": [
+            0.1,
+            0.006,
+            0.02
+          ],
+          "offset_m": [
+            -1.0,
+            -0.667,
+            0.55
+          ],
+          "material": "blue_accent"
+        }
+      }
+    },
+    "sensor_system": {
+      "trigger_sensor": {
+        "naming": "STATION_04_VisionInspection_TriggerSensor",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.05,
+          0.07
+        ],
+        "offset_m": [
+          -0.12,
+          0.24,
+          0.49
+        ],
+        "material": "metal_dark",
+        "led": {
+          "naming": "STATION_04_VisionInspection_TriggerSensorLed",
+          "primitive": "cylinder",
+          "radius_m": 0.006,
+          "depth_m": 0.01,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -0.12,
+            0.208,
+            0.52
+          ],
+          "material": "led_red"
+        }
+      },
+      "trigger_bracket": {
+        "naming": "STATION_04_VisionInspection_TriggerBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.02,
+          0.04,
+          0.05
+        ],
+        "offset_m": [
+          -0.12,
+          0.27,
+          0.46
+        ],
+        "material": "metal_dark"
+      },
+      "trigger_cable": {
+        "naming": "STATION_04_VisionInspection_TriggerCable",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.16,
+        "vertices": 6,
+        "axis": "Z",
+        "offset_m": [
+          -0.12,
+          0.29,
+          0.41
+        ],
+        "material": "rubber_black"
+      },
+      "reflectors": {
+        "naming_pattern": "STATION_04_VisionInspection_SensorReflector_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.02,
+          0.03,
+          0.06
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.6,
+            -0.24,
+            0.49
+          ],
+          [
+            -0.12,
+            -0.24,
+            0.49
+          ],
+          [
+            0.6,
+            -0.24,
+            0.49
+          ]
+        ]
+      },
+      "sensor_brackets": {
+        "naming_pattern": "STATION_04_VisionInspection_SensorBracket_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.02,
+          0.04,
+          0.05
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.6,
+            0.27,
+            0.46
+          ],
+          [
+            0.6,
+            0.27,
+            0.46
+          ]
+        ]
+      },
+      "sensor_cables": {
+        "naming_pattern": "STATION_04_VisionInspection_SensorCable_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.006,
+        "depth_m": 0.16,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -0.6,
+            0.29,
+            0.41
+          ],
+          [
+            0.6,
+            0.29,
+            0.41
+          ]
+        ]
+      }
+    },
+    "hmi_ui": {
+      "header_bar": {
+        "naming": "STATION_04_VisionInspection_HMIHeaderBar",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.008,
+          0.03
+        ],
+        "offset_m": [
+          0.85,
+          0.585,
+          1.365
+        ],
+        "tilt_deg": [
+          -12.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent"
+      },
+      "conf_bar": {
+        "naming": "STATION_04_VisionInspection_HMIConfBar",
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.008,
+          0.018
+        ],
+        "offset_m": [
+          0.85,
+          0.585,
+          1.22
+        ],
+        "tilt_deg": [
+          -12.0,
+          0.0,
+          0.0
+        ],
+        "material": "led_green"
+      },
+      "title": {
+        "naming": "STATION_04_VisionInspection_HMITitle",
+        "primitive": "text_mesh",
+        "text": "VISION INSPECTION",
+        "size_m": 0.024,
+        "world_position_m": [
+          13.35,
+          6.618,
+          1.35
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      },
+      "confidence": {
+        "naming": "STATION_04_VisionInspection_HMIConfidence",
+        "primitive": "text_mesh",
+        "text": "99.7 %",
+        "size_m": 0.045,
+        "world_position_m": [
+          13.35,
+          6.628,
+          1.19
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "model": {
+        "naming": "STATION_04_VisionInspection_HMIModel",
+        "primitive": "text_mesh",
+        "text": "YOLOv11",
+        "size_m": 0.02,
+        "world_position_m": [
+          13.3,
+          6.632,
+          1.12
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      },
+      "cycle": {
+        "naming": "STATION_04_VisionInspection_HMICycle",
+        "primitive": "text_mesh",
+        "text": "2.1 s",
+        "size_m": 0.02,
+        "world_position_m": [
+          13.43,
+          6.632,
+          1.12
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      }
+    },
+    "ai_visuals": {
+      "heatmap": {
+        "naming": "STATION_04_VisionInspection_AIHeatmap",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.14,
+          0.1,
+          0.004
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.58
+        ],
+        "material": "glass_window",
+        "hide_render": true,
+        "unity_tag": "AIHeatmap"
+      },
+      "laser_line": {
+        "naming": "STATION_04_VisionInspection_AILaserLine",
+        "primitive": "box",
+        "dimensions_m": [
+          0.55,
+          0.004,
+          0.004
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.525
+        ],
+        "material": "led_green",
+        "hide_render": true,
+        "unity_tag": "AILaser"
+      },
+      "crosshair_h": {
+        "naming": "STATION_04_VisionInspection_AICrosshairH",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.003,
+          0.003
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.59
+        ],
+        "material": "led_green",
+        "hide_render": true,
+        "unity_tag": "AICrosshair"
+      },
+      "crosshair_v": {
+        "naming": "STATION_04_VisionInspection_AICrosshairV",
+        "primitive": "box",
+        "dimensions_m": [
+          0.003,
+          0.12,
+          0.003
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.59
+        ],
+        "material": "led_green",
+        "hide_render": true,
+        "unity_tag": "AICrosshair"
+      },
+      "bbox": {
+        "naming": "STATION_04_VisionInspection_AIBoundingBox",
+        "primitive": "box",
+        "dimensions_m": [
+          0.13,
+          0.1,
+          0.1
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.48
+        ],
+        "material": "led_green",
+        "display": "wire",
+        "hide_render": true,
+        "unity_tag": "AIBBox"
+      }
+    },
+    "maintenance_detail": {
+      "quick_release": {
+        "naming_pattern": "STATION_04_VisionInspection_QuickRelease_{i}",
+        "primary": true,
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.013,
+        "depth_m": 0.014,
+        "vertices": 8,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.22,
+            -0.505,
+            0.66
+          ],
+          [
+            0.22,
+            -0.505,
+            0.66
+          ],
+          [
+            -0.22,
+            -0.505,
+            1.02
+          ],
+          [
+            0.22,
+            -0.505,
+            1.02
+          ]
+        ]
+      },
+      "label_loto": {
+        "naming": "STATION_04_VisionInspection_MaintLabelLoto",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.005,
+          0.03
+        ],
+        "offset_m": [
+          -1.0,
+          -0.912,
+          0.48
+        ],
+        "material": "safety_yellow"
+      },
+      "label_service": {
+        "naming": "STATION_04_VisionInspection_MaintLabelService",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.005,
+          0.03
+        ],
+        "offset_m": [
+          0.2,
+          -0.505,
+          0.88
+        ],
+        "material": "safety_yellow"
+      },
+      "label_drive": {
+        "naming": "STATION_04_VisionInspection_MaintLabelDrive",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.005,
+          0.03
+        ],
+        "offset_m": [
+          1.6,
+          0.44,
+          0.38
+        ],
+        "material": "safety_yellow"
+      }
+    },
+    "camera_detail": {
+      "focus_ring": {
+        "naming": "STATION_04_VisionInspection_CameraFocusRing",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.066,
+        "depth_m": 0.03,
+        "vertices": 16,
+        "axis": "Z",
+        "offset_m": [
+          0.0,
+          0.0,
+          0.925
+        ],
+        "material": "warning_black"
+      },
+      "front_glass": {
+        "naming": "STATION_04_VisionInspection_CameraFrontGlass",
+        "primitive": "cylinder",
+        "radius_m": 0.055,
+        "depth_m": 0.006,
+        "vertices": 16,
+        "axis": "Z",
+        "offset_m": [
+          0.0,
+          0.0,
+          0.795
+        ],
+        "material": "glass_window"
+      },
+      "fins": {
+        "naming_pattern": "STATION_04_VisionInspection_CameraFin_{i}",
+        "primitive": "box",
+        "count": 5,
+        "dimensions_m": [
+          0.205,
+          0.012,
+          0.05
+        ],
+        "material": "metal_light",
+        "start_offset_m": [
+          0.0,
+          -0.08,
+          1.17
+        ],
+        "step_m": [
+          0.0,
+          0.04,
+          0.0
+        ]
+      },
+      "led_pwr": {
+        "naming": "STATION_04_VisionInspection_CameraLedPwr",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.012,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          -0.06,
+          0.101,
+          1.09
+        ],
+        "material": "led_green"
+      },
+      "led_link": {
+        "naming": "STATION_04_VisionInspection_CameraLedLink",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.012,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          0.0,
+          0.101,
+          1.09
+        ],
+        "material": "led_amber"
+      },
+      "led_trig": {
+        "naming": "STATION_04_VisionInspection_CameraLedTrig",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.012,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          0.06,
+          0.101,
+          1.09
+        ],
+        "material": "led_red"
+      },
+      "m12": {
+        "naming": "STATION_04_VisionInspection_CameraM12",
+        "primitive": "cylinder",
+        "radius_m": 0.014,
+        "depth_m": 0.045,
+        "vertices": 10,
+        "axis": "Y",
+        "offset_m": [
+          0.06,
+          -0.108,
+          1.01
+        ],
+        "material": "metal_dark"
+      },
+      "rj45": {
+        "naming": "STATION_04_VisionInspection_CameraRJ45",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.04,
+          0.03
+        ],
+        "offset_m": [
+          -0.05,
+          -0.108,
+          1.01
+        ],
+        "material": "metal_dark"
+      },
+      "gland": {
+        "naming": "STATION_04_VisionInspection_CameraGland",
+        "primitive": "cylinder",
+        "radius_m": 0.016,
+        "depth_m": 0.035,
+        "vertices": 10,
+        "axis": "Y",
+        "offset_m": [
+          0.0,
+          -0.11,
+          0.98
+        ],
+        "material": "metal_dark"
+      },
+      "slot_bracket": {
+        "naming": "STATION_04_VisionInspection_CameraSlotBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.09,
+          0.06
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          1.19
+        ],
+        "material": "metal_light"
+      },
+      "slot_a": {
+        "naming": "STATION_04_VisionInspection_CameraSlotA",
+        "primitive": "box",
+        "dimensions_m": [
+          0.014,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          -0.03,
+          0.0,
+          1.19
+        ],
+        "material": "warning_black"
+      },
+      "slot_b": {
+        "naming": "STATION_04_VisionInspection_CameraSlotB",
+        "primitive": "box",
+        "dimensions_m": [
+          0.014,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          0.03,
+          0.0,
+          1.19
+        ],
+        "material": "warning_black"
+      },
+      "cam_jumper": {
+        "naming": "STATION_04_VisionInspection_CameraJumper",
+        "primitive": "cylinder",
+        "radius_m": 0.01,
+        "depth_m": 0.5,
+        "vertices": 6,
+        "axis": "Z",
+        "offset_m": [
+          0.0,
+          -0.13,
+          0.74
+        ],
+        "material": "rubber_black"
+      }
+    },
+    "tunnel_detail": {
+      "roof_door": {
+        "naming": "STATION_04_VisionInspection_TunnelRoofDoor",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.52,
+          0.42,
+          0.03
+        ],
+        "offset_m": [
+          0.0,
+          0.22,
+          1.235
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "metal_light"
+      },
+      "roof_hinges": {
+        "naming_pattern": "STATION_04_VisionInspection_TunnelRoofHinge_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.012,
+        "depth_m": 0.05,
+        "vertices": 8,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.2,
+            0.42,
+            1.235
+          ],
+          [
+            0.2,
+            0.42,
+            1.235
+          ]
+        ]
+      },
+      "roof_handle": {
+        "naming": "STATION_04_VisionInspection_TunnelRoofHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.03,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.04,
+          1.255
+        ],
+        "material": "metal_dark"
+      },
+      "liner_top": {
+        "naming": "STATION_04_VisionInspection_TunnelLinerTop",
+        "primitive": "box",
+        "dimensions_m": [
+          0.92,
+          0.86,
+          0.01
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          1.17
+        ],
+        "material": "warning_black"
+      },
+      "liner_back": {
+        "naming": "STATION_04_VisionInspection_TunnelLinerBack",
+        "primitive": "box",
+        "dimensions_m": [
+          0.92,
+          0.01,
+          0.78
+        ],
+        "offset_m": [
+          0.0,
+          -0.435,
+          0.8
+        ],
+        "material": "warning_black"
+      },
+      "gasket_top": {
+        "naming": "STATION_04_VisionInspection_WindowGasketTop",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.455,
+          1.19
+        ],
+        "material": "rubber_black"
+      },
+      "gasket_bottom": {
+        "naming": "STATION_04_VisionInspection_WindowGasketBottom",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.455,
+          0.4
+        ],
+        "material": "rubber_black"
+      },
+      "feedthrough": {
+        "naming": "STATION_04_VisionInspection_TunnelFeedthrough",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.04,
+        "vertices": 10,
+        "axis": "Z",
+        "offset_m": [
+          0.4,
+          -0.42,
+          1.21
+        ],
+        "material": "rubber_black"
+      },
+      "captive_screws": {
+        "naming_pattern": "STATION_04_VisionInspection_TunnelScrew_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.008,
+        "depth_m": 0.012,
+        "vertices": 6,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.45,
+            -0.47,
+            0.46
+          ],
+          [
+            0.45,
+            -0.47,
+            0.46
+          ],
+          [
+            -0.45,
+            -0.47,
+            1.14
+          ],
+          [
+            0.45,
+            -0.47,
+            1.14
+          ],
+          [
+            -0.45,
+            0.47,
+            0.46
+          ],
+          [
+            0.45,
+            0.47,
+            0.46
+          ],
+          [
+            -0.45,
+            0.47,
+            1.14
+          ],
+          [
+            0.45,
+            0.47,
+            1.14
+          ]
+        ]
+      }
+    },
+    "reject_detail": {
+      "cylinder_clevis": {
+        "naming": "STATION_04_VisionInspection_RejectClevis",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          0.85,
+          0.5,
+          0.445
+        ],
+        "material": "metal_dark"
+      },
+      "clevis_pin": {
+        "naming": "STATION_04_VisionInspection_RejectClevisPin",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.05,
+        "vertices": 8,
+        "axis": "X",
+        "offset_m": [
+          0.85,
+          0.5,
+          0.445
+        ],
+        "material": "metal_light"
+      },
+      "mount_bracket": {
+        "naming": "STATION_04_VisionInspection_RejectMountBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.1,
+          0.1
+        ],
+        "offset_m": [
+          0.85,
+          0.55,
+          0.41
+        ],
+        "material": "metal_dark"
+      },
+      "adj_stop": {
+        "naming": "STATION_04_VisionInspection_RejectAdjStop",
+        "primitive": "box",
+        "dimensions_m": [
+          0.02,
+          0.04,
+          0.03
+        ],
+        "offset_m": [
+          0.85,
+          0.21,
+          0.49
+        ],
+        "material": "metal_light"
+      },
+      "adj_stop_nut": {
+        "naming": "STATION_04_VisionInspection_RejectStopNut",
+        "primitive": "cylinder",
+        "radius_m": 0.013,
+        "depth_m": 0.012,
+        "vertices": 6,
+        "axis": "Y",
+        "offset_m": [
+          0.85,
+          0.235,
+          0.49
+        ],
+        "material": "metal_dark"
+      },
+      "shock_absorber": {
+        "naming": "STATION_04_VisionInspection_RejectShock",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.06,
+        "vertices": 10,
+        "axis": "Y",
+        "offset_m": [
+          0.8,
+          0.24,
+          0.445
+        ],
+        "material": "metal_dark"
+      },
+      "finger": {
+        "naming": "STATION_04_VisionInspection_RejectFinger",
+        "primitive": "box",
+        "dimensions_m": [
+          0.02,
+          0.02,
+          0.11
+        ],
+        "offset_m": [
+          0.85,
+          0.13,
+          0.46
+        ],
+        "material": "metal_light"
+      },
+      "guide": {
+        "naming": "STATION_04_VisionInspection_RejectGuide",
+        "primitive": "box",
+        "dimensions_m": [
+          0.02,
+          0.3,
+          0.06
+        ],
+        "offset_m": [
+          0.96,
+          -0.05,
+          0.445
+        ],
+        "material": "metal_light"
+      },
+      "prox_sensor": {
+        "naming": "STATION_04_VisionInspection_RejectProxSensor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.04,
+          0.05
+        ],
+        "offset_m": [
+          0.78,
+          0.44,
+          0.41
+        ],
+        "material": "metal_dark"
+      },
+      "prox_led": {
+        "naming": "STATION_04_VisionInspection_RejectProxLed",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.01,
+        "vertices": 8,
+        "axis": "X",
+        "offset_m": [
+          0.758,
+          0.44,
+          0.41
+        ],
+        "material": "led_red"
+      },
+      "prox_cable": {
+        "naming": "STATION_04_VisionInspection_RejectProxCable",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.16,
+        "vertices": 6,
+        "axis": "Z",
+        "offset_m": [
+          0.78,
+          0.46,
+          0.33
+        ],
+        "material": "rubber_black"
+      },
+      "reject_tube": {
+        "naming": "STATION_04_VisionInspection_RejectTube",
+        "primitive": "cylinder",
+        "radius_m": 0.005,
+        "depth_m": 0.12,
+        "vertices": 6,
+        "axis": "Z",
+        "offset_m": [
+          0.86,
+          0.55,
+          0.46
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "info_panel": {
+      "naming": "INFO_Vision_Panel",
+      "board": {
+        "naming": "INFO_Vision_Panel",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.05,
+          0.7
+        ],
+        "material": "white_panel",
+        "collider": "static",
+        "unity_tag": "InfoPanel",
+        "world_position_m": [
+          12.5,
+          8.6,
+          1.6
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "primary": true
+      },
+      "title": {
+        "naming": "INFO_Vision_Panel_Title",
+        "primitive": "text_mesh",
+        "text": "S04 · Vision Inspection",
+        "size_m": 0.13,
+        "world_position_m": [
+          12.5,
+          8.64,
+          1.82
+        ],
+        "rotation_deg": [
+          90,
+          0,
+          180
+        ],
+        "material": "warning_black"
+      },
+      "body": {
+        "naming": "INFO_Vision_Panel_Body",
+        "primitive": "text_mesh",
+        "text": "Vision Inspection: cameras check assembly and labeling; failed units are diverted automatically.",
+        "size_m": 0.06,
+        "wrap_chars": 28,
+        "world_position_m": [
+          12.5,
+          8.64,
+          1.48
+        ],
+        "rotation_deg": [
+          90,
+          0,
+          180
+        ],
+        "material": "warning_black"
+      }
+    },
+    "info_trigger": {
+      "naming": "TRIGGER_Info_Vision",
+      "primitive": "box",
+      "dimensions_m": [
+        2.4,
+        1.6,
+        2.2
+      ],
+      "world_position_m": [
+        12.5,
+        9.3,
+        1.1
+      ],
+      "is_trigger": true,
+      "display": "wire",
+      "hide_render": true,
+      "unity_tag": "Trigger"
+    },
+    "flow_arrow": {
+      "plate": {
+        "naming": "STATION_04_VisionInspection_FlowArrow",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.006,
+          0.1
+        ],
+        "offset_m": [
+          1.5,
+          0.3,
+          0.55
+        ],
+        "material": "safety_yellow",
+        "arrow_text": {
+          "naming": "STATION_04_VisionInspection_FlowText",
+          "primitive": "text_mesh",
+          "text": "→ S05",
+          "size_m": 0.05,
+          "world_position_m": [
+            14.0,
+            6.3,
+            0.55
+          ],
+          "rotation_deg": [
+            90,
+            0,
+            180
+          ],
+          "material": "warning_black"
+        }
+      }
+    }
+  }
+}

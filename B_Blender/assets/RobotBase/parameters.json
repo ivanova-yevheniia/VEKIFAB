@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "robot_base",
+    "name": "Robot Base",
+    "version": "1.0.0",
+    "category": "robotics",
+    "tags": [
+      "robot",
+      "base",
+      "J1",
+      "structure"
+    ]
+  },
+  "local_origin_m": [
+    0,
+    0,
+    0
+  ],
+  "parameters": {},
+  "material_library": {
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "base": {
+      "role": "base",
+      "naming": "ROBOTBASE_Body",
+      "primitive": "cylinder",
+      "radius_m": 0.2,
+      "depth_m": 0.16,
+      "vertices": 20,
+      "axis": "Z",
+      "offset_m": [
+        0,
+        0,
+        0.08
+      ],
+      "material": "metal_dark",
+      "flange": {
+        "role": "flange",
+        "naming": "ROBOTBASE_Flange",
+        "primitive": "cylinder",
+        "radius_m": 0.17,
+        "depth_m": 0.04,
+        "vertices": 20,
+        "axis": "Z",
+        "offset_from_parent_m": [
+          0,
+          0,
+          0.09
+        ],
+        "material": "metal_light"
+      }
+    }
+  }
+}

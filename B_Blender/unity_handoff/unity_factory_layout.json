@@ -1,0 +1,541 @@
+{
+  "schema_version": "1.0",
+  "handoff": "WP B (Blender station prefabs) -> WP D (Unity assembly + avatar)",
+  "project": "VEKIFAB \u2014 AI Factory Planner",
+  "product": "Infusion Pump MF-IP-100",
+  "units": "meters",
+  "up_axis": "Y (glTF)",
+  "factory_floor_m": {
+    "x": 25.0,
+    "y": 18.0
+  },
+  "assembly_note": "Blender exports individual station GLBs. Unity instantiates one prefab per placement below and assembles the line; Blender does NOT export a full scene.",
+  "prefabs_to_generate": [
+    {
+      "type": "loading_station",
+      "prefab_glb": "loading_station.glb",
+      "exists_in_exports": true
+    },
+    {
+      "type": "assisted_assembly_station",
+      "prefab_glb": "assembly_station.glb",
+      "exists_in_exports": true
+    },
+    {
+      "type": "robot_handling_cell",
+      "prefab_glb": "robot_cell.glb",
+      "exists_in_exports": true
+    },
+    {
+      "type": "vision_inspection_station",
+      "prefab_glb": "vision_inspection.glb",
+      "exists_in_exports": true
+    },
+    {
+      "type": "functional_test_station",
+      "prefab_glb": "functional_test_station.glb",
+      "exists_in_exports": false
+    },
+    {
+      "type": "packaging_station",
+      "prefab_glb": "packaging_station.glb",
+      "exists_in_exports": false
+    },
+    {
+      "type": "finished_goods_storage",
+      "prefab_glb": "storage_station.glb",
+      "exists_in_exports": false
+    }
+  ],
+  "station_placements": [
+    {
+      "station_id": "S01",
+      "type": "loading_station",
+      "prefab_glb": "loading_station.glb",
+      "position_m": [
+        2.5,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_Loading",
+      "info_panel": "INFO_Loading_Panel",
+      "reasoning_key": "S01",
+      "reasoning_available": true,
+      "parallel_group": null
+    },
+    {
+      "station_id": "S02A",
+      "type": "assisted_assembly_station",
+      "prefab_glb": "assembly_station.glb",
+      "position_m": [
+        5.83,
+        4.82,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_Assembly_A",
+      "info_panel": "INFO_Assembly_Panel_A",
+      "reasoning_key": "S02",
+      "reasoning_available": true,
+      "parallel_group": "S02"
+    },
+    {
+      "station_id": "S02B",
+      "type": "assisted_assembly_station",
+      "prefab_glb": "assembly_station.glb",
+      "position_m": [
+        5.83,
+        7.42,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_Assembly_B",
+      "info_panel": "INFO_Assembly_Panel_B",
+      "reasoning_key": "S02",
+      "reasoning_available": true,
+      "parallel_group": "S02"
+    },
+    {
+      "station_id": "S03",
+      "type": "robot_handling_cell",
+      "prefab_glb": "robot_cell.glb",
+      "position_m": [
+        9.17,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_RobotCell",
+      "info_panel": "INFO_RobotCell_Panel",
+      "reasoning_key": "S03",
+      "reasoning_available": true,
+      "parallel_group": null
+    },
+    {
+      "station_id": "S04",
+      "type": "vision_inspection_station",
+      "prefab_glb": "vision_inspection.glb",
+      "position_m": [
+        12.5,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_Vision",
+      "info_panel": "INFO_Vision_Panel",
+      "reasoning_key": "S04",
+      "reasoning_available": true,
+      "parallel_group": null
+    },
+    {
+      "station_id": "S05",
+      "type": "functional_test_station",
+      "prefab_glb": "functional_test_station.glb",
+      "position_m": [
+        15.83,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_FunctionalTest",
+      "info_panel": "INFO_FunctionalTest_Panel",
+      "reasoning_key": "S05",
+      "reasoning_available": true,
+      "parallel_group": null
+    },
+    {
+      "station_id": "S06",
+      "type": "packaging_station",
+      "prefab_glb": "packaging_station.glb",
+      "position_m": [
+        19.17,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_Packaging",
+      "info_panel": "INFO_Packaging_Panel",
+      "reasoning_key": "S06",
+      "reasoning_available": true,
+      "parallel_group": null
+    },
+    {
+      "station_id": "S07",
+      "type": "finished_goods_storage",
+      "prefab_glb": "storage_station.glb",
+      "position_m": [
+        22.5,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "trigger": "TRIGGER_Info_Storage",
+      "info_panel": "INFO_Storage_Panel",
+      "reasoning_key": "S07",
+      "reasoning_available": true,
+      "parallel_group": null
+    }
+  ],
+  "conveyors": [
+    {
+      "id": "C01",
+      "name": "CONVEYOR_S01_S02A",
+      "from": "S01",
+      "to": "S02A",
+      "start_m": [
+        3.5,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        4.83,
+        4.82,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    },
+    {
+      "id": "C02",
+      "name": "CONVEYOR_S01_S02B",
+      "from": "S01",
+      "to": "S02B",
+      "start_m": [
+        3.5,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        4.83,
+        7.42,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    },
+    {
+      "id": "C03",
+      "name": "CONVEYOR_S02A_S03",
+      "from": "S02A",
+      "to": "S03",
+      "start_m": [
+        6.83,
+        4.82,
+        0.4
+      ],
+      "end_m": [
+        8.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    },
+    {
+      "id": "C04",
+      "name": "CONVEYOR_S02B_S03",
+      "from": "S02B",
+      "to": "S03",
+      "start_m": [
+        6.83,
+        7.42,
+        0.4
+      ],
+      "end_m": [
+        8.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    },
+    {
+      "id": "C05",
+      "name": "CONVEYOR_S03_S04",
+      "from": "S03",
+      "to": "S04",
+      "start_m": [
+        10.17,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        11.5,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    },
+    {
+      "id": "C06",
+      "name": "CONVEYOR_S04_S05",
+      "from": "S04",
+      "to": "S05",
+      "start_m": [
+        13.5,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        14.83,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    },
+    {
+      "id": "C07",
+      "name": "CONVEYOR_S05_S06",
+      "from": "S05",
+      "to": "S06",
+      "start_m": [
+        16.83,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        18.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    },
+    {
+      "id": "C08",
+      "name": "CONVEYOR_S06_S07",
+      "from": "S06",
+      "to": "S07",
+      "start_m": [
+        20.17,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        21.5,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "belt_speed_mps": 0.15
+    }
+  ],
+  "avatar_walkway": {
+    "name": "PATH_AvatarWalkway",
+    "width_m": 1.6,
+    "waypoints_m": [
+      [
+        1.5,
+        10.44,
+        0.0
+      ],
+      [
+        2.5,
+        10.44,
+        0.0
+      ],
+      [
+        5.83,
+        10.44,
+        0.0
+      ],
+      [
+        9.17,
+        10.44,
+        0.0
+      ],
+      [
+        12.5,
+        10.44,
+        0.0
+      ],
+      [
+        15.83,
+        10.44,
+        0.0
+      ],
+      [
+        19.17,
+        10.44,
+        0.0
+      ],
+      [
+        22.5,
+        10.44,
+        0.0
+      ],
+      [
+        23.5,
+        10.44,
+        0.0
+      ]
+    ],
+    "route_length_m": 22.0
+  },
+  "info_panels": [
+    {
+      "id": "IP_S01",
+      "station": "S01",
+      "name": "INFO_Loading_Panel",
+      "position_m": [
+        2.5,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S02A",
+      "station": "S02A",
+      "name": "INFO_Assembly_Panel_A",
+      "position_m": [
+        5.83,
+        7.42,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S02B",
+      "station": "S02B",
+      "name": "INFO_Assembly_Panel_B",
+      "position_m": [
+        5.83,
+        8.94,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S03",
+      "station": "S03",
+      "name": "INFO_RobotCell_Panel",
+      "position_m": [
+        9.17,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S04",
+      "station": "S04",
+      "name": "INFO_Vision_Panel",
+      "position_m": [
+        12.5,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S05",
+      "station": "S05",
+      "name": "INFO_FunctionalTest_Panel",
+      "position_m": [
+        15.83,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S06",
+      "station": "S06",
+      "name": "INFO_Packaging_Panel",
+      "position_m": [
+        19.17,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S07",
+      "station": "S07",
+      "name": "INFO_Storage_Panel",
+      "position_m": [
+        22.5,
+        8.72,
+        1.6
+      ]
+    }
+  ],
+  "safety_zones": [
+    {
+      "id": "F_S03",
+      "name": "STATION_S03_RobotCell_Fence",
+      "station": "S03",
+      "type": "robot_cell_fence",
+      "area_min": [
+        7.77,
+        4.72,
+        0.0
+      ],
+      "area_max": [
+        10.57,
+        7.52,
+        0.0
+      ],
+      "height_m": 2.0,
+      "access_gate": {
+        "side": "+Y",
+        "center": [
+          9.17,
+          7.52,
+          0.0
+        ],
+        "width_m": 1.0,
+        "interlocked": true
+      }
+    }
+  ],
+  "physics_expectations": {
+    "by_name_prefix": {
+      "COLLIDER_": "Static collider (convex box); no Rigidbody",
+      "PHYS_": "Rigidbody (dynamic); use kinematic if tagged kinematic",
+      "TRIGGER_": "Collider with isTrigger = true; usually no renderer",
+      "INFO_": "UI data source (bind to reasoning_summary.json)",
+      "CONVEYOR_": "Kinematic belt; moves product at belt_speed_mps",
+      "STATION_": "Structural / static station geometry"
+    },
+    "custom_property_source": "glTF extras (unity_tag, collider, rigidbody, mass, kinematic, is_trigger, station_id)"
+  },
+  "reasoning_source": "reasoning/reasoning_summary.json"
+}

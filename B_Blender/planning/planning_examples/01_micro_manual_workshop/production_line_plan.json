@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "line_name": "Simple Sensor Module Line",
+  "product": "Simple Sensor Module",
+  "generated_by": "planning/planner.py",
+  "throughput_target_per_hour": 10.0,
+  "target_cycle_time_s": 45.0,
+  "flow_direction": "+X",
+  "planner": {
+    "automation_tier": "manual",
+    "daily_output": 80,
+    "available_area_m2": 80.0,
+    "workers": 3,
+    "budget": "low",
+    "regulated": false,
+    "layout": "compact",
+    "assembly_units": 1,
+    "station_count": 4,
+    "decisions_ref": "planner_decisions.md",
+    "stations_area_m2": 26.0
+  },
+  "stations": [
+    {
+      "id": "S01",
+      "type": "loading_station",
+      "name": "Loading Station",
+      "purpose": "Receive and kit incoming components onto trays for the line.",
+      "input": "Bulk components",
+      "output": "Kitted trays",
+      "cycle_role": "60 s nominal",
+      "required_equipment": [
+        "Infeed rack",
+        "Kitting bench",
+        "Parts bins",
+        "Roller conveyor"
+      ],
+      "info_panel_text": "Loading: incoming components are kitted and released onto the line.",
+      "position_m": [
+        2.5,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S02",
+      "type": "assisted_assembly_station",
+      "name": "Assisted Assembly Station",
+      "purpose": "Manual assembly of the product with guided tooling.",
+      "input": "Kitted trays",
+      "output": "Assembled unit",
+      "cycle_role": "60 s nominal",
+      "required_equipment": [
+        "Workbench",
+        "Pick-to-light bins",
+        "Guided tools",
+        "HMI"
+      ],
+      "info_panel_text": "Assisted Assembly: operators build the unit with guidance and torque-controlled tools.",
+      "position_m": [
+        5.1,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S03",
+      "type": "packaging_station",
+      "name": "Packaging Station",
+      "purpose": "Box, document, label and seal the finished unit.",
+      "input": "Tested unit",
+      "output": "Sealed carton",
+      "cycle_role": "55 s nominal",
+      "required_equipment": [
+        "Carton erector",
+        "Label applicator",
+        "Sealer"
+      ],
+      "info_panel_text": "Packaging: the unit is boxed, labeled and sealed for shipment.",
+      "position_m": [
+        7.7,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S04",
+      "type": "finished_goods_storage",
+      "name": "Finished Goods Storage",
+      "purpose": "Buffer and store finished product for dispatch.",
+      "input": "Sealed cartons",
+      "output": "Palletized goods",
+      "cycle_role": "0 s nominal",
+      "required_equipment": [
+        "Pallet rack",
+        "Accumulation conveyor"
+      ],
+      "info_panel_text": "Finished Goods Storage: cartons accumulate ready for dispatch.",
+      "position_m": [
+        10.3,
+        6.0,
+        0.0
+      ]
+    }
+  ],
+  "conveyors": [
+    {
+      "id": "C01",
+      "from": "S01",
+      "to": "S02"
+    },
+    {
+      "id": "C02",
+      "from": "S02",
+      "to": "S03"
+    },
+    {
+      "id": "C03",
+      "from": "S03",
+      "to": "S04"
+    }
+  ]
+}

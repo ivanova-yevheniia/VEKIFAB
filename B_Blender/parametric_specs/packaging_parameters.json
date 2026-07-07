@@ -1,0 +1,2930 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": "S06",
+    "type": "packaging_station",
+    "name": "STATION_06_Packaging",
+    "line": "MF-IP-100 Infusion Pump Line",
+    "world_position_m": [
+      19.17,
+      6.0,
+      0.0
+    ],
+    "envelope_m": {
+      "x": 2.5,
+      "y": 2.0,
+      "z": 2.2
+    },
+    "front_axis": "+Y",
+    "flow_axis": "+X",
+    "work_height_m": 0.9
+  },
+  "conventions": {
+    "units": "meters",
+    "up_axis": "Z",
+    "export_up_axis": "Y",
+    "offset_reference": "component offset_m are [dx,dy,dz] relative to station.world_position at floor; z absolute.",
+    "rotation_units": "degrees",
+    "root_object": "STATION_06_Packaging_Root",
+    "root_type": "EMPTY"
+  },
+  "material_library": {
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    },
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "worktop_grey": {
+      "base_color": [
+        0.82,
+        0.83,
+        0.85,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.55,
+      "emission_strength": 0.0
+    },
+    "white_panel": {
+      "base_color": [
+        0.9,
+        0.9,
+        0.92,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "emission_strength": 0.0
+    },
+    "blue_accent": {
+      "base_color": [
+        0.1,
+        0.35,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.1,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "safety_yellow": {
+      "base_color": [
+        0.95,
+        0.8,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "emission_strength": 0.0
+    },
+    "warning_black": {
+      "base_color": [
+        0.03,
+        0.03,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "emission_strength": 0.0
+    },
+    "rubber_black": {
+      "base_color": [
+        0.05,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "emission_strength": 0.0
+    },
+    "cardboard": {
+      "base_color": [
+        0.58,
+        0.42,
+        0.26,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.85,
+      "emission_strength": 0.0
+    },
+    "wood_pallet": {
+      "base_color": [
+        0.55,
+        0.4,
+        0.24,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.75,
+      "emission_strength": 0.0
+    },
+    "screen_dark": {
+      "base_color": [
+        0.02,
+        0.02,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.2,
+      "emission_color": [
+        0.1,
+        0.35,
+        0.55,
+        1.0
+      ],
+      "emission_strength": 1.0
+    },
+    "led_red": {
+      "base_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_amber": {
+      "base_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_green": {
+      "base_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_white": {
+      "base_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.3,
+      "emission_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "emission_strength": 2.5
+    },
+    "glass_window": {
+      "base_color": [
+        0.6,
+        0.7,
+        0.8,
+        0.22
+      ],
+      "metallic": 0.0,
+      "roughness": 0.1,
+      "alpha": 0.22,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "bench": {
+      "worktop": {
+        "naming": "COLLIDER_Packaging_Workbench",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.7,
+          1.3,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.875
+        ],
+        "bevel_m": 0.008,
+        "bevel_segments": 1,
+        "material": "worktop_grey",
+        "collider": "static",
+        "unity_tag": "Workbench"
+      },
+      "stiffener": {
+        "naming": "STATION_06_Packaging_TopStiffener",
+        "primitive": "box",
+        "dimensions_m": [
+          1.6,
+          1.2,
+          0.03
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.845
+        ],
+        "material": "metal_dark"
+      },
+      "legs": {
+        "naming_pattern": "STATION_06_Packaging_Leg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.86
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -0.8,
+            -0.6,
+            0.43
+          ],
+          [
+            0.8,
+            -0.6,
+            0.43
+          ],
+          [
+            -0.8,
+            0.6,
+            0.43
+          ],
+          [
+            0.8,
+            0.6,
+            0.43
+          ]
+        ]
+      },
+      "top_rail_x": {
+        "naming_pattern": "STATION_06_Packaging_TopRailX_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.56,
+          0.04,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            0.0,
+            -0.6,
+            0.84
+          ],
+          [
+            0.0,
+            0.6,
+            0.84
+          ]
+        ]
+      },
+      "top_rail_y": {
+        "naming_pattern": "STATION_06_Packaging_TopRailY_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          1.16,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.8,
+            0.0,
+            0.84
+          ],
+          [
+            0.8,
+            0.0,
+            0.84
+          ]
+        ]
+      },
+      "bottom_rail_x": {
+        "naming": "STATION_06_Packaging_BottomRailX",
+        "primitive": "box",
+        "dimensions_m": [
+          1.56,
+          0.04,
+          0.04
+        ],
+        "material": "metal_light",
+        "offset_m": [
+          0.0,
+          -0.6,
+          0.16
+        ]
+      },
+      "bottom_rail_y": {
+        "naming_pattern": "STATION_06_Packaging_BottomRailY_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          1.16,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.8,
+            0.0,
+            0.16
+          ],
+          [
+            0.8,
+            0.0,
+            0.16
+          ]
+        ]
+      },
+      "gussets": {
+        "naming_pattern": "STATION_06_Packaging_Gusset_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.05
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.008,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -0.77,
+            -0.57,
+            0.8
+          ],
+          [
+            0.77,
+            -0.57,
+            0.8
+          ],
+          [
+            -0.77,
+            0.57,
+            0.8
+          ],
+          [
+            0.77,
+            0.57,
+            0.8
+          ]
+        ]
+      },
+      "lower_shelf": {
+        "naming": "STATION_06_Packaging_LowerShelf",
+        "primitive": "box",
+        "dimensions_m": [
+          1.52,
+          1.1,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.16
+        ],
+        "material": "metal_light",
+        "collider": "static"
+      }
+    },
+    "levelling_feet": {
+      "base": {
+        "naming_pattern": "STATION_06_Packaging_Foot_{i}",
+        "primary": true,
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.045,
+        "depth_m": 0.03,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -0.8,
+            -0.6,
+            0.015
+          ],
+          [
+            0.8,
+            -0.6,
+            0.015
+          ],
+          [
+            -0.8,
+            0.6,
+            0.015
+          ],
+          [
+            0.8,
+            0.6,
+            0.015
+          ]
+        ]
+      },
+      "nut": {
+        "naming_pattern": "STATION_06_Packaging_FootNut_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.022,
+        "depth_m": 0.028,
+        "vertices": 6,
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.8,
+            -0.6,
+            0.045
+          ],
+          [
+            0.8,
+            -0.6,
+            0.045
+          ],
+          [
+            -0.8,
+            0.6,
+            0.045
+          ],
+          [
+            0.8,
+            0.6,
+            0.045
+          ]
+        ]
+      }
+    },
+    "uprights": {
+      "posts": {
+        "naming_pattern": "STATION_06_Packaging_Upright_{i}",
+        "primary": true,
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          1.12
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "offsets_m": [
+          [
+            -0.8,
+            -0.62,
+            1.46
+          ],
+          [
+            0.8,
+            -0.62,
+            1.46
+          ]
+        ]
+      },
+      "caps": {
+        "naming_pattern": "STATION_06_Packaging_EndCap_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.044,
+          0.044,
+          0.006
+        ],
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            -0.8,
+            -0.62,
+            2.023
+          ],
+          [
+            0.8,
+            -0.62,
+            2.023
+          ]
+        ]
+      },
+      "back_rail": {
+        "naming": "STATION_06_Packaging_BackRail",
+        "primitive": "box",
+        "dimensions_m": [
+          1.56,
+          0.04,
+          0.04
+        ],
+        "offset_m": [
+          0.0,
+          -0.62,
+          1.98
+        ],
+        "material": "metal_light"
+      }
+    },
+    "carton_magazine": {
+      "base": {
+        "naming": "STATION_06_Packaging_MagazineBase",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.28,
+          0.02
+        ],
+        "offset_m": [
+          -0.7,
+          -0.48,
+          0.92
+        ],
+        "material": "metal_dark"
+      },
+      "walls": {
+        "naming_pattern": "STATION_06_Packaging_MagazineWall_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.02,
+          0.26,
+          0.22
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.8,
+            -0.48,
+            1.04
+          ],
+          [
+            -0.6,
+            -0.48,
+            1.04
+          ]
+        ]
+      },
+      "folded_cartons": {
+        "naming_pattern": "STATION_06_Packaging_FoldedCarton_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.16,
+          0.24,
+          0.012
+        ],
+        "material": "cardboard",
+        "start_offset_m": [
+          -0.7,
+          -0.48,
+          0.945
+        ],
+        "step_m": [
+          0.0,
+          0.0,
+          0.018
+        ]
+      }
+    },
+    "box_erector": {
+      "frame": {
+        "naming": "STATION_06_Packaging_ErectorFrame",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.28
+        ],
+        "offset_m": [
+          -0.45,
+          -0.62,
+          1.05
+        ],
+        "material": "metal_light"
+      },
+      "cylinder": {
+        "naming": "STATION_06_Packaging_ErectorCyl",
+        "primitive": "cylinder",
+        "radius_m": 0.02,
+        "depth_m": 0.16,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.45,
+          -0.55,
+          1.1
+        ]
+      },
+      "guides": {
+        "naming_pattern": "STATION_06_Packaging_ErectorGuide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.02,
+          0.16,
+          0.14
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.55,
+            -0.48,
+            0.98
+          ],
+          [
+            -0.35,
+            -0.48,
+            0.98
+          ]
+        ]
+      },
+      "erected_box": {
+        "naming": "OpenBoxAnimation",
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.14,
+          0.11
+        ],
+        "offset_m": [
+          -0.45,
+          -0.42,
+          0.955
+        ],
+        "material": "cardboard",
+        "unity_tag": "OpenBoxAnimation",
+        "recess": {
+          "naming": "STATION_06_Packaging_ErectedBoxInner",
+          "primitive": "box",
+          "dimensions_m": [
+            0.17,
+            0.11,
+            0.09
+          ],
+          "offset_m": [
+            -0.45,
+            -0.42,
+            0.97
+          ],
+          "material": "warning_black"
+        }
+      }
+    },
+    "packing_nest": {
+      "nest": {
+        "naming": "STATION_06_Packaging_Nest",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.24,
+          0.18,
+          0.02
+        ],
+        "offset_m": [
+          -0.2,
+          -0.5,
+          0.905
+        ],
+        "material": "metal_dark"
+      },
+      "guides": {
+        "naming_pattern": "STATION_06_Packaging_NestGuide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.02,
+          0.16,
+          0.05
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.31,
+            -0.5,
+            0.94
+          ],
+          [
+            -0.09,
+            -0.5,
+            0.94
+          ]
+        ]
+      },
+      "open_carton": {
+        "naming": "PHYS_Packaging_Box_1",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.16,
+          0.12
+        ],
+        "offset_m": [
+          -0.2,
+          -0.5,
+          0.97
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "cardboard",
+        "unity_tag": "Box",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.5,
+          "kinematic": true
+        }
+      },
+      "carton_inner": {
+        "naming": "STATION_06_Packaging_Box1Inner",
+        "primitive": "box",
+        "dimensions_m": [
+          0.19,
+          0.13,
+          0.1
+        ],
+        "offset_m": [
+          -0.2,
+          -0.5,
+          0.985
+        ],
+        "material": "warning_black"
+      },
+      "foam_insert": {
+        "naming": "STATION_06_Packaging_FoamInsert",
+        "primitive": "box",
+        "dimensions_m": [
+          0.165,
+          0.105,
+          0.04
+        ],
+        "offset_m": [
+          -0.2,
+          -0.5,
+          0.98
+        ],
+        "material": "white_panel"
+      },
+      "device": {
+        "naming": "InsertProductAnimation",
+        "primitive": "box",
+        "dimensions_m": [
+          0.09,
+          0.055,
+          0.045
+        ],
+        "offset_m": [
+          -0.2,
+          -0.5,
+          1.01
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "white_panel",
+        "unity_tag": "InsertProductAnimation",
+        "screen": {
+          "naming": "STATION_06_Packaging_DeviceScreen",
+          "primitive": "box",
+          "dimensions_m": [
+            0.05,
+            0.006,
+            0.025
+          ],
+          "offset_m": [
+            -0.2,
+            -0.474,
+            1.025
+          ],
+          "material": "screen_dark"
+        }
+      },
+      "leaflet": {
+        "naming": "STATION_06_Packaging_Leaflet",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.09,
+          0.002
+        ],
+        "offset_m": [
+          -0.1,
+          -0.5,
+          1.0
+        ],
+        "rotation_deg": [
+          0,
+          12,
+          0
+        ],
+        "material": "white_panel"
+      }
+    },
+    "carton_closer": {
+      "frame": {
+        "naming": "STATION_06_Packaging_CloserFrame",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.24
+        ],
+        "offset_m": [
+          0.02,
+          -0.62,
+          1.02
+        ],
+        "material": "metal_dark"
+      },
+      "cylinder": {
+        "naming": "STATION_06_Packaging_CloserCyl",
+        "primitive": "cylinder",
+        "radius_m": 0.018,
+        "depth_m": 0.12,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          0.02,
+          -0.55,
+          1.05
+        ]
+      },
+      "arm": {
+        "naming": "CloseBoxAnimation",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.03,
+          0.02
+        ],
+        "offset_m": [
+          0.02,
+          -0.5,
+          0.99
+        ],
+        "material": "metal_light",
+        "unity_tag": "CloseBoxAnimation"
+      }
+    },
+    "tape_dispenser": {
+      "head": {
+        "naming": "STATION_06_Packaging_TapeHead",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.08,
+          0.06
+        ],
+        "offset_m": [
+          0.16,
+          -0.6,
+          1.0
+        ],
+        "material": "metal_dark"
+      },
+      "roll": {
+        "naming": "STATION_06_Packaging_TapeRoll",
+        "primitive": "cylinder",
+        "radius_m": 0.048,
+        "depth_m": 0.05,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "warning_black",
+        "offset_m": [
+          0.16,
+          -0.66,
+          1.06
+        ],
+        "core": {
+          "naming": "STATION_06_Packaging_TapeCore",
+          "primitive": "cylinder",
+          "radius_m": 0.02,
+          "depth_m": 0.052,
+          "vertices": 12,
+          "axis": "Y",
+          "offset_m": [
+            0.16,
+            -0.66,
+            1.06
+          ],
+          "material": "cardboard"
+        }
+      },
+      "bracket": {
+        "naming": "STATION_06_Packaging_TapeBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.06,
+          0.16
+        ],
+        "offset_m": [
+          0.16,
+          -0.63,
+          0.96
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "finished_carton": {
+      "box": {
+        "naming": "PHYS_Packaging_Box_2",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.16,
+          0.12
+        ],
+        "offset_m": [
+          0.15,
+          -0.5,
+          0.955
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "cardboard",
+        "unity_tag": "Box",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.6,
+          "kinematic": true
+        }
+      },
+      "tape_strip": {
+        "naming": "STATION_06_Packaging_Box2Tape",
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.03,
+          0.002
+        ],
+        "offset_m": [
+          0.15,
+          -0.5,
+          1.012
+        ],
+        "material": "warning_black"
+      },
+      "label": {
+        "naming": "STATION_06_Packaging_Box2Label",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.006,
+          0.05
+        ],
+        "offset_m": [
+          0.15,
+          -0.43,
+          0.975
+        ],
+        "material": "white_panel",
+        "barcode": {
+          "naming": "STATION_06_Packaging_Box2Barcode",
+          "primitive": "box",
+          "dimensions_m": [
+            0.05,
+            0.007,
+            0.018
+          ],
+          "offset_m": [
+            0.15,
+            -0.428,
+            0.968
+          ],
+          "material": "warning_black"
+        }
+      }
+    },
+    "label_printer": {
+      "body": {
+        "naming": "STATION_06_Packaging_LabelPrinter",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.18,
+          0.16,
+          0.16
+        ],
+        "offset_m": [
+          0.55,
+          -0.58,
+          1.06
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "white_panel"
+      },
+      "door": {
+        "naming": "STATION_06_Packaging_PrinterDoor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.15,
+          0.02,
+          0.11
+        ],
+        "offset_m": [
+          0.55,
+          -0.505,
+          1.06
+        ],
+        "material": "metal_light"
+      },
+      "door_handle": {
+        "naming": "STATION_06_Packaging_PrinterDoorHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.02,
+          0.015
+        ],
+        "offset_m": [
+          0.6,
+          -0.497,
+          1.06
+        ],
+        "material": "metal_dark"
+      },
+      "label_roll": {
+        "naming": "STATION_06_Packaging_LabelRoll",
+        "primitive": "cylinder",
+        "radius_m": 0.04,
+        "depth_m": 0.07,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "white_panel",
+        "offset_m": [
+          0.55,
+          -0.63,
+          1.12
+        ]
+      },
+      "print_head": {
+        "naming": "PrintLabelAnimation",
+        "primitive": "box",
+        "dimensions_m": [
+          0.11,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          0.55,
+          -0.5,
+          1.14
+        ],
+        "material": "metal_dark",
+        "unity_tag": "PrintLabelAnimation"
+      },
+      "printed_label": {
+        "naming": "STATION_06_Packaging_PrintedLabel",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.004,
+          0.03
+        ],
+        "offset_m": [
+          0.55,
+          -0.49,
+          1.1
+        ],
+        "material": "white_panel"
+      },
+      "led": {
+        "naming": "STATION_06_Packaging_PrinterLed",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.01,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          0.62,
+          -0.5,
+          1.2
+        ],
+        "material": "led_green"
+      }
+    },
+    "label_applicator": {
+      "base": {
+        "naming": "STATION_06_Packaging_ApplicatorBase",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.22
+        ],
+        "offset_m": [
+          0.4,
+          -0.62,
+          1.06
+        ],
+        "material": "metal_dark"
+      },
+      "arm": {
+        "naming": "ApplyLabelAnimation",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.22,
+          0.03
+        ],
+        "offset_m": [
+          0.4,
+          -0.52,
+          1.1
+        ],
+        "material": "metal_light",
+        "unity_tag": "ApplyLabelAnimation"
+      },
+      "pad": {
+        "naming": "STATION_06_Packaging_ApplicatorPad",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.02
+        ],
+        "offset_m": [
+          0.4,
+          -0.43,
+          1.08
+        ],
+        "material": "blue_accent"
+      },
+      "cylinder": {
+        "naming": "STATION_06_Packaging_ApplicatorCyl",
+        "primitive": "cylinder",
+        "radius_m": 0.015,
+        "depth_m": 0.1,
+        "vertices": 10,
+        "axis": "Y",
+        "material": "blue_accent",
+        "offset_m": [
+          0.4,
+          -0.56,
+          1.1
+        ]
+      }
+    },
+    "verification": {
+      "camera_body": {
+        "naming": "STATION_06_Packaging_VerifyCamera",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.08,
+          0.08,
+          0.06
+        ],
+        "offset_m": [
+          0.15,
+          -0.5,
+          1.38
+        ],
+        "material": "metal_dark"
+      },
+      "camera_lens": {
+        "naming": "STATION_06_Packaging_VerifyLens",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 0.05,
+        "vertices": 14,
+        "axis": "Z",
+        "material": "warning_black",
+        "offset_m": [
+          0.15,
+          -0.5,
+          1.33
+        ]
+      },
+      "camera_led": {
+        "naming": "STATION_06_Packaging_VerifyLed",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.01,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          0.21,
+          -0.46,
+          1.4
+        ],
+        "material": "led_green"
+      },
+      "camera_bracket": {
+        "naming": "STATION_06_Packaging_VerifyBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.2,
+          0.04
+        ],
+        "offset_m": [
+          0.15,
+          -0.58,
+          1.44
+        ],
+        "material": "metal_dark"
+      },
+      "scanner_body": {
+        "naming": "BarcodeScanAnimation",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.08,
+          0.05
+        ],
+        "offset_m": [
+          -0.02,
+          -0.58,
+          1.28
+        ],
+        "material": "metal_dark",
+        "unity_tag": "BarcodeScanAnimation"
+      },
+      "scanner_window": {
+        "naming": "STATION_06_Packaging_ScannerWindow",
+        "primitive": "box",
+        "dimensions_m": [
+          0.045,
+          0.006,
+          0.03
+        ],
+        "offset_m": [
+          -0.02,
+          -0.535,
+          1.28
+        ],
+        "material": "led_red"
+      },
+      "scanner_bracket": {
+        "naming": "STATION_06_Packaging_ScannerBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.06,
+          0.18
+        ],
+        "offset_m": [
+          -0.02,
+          -0.61,
+          1.19
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "reject": {
+      "bin": {
+        "naming": "STATION_06_Packaging_RejectBox",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.26,
+          0.26,
+          0.24
+        ],
+        "offset_m": [
+          0.72,
+          -0.95,
+          0.12
+        ],
+        "material": "blue_accent",
+        "collider": "static"
+      },
+      "bin_inner": {
+        "naming": "STATION_06_Packaging_RejectBoxInner",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.22,
+          0.2
+        ],
+        "offset_m": [
+          0.72,
+          -0.95,
+          0.15
+        ],
+        "material": "warning_black"
+      },
+      "pusher": {
+        "naming": "RejectAnimation",
+        "primitive": "box",
+        "dimensions_m": [
+          0.08,
+          0.06,
+          0.06
+        ],
+        "offset_m": [
+          0.55,
+          -0.6,
+          0.96
+        ],
+        "material": "metal_dark",
+        "unity_tag": "RejectAnimation"
+      },
+      "pusher_cyl": {
+        "naming": "STATION_06_Packaging_RejectCyl",
+        "primitive": "cylinder",
+        "radius_m": 0.014,
+        "depth_m": 0.12,
+        "vertices": 10,
+        "axis": "Y",
+        "material": "blue_accent",
+        "offset_m": [
+          0.55,
+          -0.66,
+          0.96
+        ]
+      }
+    },
+    "controller_cabinet": {
+      "body": {
+        "naming": "STATION_06_Packaging_Cabinet",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.5,
+          0.4,
+          0.9
+        ],
+        "offset_m": [
+          -1.2,
+          -0.5,
+          0.47
+        ],
+        "bevel_m": 0.008,
+        "bevel_segments": 1,
+        "material": "metal_light",
+        "collider": "static",
+        "unity_tag": "Cabinet"
+      },
+      "plinth": {
+        "naming": "STATION_06_Packaging_CabinetPlinth",
+        "primitive": "box",
+        "dimensions_m": [
+          0.46,
+          0.38,
+          0.05
+        ],
+        "offset_m": [
+          -1.2,
+          -0.5,
+          0.03
+        ],
+        "material": "metal_dark"
+      },
+      "door": {
+        "naming": "STATION_06_Packaging_CabinetDoor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.44,
+          0.02,
+          0.8
+        ],
+        "offset_m": [
+          -1.2,
+          -0.295,
+          0.49
+        ],
+        "material": "glass_window"
+      },
+      "handle": {
+        "naming": "STATION_06_Packaging_CabinetHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.035,
+          0.12
+        ],
+        "offset_m": [
+          -1.02,
+          -0.28,
+          0.49
+        ],
+        "material": "metal_dark"
+      },
+      "led": {
+        "naming": "STATION_06_Packaging_CabinetLed",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.012,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          -1.36,
+          -0.285,
+          0.82
+        ],
+        "material": "led_green"
+      },
+      "din_rail": {
+        "naming": "STATION_06_Packaging_CabinetDin",
+        "primitive": "box",
+        "dimensions_m": [
+          0.36,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.2,
+          -0.39,
+          0.7
+        ],
+        "material": "metal_dark"
+      },
+      "plc": {
+        "naming": "STATION_06_Packaging_PLC",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.07,
+          0.14
+        ],
+        "offset_m": [
+          -1.32,
+          -0.39,
+          0.62
+        ],
+        "material": "metal_dark",
+        "acc": {
+          "naming": "STATION_06_Packaging_PLCAccent",
+          "primitive": "box",
+          "dimensions_m": [
+            0.12,
+            0.006,
+            0.02
+          ],
+          "offset_m": [
+            -1.32,
+            -0.426,
+            0.62
+          ],
+          "material": "blue_accent"
+        }
+      },
+      "printer_ctrl": {
+        "naming": "STATION_06_Packaging_PrinterController",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.07,
+          0.12
+        ],
+        "offset_m": [
+          -1.18,
+          -0.39,
+          0.62
+        ],
+        "material": "blue_accent"
+      },
+      "psu": {
+        "naming": "STATION_06_Packaging_PSU",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.12
+        ],
+        "offset_m": [
+          -1.05,
+          -0.39,
+          0.7
+        ],
+        "material": "metal_light"
+      },
+      "terminals": {
+        "naming_pattern": "STATION_06_Packaging_Terminal_{i}",
+        "primitive": "box",
+        "count": 6,
+        "dimensions_m": [
+          0.012,
+          0.045,
+          0.05
+        ],
+        "material": "metal_light",
+        "start_offset_m": [
+          -1.34,
+          -0.39,
+          0.48
+        ],
+        "step_m": [
+          0.03,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "hmi": {
+      "body": {
+        "naming": "STATION_06_Packaging_HMI",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.05,
+          0.28
+        ],
+        "offset_m": [
+          0.85,
+          -0.5,
+          1.3
+        ],
+        "tilt_deg": [
+          -12,
+          0,
+          0
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark",
+        "collider": "static",
+        "unity_tag": "HMI"
+      },
+      "screen": {
+        "naming": "STATION_06_Packaging_HMIScreen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.01,
+          0.24
+        ],
+        "offset_m": [
+          0.85,
+          -0.472,
+          1.31
+        ],
+        "tilt_deg": [
+          -12,
+          0,
+          0
+        ],
+        "material": "screen_dark"
+      },
+      "pole": {
+        "naming": "STATION_06_Packaging_HMIPole",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 0.42,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          0.85,
+          -0.55,
+          1.1
+        ]
+      },
+      "t_title": {
+        "naming": "STATION_06_Packaging_HMITitle",
+        "primitive": "text_mesh",
+        "text": "PACKAGING STATION",
+        "size_m": 0.018,
+        "world_position_m": [
+          20.02,
+          5.32,
+          1.4
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      },
+      "t_label": {
+        "naming": "STATION_06_Packaging_HMILabel",
+        "primitive": "text_mesh",
+        "text": "Label Printed",
+        "size_m": 0.03,
+        "world_position_m": [
+          20.02,
+          5.325,
+          1.34
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "t_sn": {
+        "naming": "STATION_06_Packaging_HMISerial",
+        "primitive": "text_mesh",
+        "text": "SN 000342",
+        "size_m": 0.02,
+        "world_position_m": [
+          20.02,
+          5.33,
+          1.29
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      },
+      "t_box": {
+        "naming": "STATION_06_Packaging_HMIBoxOK",
+        "primitive": "text_mesh",
+        "text": "Box OK",
+        "size_m": 0.028,
+        "world_position_m": [
+          20.02,
+          5.33,
+          1.24
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "t_cycle": {
+        "naming": "STATION_06_Packaging_HMICycle",
+        "primitive": "text_mesh",
+        "text": "Cycle 6.4 s",
+        "size_m": 0.018,
+        "world_position_m": [
+          20.02,
+          5.33,
+          1.2
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      }
+    },
+    "stack_light": {
+      "pole": {
+        "naming": "STATION_06_Packaging_StackLight",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.015,
+        "depth_m": 0.16,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          0.9,
+          -0.8,
+          1.86
+        ],
+        "unity_tag": "StackLight"
+      },
+      "bracket": {
+        "naming": "STATION_06_Packaging_StackLightBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.03
+        ],
+        "offset_m": [
+          0.9,
+          -0.72,
+          1.76
+        ],
+        "material": "metal_dark"
+      },
+      "segments": {
+        "naming_pattern": "STATION_06_Packaging_StackSeg_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.032,
+        "depth_m": 0.06,
+        "vertices": 16,
+        "axis": "Z",
+        "material_cycle": [
+          "led_red",
+          "led_amber",
+          "led_green"
+        ],
+        "start_offset_m": [
+          0.9,
+          -0.8,
+          1.97
+        ],
+        "step_m": [
+          0.0,
+          0.0,
+          0.06
+        ]
+      },
+      "dome": {
+        "naming": "STATION_06_Packaging_StackDome",
+        "primitive": "cylinder",
+        "radius_m": 0.032,
+        "depth_m": 0.025,
+        "vertices": 16,
+        "axis": "Z",
+        "material": "warning_black",
+        "offset_m": [
+          0.9,
+          -0.8,
+          2.07
+        ]
+      }
+    },
+    "emergency_stop": {
+      "post": {
+        "naming": "STATION_06_Packaging_EStopPost",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.025,
+        "depth_m": 0.9,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -1.05,
+          -0.7,
+          0.5
+        ]
+      },
+      "plate": {
+        "naming": "STATION_06_Packaging_EStop",
+        "primitive": "box",
+        "dimensions_m": [
+          0.14,
+          0.02,
+          0.14
+        ],
+        "offset_m": [
+          -1.05,
+          -0.62,
+          1.1
+        ],
+        "material": "safety_yellow",
+        "unity_tag": "EmergencyStop"
+      },
+      "button": {
+        "naming": "STATION_06_Packaging_EStopButton",
+        "primitive": "cylinder",
+        "radius_m": 0.038,
+        "depth_m": 0.04,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "led_red",
+        "offset_m": [
+          -1.05,
+          -0.585,
+          1.1
+        ]
+      }
+    },
+    "start_button": {
+      "plate": {
+        "naming": "STATION_06_Packaging_StartPlate",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.02,
+          0.1
+        ],
+        "offset_m": [
+          -0.55,
+          0.6,
+          0.94
+        ],
+        "material": "metal_dark"
+      },
+      "button": {
+        "naming": "STATION_06_Packaging_StartButton",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 0.03,
+        "vertices": 14,
+        "axis": "Z",
+        "material": "led_green",
+        "offset_m": [
+          -0.58,
+          0.6,
+          0.965
+        ],
+        "unity_tag": "TestStartButton"
+      },
+      "button2": {
+        "naming": "STATION_06_Packaging_ResetButton",
+        "primitive": "cylinder",
+        "radius_m": 0.025,
+        "depth_m": 0.03,
+        "vertices": 14,
+        "axis": "Z",
+        "material": "led_amber",
+        "offset_m": [
+          -0.52,
+          0.6,
+          0.965
+        ]
+      }
+    },
+    "task_light": {
+      "gantry_beam": {
+        "naming": "STATION_06_Packaging_GantryBeam",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.56,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          -0.62,
+          2.2
+        ],
+        "material": "metal_light"
+      },
+      "fixture": {
+        "naming": "STATION_06_Packaging_TaskLight",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.1,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          -0.55,
+          2.15
+        ],
+        "material": "metal_light",
+        "unity_tag": "TaskLight"
+      },
+      "emitter": {
+        "naming": "STATION_06_Packaging_TaskLightEmitter",
+        "primitive": "box",
+        "dimensions_m": [
+          1.16,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          -0.51,
+          2.13
+        ],
+        "material": "led_white"
+      },
+      "hangers": {
+        "naming_pattern": "STATION_06_Packaging_TaskHanger_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.03,
+          0.09,
+          0.06
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.4,
+            -0.585,
+            2.18
+          ],
+          [
+            0.4,
+            -0.585,
+            2.18
+          ]
+        ]
+      },
+      "review_light": {
+        "naming": "STATION_06_Packaging_ReviewLight",
+        "type": "AREA",
+        "energy_w": 90.0,
+        "size_m": 1.0,
+        "offset_m": [
+          0.0,
+          -0.3,
+          2.05
+        ],
+        "export_to_glb": false
+      }
+    },
+    "conveyor_in": {
+      "belt": {
+        "naming": "CONVEYOR_Packaging_Input",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.52,
+          0.012
+        ],
+        "offset_m": [
+          -1.9,
+          0.0,
+          0.418
+        ],
+        "material": "rubber_black",
+        "collider": "static",
+        "unity_tag": "Conveyor",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.0,
+          "kinematic": true
+        },
+        "belt_speed_mps": 0.15
+      },
+      "frame_tie": {
+        "naming": "CONVEYOR_Packaging_Input_Frame",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.58,
+          0.04
+        ],
+        "offset_m": [
+          -1.9,
+          0.0,
+          0.3
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "side_frames": {
+        "naming_pattern": "STATION_06_Packaging_ConvInSide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.2,
+          0.045,
+          0.12
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.9,
+            -0.28,
+            0.36
+          ],
+          [
+            -1.9,
+            0.28,
+            0.36
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_06_Packaging_ConvInRoller_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.024,
+        "depth_m": 0.54,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_light",
+        "start_offset_m": [
+          -2.42,
+          0.0,
+          0.398
+        ],
+        "step_m": [
+          0.14,
+          0.0,
+          0.0
+        ]
+      },
+      "legs": {
+        "naming_pattern": "STATION_06_Packaging_ConvInLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.3
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -2.37,
+            -0.26,
+            0.15
+          ],
+          [
+            -1.42,
+            -0.26,
+            0.15
+          ],
+          [
+            -2.37,
+            0.26,
+            0.15
+          ],
+          [
+            -1.42,
+            0.26,
+            0.15
+          ]
+        ]
+      }
+    },
+    "conveyor_out": {
+      "belt": {
+        "naming": "CONVEYOR_Packaging_Output",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.52,
+          0.012
+        ],
+        "offset_m": [
+          1.9,
+          0.0,
+          0.418
+        ],
+        "material": "rubber_black",
+        "collider": "static",
+        "unity_tag": "Conveyor",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.0,
+          "kinematic": true
+        },
+        "belt_speed_mps": 0.15,
+        "connects_to": "warehouse"
+      },
+      "frame_tie": {
+        "naming": "CONVEYOR_Packaging_Output_Frame",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.58,
+          0.04
+        ],
+        "offset_m": [
+          1.9,
+          0.0,
+          0.3
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "side_frames": {
+        "naming_pattern": "STATION_06_Packaging_ConvOutSide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.2,
+          0.045,
+          0.12
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            1.9,
+            -0.28,
+            0.36
+          ],
+          [
+            1.9,
+            0.28,
+            0.36
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_06_Packaging_ConvOutRoller_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.024,
+        "depth_m": 0.54,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_light",
+        "start_offset_m": [
+          1.38,
+          0.0,
+          0.398
+        ],
+        "step_m": [
+          0.14,
+          0.0,
+          0.0
+        ]
+      },
+      "legs": {
+        "naming_pattern": "STATION_06_Packaging_ConvOutLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.3
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            1.42,
+            -0.26,
+            0.15
+          ],
+          [
+            2.37,
+            -0.26,
+            0.15
+          ],
+          [
+            1.42,
+            0.26,
+            0.15
+          ],
+          [
+            2.37,
+            0.26,
+            0.15
+          ]
+        ]
+      },
+      "drive_motor": {
+        "naming": "STATION_06_Packaging_ConvOutMotor",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.14,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offset_m": [
+          2.4,
+          0.33,
+          0.3
+        ]
+      },
+      "package_1": {
+        "naming": "PHYS_Packaging_Box_3",
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.14,
+          0.11
+        ],
+        "offset_m": [
+          1.7,
+          0.0,
+          0.485
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "cardboard",
+        "unity_tag": "Box",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.6,
+          "kinematic": true
+        },
+        "lbl": {
+          "naming": "STATION_06_Packaging_Box3Label",
+          "primitive": "box",
+          "dimensions_m": [
+            0.07,
+            0.006,
+            0.05
+          ],
+          "offset_m": [
+            1.7,
+            0.07,
+            0.505
+          ],
+          "material": "white_panel"
+        }
+      }
+    },
+    "pallet": {
+      "deck": {
+        "naming": "STATION_06_Packaging_Pallet_1",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.9,
+          0.75,
+          0.022
+        ],
+        "offset_m": [
+          0.5,
+          0.62,
+          0.104
+        ],
+        "material": "wood_pallet",
+        "collider": "static",
+        "unity_tag": "Pallet"
+      },
+      "runners": {
+        "naming_pattern": "STATION_06_Packaging_PalletRunner_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.9,
+          0.1,
+          0.038
+        ],
+        "material": "wood_pallet",
+        "offsets_m": [
+          [
+            0.5,
+            0.31,
+            0.019
+          ],
+          [
+            0.5,
+            0.62,
+            0.019
+          ],
+          [
+            0.5,
+            0.93,
+            0.019
+          ]
+        ]
+      },
+      "blocks": {
+        "naming_pattern": "STATION_06_Packaging_PalletBlock_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.1,
+          0.75,
+          0.055
+        ],
+        "material": "wood_pallet",
+        "offsets_m": [
+          [
+            0.12,
+            0.62,
+            0.066
+          ],
+          [
+            0.5,
+            0.62,
+            0.066
+          ],
+          [
+            0.88,
+            0.62,
+            0.066
+          ]
+        ]
+      },
+      "finished_cartons": {
+        "naming": "PHYS_Packaging_Box_4",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.16,
+          0.12
+        ],
+        "offset_m": [
+          0.5,
+          0.62,
+          0.175
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "cardboard",
+        "unity_tag": "Box",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.6,
+          "kinematic": true
+        },
+        "stack": {
+          "naming": "STATION_06_Packaging_PalletCarton_2",
+          "primitive": "box",
+          "dimensions_m": [
+            0.22,
+            0.16,
+            0.12
+          ],
+          "offset_m": [
+            0.5,
+            0.62,
+            0.3
+          ],
+          "material": "cardboard"
+        },
+        "lbl": {
+          "naming": "STATION_06_Packaging_Box4Label",
+          "primitive": "box",
+          "dimensions_m": [
+            0.08,
+            0.006,
+            0.055
+          ],
+          "offset_m": [
+            0.5,
+            0.7,
+            0.19
+          ],
+          "material": "white_panel"
+        }
+      }
+    },
+    "sensors": {
+      "entry_sensor": {
+        "naming": "STATION_06_Packaging_EntrySensor",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.06,
+          0.08
+        ],
+        "offset_m": [
+          -0.95,
+          0.23,
+          0.62
+        ],
+        "material": "metal_dark",
+        "unity_tag": "Sensor",
+        "led": {
+          "naming": "STATION_06_Packaging_EntrySensorLed",
+          "primitive": "cylinder",
+          "radius_m": 0.008,
+          "depth_m": 0.01,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -0.95,
+            0.195,
+            0.62
+          ],
+          "material": "led_red"
+        }
+      },
+      "exit_sensor": {
+        "naming": "STATION_06_Packaging_ExitSensor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.06,
+          0.08
+        ],
+        "offset_m": [
+          0.95,
+          0.23,
+          0.62
+        ],
+        "material": "metal_dark",
+        "led2": {
+          "naming": "STATION_06_Packaging_ExitSensorLed",
+          "primitive": "cylinder",
+          "radius_m": 0.008,
+          "depth_m": 0.01,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            0.95,
+            0.195,
+            0.62
+          ],
+          "material": "led_red"
+        }
+      },
+      "box_stops": {
+        "naming_pattern": "STATION_06_Packaging_BoxStop_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.02,
+          0.1,
+          0.06
+        ],
+        "material": "safety_yellow",
+        "offsets_m": [
+          [
+            0.3,
+            -0.5,
+            0.94
+          ],
+          [
+            1.05,
+            0.0,
+            0.44
+          ]
+        ]
+      },
+      "guide_rails": {
+        "naming_pattern": "STATION_06_Packaging_GuideRail_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.0,
+          0.02,
+          0.05
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.15,
+            -0.66,
+            0.94
+          ],
+          [
+            -0.15,
+            -0.34,
+            0.94
+          ]
+        ]
+      },
+      "adjustable_brackets": {
+        "naming_pattern": "STATION_06_Packaging_AdjGuide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.03,
+          0.05,
+          0.06
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            0.3,
+            -0.66,
+            0.93
+          ],
+          [
+            0.3,
+            -0.34,
+            0.93
+          ]
+        ]
+      }
+    },
+    "services": {
+      "frl_body": {
+        "naming": "STATION_06_Packaging_FRL",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.028,
+        "depth_m": 0.1,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_light",
+        "offset_m": [
+          -0.8,
+          -0.55,
+          0.55
+        ]
+      },
+      "frl_bowl": {
+        "naming": "STATION_06_Packaging_FRLBowl",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.05,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "screen_dark",
+        "offset_m": [
+          -0.8,
+          -0.55,
+          0.48
+        ]
+      },
+      "frl_knob": {
+        "naming": "STATION_06_Packaging_FRLKnob",
+        "primitive": "cylinder",
+        "radius_m": 0.015,
+        "depth_m": 0.02,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.8,
+          -0.55,
+          0.62
+        ]
+      },
+      "cable_duct": {
+        "naming": "STATION_06_Packaging_CableDuct",
+        "primitive": "box",
+        "dimensions_m": [
+          1.4,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          -0.3,
+          -0.62,
+          0.3
+        ],
+        "material": "metal_dark"
+      },
+      "cable_gland": {
+        "naming": "STATION_06_Packaging_CableGland",
+        "primitive": "cylinder",
+        "radius_m": 0.018,
+        "depth_m": 0.03,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -1.2,
+          -0.5,
+          0.06
+        ]
+      },
+      "m12_connectors": {
+        "naming_pattern": "STATION_06_Packaging_M12_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.012,
+        "depth_m": 0.035,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "metal_dark",
+        "start_offset_m": [
+          0.4,
+          -0.6,
+          0.95
+        ],
+        "step_m": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "hmi_cable": {
+        "naming": "STATION_06_Packaging_HMICable",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.5,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          0.87,
+          -0.57,
+          0.75
+        ]
+      }
+    },
+    "maintenance": {
+      "access_panel": {
+        "naming": "STATION_06_Packaging_AccessPanel",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.02,
+          0.24
+        ],
+        "offset_m": [
+          0.6,
+          -0.635,
+          0.6
+        ],
+        "material": "metal_light"
+      },
+      "panel_screws": {
+        "naming_pattern": "STATION_06_Packaging_PanelScrew_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.008,
+        "depth_m": 0.012,
+        "vertices": 6,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            0.47,
+            -0.646,
+            0.5
+          ],
+          [
+            0.73,
+            -0.646,
+            0.5
+          ],
+          [
+            0.47,
+            -0.646,
+            0.7
+          ],
+          [
+            0.73,
+            -0.646,
+            0.7
+          ]
+        ]
+      },
+      "asset_id_plate": {
+        "naming": "STATION_06_Packaging_AssetIDPlate",
+        "primitive": "box",
+        "dimensions_m": [
+          0.14,
+          0.006,
+          0.06
+        ],
+        "offset_m": [
+          -0.55,
+          0.605,
+          0.55
+        ],
+        "material": "metal_light",
+        "id_text": {
+          "naming": "STATION_06_Packaging_AssetIDText",
+          "primitive": "text_mesh",
+          "text": "S06-PK-001",
+          "size_m": 0.022,
+          "world_position_m": [
+            18.62,
+            6.49,
+            0.55
+          ],
+          "rotation_deg": [
+            90,
+            0,
+            180
+          ],
+          "material": "warning_black"
+        }
+      },
+      "calib_stickers": {
+        "naming_pattern": "STATION_06_Packaging_CalibSticker_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.035,
+          0.005,
+          0.025
+        ],
+        "material": "safety_yellow",
+        "offsets_m": [
+          [
+            0.55,
+            -0.5,
+            1.15
+          ],
+          [
+            0.15,
+            -0.535,
+            1.36
+          ]
+        ]
+      }
+    },
+    "floor_markings": {
+      "operator_mat": {
+        "naming": "STATION_06_Packaging_OperatorMat",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.4,
+          0.6,
+          0.01
+        ],
+        "offset_m": [
+          -0.1,
+          1.05,
+          0.006
+        ],
+        "material": "rubber_black",
+        "unity_tag": "FloorMarking"
+      },
+      "safety_stripe": {
+        "naming": "STATION_06_Packaging_SafetyStripe",
+        "primitive": "box",
+        "dimensions_m": [
+          2.2,
+          0.1,
+          0.006
+        ],
+        "offset_m": [
+          0.0,
+          1.45,
+          0.004
+        ],
+        "material": "safety_yellow",
+        "collider": "static",
+        "unity_tag": "FloorMarking"
+      }
+    },
+    "labels": {
+      "id_plate": {
+        "naming": "STATION_06_Packaging_IDPlate",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.26,
+          0.008,
+          0.08
+        ],
+        "offset_m": [
+          0.2,
+          0.605,
+          0.6
+        ],
+        "material": "metal_light",
+        "id_text": {
+          "naming": "STATION_06_Packaging_IDText",
+          "primitive": "text_mesh",
+          "text": "S06 · PACKAGING",
+          "size_m": 0.04,
+          "world_position_m": [
+            19.37,
+            6.49,
+            0.6
+          ],
+          "rotation_deg": [
+            90,
+            0,
+            180
+          ],
+          "material": "warning_black"
+        }
+      },
+      "flow_arrow": {
+        "naming": "STATION_06_Packaging_FlowArrow",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.006,
+          0.1
+        ],
+        "offset_m": [
+          1.55,
+          0.34,
+          0.55
+        ],
+        "material": "safety_yellow",
+        "arrow_text": {
+          "naming": "STATION_06_Packaging_FlowText",
+          "primitive": "text_mesh",
+          "text": "→ WAREHOUSE",
+          "size_m": 0.045,
+          "world_position_m": [
+            20.72,
+            6.22,
+            0.55
+          ],
+          "rotation_deg": [
+            90,
+            0,
+            180
+          ],
+          "material": "warning_black"
+        }
+      }
+    },
+    "info_panel": {
+      "board": {
+        "naming": "INFO_Packaging_Panel",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.05,
+          0.7
+        ],
+        "world_position_m": [
+          19.17,
+          8.6,
+          1.6
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "bevel_m": 0.02,
+        "bevel_segments": 1,
+        "material": "white_panel",
+        "collider": "static",
+        "unity_tag": "InfoPanel"
+      },
+      "post": {
+        "naming": "INFO_Packaging_Panel_Post",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          1.28
+        ],
+        "world_position_m": [
+          19.17,
+          8.62,
+          0.64
+        ],
+        "material": "metal_dark"
+      },
+      "title": {
+        "naming": "INFO_Packaging_Panel_Title",
+        "primitive": "text_mesh",
+        "text": "S06 · Packaging",
+        "size_m": 0.13,
+        "world_position_m": [
+          19.17,
+          8.64,
+          1.82
+        ],
+        "rotation_deg": [
+          90,
+          0,
+          180
+        ],
+        "material": "warning_black"
+      },
+      "body": {
+        "naming": "INFO_Packaging_Panel_Body",
+        "primitive": "text_mesh",
+        "text": "Packaging: devices boxed, labeled and sealed for the warehouse.",
+        "size_m": 0.06,
+        "wrap_chars": 26,
+        "world_position_m": [
+          19.17,
+          8.64,
+          1.48
+        ],
+        "rotation_deg": [
+          90,
+          0,
+          180
+        ],
+        "material": "warning_black"
+      }
+    },
+    "trigger_zone": {
+      "naming": "TRIGGER_Info_Packaging",
+      "unity_tag": "Trigger",
+      "is_trigger": true,
+      "primitive": "box",
+      "dimensions_m": [
+        2.2,
+        1.6,
+        2.2
+      ],
+      "world_position_m": [
+        19.17,
+        9.3,
+        1.1
+      ],
+      "display": "wire",
+      "hide_render": true
+    }
+  }
+}

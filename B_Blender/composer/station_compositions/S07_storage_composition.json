@@ -1,0 +1,555 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": "S07",
+    "type": "finished_goods_storage",
+    "name": "STATION_S07_Storage",
+    "world_position_m": [
+      22.5,
+      6.12,
+      0.0
+    ],
+    "envelope_m": {
+      "x": 3.5,
+      "y": 3.5,
+      "z": 3.0
+    },
+    "front_axis": "+Y",
+    "flow_axis": "+X"
+  },
+  "instances": [
+    {
+      "instance_id": "S07_leg_1",
+      "asset_id": "aluminium_profile",
+      "position": [
+        -0.8,
+        -0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_07_Storage_Leg_1",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_leg_2",
+      "asset_id": "aluminium_profile",
+      "position": [
+        0.8,
+        -0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_07_Storage_Leg_2",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_leg_3",
+      "asset_id": "aluminium_profile",
+      "position": [
+        -0.8,
+        0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_07_Storage_Leg_3",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_leg_4",
+      "asset_id": "aluminium_profile",
+      "position": [
+        0.8,
+        0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_07_Storage_Leg_4",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_foot_1",
+      "asset_id": "adjustable_foot",
+      "position": [
+        -0.8,
+        -0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Foot_1",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_foot_2",
+      "asset_id": "adjustable_foot",
+      "position": [
+        0.8,
+        -0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Foot_2",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_foot_3",
+      "asset_id": "adjustable_foot",
+      "position": [
+        -0.8,
+        0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Foot_3",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_foot_4",
+      "asset_id": "adjustable_foot",
+      "position": [
+        0.8,
+        0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Foot_4",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_info_1",
+      "asset_id": "information_panel",
+      "position": [
+        0.0,
+        2.4,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "board_height_m": 1.6
+      },
+      "name_prefix": "INFO_Storage_Panel",
+      "socket_connections": [],
+      "unity_tags": [
+        "InfoPanel",
+        "Trigger"
+      ],
+      "physics_role": "trigger"
+    },
+    {
+      "instance_id": "S07_stack_1",
+      "asset_id": "stack_light",
+      "position": [
+        0.9,
+        -0.8,
+        1.9
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_StackLight",
+      "socket_connections": [],
+      "unity_tags": [
+        "StackLight"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_conv_in_1",
+      "asset_id": "roller_conveyor",
+      "position": [
+        -1.9,
+        0.0,
+        0.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "CONVEYOR_Storage_Input",
+      "socket_connections": [],
+      "unity_tags": [
+        "Conveyor"
+      ],
+      "physics_role": "kinematic"
+    },
+    {
+      "instance_id": "S07_pallet_1",
+      "asset_id": "pallet",
+      "position": [
+        -0.6,
+        0.0,
+        0.06
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Pallet_1",
+      "socket_connections": [],
+      "unity_tags": [
+        "Pallet"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_pallet_2",
+      "asset_id": "pallet",
+      "position": [
+        0.3,
+        0.0,
+        0.06
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Pallet_2",
+      "socket_connections": [],
+      "unity_tags": [
+        "Pallet"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_pallet_3",
+      "asset_id": "pallet",
+      "position": [
+        -0.6,
+        0.5,
+        0.06
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Pallet_3",
+      "socket_connections": [],
+      "unity_tags": [
+        "Pallet"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_pallet_4",
+      "asset_id": "pallet",
+      "position": [
+        0.3,
+        0.5,
+        0.06
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_07_Storage_Pallet_4",
+      "socket_connections": [],
+      "unity_tags": [
+        "Pallet"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S07_box_1",
+      "asset_id": "cardboard_box",
+      "position": [
+        -0.5,
+        -0.3,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_1",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    },
+    {
+      "instance_id": "S07_box_2",
+      "asset_id": "cardboard_box",
+      "position": [
+        -0.15,
+        -0.3,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_2",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    },
+    {
+      "instance_id": "S07_box_3",
+      "asset_id": "cardboard_box",
+      "position": [
+        0.2,
+        -0.3,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_3",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    },
+    {
+      "instance_id": "S07_box_4",
+      "asset_id": "cardboard_box",
+      "position": [
+        -0.5,
+        0.05,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_4",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    },
+    {
+      "instance_id": "S07_box_5",
+      "asset_id": "cardboard_box",
+      "position": [
+        -0.15,
+        0.05,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_5",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    },
+    {
+      "instance_id": "S07_box_6",
+      "asset_id": "cardboard_box",
+      "position": [
+        0.2,
+        0.05,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_6",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    },
+    {
+      "instance_id": "S07_box_7",
+      "asset_id": "cardboard_box",
+      "position": [
+        -0.5,
+        0.4,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_7",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    },
+    {
+      "instance_id": "S07_box_8",
+      "asset_id": "cardboard_box",
+      "position": [
+        -0.15,
+        0.4,
+        0.95
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "mass_kg": 0.6
+      },
+      "name_prefix": "PHYS_Storage_Box_8",
+      "socket_connections": [],
+      "unity_tags": [
+        "Box"
+      ],
+      "physics_role": "dynamic"
+    }
+  ]
+}

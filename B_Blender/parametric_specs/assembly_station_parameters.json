@@ -1,0 +1,2609 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": "S02",
+    "type": "assisted_assembly_station",
+    "name": "STATION_02_Assembly",
+    "line": "MF-IP-100 Infusion Pump Line",
+    "world_position_m": [
+      6.0,
+      6.0,
+      0.0
+    ],
+    "envelope_m": {
+      "x": 2.5,
+      "y": 2.0,
+      "z": 2.0
+    },
+    "front_axis": "+Y",
+    "flow_axis": "+X",
+    "work_height_m": 0.9
+  },
+  "conventions": {
+    "units": "meters",
+    "up_axis": "Z",
+    "export_up_axis": "Y",
+    "offset_reference": "All component offset_m are [dx, dy, dz] relative to station.world_position at floor level; final world = [Xw+dx, Yw+dy, dz] where dz is absolute height.",
+    "rotation_units": "degrees",
+    "root_object": "STATION_02_Assembly_Root",
+    "root_type": "EMPTY"
+  },
+  "material_library": {
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    },
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "worktop_grey": {
+      "base_color": [
+        0.82,
+        0.83,
+        0.85,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.55,
+      "emission_strength": 0.0
+    },
+    "white_panel": {
+      "base_color": [
+        0.9,
+        0.9,
+        0.92,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "emission_strength": 0.0
+    },
+    "blue_accent": {
+      "base_color": [
+        0.1,
+        0.35,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.1,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "safety_yellow": {
+      "base_color": [
+        0.95,
+        0.8,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "emission_strength": 0.0
+    },
+    "warning_black": {
+      "base_color": [
+        0.03,
+        0.03,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "emission_strength": 0.0
+    },
+    "rubber_black": {
+      "base_color": [
+        0.05,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "emission_strength": 0.0
+    },
+    "cardboard": {
+      "base_color": [
+        0.58,
+        0.42,
+        0.26,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.85,
+      "emission_strength": 0.0
+    },
+    "wood_pallet": {
+      "base_color": [
+        0.55,
+        0.4,
+        0.24,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.75,
+      "emission_strength": 0.0
+    },
+    "screen_dark": {
+      "base_color": [
+        0.02,
+        0.02,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.2,
+      "emission_color": [
+        0.1,
+        0.35,
+        0.55,
+        1.0
+      ],
+      "emission_strength": 1.0
+    },
+    "led_red": {
+      "base_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_amber": {
+      "base_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_green": {
+      "base_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_white": {
+      "base_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.3,
+      "emission_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "emission_strength": 2.5
+    },
+    "glass_window": {
+      "base_color": [
+        0.6,
+        0.7,
+        0.8,
+        0.22
+      ],
+      "metallic": 0.0,
+      "roughness": 0.1,
+      "alpha": 0.22,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "workbench": {
+      "naming": "COLLIDER_Assembly_Workbench",
+      "collider": "static",
+      "worktop": {
+        "primitive": "box",
+        "dimensions_m": [
+          1.9,
+          0.75,
+          0.08
+        ],
+        "offset_m": [
+          0.0,
+          -0.6,
+          0.9
+        ],
+        "bevel_m": 0.02,
+        "bevel_segments": 2,
+        "material": "metal_dark",
+        "unity_tag": "Workbench"
+      },
+      "legs": {
+        "naming_pattern": "STATION_02_Assembly_Leg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.86
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "offsets_m": [
+          [
+            -0.85,
+            -0.9,
+            0.43
+          ],
+          [
+            0.85,
+            -0.9,
+            0.43
+          ],
+          [
+            -0.85,
+            -0.3,
+            0.43
+          ],
+          [
+            0.85,
+            -0.3,
+            0.43
+          ]
+        ]
+      },
+      "levelling_feet": {
+        "naming_pattern": "STATION_02_Assembly_Foot_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.05,
+        "depth_m": 0.04,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -0.85,
+            -0.9,
+            0.02
+          ],
+          [
+            0.85,
+            -0.9,
+            0.02
+          ],
+          [
+            -0.85,
+            -0.3,
+            0.02
+          ],
+          [
+            0.85,
+            -0.3,
+            0.02
+          ]
+        ]
+      },
+      "lower_shelf": {
+        "naming": "STATION_02_Assembly_LowerShelf",
+        "primitive": "box",
+        "dimensions_m": [
+          1.7,
+          0.6,
+          0.03
+        ],
+        "offset_m": [
+          0.0,
+          -0.6,
+          0.2
+        ],
+        "material": "metal_light",
+        "collider": "static"
+      }
+    },
+    "tool_rack": {
+      "naming": "STATION_02_Assembly_ToolRack",
+      "panel": {
+        "primitive": "box",
+        "dimensions_m": [
+          1.7,
+          0.04,
+          0.85
+        ],
+        "offset_m": [
+          0.0,
+          -0.96,
+          1.45
+        ],
+        "material": "blue_accent",
+        "collider": "static"
+      },
+      "tools": {
+        "naming_pattern": "STATION_02_Assembly_Tool_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.035,
+          0.035,
+          0.26
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.6,
+            -0.92,
+            1.45
+          ],
+          [
+            -0.3,
+            -0.92,
+            1.5
+          ],
+          [
+            0.3,
+            -0.92,
+            1.45
+          ],
+          [
+            0.6,
+            -0.92,
+            1.5
+          ]
+        ]
+      }
+    },
+    "parts_bins": {
+      "naming_pattern": "STATION_02_Assembly_Bin_{i}",
+      "primitive": "box",
+      "count": 4,
+      "dimensions_m": [
+        0.2,
+        0.15,
+        0.12
+      ],
+      "tilt_deg": [
+        -18.0,
+        0.0,
+        0.0
+      ],
+      "material_cycle": [
+        "blue_accent",
+        "safety_yellow",
+        "white_panel",
+        "blue_accent"
+      ],
+      "collider": "static",
+      "start_offset_m": [
+        -0.7,
+        -0.78,
+        1.0
+      ],
+      "step_m": [
+        0.32,
+        0.0,
+        0.0
+      ]
+    },
+    "assembly_fixture": {
+      "naming": "STATION_02_Assembly_Fixture",
+      "base": {
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.28,
+          0.05
+        ],
+        "offset_m": [
+          -0.35,
+          -0.5,
+          0.97
+        ],
+        "bevel_m": 0.01,
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "posts": {
+        "naming_pattern": "STATION_02_Assembly_FixturePost_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.015,
+        "depth_m": 0.1,
+        "vertices": 10,
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.5,
+            -0.5,
+            1.03
+          ],
+          [
+            -0.2,
+            -0.5,
+            1.03
+          ]
+        ]
+      }
+    },
+    "pump_1": {
+      "naming": "PHYS_Assembly_Part_1",
+      "primitive": "box",
+      "dimensions_m": [
+        0.1,
+        0.075,
+        0.11
+      ],
+      "offset_m": [
+        -0.35,
+        -0.5,
+        1.02
+      ],
+      "bevel_m": 0.008,
+      "material": "white_panel",
+      "unity_tag": "PumpPart",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.3,
+        "kinematic": false
+      },
+      "screen": {
+        "naming": "PHYS_Assembly_Part_1_Screen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.005,
+          0.025
+        ],
+        "offset_from_parent_m": [
+          0.0,
+          -0.041,
+          0.006
+        ],
+        "material": "screen_dark"
+      },
+      "knob": {
+        "naming": "PHYS_Assembly_Part_1_Knob",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "offset_from_parent_m": [
+          0.035,
+          0.0,
+          0.03
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "pump_2": {
+      "naming": "PHYS_Assembly_Part_2",
+      "primitive": "box",
+      "dimensions_m": [
+        0.1,
+        0.075,
+        0.11
+      ],
+      "offset_m": [
+        0.35,
+        -0.55,
+        0.99
+      ],
+      "bevel_m": 0.008,
+      "material": "white_panel",
+      "unity_tag": "PumpPart",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.3,
+        "kinematic": false
+      },
+      "knob": {
+        "naming": "PHYS_Assembly_Part_2_Knob",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "offset_from_parent_m": [
+          0.035,
+          0.0,
+          0.03
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "pump_3": {
+      "naming": "PHYS_Assembly_Part_3",
+      "primitive": "box",
+      "dimensions_m": [
+        0.1,
+        0.075,
+        0.11
+      ],
+      "offset_m": [
+        0.55,
+        -0.35,
+        0.99
+      ],
+      "bevel_m": 0.008,
+      "material": "white_panel",
+      "unity_tag": "PumpPart",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.3,
+        "kinematic": false
+      },
+      "screen": {
+        "naming": "PHYS_Assembly_Part_3_Screen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.005,
+          0.025
+        ],
+        "offset_from_parent_m": [
+          0.0,
+          -0.041,
+          0.006
+        ],
+        "material": "screen_dark"
+      },
+      "knob": {
+        "naming": "PHYS_Assembly_Part_3_Knob",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "offset_from_parent_m": [
+          0.035,
+          0.0,
+          0.03
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "pump_4": {
+      "naming": "PHYS_Assembly_Part_4",
+      "primitive": "box",
+      "dimensions_m": [
+        0.1,
+        0.075,
+        0.11
+      ],
+      "offset_m": [
+        -0.65,
+        -0.35,
+        0.99
+      ],
+      "bevel_m": 0.008,
+      "material": "white_panel",
+      "unity_tag": "PumpPart",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.3,
+        "kinematic": false
+      },
+      "knob": {
+        "naming": "PHYS_Assembly_Part_4_Knob",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "offset_from_parent_m": [
+          0.035,
+          0.0,
+          0.03
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "hmi": {
+      "naming": "STATION_02_Assembly_HMI",
+      "primitive": "box",
+      "dimensions_m": [
+        0.4,
+        0.03,
+        0.3
+      ],
+      "offset_m": [
+        0.85,
+        -0.47,
+        1.35
+      ],
+      "tilt_deg": [
+        -12.0,
+        0.0,
+        0.0
+      ],
+      "material": "screen_dark",
+      "unity_tag": "HMI",
+      "collider": "static",
+      "pole": {
+        "naming": "STATION_02_Assembly_HMIPole",
+        "primitive": "cylinder",
+        "radius_m": 0.04,
+        "depth_m": 1.4,
+        "vertices": 12,
+        "offset_m": [
+          0.85,
+          -0.55,
+          0.7
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "task_light": {
+      "naming": "STATION_02_Assembly_TaskLight",
+      "fixture": {
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.18,
+          0.06
+        ],
+        "offset_m": [
+          0.0,
+          -0.5,
+          2.2
+        ],
+        "material": "metal_light",
+        "unity_tag": "TaskLight"
+      },
+      "emitter": {
+        "naming": "STATION_02_Assembly_TaskLight_Emitter",
+        "primitive": "box",
+        "dimensions_m": [
+          1.16,
+          0.02,
+          0.03
+        ],
+        "offset_from_parent_m": [
+          0.0,
+          -0.03,
+          -0.01
+        ],
+        "material": "led_white"
+      },
+      "review_light": {
+        "type": "AREA",
+        "energy_w": 110.0,
+        "size_m": 1.0,
+        "offset_m": [
+          0.0,
+          -0.5,
+          2.12
+        ],
+        "export_to_glb": false
+      }
+    },
+    "gantry": {
+      "beam": {
+        "naming": "STATION_02_Assembly_GantryBeam",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.76,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          -0.96,
+          2.27
+        ],
+        "material": "metal_light"
+      },
+      "uprights": {
+        "naming_pattern": "STATION_02_Assembly_Upright_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.05,
+          0.05,
+          1.35
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "offsets_m": [
+          [
+            -0.83,
+            -0.96,
+            1.6
+          ],
+          [
+            0.83,
+            -0.96,
+            1.6
+          ]
+        ]
+      },
+      "gussets": {
+        "naming_pattern": "STATION_02_Assembly_GantryGusset_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.07,
+          0.07,
+          0.07
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.83,
+            -0.93,
+            2.23
+          ],
+          [
+            0.83,
+            -0.93,
+            2.23
+          ]
+        ]
+      },
+      "task_hangers": {
+        "naming_pattern": "STATION_02_Assembly_TaskHanger_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.03,
+          0.48,
+          0.03
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.4,
+            -0.73,
+            2.24
+          ],
+          [
+            0.4,
+            -0.73,
+            2.24
+          ]
+        ]
+      }
+    },
+    "fixture_detail": {
+      "plate": {
+        "naming": "STATION_02_Assembly_FixturePlate",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.4,
+          0.3,
+          0.02
+        ],
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.005
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "metal_light"
+      },
+      "plate_holes": {
+        "naming_pattern": "STATION_02_Assembly_PlateHole_{i}",
+        "primitive": "cylinder",
+        "count": 6,
+        "radius_m": 0.006,
+        "depth_m": 0.024,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            -0.47,
+            -0.56,
+            1.01
+          ],
+          [
+            -0.35,
+            -0.56,
+            1.01
+          ],
+          [
+            -0.23,
+            -0.56,
+            1.01
+          ],
+          [
+            -0.47,
+            -0.44,
+            1.01
+          ],
+          [
+            -0.35,
+            -0.44,
+            1.01
+          ],
+          [
+            -0.23,
+            -0.44,
+            1.01
+          ]
+        ]
+      },
+      "locating_pins": {
+        "naming_pattern": "STATION_02_Assembly_LocatingPin_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.006,
+        "depth_m": 0.06,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.45,
+            -0.5,
+            1.035
+          ],
+          [
+            -0.25,
+            -0.5,
+            1.035
+          ]
+        ]
+      },
+      "bushings": {
+        "naming_pattern": "STATION_02_Assembly_Bushing_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.013,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.45,
+            -0.5,
+            1.02
+          ],
+          [
+            -0.25,
+            -0.5,
+            1.02
+          ]
+        ]
+      },
+      "nest": {
+        "naming": "STATION_02_Assembly_Nest",
+        "primitive": "box",
+        "dimensions_m": [
+          0.15,
+          0.11,
+          0.035
+        ],
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.03
+        ],
+        "material": "metal_dark"
+      },
+      "nest_recess": {
+        "naming": "STATION_02_Assembly_NestRecess",
+        "primitive": "box",
+        "dimensions_m": [
+          0.115,
+          0.075,
+          0.02
+        ],
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.045
+        ],
+        "material": "screen_dark"
+      },
+      "clamp_body": {
+        "naming_pattern": "STATION_02_Assembly_ClampBody_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.05,
+          0.06
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.485,
+            -0.5,
+            1.055
+          ],
+          [
+            -0.215,
+            -0.5,
+            1.055
+          ]
+        ]
+      },
+      "clamp_arm": {
+        "naming_pattern": "STATION_02_Assembly_ClampArm_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.09,
+          0.02,
+          0.015
+        ],
+        "material": "metal_light",
+        "unity_tag": "Clamp",
+        "offsets_m": [
+          [
+            -0.44,
+            -0.5,
+            1.085
+          ],
+          [
+            -0.26,
+            -0.5,
+            1.085
+          ]
+        ]
+      },
+      "clamp_cyl": {
+        "naming_pattern": "STATION_02_Assembly_ClampCyl_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.012,
+        "depth_m": 0.05,
+        "vertices": 10,
+        "axis": "Y",
+        "material": "blue_accent",
+        "offsets_m": [
+          [
+            -0.485,
+            -0.44,
+            1.055
+          ],
+          [
+            -0.215,
+            -0.44,
+            1.055
+          ]
+        ]
+      },
+      "clamp_tube": {
+        "naming_pattern": "STATION_02_Assembly_ClampTube_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.004,
+        "depth_m": 0.1,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offsets_m": [
+          [
+            -0.485,
+            -0.42,
+            1.0
+          ],
+          [
+            -0.215,
+            -0.42,
+            1.0
+          ]
+        ]
+      }
+    },
+    "assembly_tools": {
+      "tool_arm": {
+        "naming": "STATION_02_Assembly_ToolArm",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.5,
+          0.05
+        ],
+        "offset_m": [
+          -0.35,
+          -0.71,
+          2.24
+        ],
+        "material": "metal_light"
+      },
+      "balancer": {
+        "naming": "STATION_02_Assembly_ToolBalancer",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.12,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -0.35,
+          -0.5,
+          2.12
+        ]
+      },
+      "balancer_cable": {
+        "naming": "STATION_02_Assembly_BalancerCable",
+        "primitive": "cylinder",
+        "radius_m": 0.004,
+        "depth_m": 0.62,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.75
+        ]
+      },
+      "sd_body": {
+        "naming": "STATION_02_Assembly_TorqueScrewdriver",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.16,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_light",
+        "unity_tag": "ToolScrewdriver",
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.44
+        ]
+      },
+      "sd_grip": {
+        "naming": "STATION_02_Assembly_ScrewdriverGrip",
+        "primitive": "cylinder",
+        "radius_m": 0.026,
+        "depth_m": 0.07,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.37
+        ]
+      },
+      "sd_collar": {
+        "naming": "STATION_02_Assembly_ScrewdriverCollar",
+        "primitive": "cylinder",
+        "radius_m": 0.02,
+        "depth_m": 0.03,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.335
+        ]
+      },
+      "sd_bit": {
+        "naming": "STATION_02_Assembly_ScrewdriverBit",
+        "primitive": "cylinder",
+        "radius_m": 0.005,
+        "depth_m": 0.06,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.29
+        ]
+      },
+      "sd_cable": {
+        "naming": "STATION_02_Assembly_ScrewdriverCable",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.55,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          -0.35,
+          -0.56,
+          1.72
+        ]
+      },
+      "tool_holders": {
+        "naming_pattern": "STATION_02_Assembly_ToolHolder_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.05,
+          0.07,
+          0.1
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            0.3,
+            -0.93,
+            1.12
+          ],
+          [
+            0.42,
+            -0.93,
+            1.12
+          ],
+          [
+            0.54,
+            -0.93,
+            1.12
+          ]
+        ]
+      },
+      "screw_target": {
+        "naming": "STATION_02_Assembly_ScrewTarget",
+        "primitive": "box",
+        "dimensions_m": [
+          0.02,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -0.35,
+          -0.5,
+          1.07
+        ],
+        "material": "led_green",
+        "hide_render": true,
+        "unity_tag": "ScrewTarget"
+      }
+    },
+    "operator_zone": {
+      "naming": "STATION_02_Assembly_OperatorZone",
+      "primitive": "box",
+      "dimensions_m": [
+        1.6,
+        0.8,
+        0.02
+      ],
+      "offset_m": [
+        0.0,
+        0.5,
+        0.01
+      ],
+      "material": "safety_yellow",
+      "collider": "static"
+    },
+    "input_transfer": {
+      "belt": {
+        "naming": "CONVEYOR_Assembly_Input",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.24,
+          0.52,
+          0.012
+        ],
+        "offset_m": [
+          -1.875,
+          0.0,
+          0.418
+        ],
+        "material": "rubber_black",
+        "collider": "static",
+        "unity_tag": "Conveyor",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.0,
+          "kinematic": true
+        },
+        "belt_speed_mps": 0.15
+      },
+      "frame_tie": {
+        "naming": "CONVEYOR_Assembly_Input_Frame",
+        "primitive": "box",
+        "dimensions_m": [
+          1.24,
+          0.58,
+          0.04
+        ],
+        "offset_m": [
+          -1.875,
+          0.0,
+          0.3
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "side_frames": {
+        "naming_pattern": "STATION_02_Assembly_ConvInSide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.24,
+          0.045,
+          0.12
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.875,
+            -0.28,
+            0.36
+          ],
+          [
+            -1.875,
+            0.28,
+            0.36
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_02_Assembly_ConvInRoller_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.024,
+        "depth_m": 0.5,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_light",
+        "start_offset_m": [
+          -2.365,
+          0.0,
+          0.398
+        ],
+        "step_m": [
+          0.14,
+          0.0,
+          0.0
+        ]
+      },
+      "legs": {
+        "naming_pattern": "STATION_02_Assembly_ConvInLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.3
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -2.395,
+            -0.26,
+            0.15
+          ],
+          [
+            -1.355,
+            -0.26,
+            0.15
+          ],
+          [
+            -2.395,
+            0.26,
+            0.15
+          ],
+          [
+            -1.355,
+            0.26,
+            0.15
+          ]
+        ]
+      },
+      "feet": {
+        "naming_pattern": "STATION_02_Assembly_ConvInFoot_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.03,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -2.395,
+            -0.26,
+            0.01
+          ],
+          [
+            -1.355,
+            -0.26,
+            0.01
+          ],
+          [
+            -2.395,
+            0.26,
+            0.01
+          ],
+          [
+            -1.355,
+            0.26,
+            0.01
+          ]
+        ]
+      }
+    },
+    "output_transfer": {
+      "belt": {
+        "naming": "CONVEYOR_Assembly_Output",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.24,
+          0.52,
+          0.012
+        ],
+        "offset_m": [
+          1.875,
+          0.0,
+          0.418
+        ],
+        "material": "rubber_black",
+        "collider": "static",
+        "unity_tag": "Conveyor",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.0,
+          "kinematic": true
+        },
+        "belt_speed_mps": 0.15,
+        "connects_to": "S03"
+      },
+      "frame_tie": {
+        "naming": "CONVEYOR_Assembly_Output_Frame",
+        "primitive": "box",
+        "dimensions_m": [
+          1.24,
+          0.58,
+          0.04
+        ],
+        "offset_m": [
+          1.875,
+          0.0,
+          0.3
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "side_frames": {
+        "naming_pattern": "STATION_02_Assembly_ConvOutSide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.24,
+          0.045,
+          0.12
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            1.875,
+            -0.28,
+            0.36
+          ],
+          [
+            1.875,
+            0.28,
+            0.36
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_02_Assembly_ConvOutRoller_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.024,
+        "depth_m": 0.5,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_light",
+        "start_offset_m": [
+          1.385,
+          0.0,
+          0.398
+        ],
+        "step_m": [
+          0.14,
+          0.0,
+          0.0
+        ]
+      },
+      "legs": {
+        "naming_pattern": "STATION_02_Assembly_ConvOutLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.3
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            1.355,
+            -0.26,
+            0.15
+          ],
+          [
+            2.395,
+            -0.26,
+            0.15
+          ],
+          [
+            1.355,
+            0.26,
+            0.15
+          ],
+          [
+            2.395,
+            0.26,
+            0.15
+          ]
+        ]
+      },
+      "feet": {
+        "naming_pattern": "STATION_02_Assembly_ConvOutFoot_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.03,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            1.355,
+            -0.26,
+            0.01
+          ],
+          [
+            2.395,
+            -0.26,
+            0.01
+          ],
+          [
+            1.355,
+            0.26,
+            0.01
+          ],
+          [
+            2.395,
+            0.26,
+            0.01
+          ]
+        ]
+      },
+      "drive_gearbox": {
+        "naming": "STATION_02_Assembly_ConvOutDrive_Gearbox",
+        "primitive": "box",
+        "dimensions_m": [
+          0.13,
+          0.1,
+          0.13
+        ],
+        "offset_m": [
+          2.425,
+          0.2,
+          0.3
+        ],
+        "material": "metal_dark"
+      },
+      "drive_motor": {
+        "naming": "STATION_02_Assembly_ConvOutDrive_Motor",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.14,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offset_m": [
+          2.425,
+          0.33,
+          0.3
+        ]
+      }
+    },
+    "emergency_stop": {
+      "naming": "STATION_02_Assembly_EStop",
+      "unity_tag": "EmergencyStop",
+      "plate": {
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.05,
+          0.16
+        ],
+        "offset_m": [
+          1.15,
+          -0.55,
+          1.2
+        ],
+        "material": "safety_yellow"
+      },
+      "button": {
+        "naming": "STATION_02_Assembly_EStop_Button",
+        "primitive": "cylinder",
+        "radius_m": 0.04,
+        "depth_m": 0.05,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "led_red",
+        "offset_from_parent_m": [
+          0.0,
+          -0.05,
+          0.0
+        ]
+      }
+    },
+    "labels": {
+      "naming_pattern": "STATION_02_Assembly_Label_{name}",
+      "primitive": "quad_or_text_mesh",
+      "items": [
+        {
+          "name": "StationID",
+          "text": "S02 · ASSEMBLY",
+          "size_m": 0.05,
+          "offset_m": [
+            0.0,
+            -0.44,
+            0.7
+          ],
+          "material": "warning_black",
+          "face": "+Y"
+        },
+        {
+          "name": "FlowArrow",
+          "text": "→ S03",
+          "size_m": 0.06,
+          "offset_m": [
+            1.2,
+            -0.3,
+            0.55
+          ],
+          "material": "warning_black",
+          "face": "+Y"
+        }
+      ]
+    },
+    "hmi_ui": {
+      "bezel": {
+        "naming": "STATION_02_Assembly_HMIBezel",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.44,
+          0.02,
+          0.34
+        ],
+        "offset_m": [
+          0.85,
+          -0.487,
+          1.35
+        ],
+        "tilt_deg": [
+          -12.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_dark"
+      },
+      "header": {
+        "naming": "STATION_02_Assembly_HMIHeader",
+        "primitive": "box",
+        "dimensions_m": [
+          0.36,
+          0.008,
+          0.03
+        ],
+        "offset_m": [
+          0.85,
+          -0.452,
+          1.47
+        ],
+        "tilt_deg": [
+          -12.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent"
+      },
+      "buttons": {
+        "naming": "STATION_02_Assembly_HMIButtons",
+        "primitive": "box",
+        "dimensions_m": [
+          0.36,
+          0.01,
+          0.03
+        ],
+        "offset_m": [
+          0.85,
+          -0.452,
+          1.21
+        ],
+        "tilt_deg": [
+          -12.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent"
+      },
+      "title": {
+        "naming": "STATION_02_Assembly_HMITitle",
+        "primitive": "text_mesh",
+        "text": "ASSISTED ASSEMBLY",
+        "size_m": 0.022,
+        "world_position_m": [
+          6.85,
+          5.52,
+          1.46
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      },
+      "step": {
+        "naming": "STATION_02_Assembly_HMIStep",
+        "primitive": "text_mesh",
+        "text": "STEP 3 / 7",
+        "size_m": 0.05,
+        "world_position_m": [
+          6.85,
+          5.53,
+          1.37
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "torque": {
+        "naming": "STATION_02_Assembly_HMITorque",
+        "primitive": "text_mesh",
+        "text": "0.8 Nm  OK",
+        "size_m": 0.03,
+        "world_position_m": [
+          6.85,
+          5.535,
+          1.3
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "guide": {
+        "naming": "STATION_02_Assembly_HMIGuide",
+        "primitive": "text_mesh",
+        "text": "PICK BIN 2",
+        "size_m": 0.028,
+        "world_position_m": [
+          6.85,
+          5.535,
+          1.24
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_amber"
+      }
+    },
+    "documentation": {
+      "holder": {
+        "naming": "STATION_02_Assembly_DocHolder",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.24,
+          0.02,
+          0.32
+        ],
+        "offset_m": [
+          -0.72,
+          -0.935,
+          1.42
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_dark"
+      },
+      "sheet": {
+        "naming": "STATION_02_Assembly_DocSheet",
+        "primitive": "box",
+        "dimensions_m": [
+          0.21,
+          0.006,
+          0.29
+        ],
+        "offset_m": [
+          -0.72,
+          -0.921,
+          1.42
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "material": "white_panel"
+      },
+      "clip": {
+        "naming": "STATION_02_Assembly_DocClip",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -0.72,
+          -0.924,
+          1.56
+        ],
+        "material": "metal_light"
+      },
+      "doc_title": {
+        "naming": "STATION_02_Assembly_DocTitle",
+        "primitive": "text_mesh",
+        "text": "WORK INSTRUCTIONS",
+        "size_m": 0.017,
+        "world_position_m": [
+          5.28,
+          5.428,
+          1.54
+        ],
+        "rotation_deg": [
+          80,
+          0,
+          180
+        ],
+        "material": "warning_black"
+      },
+      "doc_lines": {
+        "naming_pattern": "STATION_02_Assembly_DocLine_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.16,
+          0.004,
+          0.006
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "material": "warning_black",
+        "start_offset_m": [
+          -0.72,
+          -0.918,
+          1.46
+        ],
+        "step_m": [
+          0.0,
+          0.0,
+          -0.045
+        ]
+      },
+      "doc_diagram": {
+        "naming": "STATION_02_Assembly_DocDiagram",
+        "primitive": "box",
+        "dimensions_m": [
+          0.08,
+          0.004,
+          0.06
+        ],
+        "offset_m": [
+          -0.72,
+          -0.918,
+          1.33
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "services": {
+      "frl_body": {
+        "naming": "STATION_02_Assembly_FRL",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.028,
+        "depth_m": 0.1,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_light",
+        "offset_m": [
+          -0.8,
+          -0.55,
+          0.55
+        ]
+      },
+      "frl_bowl": {
+        "naming": "STATION_02_Assembly_FRLBowl",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.05,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "screen_dark",
+        "offset_m": [
+          -0.8,
+          -0.55,
+          0.48
+        ]
+      },
+      "frl_knob": {
+        "naming": "STATION_02_Assembly_FRLKnob",
+        "primitive": "cylinder",
+        "radius_m": 0.015,
+        "depth_m": 0.02,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.8,
+          -0.55,
+          0.62
+        ]
+      },
+      "frl_gauge": {
+        "naming": "STATION_02_Assembly_FRLGauge",
+        "primitive": "cylinder",
+        "radius_m": 0.02,
+        "depth_m": 0.012,
+        "vertices": 12,
+        "axis": "Y",
+        "material": "white_panel",
+        "offset_m": [
+          -0.73,
+          -0.505,
+          0.58
+        ]
+      },
+      "air_manifold": {
+        "naming": "STATION_02_Assembly_AirManifold",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.05,
+          0.04
+        ],
+        "offset_m": [
+          -0.68,
+          -0.55,
+          0.55
+        ],
+        "material": "metal_dark"
+      },
+      "air_line": {
+        "naming": "STATION_02_Assembly_AirLine",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.55,
+        "vertices": 6,
+        "axis": "X",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.5,
+          -0.55,
+          0.55
+        ]
+      },
+      "air_riser": {
+        "naming": "STATION_02_Assembly_AirRiser",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.45,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.35,
+          -0.55,
+          0.78
+        ]
+      },
+      "cable_duct": {
+        "naming": "STATION_02_Assembly_CableDuct",
+        "primitive": "box",
+        "dimensions_m": [
+          1.6,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          -0.94,
+          0.3
+        ],
+        "material": "metal_dark"
+      },
+      "hmi_cable": {
+        "naming": "STATION_02_Assembly_HMICable",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.9,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          0.87,
+          -0.57,
+          0.75
+        ]
+      },
+      "foot_pedal": {
+        "naming": "STATION_02_Assembly_FootPedal",
+        "primitive": "box",
+        "dimensions_m": [
+          0.18,
+          0.12,
+          0.04
+        ],
+        "offset_m": [
+          -0.35,
+          0.3,
+          0.025
+        ],
+        "material": "rubber_black",
+        "unity_tag": "FootPedal",
+        "pedal_top": {
+          "naming": "STATION_02_Assembly_FootPedalTop",
+          "primitive": "box",
+          "dimensions_m": [
+            0.14,
+            0.09,
+            0.015
+          ],
+          "offset_m": [
+            -0.35,
+            0.3,
+            0.05
+          ],
+          "material": "blue_accent"
+        },
+        "pedal_hose": {
+          "naming": "STATION_02_Assembly_FootPedalHose",
+          "primitive": "cylinder",
+          "radius_m": 0.006,
+          "depth_m": 0.5,
+          "vertices": 6,
+          "axis": "Y",
+          "material": "blue_accent",
+          "offset_m": [
+            -0.35,
+            0.0,
+            0.05
+          ]
+        }
+      }
+    },
+    "stack_light": {
+      "pole": {
+        "naming": "STATION_02_Assembly_StackLightPole",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.014,
+        "depth_m": 0.14,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          0.83,
+          -0.9,
+          1.9
+        ]
+      },
+      "base": {
+        "naming": "STATION_02_Assembly_StackLightBase",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 0.03,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          0.83,
+          -0.9,
+          1.82
+        ]
+      },
+      "segments": {
+        "naming_pattern": "STATION_02_Assembly_StackSeg_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.03,
+        "depth_m": 0.05,
+        "vertices": 16,
+        "axis": "Z",
+        "material_cycle": [
+          "led_red",
+          "led_amber",
+          "led_green"
+        ],
+        "start_offset_m": [
+          0.83,
+          -0.9,
+          1.99
+        ],
+        "step_m": [
+          0.0,
+          0.0,
+          0.05
+        ]
+      },
+      "dome": {
+        "naming": "STATION_02_Assembly_StackDome",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 0.025,
+        "vertices": 16,
+        "axis": "Z",
+        "material": "warning_black",
+        "offset_m": [
+          0.83,
+          -0.9,
+          2.155
+        ]
+      }
+    },
+    "ergonomics": {
+      "mat": {
+        "naming": "STATION_02_Assembly_OperatorMat",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.5,
+          0.7,
+          0.01
+        ],
+        "offset_m": [
+          0.0,
+          0.42,
+          0.006
+        ],
+        "material": "rubber_black",
+        "unity_tag": "FloorMarking"
+      },
+      "forearm_rest": {
+        "naming": "STATION_02_Assembly_ForearmRest",
+        "primitive": "box",
+        "dimensions_m": [
+          1.5,
+          0.06,
+          0.03
+        ],
+        "offset_m": [
+          0.0,
+          -0.2,
+          0.95
+        ],
+        "material": "rubber_black"
+      }
+    },
+    "interaction": {
+      "zone": {
+        "naming": "STATION_02_Assembly_InteractionZone",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.9,
+          0.7,
+          0.7
+        ],
+        "offset_m": [
+          -0.35,
+          0.15,
+          1.0
+        ],
+        "is_trigger": true,
+        "display": "wire",
+        "hide_render": true,
+        "unity_tag": "OperatorInteraction"
+      }
+    },
+    "bin_detail": {
+      "bin_shelf": {
+        "naming": "STATION_02_Assembly_BinShelf",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.5,
+          0.24,
+          0.02
+        ],
+        "offset_m": [
+          -0.22,
+          -0.8,
+          0.965
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_light"
+      },
+      "pick_rail": {
+        "naming": "STATION_02_Assembly_PickLightRail",
+        "primitive": "box",
+        "dimensions_m": [
+          1.45,
+          0.03,
+          0.03
+        ],
+        "offset_m": [
+          -0.22,
+          -0.9,
+          1.14
+        ],
+        "material": "metal_dark"
+      },
+      "kanban": {
+        "naming_pattern": "STATION_02_Assembly_Kanban_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.09,
+          0.004,
+          0.055
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "white_panel",
+        "start_offset_m": [
+          -0.7,
+          -0.705,
+          1.03
+        ],
+        "step_m": [
+          0.32,
+          0.0,
+          0.0
+        ]
+      },
+      "pick_lights": {
+        "naming_pattern": "STATION_02_Assembly_PickLight_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.05,
+          0.03,
+          0.025
+        ],
+        "material_cycle": [
+          "led_green",
+          "led_amber",
+          "led_green",
+          "led_amber"
+        ],
+        "start_offset_m": [
+          -0.7,
+          -0.885,
+          1.135
+        ],
+        "step_m": [
+          0.32,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "output_tray": {
+      "tray_base": {
+        "naming": "STATION_02_Assembly_FinishedTray",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.32,
+          0.24,
+          0.02
+        ],
+        "offset_m": [
+          0.62,
+          -0.44,
+          0.955
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "metal_light",
+        "unity_tag": "FinishedTray"
+      },
+      "tray_rim": {
+        "naming_pattern": "STATION_02_Assembly_TrayRim_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.32,
+          0.012,
+          0.03
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            0.62,
+            -0.56,
+            0.975
+          ],
+          [
+            0.62,
+            -0.32,
+            0.975
+          ],
+          [
+            0.475,
+            -0.44,
+            0.975
+          ],
+          [
+            0.765,
+            -0.44,
+            0.975
+          ]
+        ]
+      },
+      "tray_divider": {
+        "naming": "STATION_02_Assembly_TrayDivider",
+        "primitive": "box",
+        "dimensions_m": [
+          0.01,
+          0.22,
+          0.025
+        ],
+        "offset_m": [
+          0.62,
+          -0.44,
+          0.975
+        ],
+        "material": "metal_dark"
+      },
+      "finished_product": {
+        "naming": "STATION_02_Assembly_FinishedProduct",
+        "primitive": "box",
+        "dimensions_m": [
+          0.11,
+          0.07,
+          0.05
+        ],
+        "offset_m": [
+          0.55,
+          -0.44,
+          0.99
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "white_panel",
+        "unity_tag": "FinishedProduct",
+        "screen": {
+          "naming": "STATION_02_Assembly_FinishedProduct_Screen",
+          "primitive": "box",
+          "dimensions_m": [
+            0.05,
+            0.006,
+            0.03
+          ],
+          "offset_m": [
+            0.55,
+            -0.406,
+            1.0
+          ],
+          "material": "screen_dark"
+        }
+      }
+    },
+    "cabinet": {
+      "body": {
+        "naming": "STATION_02_Assembly_Cabinet",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.42,
+          0.44,
+          0.86
+        ],
+        "offset_m": [
+          -1.16,
+          -0.55,
+          0.45
+        ],
+        "bevel_m": 0.008,
+        "bevel_segments": 1,
+        "material": "metal_light",
+        "collider": "static",
+        "unity_tag": "Cabinet"
+      },
+      "plinth": {
+        "naming": "STATION_02_Assembly_CabinetPlinth",
+        "primitive": "box",
+        "dimensions_m": [
+          0.4,
+          0.42,
+          0.05
+        ],
+        "offset_m": [
+          -1.16,
+          -0.55,
+          0.03
+        ],
+        "material": "metal_dark"
+      },
+      "door": {
+        "naming": "STATION_02_Assembly_CabinetDoor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.38,
+          0.02,
+          0.78
+        ],
+        "offset_m": [
+          -1.16,
+          -0.335,
+          0.47
+        ],
+        "material": "glass_window"
+      },
+      "disconnect": {
+        "naming": "STATION_02_Assembly_CabinetDisconnect",
+        "primitive": "box",
+        "dimensions_m": [
+          0.09,
+          0.012,
+          0.11
+        ],
+        "offset_m": [
+          -1.29,
+          -0.328,
+          0.62
+        ],
+        "material": "safety_yellow",
+        "knob": {
+          "naming": "STATION_02_Assembly_CabinetDisconnectKnob",
+          "primitive": "cylinder",
+          "radius_m": 0.026,
+          "depth_m": 0.03,
+          "vertices": 12,
+          "axis": "Y",
+          "offset_m": [
+            -1.29,
+            -0.35,
+            0.62
+          ],
+          "material": "warning_black"
+        }
+      },
+      "led": {
+        "naming": "STATION_02_Assembly_CabinetLed",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.012,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          -1.05,
+          -0.328,
+          0.8
+        ],
+        "material": "led_green"
+      },
+      "din_rail": {
+        "naming": "STATION_02_Assembly_CabinetDinRail",
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.16,
+          -0.42,
+          0.62
+        ],
+        "material": "metal_dark"
+      },
+      "psu": {
+        "naming": "STATION_02_Assembly_CabinetPSU",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.11
+        ],
+        "offset_m": [
+          -1.27,
+          -0.42,
+          0.6
+        ],
+        "material": "metal_light",
+        "psuled": {
+          "naming": "STATION_02_Assembly_CabinetPSULed",
+          "primitive": "cylinder",
+          "radius_m": 0.006,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -1.27,
+            -0.452,
+            0.63
+          ],
+          "material": "led_green"
+        }
+      },
+      "plc": {
+        "naming": "STATION_02_Assembly_CabinetPLC",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.07,
+          0.13
+        ],
+        "offset_m": [
+          -1.1,
+          -0.42,
+          0.55
+        ],
+        "material": "metal_dark",
+        "plcaccent": {
+          "naming": "STATION_02_Assembly_CabinetPLCAccent",
+          "primitive": "box",
+          "dimensions_m": [
+            0.1,
+            0.006,
+            0.02
+          ],
+          "offset_m": [
+            -1.1,
+            -0.456,
+            0.55
+          ],
+          "material": "blue_accent"
+        }
+      },
+      "modules": {
+        "naming_pattern": "STATION_02_Assembly_CabinetModule_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.03,
+          0.045,
+          0.06
+        ],
+        "material": "warning_black",
+        "start_offset_m": [
+          -1.2,
+          -0.42,
+          0.62
+        ],
+        "step_m": [
+          0.035,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "info_panel": {
+      "naming": "INFO_Assembly_Panel",
+      "unity_tag": "InfoPanel",
+      "board": {
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.05,
+          0.7
+        ],
+        "world_position_m": [
+          6.0,
+          8.6,
+          1.6
+        ],
+        "rotation_deg": [
+          0.0,
+          0.0,
+          180.0
+        ],
+        "material": "white_panel"
+      },
+      "title": {
+        "naming": "INFO_Assembly_Panel_Title",
+        "primitive": "text_mesh",
+        "text": "S02 · Assembly",
+        "size_m": 0.13,
+        "world_position_m": [
+          6.0,
+          8.64,
+          1.82
+        ],
+        "rotation_deg": [
+          90.0,
+          0.0,
+          180.0
+        ],
+        "material": "warning_black"
+      },
+      "body": {
+        "naming": "INFO_Assembly_Panel_Body",
+        "primitive": "text_mesh",
+        "text": "Assisted Assembly: operators build the pump with pick-to-light guidance and torque-controlled tools.",
+        "size_m": 0.06,
+        "wrap_chars": 28,
+        "world_position_m": [
+          6.0,
+          8.64,
+          1.5
+        ],
+        "rotation_deg": [
+          90.0,
+          0.0,
+          180.0
+        ],
+        "material": "warning_black"
+      }
+    },
+    "trigger_zone": {
+      "naming": "TRIGGER_Info_Assembly",
+      "unity_tag": "Trigger",
+      "is_trigger": true,
+      "primitive": "box",
+      "dimensions_m": [
+        2.4,
+        1.6,
+        2.2
+      ],
+      "world_position_m": [
+        6.0,
+        9.3,
+        1.1
+      ],
+      "display": "wire",
+      "hide_render": true
+    }
+  }
+}

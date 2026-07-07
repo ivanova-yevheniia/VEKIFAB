@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "asset": "hmi_panel",
+  "category": "control",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "HMI_Screen"
+      ],
+      "geometry": {
+        "note": "asset entry object (local origin)"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "HMI_Screen",
+      "children": [
+        "HMI_Bezel",
+        "HMI_Button_1",
+        "HMI_Button_2",
+        "HMI_Button_3"
+      ],
+      "geometry": {
+        "source": "parameters.components",
+        "primitives": "generic"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "screen_dark",
+        "metal_dark",
+        "blue_accent"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

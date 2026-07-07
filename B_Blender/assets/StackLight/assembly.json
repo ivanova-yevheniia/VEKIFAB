@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "asset": "stack_light",
+  "category": "safety",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "STACK_Base"
+      ],
+      "geometry": {
+        "note": "asset entry object (local origin)"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "STACK_Base",
+      "children": [
+        "STACK_Pole",
+        "STACK_Segment_1",
+        "STACK_Segment_2",
+        "STACK_Segment_3",
+        "STACK_Dome"
+      ],
+      "geometry": {
+        "source": "parameters.components",
+        "primitives": "generic"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "metal_dark",
+        "led_red",
+        "led_amber",
+        "led_green",
+        "warning_black"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

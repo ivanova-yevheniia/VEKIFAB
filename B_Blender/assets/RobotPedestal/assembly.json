@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "asset": "robot_pedestal",
+  "category": "robotics",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "ROBOTPEDESTAL_Body"
+      ],
+      "geometry": {
+        "note": "asset entry"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "ROBOTPEDESTAL_Body",
+      "children": [],
+      "geometry": {
+        "source": "parameters.components"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "metal_dark"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "asset": "cable_chain",
+  "category": "cable_management",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "CHAIN_Link_1"
+      ],
+      "geometry": {
+        "note": "asset entry object (local origin)"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "CHAIN_Link_1",
+      "children": [
+        "CHAIN_Link_2",
+        "CHAIN_Link_3",
+        "CHAIN_Link_4",
+        "CHAIN_Link_5",
+        "CHAIN_Link_6",
+        "CHAIN_Link_7",
+        "CHAIN_Link_8",
+        "CHAIN_Link_9",
+        "CHAIN_Link_10"
+      ],
+      "geometry": {
+        "source": "parameters.components",
+        "primitives": "generic"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "rubber_black"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

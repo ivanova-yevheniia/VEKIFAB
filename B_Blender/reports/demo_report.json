@@ -1,0 +1,71 @@
+{
+  "project_name": "VEKIFAB \u2014 AI Factory Planner",
+  "use_case": "Planner-driven line; Unity assembles the walkthrough",
+  "product": "Infusion Pump MF-IP-100",
+  "factory_area_m2": 450.0,
+  "factory_floor_m": {
+    "x": 25.0,
+    "y": 18.0
+  },
+  "stations": 8,
+  "asset_instances": 171,
+  "conveyors": 8,
+  "info_panels": 8,
+  "physics_objects": 39,
+  "collider_candidates": 124,
+  "trigger_zones": 8,
+  "conveyor_length_m": 12.784,
+  "avatar_route_length_m": 22.0,
+  "asset_coverage_by_category": {
+    "cable_management": 2,
+    "control": 6,
+    "electrical": 7,
+    "lighting": 7,
+    "logistics": 28,
+    "material_handling": 14,
+    "robotics": 4,
+    "safety": 16,
+    "sensor": 3,
+    "storage": 12,
+    "structure": 64,
+    "ux": 8
+  },
+  "exported_files": {
+    "blend": [
+      "01_loading_station.blend",
+      "01_loading_station.blend1",
+      "02_assembly_station.blend",
+      "assembly_station.blend",
+      "loading_station.blend",
+      "loading_station.blend1",
+      "robot_cell.blend",
+      "robot_cell.blend1",
+      "utils_smoke_test.blend"
+    ],
+    "glb": [
+      "01_loading_station.glb",
+      "02_assembly_station.glb",
+      "assembly_station.glb",
+      "loading_station.glb",
+      "robot_cell.glb",
+      "utils_smoke_test.glb"
+    ],
+    "screenshots": [
+      "01_loading_station.png",
+      "02_assembly_station.png",
+      "assembly_station.png",
+      "loading_station.png",
+      "robot_cell.png"
+    ]
+  },
+  "exported_file_count": 20,
+  "review_score": 100,
+  "pipeline": [
+    "customer requirements",
+    "process plan",
+    "asset composition",
+    "procedural builder",
+    "Blender",
+    "Unity avatar walkthrough"
+  ]
+}

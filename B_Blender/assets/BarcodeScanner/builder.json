@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "barcode_scanner",
+    "name": "Barcode Scanner",
+    "version": "1.0.0"
+  },
+  "entry_object": "SCAN_Body",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "bracket",
+      "at": "(0,0.03,-0.05)",
+      "axis": "+Y",
+      "type": "bracket/arm mount"
+    }
+  ],
+  "collider": {
+    "type": "Box (static)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static",
+    "rigidbody": false,
+    "unity_event": "scan"
+  },
+  "lod": {
+    "importance": "low",
+    "note": "low"
+  },
+  "performance_budget": {
+    "target_tris": 250,
+    "max_tris": 450,
+    "materials": 3
+  },
+  "unity": {
+    "tags": [
+      "Sensor"
+    ],
+    "prefab_hint": "barcode_scanner"
+  }
+}

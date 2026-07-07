@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "adjustable_foot",
+    "name": "Adjustable Foot",
+    "version": "1.0.0"
+  },
+  "entry_object": "FOOT_Base",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "mount",
+      "at": "(0,0,top)",
+      "axis": "+Z",
+      "type": "threads into profile/leg end"
+    }
+  ],
+  "collider": {
+    "type": "Box (static)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static",
+    "rigidbody": false
+  },
+  "lod": {
+    "importance": "low",
+    "note": "low (small, seen at floor level)"
+  },
+  "performance_budget": {
+    "target_tris": 120,
+    "max_tris": 200,
+    "materials": 3
+  },
+  "unity": {
+    "tags": [
+      "Foot"
+    ],
+    "prefab_hint": "adjustable_foot"
+  }
+}

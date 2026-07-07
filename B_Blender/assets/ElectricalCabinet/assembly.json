@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "asset": "electrical_cabinet",
+  "category": "electrical",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "CAB_Body"
+      ],
+      "geometry": {
+        "note": "asset entry object (local origin)"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "CAB_Body",
+      "children": [
+        "CAB_Door",
+        "CAB_Handle",
+        "CAB_PowerLed"
+      ],
+      "geometry": {
+        "source": "parameters.components",
+        "primitives": "generic"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "metal_light",
+        "metal_dark",
+        "led_green"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

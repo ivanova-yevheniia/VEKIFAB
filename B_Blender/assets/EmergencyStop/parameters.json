@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "emergency_stop",
+    "name": "Emergency Stop",
+    "version": "1.0.0",
+    "category": "safety",
+    "tags": [
+      "safety",
+      "e-stop",
+      "control",
+      "interactive"
+    ]
+  },
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters": {
+    "button_radius_m": {
+      "default": 0.04,
+      "range": "0.02-0.05",
+      "description": "Mushroom head radius."
+    }
+  },
+  "material_library": {
+    "safety_yellow": {
+      "base_color": [
+        0.95,
+        0.8,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "emission_strength": 0.0
+    },
+    "warning_black": {
+      "base_color": [
+        0.03,
+        0.03,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "emission_strength": 0.0
+    },
+    "led_red": {
+      "base_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    }
+  },
+  "components": {
+    "plate": {
+      "naming": "ESTOP_Plate",
+      "primitive": "box",
+      "dimensions_m": [
+        0.16,
+        0.05,
+        0.16
+      ],
+      "offset_m": [
+        0,
+        0,
+        0
+      ],
+      "material": "safety_yellow",
+      "collider": "static",
+      "unity_tag": "EmergencyStop",
+      "collar": {
+        "naming": "ESTOP_Collar",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.02,
+        "vertices": 16,
+        "axis": "Y",
+        "offset_from_parent_m": [
+          0,
+          -0.02,
+          0
+        ],
+        "material": "warning_black"
+      },
+      "button": {
+        "naming": "ESTOP_Button",
+        "primitive": "cylinder",
+        "radius_m": 0.04,
+        "depth_m": 0.05,
+        "vertices": 16,
+        "axis": "Y",
+        "offset_from_parent_m": [
+          0,
+          -0.05,
+          0
+        ],
+        "material": "led_red"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "asset": "safety_fence",
+  "category": "safety",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "FENCE_Post_1"
+      ],
+      "geometry": {
+        "note": "asset entry object (local origin)"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "FENCE_Post_1",
+      "children": [
+        "FENCE_Post_2",
+        "FENCE_Post_3",
+        "FENCE_Panel_1",
+        "FENCE_Panel_2",
+        "FENCE_Foot_1",
+        "FENCE_Foot_2",
+        "FENCE_Foot_3"
+      ],
+      "geometry": {
+        "source": "parameters.components",
+        "primitives": "generic"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "safety_yellow",
+        "metal_light",
+        "metal_dark"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

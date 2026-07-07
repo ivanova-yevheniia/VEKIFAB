@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "line_name": "Surgical Sensor Line",
+  "product": "Surgical Sensor",
+  "generated_by": "planning/planner.py",
+  "throughput_target_per_hour": 18.8,
+  "target_cycle_time_s": 90.0,
+  "flow_direction": "+X",
+  "planner": {
+    "automation_tier": "semi",
+    "daily_output": 150,
+    "available_area_m2": 280.0,
+    "workers": 6,
+    "budget": "medium",
+    "regulated": true,
+    "layout": "standard",
+    "assembly_units": 1,
+    "station_count": 6,
+    "decisions_ref": "planner_decisions.md",
+    "stations_area_m2": 34.0
+  },
+  "stations": [
+    {
+      "id": "S01",
+      "type": "loading_station",
+      "name": "Loading Station",
+      "purpose": "Receive and kit incoming components onto trays for the line.",
+      "input": "Bulk components",
+      "output": "Kitted trays",
+      "cycle_role": "60 s nominal",
+      "required_equipment": [
+        "Infeed rack",
+        "Kitting bench",
+        "Parts bins",
+        "Roller conveyor"
+      ],
+      "info_panel_text": "Loading: incoming components are kitted and released onto the line.",
+      "position_m": [
+        2.5,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S02",
+      "type": "assisted_assembly_station",
+      "name": "Assisted Assembly Station",
+      "purpose": "Manual assembly of the product with guided tooling.",
+      "input": "Kitted trays",
+      "output": "Assembled unit",
+      "cycle_role": "60 s nominal",
+      "required_equipment": [
+        "Workbench",
+        "Pick-to-light bins",
+        "Guided tools",
+        "HMI"
+      ],
+      "info_panel_text": "Assisted Assembly: operators build the unit with guidance and torque-controlled tools.",
+      "position_m": [
+        6.0,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S03",
+      "type": "vision_inspection_station",
+      "name": "Vision Inspection Station",
+      "purpose": "Automated optical inspection of assembly and labeling.",
+      "input": "Closed unit",
+      "output": "Inspected unit (pass/fail)",
+      "cycle_role": "20 s nominal",
+      "required_equipment": [
+        "Machine-vision camera",
+        "Ring light",
+        "Reject diverter"
+      ],
+      "info_panel_text": "Vision Inspection: cameras check assembly and labeling; failures are diverted.",
+      "position_m": [
+        9.5,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S04",
+      "type": "functional_test_station",
+      "name": "Functional Test Station",
+      "purpose": "Electrical / functional end-of-line test with per-unit record.",
+      "input": "Inspected unit",
+      "output": "Tested unit + record",
+      "cycle_role": "45 s nominal",
+      "required_equipment": [
+        "Test fixture",
+        "Controller",
+        "Reject bin"
+      ],
+      "info_panel_text": "Functional Test: each unit is powered and verified; results logged per serial.",
+      "position_m": [
+        13.0,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S05",
+      "type": "packaging_station",
+      "name": "Packaging Station",
+      "purpose": "Box, document, label and seal the finished unit.",
+      "input": "Tested unit",
+      "output": "Sealed carton",
+      "cycle_role": "55 s nominal",
+      "required_equipment": [
+        "Carton erector",
+        "Label applicator",
+        "Sealer"
+      ],
+      "info_panel_text": "Packaging: the unit is boxed, labeled and sealed for shipment.",
+      "position_m": [
+        16.5,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "id": "S06",
+      "type": "finished_goods_storage",
+      "name": "Finished Goods Storage",
+      "purpose": "Buffer and store finished product for dispatch.",
+      "input": "Sealed cartons",
+      "output": "Palletized goods",
+      "cycle_role": "0 s nominal",
+      "required_equipment": [
+        "Pallet rack",
+        "Accumulation conveyor"
+      ],
+      "info_panel_text": "Finished Goods Storage: cartons accumulate ready for dispatch.",
+      "position_m": [
+        20.0,
+        6.0,
+        0.0
+      ]
+    }
+  ],
+  "conveyors": [
+    {
+      "id": "C01",
+      "from": "S01",
+      "to": "S02"
+    },
+    {
+      "id": "C02",
+      "from": "S02",
+      "to": "S03"
+    },
+    {
+      "id": "C03",
+      "from": "S03",
+      "to": "S04"
+    },
+    {
+      "id": "C04",
+      "from": "S04",
+      "to": "S05"
+    },
+    {
+      "id": "C05",
+      "from": "S05",
+      "to": "S06"
+    }
+  ]
+}

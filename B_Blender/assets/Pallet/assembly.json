@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "asset": "pallet",
+  "category": "logistics",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "PALLET_Deck"
+      ],
+      "geometry": {
+        "note": "asset entry object (local origin)"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "PALLET_Deck",
+      "children": [
+        "PALLET_Board_1",
+        "PALLET_Board_2",
+        "PALLET_Board_3",
+        "PALLET_Block_1",
+        "PALLET_Block_2",
+        "PALLET_Block_3",
+        "PALLET_Block_4",
+        "PALLET_Block_5",
+        "PALLET_Block_6",
+        "PALLET_Block_7",
+        "PALLET_Block_8",
+        "PALLET_Block_9"
+      ],
+      "geometry": {
+        "source": "parameters.components",
+        "primitives": "generic"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "wood_pallet"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

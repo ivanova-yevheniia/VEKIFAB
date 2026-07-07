@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "pallet",
+    "name": "Pallet",
+    "version": "1.0.0"
+  },
+  "entry_object": "PALLET_Deck",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "floor",
+      "at": "(0,0,0)",
+      "axis": "-Z",
+      "type": "floor / fork entry"
+    },
+    {
+      "name": "top",
+      "at": "(0,0,deck)",
+      "axis": "+Z",
+      "type": "load surface"
+    }
+  ],
+  "collider": {
+    "type": "Box (static)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static_or_dynamic",
+    "rigidbody": false,
+    "optional_mass_kg": 25.0
+  },
+  "lod": {
+    "importance": "low",
+    "note": "low"
+  },
+  "performance_budget": {
+    "target_tris": 400,
+    "max_tris": 700,
+    "materials": 1
+  },
+  "unity": {
+    "tags": [
+      "Pallet"
+    ],
+    "prefab_hint": "pallet"
+  }
+}

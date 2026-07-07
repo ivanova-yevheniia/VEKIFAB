@@ -1,0 +1,33 @@
+{
+  "customer": {
+    "name": "StartupX"
+  },
+  "product": {
+    "name": "IoT Gateway (pilot)",
+    "target_cycle_time_s": 60
+  },
+  "daily_output": {
+    "target_units_per_day": 200,
+    "shift_hours": 8,
+    "shifts_per_day": 1
+  },
+  "automation_level": {
+    "level": "semi"
+  },
+  "available_area_m": {
+    "length_x": 15,
+    "width_y": 12
+  },
+  "workers": {
+    "total": 5
+  },
+  "quality_control": {
+    "methods": [
+      "optical"
+    ],
+    "regulated": false
+  },
+  "constraints": {
+    "budget": "low"
+  }
+}

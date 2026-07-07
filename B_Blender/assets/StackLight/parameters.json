@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "stack_light",
+    "name": "Stack Light",
+    "version": "1.0.0",
+    "category": "safety",
+    "tags": [
+      "signal",
+      "stack-light",
+      "status",
+      "andon"
+    ]
+  },
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters": {
+    "segment_count": {
+      "default": 3,
+      "range": "2-5",
+      "description": "Number of light segments."
+    }
+  },
+  "material_library": {
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "led_red": {
+      "base_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_amber": {
+      "base_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_green": {
+      "base_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "warning_black": {
+      "base_color": [
+        0.03,
+        0.03,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "base": {
+      "naming": "STACK_Base",
+      "primitive": "cylinder",
+      "radius_m": 0.03,
+      "depth_m": 0.04,
+      "vertices": 16,
+      "offset_m": [
+        0,
+        0,
+        0.02
+      ],
+      "material": "metal_dark",
+      "collider": "static",
+      "unity_tag": "StackLight",
+      "pole": {
+        "naming": "STACK_Pole",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.05,
+        "vertices": 8,
+        "offset_m": [
+          0,
+          0,
+          0.06
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "segments": {
+      "naming_pattern": "STACK_Segment_{i}",
+      "primitive": "cylinder",
+      "count": 3,
+      "radius_m": 0.03,
+      "depth_m": 0.05,
+      "vertices": 16,
+      "material_cycle": [
+        "led_red",
+        "led_amber",
+        "led_green"
+      ],
+      "start_offset_m": [
+        0,
+        0,
+        0.11
+      ],
+      "step_m": [
+        0,
+        0,
+        0.05
+      ]
+    },
+    "dome": {
+      "naming": "STACK_Dome",
+      "primitive": "cylinder",
+      "radius_m": 0.03,
+      "depth_m": 0.02,
+      "vertices": 16,
+      "offset_m": [
+        0,
+        0,
+        0.27
+      ],
+      "material": "warning_black"
+    }
+  }
+}

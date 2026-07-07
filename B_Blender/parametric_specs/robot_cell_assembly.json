@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.0",
+  "station": "S03",
+  "type": "robot_handling_cell",
+  "parameters_ref": "robot_cell_parameters.json",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "STATION_03_RobotCell_Root"
+      ],
+      "geometry": {
+        "primitive": "empty",
+        "at": "station.world_position_m"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_working_envelope",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "TRIGGER_RobotCell_WorkEnvelope"
+      ],
+      "geometry": {
+        "source": "components.working_envelope"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_restricted_zone",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_RestrictedZone_1"
+      ],
+      "geometry": {
+        "source": "components.restricted_zone"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_040_operator_zone",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_OperatorZone"
+      ],
+      "geometry": {
+        "source": "components.operator_zone"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_050_fence",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_FencePost_1"
+      ],
+      "geometry": {
+        "source": "components.fence"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_060_access_gate",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_Gate"
+      ],
+      "geometry": {
+        "source": "components.access_gate"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_070_cabinet",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_Cabinet"
+      ],
+      "geometry": {
+        "source": "components.cabinet"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_080_hmi",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_HMI"
+      ],
+      "geometry": {
+        "source": "components.hmi"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_090_stack_light",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_StackLightBase"
+      ],
+      "geometry": {
+        "source": "components.stack_light"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_100_emergency_stop",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_EStop"
+      ],
+      "geometry": {
+        "source": "components.emergency_stop"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_110_task_light",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_TaskLight"
+      ],
+      "geometry": {
+        "source": "components.task_light"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_120_cable_chain",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_CableChain_1"
+      ],
+      "geometry": {
+        "source": "components.cable_chain"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_130_conveyor_in",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "CONVEYOR_RobotCell_Input"
+      ],
+      "geometry": {
+        "source": "components.conveyor_in"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_140_conveyor_out",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "CONVEYOR_RobotCell_Output"
+      ],
+      "geometry": {
+        "source": "components.conveyor_out"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_150_labels",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_Label_Warning"
+      ],
+      "geometry": {
+        "source": "components.labels"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_160_info_panel",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "INFO_RobotCell_Panel"
+      ],
+      "geometry": {
+        "source": "components.info_panel"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_170_info_trigger",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "TRIGGER_Info_RobotCell"
+      ],
+      "geometry": {
+        "source": "components.info_trigger"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_180_robot",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "COLLIDER_RobotCell_Pedestal"
+      ],
+      "geometry": {
+        "source": "components.robot"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_200_cabinet_din",
+      "parent": "STATION_03_RobotCell_Cabinet",
+      "children": [
+        "STATION_03_RobotCell_DinRail"
+      ],
+      "geometry": {
+        "source": "components.cabinet_din",
+        "note": "hero: robot-controller interior behind glass door — servo drives, controller, PSU, PLC, terminals"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_201_teach_pendant",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_TeachPendant"
+      ],
+      "geometry": {
+        "source": "components.teach_pendant",
+        "note": "hero: teach pendant hung on the fence with screen, e-stop, coiled cable"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_202_light_curtain",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_LightCurtainStrip_1"
+      ],
+      "geometry": {
+        "source": "components.light_curtain",
+        "note": "hero: safety light curtain flanking the gate opening"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_203_gate_interlock",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_GateInterlockSwitch"
+      ],
+      "geometry": {
+        "source": "components.gate_interlock",
+        "note": "hero: interlocked safety switch + tongue on the access gate"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_205_gantry",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_GantryBeam"
+      ],
+      "geometry": {
+        "source": "components.gantry",
+        "note": "hero: overhead portal frame carrying the task light (de-floats it)"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_206_robot_cabling",
+      "parent": "COLLIDER_RobotCell_Pedestal",
+      "children": [
+        "STATION_03_RobotCell_RobotJunction"
+      ],
+      "geometry": {
+        "source": "components.robot_cabling",
+        "note": "hero: robot junction box + dress-pack cabling"
+      },
+      "dependencies": [
+        "op_180_robot"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_207_hmi_ui",
+      "parent": "STATION_03_RobotCell_HMI",
+      "children": [
+        "STATION_03_RobotCell_HMIHeaderBar"
+      ],
+      "geometry": {
+        "source": "components.hmi_ui",
+        "note": "hero: live HMI — ROBOT CELL / RUNNING / CYCLE 12.0 s / PARTS 342"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_208_pedestal_detail",
+      "parent": "COLLIDER_RobotCell_Pedestal",
+      "children": [
+        "STATION_03_RobotCell_PedestalPlate"
+      ],
+      "geometry": {
+        "source": "components.pedestal_detail",
+        "note": "hero: bolted robot base plate + anchor bolts"
+      },
+      "dependencies": [
+        "op_180_robot"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_209_signage_placeholders",
+      "parent": "STATION_03_RobotCell_Root",
+      "children": [
+        "STATION_03_RobotCell_HazardPictogram"
+      ],
+      "geometry": {
+        "source": "components.signage_placeholders",
+        "note": "hero: robot hazard pictogram + Unity pick/place point placeholders"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_999_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags_and_export"
+      },
+      "dependencies": [
+        "op_020_working_envelope",
+        "op_030_restricted_zone",
+        "op_040_operator_zone",
+        "op_050_fence",
+        "op_060_access_gate",
+        "op_070_cabinet",
+        "op_080_hmi",
+        "op_090_stack_light",
+        "op_100_emergency_stop",
+        "op_110_task_light",
+        "op_120_cable_chain",
+        "op_130_conveyor_in",
+        "op_140_conveyor_out",
+        "op_150_labels",
+        "op_160_info_panel",
+        "op_170_info_trigger",
+        "op_180_robot"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    }
+  ]
+}

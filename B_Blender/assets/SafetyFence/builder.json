@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "safety_fence",
+    "name": "Safety Fence",
+    "version": "1.0.0"
+  },
+  "entry_object": "FENCE_Post_1",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "post_end",
+      "at": "post tops/sides",
+      "axis": "+/-X",
+      "type": "bay-to-bay coupling"
+    },
+    {
+      "name": "gate",
+      "at": "any bay",
+      "axis": "+Y",
+      "type": "replace panel with interlocked gate"
+    }
+  ],
+  "collider": {
+    "type": "Box per post + Box per panel",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static",
+    "rigidbody": false,
+    "blocking": true
+  },
+  "lod": {
+    "importance": "medium",
+    "note": "medium"
+  },
+  "performance_budget": {
+    "target_tris": 1200,
+    "max_tris": 2000,
+    "materials": 3
+  },
+  "unity": {
+    "tags": [
+      "SafetyFence"
+    ],
+    "prefab_hint": "safety_fence"
+  }
+}

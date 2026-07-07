@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "project": "VEKIFAB \u2014 AI Factory Planner",
+  "product": "Compact Medical Infusion Pump (MF-IP-100)",
+  "usage": "Unity displays the matching station entry when the avatar enters its info trigger.",
+  "stations": {
+    "S01": {
+      "title": "S01 \u2014 Loading Station",
+      "trigger": "TRIGGER_Info_Loading",
+      "summary": "The line's infeed: bulk components are kitted onto trays and released, one kit per cycle, to assembly.",
+      "decision_tree": [
+        "480 units/day @ 60 s \u2192 single-shift semi-automated line",
+        "Manual kitting is flexible & low-risk \u2192 open bench, no guarding",
+        "Must not starve assembly \u2192 powered buffered outfeed conveyor",
+        "Operator present \u2192 e-stop + stack light + floor markings"
+      ],
+      "engineering_notes": [
+        "0.90 m ergonomic work height; angled bins within a 0.5 m reach arc",
+        "Powered roller outfeed at 0.40 m belt height feeds S02",
+        "Line head: no input conveyor, one output (C01)"
+      ],
+      "future_improvements": [
+        "AMR/AGV automated infeed",
+        "Pick-to-light bins",
+        "Vision kit verification"
+      ]
+    },
+    "S02": {
+      "title": "S02 \u2014 Assisted Assembly Station",
+      "trigger": "TRIGGER_Info_Assembly",
+      "summary": "Operators build the pump with pick-to-light guidance and torque-controlled tools before robotic handling.",
+      "decision_tree": [
+        "Dexterous assembly \u2192 keep human operators",
+        "Error-sensitive medical build \u2192 pick-to-light + torque tools + HMI guidance",
+        "Two operators to hold 60 s cycle \u2192 2.5 m bench",
+        "Manual, low-risk \u2192 open bench with e-stop"
+      ],
+      "engineering_notes": [
+        "Guided assembly with pick-to-light bins and an HMI step display",
+        "Feeds the robot cell (S03) via C02",
+        "Two-operator ergonomic layout at 0.90 m"
+      ],
+      "future_improvements": [
+        "Cobot assist arm",
+        "Poka-yoke / automated fastening",
+        "AR guidance overlay"
+      ]
+    },
+    "S03": {
+      "title": "S03 \u2014 Robot Handling Cell",
+      "trigger": "TRIGGER_Info_RobotCell",
+      "summary": "A fenced 6-axis robot closes the housing and reorients the pump \u2014 the automated hinge between manual assembly and inspection.",
+      "decision_tree": [
+        "Repetitive precise handling \u2192 industrial robot",
+        "Moving robot = hazard \u2192 full fence + interlocked gate + keep-out zone",
+        "Robot reach 0.9 m + clearance \u2192 3.0 m fenced cell",
+        "Automated zone starts here \u2192 decouples manual upstream from inspection"
+      ],
+      "engineering_notes": [
+        "Robot built from reusable assets in a true kinematic chain (Base\u2192\u2026\u2192Gripper)",
+        "Only station requiring full guarding; working-envelope exported as a Unity trigger",
+        "Hero station \u2014 \u224812 k triangles, Unity-ready"
+      ],
+      "future_improvements": [
+        "Rig/animate the arm",
+        "Vision-guided picking + force-torque",
+        "Quick-change gripper / 2nd robot"
+      ]
+    },
+    "S04": {
+      "title": "S04 \u2014 Vision Inspection Station",
+      "trigger": "TRIGGER_Info_Vision",
+      "summary": "Cameras check assembly correctness and label quality; failed units are diverted automatically.",
+      "decision_tree": [
+        "Objective defect detection needed \u2192 machine vision, not manual",
+        "Non-contact + fast \u2192 cameras + controlled lighting",
+        "Catch defects early \u2192 placed before functional test",
+        "Enclosed optics, low risk \u2192 e-stop + stack light, no fence"
+      ],
+      "engineering_notes": [
+        "Camera/lighting mast drives the taller 2.5 m envelope",
+        "Automatic reject diversion; ~20 s non-bottleneck cycle",
+        "Feeds functional test (S05) via C04"
+      ],
+      "future_improvements": [
+        "Deep-learning defect classification",
+        "Multi-view / 3D inspection",
+        "Inline OCR + SPC"
+      ]
+    },
+    "S05": {
+      "title": "S05 \u2014 Functional Test Station",
+      "trigger": "TRIGGER_Info_FunctionalTest",
+      "summary": "Each pump is powered up and its flow rate verified; results are logged per serial number.",
+      "decision_tree": [
+        "Medical device \u2192 100 % functional + flow-rate test",
+        "Traceability required \u2192 per-serial test record via barcode",
+        "Test only good units \u2192 placed after vision",
+        "Enclosed fixture, low risk \u2192 e-stop + stack light"
+      ],
+      "engineering_notes": [
+        "Per-serial test logging supports medical traceability",
+        "~45 s automated test; failed units diverted",
+        "Feeds packaging (S06) via C05"
+      ],
+      "future_improvements": [
+        "Parallel test nests",
+        "Automated reject handling",
+        "MES / QMS integration"
+      ]
+    },
+    "S06": {
+      "title": "S06 \u2014 Packaging Station",
+      "trigger": "TRIGGER_Info_Packaging",
+      "summary": "The pump is boxed with its documentation, labeled and sealed for shipment.",
+      "decision_tree": [
+        "Variable cartoning + docs \u2192 keep a human operator",
+        "Labeling/sealing repetitive \u2192 automate those steps",
+        "End-of-line dispatch prep \u2192 placed before storage",
+        "Manual, low-risk \u2192 open bench with e-stop"
+      ],
+      "engineering_notes": [
+        "Semi-automated: manual insertion, automated label/seal",
+        "~55 s cycle; feeds finished-goods storage via C06",
+        "Pallet staged for outbound handoff"
+      ],
+      "future_improvements": [
+        "Automatic case packer",
+        "Print-and-apply labeling",
+        "Serialization aggregation + palletizer"
+      ]
+    },
+    "S07": {
+      "title": "S07 \u2014 Finished Goods Storage",
+      "trigger": "TRIGGER_Info_Storage",
+      "summary": "Sealed cartons accumulate on racks, ready for palletizing and dispatch.",
+      "decision_tree": [
+        "Line runs continuously, dispatch in batches \u2192 buffer store",
+        "Accumulation, not processing \u2192 minimal automation",
+        "One shift of output \u2192 largest (3.5 m) footprint",
+        "Unmanned \u2192 stack light only, no e-stop required"
+      ],
+      "engineering_notes": [
+        "Buffer sized for ~one shift of finished goods",
+        "Unmanned: e-stop exempt, aisle kept clear",
+        "Line terminus \u2014 input only (C06), no output conveyor"
+      ],
+      "future_improvements": [
+        "ASRS / vertical storage",
+        "WMS integration",
+        "AGV dispatch + FIFO"
+      ]
+    }
+  }
+}

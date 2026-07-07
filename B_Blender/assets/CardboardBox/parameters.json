@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "cardboard_box",
+    "name": "Cardboard Box",
+    "version": "1.0.0",
+    "category": "logistics",
+    "tags": [
+      "box",
+      "carton",
+      "product",
+      "load"
+    ]
+  },
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters": {
+    "length_m": {
+      "default": 0.4,
+      "range": "0.2-0.6",
+      "description": "Box length."
+    },
+    "height_m": {
+      "default": 0.3,
+      "range": "0.15-0.5",
+      "description": "Box height."
+    },
+    "mass_kg": {
+      "default": 0.6,
+      "range": "0.2-5.0",
+      "description": "Rigidbody mass."
+    }
+  },
+  "material_library": {
+    "cardboard": {
+      "base_color": [
+        0.58,
+        0.42,
+        0.26,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.85,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "body": {
+      "naming": "BOX_Body",
+      "primitive": "box",
+      "dimensions_m": [
+        0.4,
+        0.3,
+        0.3
+      ],
+      "offset_m": [
+        0,
+        0,
+        0.15
+      ],
+      "bevel_m": 0.005,
+      "material": "cardboard",
+      "collider": "static",
+      "unity_tag": "Box",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.6,
+        "kinematic": false
+      }
+    }
+  }
+}

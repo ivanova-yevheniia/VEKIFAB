@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "emergency_stop",
+    "name": "Emergency Stop",
+    "version": "1.0.0"
+  },
+  "entry_object": "ESTOP_Plate",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "mount",
+      "at": "(0,0,0)",
+      "axis": "+Y",
+      "type": "mounts to panel/frame face"
+    }
+  ],
+  "collider": {
+    "type": "Box (static)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static_interactive",
+    "rigidbody": false,
+    "unity_event": "press"
+  },
+  "lod": {
+    "importance": "medium",
+    "note": "medium (interactive, close inspection)"
+  },
+  "performance_budget": {
+    "target_tris": 300,
+    "max_tris": 500,
+    "materials": 3
+  },
+  "unity": {
+    "tags": [
+      "EmergencyStop"
+    ],
+    "prefab_hint": "emergency_stop"
+  }
+}

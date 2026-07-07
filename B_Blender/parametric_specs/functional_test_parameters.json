@@ -1,0 +1,2708 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": "S05",
+    "type": "functional_test_station",
+    "name": "STATION_05_FunctionalTest",
+    "line": "MF-IP-100 Infusion Pump Line",
+    "world_position_m": [
+      16.5,
+      6.0,
+      0.0
+    ],
+    "envelope_m": {
+      "x": 2.0,
+      "y": 2.0,
+      "z": 2.2
+    },
+    "front_axis": "+Y",
+    "flow_axis": "+X",
+    "work_height_m": 0.9
+  },
+  "conventions": {
+    "units": "meters",
+    "up_axis": "Z",
+    "export_up_axis": "Y",
+    "offset_reference": "component offset_m are [dx,dy,dz] relative to station.world_position at floor; z absolute.",
+    "rotation_units": "degrees",
+    "root_object": "STATION_05_FunctionalTest_Root",
+    "root_type": "EMPTY"
+  },
+  "material_library": {
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    },
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "worktop_grey": {
+      "base_color": [
+        0.82,
+        0.83,
+        0.85,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.55,
+      "emission_strength": 0.0
+    },
+    "white_panel": {
+      "base_color": [
+        0.9,
+        0.9,
+        0.92,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "emission_strength": 0.0
+    },
+    "blue_accent": {
+      "base_color": [
+        0.1,
+        0.35,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.1,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "safety_yellow": {
+      "base_color": [
+        0.95,
+        0.8,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "emission_strength": 0.0
+    },
+    "warning_black": {
+      "base_color": [
+        0.03,
+        0.03,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "emission_strength": 0.0
+    },
+    "rubber_black": {
+      "base_color": [
+        0.05,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "emission_strength": 0.0
+    },
+    "cardboard": {
+      "base_color": [
+        0.58,
+        0.42,
+        0.26,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.85,
+      "emission_strength": 0.0
+    },
+    "wood_pallet": {
+      "base_color": [
+        0.55,
+        0.4,
+        0.24,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.75,
+      "emission_strength": 0.0
+    },
+    "screen_dark": {
+      "base_color": [
+        0.02,
+        0.02,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.2,
+      "emission_color": [
+        0.1,
+        0.35,
+        0.55,
+        1.0
+      ],
+      "emission_strength": 1.0
+    },
+    "led_red": {
+      "base_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_amber": {
+      "base_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_green": {
+      "base_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_white": {
+      "base_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.3,
+      "emission_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "emission_strength": 2.5
+    },
+    "glass_window": {
+      "base_color": [
+        0.6,
+        0.7,
+        0.8,
+        0.22
+      ],
+      "metallic": 0.0,
+      "roughness": 0.1,
+      "alpha": 0.22,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "bench": {
+      "worktop": {
+        "naming": "COLLIDER_FunctionalTest_Workbench",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.8,
+          1.3,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.875
+        ],
+        "bevel_m": 0.008,
+        "bevel_segments": 2,
+        "material": "worktop_grey",
+        "collider": "static",
+        "unity_tag": "Workbench"
+      },
+      "stiffener": {
+        "naming": "STATION_05_FunctionalTest_TopStiffener",
+        "primitive": "box",
+        "dimensions_m": [
+          1.7,
+          1.2,
+          0.03
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.845
+        ],
+        "material": "metal_dark"
+      },
+      "legs": {
+        "naming_pattern": "STATION_05_FunctionalTest_Leg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.86
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -0.85,
+            -0.6,
+            0.43
+          ],
+          [
+            0.85,
+            -0.6,
+            0.43
+          ],
+          [
+            -0.85,
+            0.6,
+            0.43
+          ],
+          [
+            0.85,
+            0.6,
+            0.43
+          ]
+        ]
+      },
+      "top_rail_x": {
+        "naming_pattern": "STATION_05_FunctionalTest_TopRailX_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.66,
+          0.04,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            0.0,
+            -0.6,
+            0.84
+          ],
+          [
+            0.0,
+            0.6,
+            0.84
+          ]
+        ]
+      },
+      "top_rail_y": {
+        "naming_pattern": "STATION_05_FunctionalTest_TopRailY_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          1.16,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.85,
+            0.0,
+            0.84
+          ],
+          [
+            0.85,
+            0.0,
+            0.84
+          ]
+        ]
+      },
+      "bottom_rail_x": {
+        "naming": "STATION_05_FunctionalTest_BottomRailX",
+        "primitive": "box",
+        "dimensions_m": [
+          1.66,
+          0.04,
+          0.04
+        ],
+        "material": "metal_light",
+        "offset_m": [
+          0.0,
+          -0.6,
+          0.16
+        ]
+      },
+      "bottom_rail_y": {
+        "naming_pattern": "STATION_05_FunctionalTest_BottomRailY_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          1.16,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.85,
+            0.0,
+            0.16
+          ],
+          [
+            0.85,
+            0.0,
+            0.16
+          ]
+        ]
+      },
+      "gussets": {
+        "naming_pattern": "STATION_05_FunctionalTest_Gusset_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.05
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.008,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -0.82,
+            -0.57,
+            0.8
+          ],
+          [
+            0.82,
+            -0.57,
+            0.8
+          ],
+          [
+            -0.82,
+            0.57,
+            0.8
+          ],
+          [
+            0.82,
+            0.57,
+            0.8
+          ]
+        ]
+      },
+      "lower_shelf": {
+        "naming": "STATION_05_FunctionalTest_LowerShelf",
+        "primitive": "box",
+        "dimensions_m": [
+          1.62,
+          1.1,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          0.0,
+          0.16
+        ],
+        "material": "metal_light",
+        "collider": "static"
+      }
+    },
+    "levelling_feet": {
+      "base": {
+        "naming_pattern": "STATION_05_FunctionalTest_Foot_{i}",
+        "primary": true,
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.045,
+        "depth_m": 0.03,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -0.85,
+            -0.6,
+            0.015
+          ],
+          [
+            0.85,
+            -0.6,
+            0.015
+          ],
+          [
+            -0.85,
+            0.6,
+            0.015
+          ],
+          [
+            0.85,
+            0.6,
+            0.015
+          ]
+        ]
+      },
+      "nut": {
+        "naming_pattern": "STATION_05_FunctionalTest_FootNut_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.022,
+        "depth_m": 0.028,
+        "vertices": 6,
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.85,
+            -0.6,
+            0.045
+          ],
+          [
+            0.85,
+            -0.6,
+            0.045
+          ],
+          [
+            -0.85,
+            0.6,
+            0.045
+          ],
+          [
+            0.85,
+            0.6,
+            0.045
+          ]
+        ]
+      }
+    },
+    "uprights": {
+      "posts": {
+        "naming_pattern": "STATION_05_FunctionalTest_Upright_{i}",
+        "primary": true,
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          1.12
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "offsets_m": [
+          [
+            -0.85,
+            -0.62,
+            1.46
+          ],
+          [
+            0.85,
+            -0.62,
+            1.46
+          ]
+        ]
+      },
+      "caps": {
+        "naming_pattern": "STATION_05_FunctionalTest_EndCap_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.044,
+          0.044,
+          0.006
+        ],
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            -0.85,
+            -0.62,
+            2.023
+          ],
+          [
+            0.85,
+            -0.62,
+            2.023
+          ]
+        ]
+      },
+      "back_rail": {
+        "naming": "STATION_05_FunctionalTest_BackRail",
+        "primitive": "box",
+        "dimensions_m": [
+          1.66,
+          0.04,
+          0.04
+        ],
+        "offset_m": [
+          0.0,
+          -0.62,
+          1.98
+        ],
+        "material": "metal_light"
+      }
+    },
+    "test_fixture": {
+      "plate": {
+        "naming": "STATION_05_FunctionalTest_FixturePlate",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.38,
+          0.3,
+          0.02
+        ],
+        "offset_m": [
+          -0.2,
+          -0.42,
+          0.915
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "metal_light"
+      },
+      "plate_holes": {
+        "naming_pattern": "STATION_05_FunctionalTest_PlateHole_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.006,
+        "depth_m": 0.022,
+        "vertices": 8,
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            -0.33,
+            -0.48,
+            0.92
+          ],
+          [
+            -0.07,
+            -0.48,
+            0.92
+          ],
+          [
+            -0.33,
+            -0.36,
+            0.92
+          ],
+          [
+            -0.07,
+            -0.36,
+            0.92
+          ]
+        ]
+      },
+      "locating_pins": {
+        "naming_pattern": "STATION_05_FunctionalTest_LocatingPin_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.006,
+        "depth_m": 0.055,
+        "vertices": 10,
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.31,
+            -0.42,
+            0.945
+          ],
+          [
+            -0.09,
+            -0.42,
+            0.945
+          ]
+        ]
+      },
+      "bushings": {
+        "naming_pattern": "STATION_05_FunctionalTest_Bushing_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.013,
+        "depth_m": 0.018,
+        "vertices": 12,
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.31,
+            -0.42,
+            0.93
+          ],
+          [
+            -0.09,
+            -0.42,
+            0.93
+          ]
+        ]
+      },
+      "nest": {
+        "naming": "STATION_05_FunctionalTest_Nest",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.11,
+          0.03
+        ],
+        "offset_m": [
+          -0.2,
+          -0.42,
+          0.935
+        ],
+        "material": "metal_dark"
+      },
+      "nest_recess": {
+        "naming": "STATION_05_FunctionalTest_NestRecess",
+        "primitive": "box",
+        "dimensions_m": [
+          0.115,
+          0.075,
+          0.018
+        ],
+        "offset_m": [
+          -0.2,
+          -0.42,
+          0.948
+        ],
+        "material": "screen_dark"
+      },
+      "clamp_body": {
+        "naming_pattern": "STATION_05_FunctionalTest_ClampBody_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.05,
+          0.06
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.35,
+            -0.42,
+            0.955
+          ],
+          [
+            -0.05,
+            -0.42,
+            0.955
+          ]
+        ]
+      },
+      "clamp_arm": {
+        "naming_pattern": "STATION_05_FunctionalTest_ClampArm_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.09,
+          0.02,
+          0.015
+        ],
+        "material": "metal_light",
+        "unity_tag": "ClampAnimation",
+        "offsets_m": [
+          [
+            -0.31,
+            -0.42,
+            0.985
+          ],
+          [
+            -0.09,
+            -0.42,
+            0.985
+          ]
+        ]
+      },
+      "clamp_cyl": {
+        "naming_pattern": "STATION_05_FunctionalTest_ClampCyl_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.012,
+        "depth_m": 0.05,
+        "vertices": 10,
+        "axis": "Y",
+        "material": "blue_accent",
+        "offsets_m": [
+          [
+            -0.35,
+            -0.36,
+            0.955
+          ],
+          [
+            -0.05,
+            -0.36,
+            0.955
+          ]
+        ]
+      },
+      "fixture_closed": {
+        "naming": "FixtureClosed",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          -0.2,
+          -0.42,
+          0.985
+        ],
+        "material": "led_green",
+        "hide_render": true,
+        "unity_tag": "FixtureClosed"
+      },
+      "fixture_open": {
+        "naming": "FixtureOpen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          -0.2,
+          -0.3,
+          0.985
+        ],
+        "material": "led_amber",
+        "hide_render": true,
+        "unity_tag": "FixtureOpen"
+      }
+    },
+    "device": {
+      "naming": "PHYS_FunctionalTest_Box_1",
+      "primitive": "box",
+      "dimensions_m": [
+        0.1,
+        0.075,
+        0.11
+      ],
+      "offset_m": [
+        -0.2,
+        -0.42,
+        0.985
+      ],
+      "bevel_m": 0.006,
+      "bevel_segments": 1,
+      "material": "white_panel",
+      "unity_tag": "Box",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.6,
+        "kinematic": true
+      },
+      "display": {
+        "naming": "PHYS_FunctionalTest_Box_1_Screen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.055,
+          0.006,
+          0.032
+        ],
+        "offset_m": [
+          -0.2,
+          -0.384,
+          1.015
+        ],
+        "material": "screen_dark"
+      },
+      "buttons": {
+        "naming_pattern": "STATION_05_FunctionalTest_DeviceBtn_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.012,
+          0.006,
+          0.012
+        ],
+        "material": "blue_accent",
+        "offsets_m": [
+          [
+            -0.22,
+            -0.384,
+            0.965
+          ],
+          [
+            -0.18,
+            -0.384,
+            0.965
+          ]
+        ]
+      },
+      "split_line": {
+        "naming": "STATION_05_FunctionalTest_DeviceSplit",
+        "primitive": "box",
+        "dimensions_m": [
+          0.104,
+          0.079,
+          0.004
+        ],
+        "offset_m": [
+          -0.2,
+          -0.42,
+          0.975
+        ],
+        "material": "warning_black"
+      }
+    },
+    "connector_dock": {
+      "column": {
+        "naming": "STATION_05_FunctionalTest_DockColumn",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.07,
+          0.62
+        ],
+        "offset_m": [
+          -0.2,
+          -0.63,
+          1.21
+        ],
+        "material": "metal_light"
+      },
+      "guide_rail": {
+        "naming": "STATION_05_FunctionalTest_DockGuide",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.03,
+          0.5
+        ],
+        "offset_m": [
+          -0.2,
+          -0.595,
+          1.24
+        ],
+        "material": "metal_dark"
+      },
+      "arm": {
+        "naming": "STATION_05_FunctionalTest_DockArm",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.24,
+          0.06
+        ],
+        "offset_m": [
+          -0.2,
+          -0.51,
+          1.44
+        ],
+        "material": "metal_dark"
+      },
+      "slide": {
+        "naming": "STATION_05_FunctionalTest_DockSlide",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.1,
+          0.14
+        ],
+        "offset_m": [
+          -0.2,
+          -0.45,
+          1.3
+        ],
+        "material": "metal_dark",
+        "unity_tag": "ConnectorAnimation"
+      },
+      "actuator_cyl": {
+        "naming": "STATION_05_FunctionalTest_DockCylinder",
+        "primitive": "cylinder",
+        "radius_m": 0.02,
+        "depth_m": 0.2,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.2,
+          -0.55,
+          1.3
+        ]
+      },
+      "pogo_connector": {
+        "naming": "STATION_05_FunctionalTest_PogoConnector",
+        "primitive": "box",
+        "dimensions_m": [
+          0.09,
+          0.07,
+          0.05
+        ],
+        "offset_m": [
+          -0.2,
+          -0.45,
+          1.17
+        ],
+        "material": "blue_accent",
+        "unity_tag": "ConnectorAnimation"
+      },
+      "pogo_pins": {
+        "naming_pattern": "STATION_05_FunctionalTest_PogoPin_{i}",
+        "primitive": "cylinder",
+        "count": 5,
+        "radius_m": 0.003,
+        "depth_m": 0.03,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "metal_light",
+        "start_offset_m": [
+          -0.24,
+          -0.45,
+          1.13
+        ],
+        "step_m": [
+          0.02,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "test_probes": {
+      "actuator": {
+        "naming": "STATION_05_FunctionalTest_ProbeActuator",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.06,
+          0.06
+        ],
+        "offset_m": [
+          0.02,
+          -0.42,
+          0.97
+        ],
+        "material": "metal_dark"
+      },
+      "probe_head": {
+        "naming": "STATION_05_FunctionalTest_ProbeHead",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          -0.04,
+          -0.42,
+          0.97
+        ],
+        "material": "metal_light",
+        "unity_tag": "ProbeAnimation"
+      },
+      "probe_pins": {
+        "naming_pattern": "STATION_05_FunctionalTest_ProbePin_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.003,
+        "depth_m": 0.04,
+        "vertices": 6,
+        "axis": "X",
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.08,
+            -0.43,
+            0.98
+          ],
+          [
+            -0.08,
+            -0.42,
+            0.97
+          ],
+          [
+            -0.08,
+            -0.41,
+            0.96
+          ]
+        ]
+      }
+    },
+    "instrument_panel": {
+      "panel": {
+        "naming": "STATION_05_FunctionalTest_InstrumentPanel",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.62,
+          0.02,
+          0.42
+        ],
+        "offset_m": [
+          0.42,
+          -0.63,
+          1.3
+        ],
+        "material": "white_panel"
+      },
+      "din_rail": {
+        "naming": "STATION_05_FunctionalTest_InstrumentDin",
+        "primitive": "box",
+        "dimensions_m": [
+          0.56,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          0.42,
+          -0.6,
+          1.42
+        ],
+        "material": "metal_dark"
+      },
+      "pressure_module": {
+        "naming": "STATION_05_FunctionalTest_PressureModule",
+        "primitive": "box",
+        "dimensions_m": [
+          0.08,
+          0.06,
+          0.13
+        ],
+        "offset_m": [
+          0.2,
+          -0.59,
+          1.24
+        ],
+        "material": "metal_light"
+      },
+      "pressure_gauge": {
+        "naming": "STATION_05_FunctionalTest_PressureGauge",
+        "primitive": "cylinder",
+        "radius_m": 0.032,
+        "depth_m": 0.016,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "white_panel",
+        "offset_m": [
+          0.2,
+          -0.555,
+          1.32
+        ],
+        "unity_tag": "PressureGauge"
+      },
+      "pressure_regulator": {
+        "naming": "STATION_05_FunctionalTest_PressureRegulator",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.05,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_light",
+        "offset_m": [
+          0.2,
+          -0.59,
+          1.13
+        ],
+        "knob": {
+          "naming": "STATION_05_FunctionalTest_RegulatorKnob",
+          "primitive": "cylinder",
+          "radius_m": 0.015,
+          "depth_m": 0.02,
+          "vertices": 10,
+          "axis": "Z",
+          "offset_m": [
+            0.2,
+            -0.59,
+            1.165
+          ],
+          "material": "blue_accent"
+        }
+      },
+      "flow_module": {
+        "naming": "STATION_05_FunctionalTest_FlowModule",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.06,
+          0.13
+        ],
+        "offset_m": [
+          0.34,
+          -0.59,
+          1.24
+        ],
+        "material": "blue_accent"
+      },
+      "vi_module": {
+        "naming": "STATION_05_FunctionalTest_VIModule",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.06,
+          0.13
+        ],
+        "offset_m": [
+          0.48,
+          -0.59,
+          1.24
+        ],
+        "material": "metal_dark",
+        "vi_led": {
+          "naming": "STATION_05_FunctionalTest_VIModuleLed",
+          "primitive": "cylinder",
+          "radius_m": 0.007,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            0.48,
+            -0.556,
+            1.29
+          ],
+          "material": "led_green"
+        }
+      },
+      "leak_module": {
+        "naming": "STATION_05_FunctionalTest_LeakModule",
+        "primitive": "box",
+        "dimensions_m": [
+          0.08,
+          0.06,
+          0.11
+        ],
+        "offset_m": [
+          0.62,
+          -0.59,
+          1.23
+        ],
+        "material": "metal_light"
+      },
+      "valves": {
+        "naming_pattern": "STATION_05_FunctionalTest_PneumaticValve_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.03,
+          0.05,
+          0.07
+        ],
+        "material": "blue_accent",
+        "start_offset_m": [
+          0.3,
+          -0.59,
+          1.05
+        ],
+        "step_m": [
+          0.04,
+          0.0,
+          0.0
+        ]
+      },
+      "manifold": {
+        "naming": "STATION_05_FunctionalTest_PressureManifold",
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.05,
+          0.04
+        ],
+        "offset_m": [
+          0.36,
+          -0.59,
+          1.0
+        ],
+        "material": "metal_dark"
+      },
+      "tube_1": {
+        "naming": "STATION_05_FunctionalTest_TestTube_1",
+        "primitive": "cylinder",
+        "radius_m": 0.005,
+        "depth_m": 0.5,
+        "vertices": 6,
+        "axis": "X",
+        "material": "blue_accent",
+        "offset_m": [
+          0.05,
+          -0.55,
+          1.0
+        ]
+      },
+      "tube_2": {
+        "naming": "STATION_05_FunctionalTest_TestTube_2",
+        "primitive": "cylinder",
+        "radius_m": 0.005,
+        "depth_m": 0.28,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.18,
+          -0.55,
+          1.1
+        ]
+      }
+    },
+    "controller_cabinet": {
+      "body": {
+        "naming": "STATION_05_FunctionalTest_Cabinet",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.5,
+          0.4,
+          0.9
+        ],
+        "offset_m": [
+          -1.2,
+          -0.5,
+          0.47
+        ],
+        "bevel_m": 0.008,
+        "bevel_segments": 1,
+        "material": "metal_light",
+        "collider": "static",
+        "unity_tag": "Cabinet"
+      },
+      "plinth": {
+        "naming": "STATION_05_FunctionalTest_CabinetPlinth",
+        "primitive": "box",
+        "dimensions_m": [
+          0.46,
+          0.38,
+          0.05
+        ],
+        "offset_m": [
+          -1.2,
+          -0.5,
+          0.03
+        ],
+        "material": "metal_dark"
+      },
+      "door": {
+        "naming": "STATION_05_FunctionalTest_CabinetDoor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.44,
+          0.02,
+          0.8
+        ],
+        "offset_m": [
+          -1.2,
+          -0.295,
+          0.49
+        ],
+        "material": "glass_window"
+      },
+      "handle": {
+        "naming": "STATION_05_FunctionalTest_CabinetHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.035,
+          0.12
+        ],
+        "offset_m": [
+          -1.02,
+          -0.28,
+          0.49
+        ],
+        "material": "metal_dark"
+      },
+      "led": {
+        "naming": "STATION_05_FunctionalTest_CabinetLed",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.012,
+        "vertices": 8,
+        "axis": "Y",
+        "offset_m": [
+          -1.36,
+          -0.285,
+          0.82
+        ],
+        "material": "led_green"
+      },
+      "din_rail": {
+        "naming": "STATION_05_FunctionalTest_CabinetDin",
+        "primitive": "box",
+        "dimensions_m": [
+          0.36,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.2,
+          -0.39,
+          0.7
+        ],
+        "material": "metal_dark"
+      },
+      "plc": {
+        "naming": "STATION_05_FunctionalTest_PLC",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.07,
+          0.14
+        ],
+        "offset_m": [
+          -1.32,
+          -0.39,
+          0.62
+        ],
+        "material": "metal_dark",
+        "acc": {
+          "naming": "STATION_05_FunctionalTest_PLCAccent",
+          "primitive": "box",
+          "dimensions_m": [
+            0.12,
+            0.006,
+            0.02
+          ],
+          "offset_m": [
+            -1.32,
+            -0.426,
+            0.62
+          ],
+          "material": "blue_accent"
+        },
+        "led2": {
+          "naming": "STATION_05_FunctionalTest_PLCLed",
+          "primitive": "cylinder",
+          "radius_m": 0.006,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -1.36,
+            -0.426,
+            0.66
+          ],
+          "material": "led_green"
+        }
+      },
+      "daq": {
+        "naming": "STATION_05_FunctionalTest_DAQ",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.07,
+          0.12
+        ],
+        "offset_m": [
+          -1.18,
+          -0.39,
+          0.62
+        ],
+        "material": "blue_accent"
+      },
+      "ipc": {
+        "naming": "STATION_05_FunctionalTest_IndustrialPC",
+        "primitive": "box",
+        "dimensions_m": [
+          0.14,
+          0.09,
+          0.16
+        ],
+        "offset_m": [
+          -1.2,
+          -0.39,
+          0.4
+        ],
+        "material": "metal_dark",
+        "ipcled": {
+          "naming": "STATION_05_FunctionalTest_IPCLed",
+          "primitive": "cylinder",
+          "radius_m": 0.007,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -1.26,
+            -0.436,
+            0.45
+          ],
+          "material": "led_green"
+        }
+      },
+      "psu": {
+        "naming": "STATION_05_FunctionalTest_PSU",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.12
+        ],
+        "offset_m": [
+          -1.05,
+          -0.39,
+          0.7
+        ],
+        "material": "metal_light"
+      },
+      "terminals": {
+        "naming_pattern": "STATION_05_FunctionalTest_Terminal_{i}",
+        "primitive": "box",
+        "count": 6,
+        "dimensions_m": [
+          0.012,
+          0.045,
+          0.05
+        ],
+        "material": "metal_light",
+        "start_offset_m": [
+          -1.34,
+          -0.39,
+          0.48
+        ],
+        "step_m": [
+          0.03,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "hmi": {
+      "body": {
+        "naming": "STATION_05_FunctionalTest_HMI",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.05,
+          0.28
+        ],
+        "offset_m": [
+          0.85,
+          -0.5,
+          1.3
+        ],
+        "tilt_deg": [
+          -12,
+          0,
+          0
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark",
+        "collider": "static",
+        "unity_tag": "HMI"
+      },
+      "screen": {
+        "naming": "STATION_05_FunctionalTest_HMIScreen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.01,
+          0.24
+        ],
+        "offset_m": [
+          0.85,
+          -0.472,
+          1.31
+        ],
+        "tilt_deg": [
+          -12,
+          0,
+          0
+        ],
+        "material": "screen_dark"
+      },
+      "pole": {
+        "naming": "STATION_05_FunctionalTest_HMIPole",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 0.42,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          0.85,
+          -0.55,
+          1.1
+        ]
+      },
+      "t_title": {
+        "naming": "STATION_05_FunctionalTest_HMITitle",
+        "primitive": "text_mesh",
+        "text": "FUNCTIONAL TEST",
+        "size_m": 0.019,
+        "world_position_m": [
+          17.35,
+          5.44,
+          1.4
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      },
+      "t_pass": {
+        "naming": "STATION_05_FunctionalTest_HMIPass",
+        "primitive": "text_mesh",
+        "text": "PASS",
+        "size_m": 0.05,
+        "world_position_m": [
+          17.35,
+          5.445,
+          1.34
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "t_fp": {
+        "naming": "STATION_05_FunctionalTest_HMILine1",
+        "primitive": "text_mesh",
+        "text": "Flow OK   Pressure OK",
+        "size_m": 0.016,
+        "world_position_m": [
+          17.35,
+          5.45,
+          1.28
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "t_vi": {
+        "naming": "STATION_05_FunctionalTest_HMILine2",
+        "primitive": "text_mesh",
+        "text": "Voltage OK  Current OK",
+        "size_m": 0.016,
+        "world_position_m": [
+          17.35,
+          5.45,
+          1.24
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "t_cycle": {
+        "naming": "STATION_05_FunctionalTest_HMICycle",
+        "primitive": "text_mesh",
+        "text": "Cycle 8.2 s",
+        "size_m": 0.016,
+        "world_position_m": [
+          17.35,
+          5.45,
+          1.2
+        ],
+        "rotation_deg": [
+          78,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      }
+    },
+    "andon": {
+      "housing": {
+        "naming": "STATION_05_FunctionalTest_Andon",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.06,
+          0.16
+        ],
+        "offset_m": [
+          0.1,
+          -0.6,
+          1.62
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "pass_lamp": {
+        "naming": "PassLamp",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.02,
+          0.11
+        ],
+        "offset_m": [
+          0.02,
+          -0.565,
+          1.62
+        ],
+        "material": "led_green",
+        "unity_tag": "PassLamp"
+      },
+      "fail_lamp": {
+        "naming": "FailLamp",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.02,
+          0.11
+        ],
+        "offset_m": [
+          0.18,
+          -0.565,
+          1.62
+        ],
+        "material": "led_red",
+        "unity_tag": "FailLamp"
+      },
+      "bracket": {
+        "naming": "STATION_05_FunctionalTest_AndonBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.14
+        ],
+        "offset_m": [
+          0.1,
+          -0.62,
+          1.53
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "stack_light": {
+      "pole": {
+        "naming": "STATION_05_FunctionalTest_StackLight",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.015,
+        "depth_m": 0.16,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          0.9,
+          -0.8,
+          1.86
+        ],
+        "unity_tag": "StackLight"
+      },
+      "bracket": {
+        "naming": "STATION_05_FunctionalTest_StackLightBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.03
+        ],
+        "offset_m": [
+          0.9,
+          -0.72,
+          1.76
+        ],
+        "material": "metal_dark"
+      },
+      "segments": {
+        "naming_pattern": "STATION_05_FunctionalTest_StackSeg_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.032,
+        "depth_m": 0.06,
+        "vertices": 16,
+        "axis": "Z",
+        "material_cycle": [
+          "led_red",
+          "led_amber",
+          "led_green"
+        ],
+        "start_offset_m": [
+          0.9,
+          -0.8,
+          1.97
+        ],
+        "step_m": [
+          0.0,
+          0.0,
+          0.06
+        ]
+      },
+      "dome": {
+        "naming": "STATION_05_FunctionalTest_StackDome",
+        "primitive": "cylinder",
+        "radius_m": 0.032,
+        "depth_m": 0.025,
+        "vertices": 16,
+        "axis": "Z",
+        "material": "warning_black",
+        "offset_m": [
+          0.9,
+          -0.8,
+          2.07
+        ]
+      }
+    },
+    "emergency_stop": {
+      "post": {
+        "naming": "STATION_05_FunctionalTest_EStopPost",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.025,
+        "depth_m": 0.9,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -1.05,
+          -0.7,
+          0.5
+        ]
+      },
+      "plate": {
+        "naming": "STATION_05_FunctionalTest_EStop",
+        "primitive": "box",
+        "dimensions_m": [
+          0.14,
+          0.02,
+          0.14
+        ],
+        "offset_m": [
+          -1.05,
+          -0.62,
+          1.1
+        ],
+        "material": "safety_yellow",
+        "unity_tag": "EmergencyStop"
+      },
+      "button": {
+        "naming": "STATION_05_FunctionalTest_EStopButton",
+        "primitive": "cylinder",
+        "radius_m": 0.038,
+        "depth_m": 0.04,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "led_red",
+        "offset_m": [
+          -1.05,
+          -0.585,
+          1.1
+        ]
+      }
+    },
+    "start_button": {
+      "plate": {
+        "naming": "STATION_05_FunctionalTest_StartPlate",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.02,
+          0.1
+        ],
+        "offset_m": [
+          -0.6,
+          0.6,
+          0.94
+        ],
+        "material": "metal_dark"
+      },
+      "button": {
+        "naming": "TestStartButton",
+        "primitive": "cylinder",
+        "radius_m": 0.03,
+        "depth_m": 0.03,
+        "vertices": 14,
+        "axis": "Z",
+        "material": "led_green",
+        "offset_m": [
+          -0.63,
+          0.6,
+          0.965
+        ],
+        "unity_tag": "TestStartButton"
+      },
+      "button2": {
+        "naming": "STATION_05_FunctionalTest_ResetButton",
+        "primitive": "cylinder",
+        "radius_m": 0.025,
+        "depth_m": 0.03,
+        "vertices": 14,
+        "axis": "Z",
+        "material": "led_amber",
+        "offset_m": [
+          -0.57,
+          0.6,
+          0.965
+        ]
+      }
+    },
+    "scanner": {
+      "body": {
+        "naming": "STATION_05_FunctionalTest_Scanner",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.08,
+          0.1,
+          0.06
+        ],
+        "offset_m": [
+          0.3,
+          -0.5,
+          1.4
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "metal_dark",
+        "unity_tag": "Sensor"
+      },
+      "window": {
+        "naming": "STATION_05_FunctionalTest_ScannerWindow",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.006,
+          0.04
+        ],
+        "offset_m": [
+          0.3,
+          -0.445,
+          1.4
+        ],
+        "material": "led_red"
+      },
+      "bracket": {
+        "naming": "STATION_05_FunctionalTest_ScannerBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.08,
+          0.2
+        ],
+        "offset_m": [
+          0.3,
+          -0.56,
+          1.3
+        ],
+        "material": "metal_dark"
+      }
+    },
+    "task_light": {
+      "gantry_beam": {
+        "naming": "STATION_05_FunctionalTest_GantryBeam",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.66,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          -0.62,
+          2.2
+        ],
+        "material": "metal_light"
+      },
+      "fixture": {
+        "naming": "STATION_05_FunctionalTest_TaskLight",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.1,
+          0.05
+        ],
+        "offset_m": [
+          0.0,
+          -0.55,
+          2.15
+        ],
+        "material": "metal_light",
+        "unity_tag": "TaskLight"
+      },
+      "emitter": {
+        "naming": "STATION_05_FunctionalTest_TaskLightEmitter",
+        "primitive": "box",
+        "dimensions_m": [
+          1.16,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          0.0,
+          -0.51,
+          2.13
+        ],
+        "material": "led_white"
+      },
+      "hangers": {
+        "naming_pattern": "STATION_05_FunctionalTest_TaskHanger_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.03,
+          0.09,
+          0.06
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.4,
+            -0.585,
+            2.18
+          ],
+          [
+            0.4,
+            -0.585,
+            2.18
+          ]
+        ]
+      },
+      "review_light": {
+        "naming": "STATION_05_FunctionalTest_ReviewLight",
+        "type": "AREA",
+        "energy_w": 90.0,
+        "size_m": 1.0,
+        "offset_m": [
+          0.0,
+          -0.3,
+          2.05
+        ],
+        "export_to_glb": false
+      }
+    },
+    "conveyor_in": {
+      "belt": {
+        "naming": "CONVEYOR_FunctionalTest_Input",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.52,
+          0.012
+        ],
+        "offset_m": [
+          -1.875,
+          0.0,
+          0.418
+        ],
+        "material": "rubber_black",
+        "collider": "static",
+        "unity_tag": "Conveyor",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.0,
+          "kinematic": true
+        },
+        "belt_speed_mps": 0.15
+      },
+      "frame_tie": {
+        "naming": "CONVEYOR_FunctionalTest_Input_Frame",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.58,
+          0.04
+        ],
+        "offset_m": [
+          -1.875,
+          0.0,
+          0.3
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "side_frames": {
+        "naming_pattern": "STATION_05_FunctionalTest_ConvInSide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.2,
+          0.045,
+          0.12
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.875,
+            -0.28,
+            0.36
+          ],
+          [
+            -1.875,
+            0.28,
+            0.36
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_05_FunctionalTest_ConvInRoller_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.024,
+        "depth_m": 0.54,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_light",
+        "start_offset_m": [
+          -2.4,
+          0.0,
+          0.398
+        ],
+        "step_m": [
+          0.14,
+          0.0,
+          0.0
+        ]
+      },
+      "legs": {
+        "naming_pattern": "STATION_05_FunctionalTest_ConvInLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.3
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -2.35,
+            -0.26,
+            0.15
+          ],
+          [
+            -1.4,
+            -0.26,
+            0.15
+          ],
+          [
+            -2.35,
+            0.26,
+            0.15
+          ],
+          [
+            -1.4,
+            0.26,
+            0.15
+          ]
+        ]
+      }
+    },
+    "conveyor_out": {
+      "belt": {
+        "naming": "CONVEYOR_FunctionalTest_Output",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.52,
+          0.012
+        ],
+        "offset_m": [
+          1.875,
+          0.0,
+          0.418
+        ],
+        "material": "rubber_black",
+        "collider": "static",
+        "unity_tag": "Conveyor",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.0,
+          "kinematic": true
+        },
+        "belt_speed_mps": 0.15,
+        "connects_to": "S06"
+      },
+      "frame_tie": {
+        "naming": "CONVEYOR_FunctionalTest_Output_Frame",
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.58,
+          0.04
+        ],
+        "offset_m": [
+          1.875,
+          0.0,
+          0.3
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "side_frames": {
+        "naming_pattern": "STATION_05_FunctionalTest_ConvOutSide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.2,
+          0.045,
+          0.12
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            1.875,
+            -0.28,
+            0.36
+          ],
+          [
+            1.875,
+            0.28,
+            0.36
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_05_FunctionalTest_ConvOutRoller_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.024,
+        "depth_m": 0.54,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_light",
+        "start_offset_m": [
+          1.35,
+          0.0,
+          0.398
+        ],
+        "step_m": [
+          0.14,
+          0.0,
+          0.0
+        ]
+      },
+      "legs": {
+        "naming_pattern": "STATION_05_FunctionalTest_ConvOutLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.3
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            1.4,
+            -0.26,
+            0.15
+          ],
+          [
+            2.35,
+            -0.26,
+            0.15
+          ],
+          [
+            1.4,
+            0.26,
+            0.15
+          ],
+          [
+            2.35,
+            0.26,
+            0.15
+          ]
+        ]
+      },
+      "drive_motor": {
+        "naming": "STATION_05_FunctionalTest_ConvOutMotor",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.14,
+        "vertices": 14,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offset_m": [
+          2.38,
+          0.33,
+          0.3
+        ]
+      }
+    },
+    "services": {
+      "frl_body": {
+        "naming": "STATION_05_FunctionalTest_FRL",
+        "primary": true,
+        "primitive": "cylinder",
+        "radius_m": 0.028,
+        "depth_m": 0.1,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_light",
+        "offset_m": [
+          -0.85,
+          -0.55,
+          0.55
+        ]
+      },
+      "frl_bowl": {
+        "naming": "STATION_05_FunctionalTest_FRLBowl",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.05,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "screen_dark",
+        "offset_m": [
+          -0.85,
+          -0.55,
+          0.48
+        ]
+      },
+      "frl_knob": {
+        "naming": "STATION_05_FunctionalTest_FRLKnob",
+        "primitive": "cylinder",
+        "radius_m": 0.015,
+        "depth_m": 0.02,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.85,
+          -0.55,
+          0.62
+        ]
+      },
+      "cable_duct": {
+        "naming": "STATION_05_FunctionalTest_CableDuct",
+        "primitive": "box",
+        "dimensions_m": [
+          1.5,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          -0.35,
+          -0.62,
+          0.3
+        ],
+        "material": "metal_dark"
+      },
+      "cable_gland": {
+        "naming": "STATION_05_FunctionalTest_CableGland",
+        "primitive": "cylinder",
+        "radius_m": 0.018,
+        "depth_m": 0.03,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offset_m": [
+          -1.2,
+          -0.5,
+          0.06
+        ]
+      },
+      "m12_connectors": {
+        "naming_pattern": "STATION_05_FunctionalTest_M12_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.012,
+        "depth_m": 0.035,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "metal_dark",
+        "start_offset_m": [
+          0.2,
+          -0.6,
+          0.95
+        ],
+        "step_m": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "quick_release": {
+        "naming_pattern": "STATION_05_FunctionalTest_QuickRelease_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.014,
+        "depth_m": 0.03,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            0.3,
+            -0.6,
+            0.98
+          ],
+          [
+            0.4,
+            -0.6,
+            0.98
+          ]
+        ]
+      },
+      "hmi_cable": {
+        "naming": "STATION_05_FunctionalTest_HMICable",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.5,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          0.87,
+          -0.57,
+          0.75
+        ]
+      }
+    },
+    "maintenance": {
+      "access_panel": {
+        "naming": "STATION_05_FunctionalTest_AccessPanel",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.3,
+          0.02,
+          0.24
+        ],
+        "offset_m": [
+          0.42,
+          -0.635,
+          1.05
+        ],
+        "material": "metal_light"
+      },
+      "panel_screws": {
+        "naming_pattern": "STATION_05_FunctionalTest_PanelScrew_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.008,
+        "depth_m": 0.012,
+        "vertices": 6,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            0.29,
+            -0.646,
+            0.95
+          ],
+          [
+            0.55,
+            -0.646,
+            0.95
+          ],
+          [
+            0.29,
+            -0.646,
+            1.15
+          ],
+          [
+            0.55,
+            -0.646,
+            1.15
+          ]
+        ]
+      },
+      "asset_id_plate": {
+        "naming": "STATION_05_FunctionalTest_AssetIDPlate",
+        "primitive": "box",
+        "dimensions_m": [
+          0.14,
+          0.006,
+          0.06
+        ],
+        "offset_m": [
+          -0.6,
+          0.605,
+          0.55
+        ],
+        "material": "metal_light",
+        "id_text": {
+          "naming": "STATION_05_FunctionalTest_AssetIDText",
+          "primitive": "text_mesh",
+          "text": "S05-FT-001",
+          "size_m": 0.022,
+          "world_position_m": [
+            15.9,
+            6.61,
+            0.55
+          ],
+          "rotation_deg": [
+            90,
+            0,
+            180
+          ],
+          "material": "warning_black"
+        }
+      },
+      "calib_stickers": {
+        "naming_pattern": "STATION_05_FunctionalTest_CalibSticker_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.035,
+          0.005,
+          0.025
+        ],
+        "material": "safety_yellow",
+        "offsets_m": [
+          [
+            0.2,
+            -0.556,
+            1.16
+          ],
+          [
+            0.34,
+            -0.556,
+            1.3
+          ],
+          [
+            0.62,
+            -0.556,
+            1.28
+          ]
+        ]
+      },
+      "service_label": {
+        "naming": "STATION_05_FunctionalTest_ServiceLabel",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.005,
+          0.03
+        ],
+        "offset_m": [
+          -1.0,
+          -0.285,
+          0.65
+        ],
+        "material": "safety_yellow"
+      }
+    },
+    "floor_markings": {
+      "operator_mat": {
+        "naming": "STATION_05_FunctionalTest_OperatorMat",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.4,
+          0.6,
+          0.01
+        ],
+        "offset_m": [
+          0.0,
+          1.05,
+          0.006
+        ],
+        "material": "rubber_black",
+        "unity_tag": "FloorMarking"
+      },
+      "safety_stripe": {
+        "naming": "STATION_05_FunctionalTest_SafetyStripe",
+        "primitive": "box",
+        "dimensions_m": [
+          2.2,
+          0.1,
+          0.006
+        ],
+        "offset_m": [
+          0.0,
+          1.45,
+          0.004
+        ],
+        "material": "safety_yellow",
+        "collider": "static",
+        "unity_tag": "FloorMarking"
+      }
+    },
+    "labels": {
+      "id_plate": {
+        "naming": "STATION_05_FunctionalTest_IDPlate",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.28,
+          0.008,
+          0.08
+        ],
+        "offset_m": [
+          0.3,
+          0.605,
+          0.6
+        ],
+        "material": "metal_light",
+        "id_text": {
+          "naming": "STATION_05_FunctionalTest_IDText",
+          "primitive": "text_mesh",
+          "text": "S05 · FUNCTIONAL TEST",
+          "size_m": 0.04,
+          "world_position_m": [
+            16.8,
+            6.61,
+            0.6
+          ],
+          "rotation_deg": [
+            90,
+            0,
+            180
+          ],
+          "material": "warning_black"
+        }
+      },
+      "flow_arrow": {
+        "naming": "STATION_05_FunctionalTest_FlowArrow",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.006,
+          0.1
+        ],
+        "offset_m": [
+          1.55,
+          0.34,
+          0.55
+        ],
+        "material": "safety_yellow",
+        "arrow_text": {
+          "naming": "STATION_05_FunctionalTest_FlowText",
+          "primitive": "text_mesh",
+          "text": "→ S06",
+          "size_m": 0.05,
+          "world_position_m": [
+            18.05,
+            6.34,
+            0.55
+          ],
+          "rotation_deg": [
+            90,
+            0,
+            180
+          ],
+          "material": "warning_black"
+        }
+      }
+    },
+    "info_panel": {
+      "board": {
+        "naming": "INFO_FunctionalTest_Panel",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          1.2,
+          0.05,
+          0.7
+        ],
+        "world_position_m": [
+          16.5,
+          8.6,
+          1.6
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "bevel_m": 0.02,
+        "bevel_segments": 2,
+        "material": "white_panel",
+        "collider": "static",
+        "unity_tag": "InfoPanel"
+      },
+      "post": {
+        "naming": "INFO_FunctionalTest_Panel_Post",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          1.28
+        ],
+        "world_position_m": [
+          16.5,
+          8.62,
+          0.64
+        ],
+        "material": "metal_dark"
+      },
+      "title": {
+        "naming": "INFO_FunctionalTest_Panel_Title",
+        "primitive": "text_mesh",
+        "text": "S05 · Functional Test",
+        "size_m": 0.13,
+        "world_position_m": [
+          16.5,
+          8.64,
+          1.82
+        ],
+        "rotation_deg": [
+          90,
+          0,
+          180
+        ],
+        "material": "warning_black"
+      },
+      "body": {
+        "naming": "INFO_FunctionalTest_Panel_Body",
+        "primitive": "text_mesh",
+        "text": "Functional test: flow, pressure, voltage and current verified before packaging.",
+        "size_m": 0.06,
+        "wrap_chars": 26,
+        "world_position_m": [
+          16.5,
+          8.64,
+          1.48
+        ],
+        "rotation_deg": [
+          90,
+          0,
+          180
+        ],
+        "material": "warning_black"
+      }
+    },
+    "trigger_zone": {
+      "naming": "TRIGGER_Info_FunctionalTest",
+      "unity_tag": "Trigger",
+      "is_trigger": true,
+      "primitive": "box",
+      "dimensions_m": [
+        2.2,
+        1.6,
+        2.2
+      ],
+      "world_position_m": [
+        16.5,
+        9.3,
+        1.1
+      ],
+      "display": "wire",
+      "hide_render": true
+    }
+  }
+}

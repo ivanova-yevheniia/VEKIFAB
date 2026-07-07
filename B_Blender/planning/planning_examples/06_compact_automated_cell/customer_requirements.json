@@ -1,0 +1,33 @@
+{
+  "customer": {
+    "name": "RoboCell Co"
+  },
+  "product": {
+    "name": "Automotive Relay",
+    "target_cycle_time_s": 50
+  },
+  "daily_output": {
+    "target_units_per_day": 400,
+    "shift_hours": 8,
+    "shifts_per_day": 1
+  },
+  "automation_level": {
+    "level": "full"
+  },
+  "available_area_m": {
+    "length_x": 12,
+    "width_y": 10
+  },
+  "workers": {
+    "total": 3
+  },
+  "quality_control": {
+    "methods": [
+      "optical"
+    ],
+    "regulated": false
+  },
+  "constraints": {
+    "budget": "medium"
+  }
+}

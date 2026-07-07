@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.2",
+  "customer": {
+    "name": "MediFlow Devices GmbH",
+    "contact": "engineering@mediflow.example",
+    "industry": "Medical device manufacturing"
+  },
+  "product": {
+    "name": "Compact Medical Infusion Pump",
+    "model_code": "MF-IP-100",
+    "description": "Compact, battery-powered infusion pump for controlled IV medication delivery.",
+    "approx_size_mm": { "x": 120, "y": 80, "z": 45 },
+    "approx_weight_g": 350,
+    "variants": ["standard", "wireless"]
+  },
+  "daily_output": {
+    "target_units_per_day": 480,
+    "shifts_per_day": 1,
+    "shift_hours": 8,
+    "target_cycle_time_s": 60
+  },
+  "available_area_m": {
+    "length_x": 25.0,
+    "width_y": 18.0,
+    "clear_height_z": 4.0
+  },
+  "automation_level": {
+    "level": "semi-automated",
+    "description": "Hybrid line: manual assisted assembly plus automated robot handling, vision and functional test."
+  },
+  "workers": {
+    "total": 6,
+    "roles": [
+      { "role": "Loading operator", "count": 1 },
+      { "role": "Assembly operator", "count": 2 },
+      { "role": "Quality inspector", "count": 1 },
+      { "role": "Packaging operator", "count": 1 },
+      { "role": "Line supervisor", "count": 1 }
+    ]
+  },
+  "required_processes": [
+    "Component loading and kitting",
+    "Assisted manual assembly",
+    "Automated robotic handling and transfer",
+    "Automated optical vision inspection",
+    "Functional / electrical test",
+    "Packaging and labeling",
+    "Finished goods storage"
+  ],
+  "quality_control": {
+    "methods": ["Optical vision inspection", "Automated functional test"],
+    "inspection_points": ["Post-assembly vision", "End-of-line functional test"],
+    "traceability": "Per-unit serial number and test record",
+    "reject_handling": "Automatic diversion of failed units to reject bin"
+  },
+  "safety": {
+    "robot_cell": "Fully fenced robot cell with interlocked access",
+    "emergency_stops": "E-stop at every manned station",
+    "walkway": "Clearly marked pedestrian walkway separated from machine zones",
+    "min_walkway_width_m": 1.2
+  },
+  "unity_walkthrough_requirements": {
+    "avatar_walkthrough": true,
+    "walkway_path": "Continuous walkable path passing all stations in process order",
+    "info_panels": "One info panel per station, readable from the walkway",
+    "inspection_points": "Avatar stops in front of each station for inspection",
+    "collision": "Avatar collides with stations, fences and equipment; walks only on the floor/walkway",
+    "min_walkway_width_m": 1.2
+  },
+  "basic_physics_requirements": {
+    "gravity": true,
+    "floor_collider": true,
+    "station_colliders": "Static colliders on all stations and fences",
+    "pickable_parts": "Selected product parts flagged as movable rigid bodies",
+    "conveyor_motion": "Conveyor belts move parts along the line (kinematic)",
+    "notes": "Physics kept lightweight: static colliders plus a few pickable rigid bodies, no full soft-body or fluid simulation."
+  }
+}

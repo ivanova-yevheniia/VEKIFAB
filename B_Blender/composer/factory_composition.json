@@ -1,0 +1,466 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "VEKIFAB \u2014 AI Factory Planner",
+    "work_package": "WP B \u2014 Blender station prefab generation",
+    "use_case": "Planner-driven line; Unity assembles the walkthrough",
+    "product": "Infusion Pump MF-IP-100",
+    "line": "Infusion_Pump_MF-IP-100_Line"
+  },
+  "units": "meters",
+  "factory_floor": {
+    "size_m": {
+      "x": 25.0,
+      "y": 18.0
+    },
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "asset_library": "assets/asset_registry.json",
+  "stations": [
+    {
+      "id": "S01",
+      "type": "loading_station",
+      "name": "STATION_S01_Loading",
+      "world_position_m": [
+        2.5,
+        6.12,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "composition_file": "station_compositions/S01_loading_composition.json",
+      "instance_count": 25
+    },
+    {
+      "id": "S02A",
+      "type": "assisted_assembly_station",
+      "name": "STATION_S02A_Assembly",
+      "world_position_m": [
+        5.83,
+        4.82,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 2.5,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "composition_file": "station_compositions/S02A_assembly_composition.json",
+      "instance_count": 22
+    },
+    {
+      "id": "S02B",
+      "type": "assisted_assembly_station",
+      "name": "STATION_S02B_Assembly",
+      "world_position_m": [
+        5.83,
+        7.42,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 2.5,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "composition_file": "station_compositions/S02B_assembly_composition.json",
+      "instance_count": 22
+    },
+    {
+      "id": "S03",
+      "type": "robot_handling_cell",
+      "name": "STATION_S03_RobotCell",
+      "world_position_m": [
+        9.17,
+        6.12,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 3.0,
+        "y": 3.0,
+        "z": 2.5
+      },
+      "composition_file": "station_compositions/S03_robotcell_composition.json",
+      "instance_count": 23
+    },
+    {
+      "id": "S04",
+      "type": "vision_inspection_station",
+      "name": "STATION_S04_Vision",
+      "world_position_m": [
+        12.5,
+        6.12,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.5
+      },
+      "composition_file": "station_compositions/S04_vision_composition.json",
+      "instance_count": 17
+    },
+    {
+      "id": "S05",
+      "type": "functional_test_station",
+      "name": "STATION_S05_FunctionalTest",
+      "world_position_m": [
+        15.83,
+        6.12,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "composition_file": "station_compositions/S05_functionaltest_composition.json",
+      "instance_count": 18
+    },
+    {
+      "id": "S06",
+      "type": "packaging_station",
+      "name": "STATION_S06_Packaging",
+      "world_position_m": [
+        19.17,
+        6.12,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 2.5,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "composition_file": "station_compositions/S06_packaging_composition.json",
+      "instance_count": 21
+    },
+    {
+      "id": "S07",
+      "type": "finished_goods_storage",
+      "name": "STATION_S07_Storage",
+      "world_position_m": [
+        22.5,
+        6.12,
+        0.0
+      ],
+      "envelope_m": {
+        "x": 3.5,
+        "y": 3.5,
+        "z": 3.0
+      },
+      "composition_file": "station_compositions/S07_storage_composition.json",
+      "instance_count": 23
+    }
+  ],
+  "conveyors": [
+    {
+      "id": "C01",
+      "name": "CONVEYOR_S01_S02A",
+      "from": "S01",
+      "to": "S02A",
+      "start_m": [
+        3.5,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        4.83,
+        4.82,
+        0.4
+      ],
+      "width_m": 0.6
+    },
+    {
+      "id": "C02",
+      "name": "CONVEYOR_S01_S02B",
+      "from": "S01",
+      "to": "S02B",
+      "start_m": [
+        3.5,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        4.83,
+        7.42,
+        0.4
+      ],
+      "width_m": 0.6
+    },
+    {
+      "id": "C03",
+      "name": "CONVEYOR_S02A_S03",
+      "from": "S02A",
+      "to": "S03",
+      "start_m": [
+        6.83,
+        4.82,
+        0.4
+      ],
+      "end_m": [
+        8.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6
+    },
+    {
+      "id": "C04",
+      "name": "CONVEYOR_S02B_S03",
+      "from": "S02B",
+      "to": "S03",
+      "start_m": [
+        6.83,
+        7.42,
+        0.4
+      ],
+      "end_m": [
+        8.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6
+    },
+    {
+      "id": "C05",
+      "name": "CONVEYOR_S03_S04",
+      "from": "S03",
+      "to": "S04",
+      "start_m": [
+        10.17,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        11.5,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6
+    },
+    {
+      "id": "C06",
+      "name": "CONVEYOR_S04_S05",
+      "from": "S04",
+      "to": "S05",
+      "start_m": [
+        13.5,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        14.83,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6
+    },
+    {
+      "id": "C07",
+      "name": "CONVEYOR_S05_S06",
+      "from": "S05",
+      "to": "S06",
+      "start_m": [
+        16.83,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        18.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6
+    },
+    {
+      "id": "C08",
+      "name": "CONVEYOR_S06_S07",
+      "from": "S06",
+      "to": "S07",
+      "start_m": [
+        20.17,
+        6.12,
+        0.4
+      ],
+      "end_m": [
+        21.5,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6
+    }
+  ],
+  "avatar_walkway": {
+    "name": "PATH_AvatarWalkway",
+    "width_m": 1.6,
+    "waypoints_m": [
+      [
+        1.5,
+        10.44,
+        0.0
+      ],
+      [
+        2.5,
+        10.44,
+        0.0
+      ],
+      [
+        5.83,
+        10.44,
+        0.0
+      ],
+      [
+        9.17,
+        10.44,
+        0.0
+      ],
+      [
+        12.5,
+        10.44,
+        0.0
+      ],
+      [
+        15.83,
+        10.44,
+        0.0
+      ],
+      [
+        19.17,
+        10.44,
+        0.0
+      ],
+      [
+        22.5,
+        10.44,
+        0.0
+      ],
+      [
+        23.5,
+        10.44,
+        0.0
+      ]
+    ]
+  },
+  "info_panels": [
+    {
+      "id": "IP_S01",
+      "station": "S01",
+      "name": "INFO_Loading_Panel",
+      "position_m": [
+        2.5,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S02A",
+      "station": "S02A",
+      "name": "INFO_Assembly_Panel_A",
+      "position_m": [
+        5.83,
+        7.42,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S02B",
+      "station": "S02B",
+      "name": "INFO_Assembly_Panel_B",
+      "position_m": [
+        5.83,
+        8.94,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S03",
+      "station": "S03",
+      "name": "INFO_RobotCell_Panel",
+      "position_m": [
+        9.17,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S04",
+      "station": "S04",
+      "name": "INFO_Vision_Panel",
+      "position_m": [
+        12.5,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S05",
+      "station": "S05",
+      "name": "INFO_FunctionalTest_Panel",
+      "position_m": [
+        15.83,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S06",
+      "station": "S06",
+      "name": "INFO_Packaging_Panel",
+      "position_m": [
+        19.17,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S07",
+      "station": "S07",
+      "name": "INFO_Storage_Panel",
+      "position_m": [
+        22.5,
+        8.72,
+        1.6
+      ]
+    }
+  ],
+  "safety_zones": [
+    {
+      "id": "F_S03",
+      "name": "STATION_S03_RobotCell_Fence",
+      "station": "S03",
+      "type": "robot_cell_fence",
+      "area_min_m": [
+        7.77,
+        4.72,
+        0.0
+      ],
+      "area_max_m": [
+        10.57,
+        7.52,
+        0.0
+      ],
+      "height_m": 2.0
+    }
+  ],
+  "export": {
+    "blend_dir": "exports/blend",
+    "glb_dir": "exports/glb",
+    "screenshots_dir": "exports/screenshots",
+    "station_basenames": {
+      "S01": "loading_station",
+      "S02A": "assembly_station",
+      "S02B": "assembly_station",
+      "S03": "robot_cell",
+      "S04": "vision_inspection",
+      "S05": "functional_test_station",
+      "S06": "packaging_station",
+      "S07": "storage_station"
+    }
+  }
+}

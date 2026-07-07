@@ -1,0 +1,3526 @@
+{
+  "schema_version": "2.0",
+  "station": {
+    "id": "S01",
+    "type": "loading_station",
+    "name": "STATION_01_Loading",
+    "line": "MF-IP-100 Infusion Pump Line",
+    "catalogue_reference": "VEKIFAB Rexroth-style kitting bench, 1.6 m, aluminium 40x40 profile system",
+    "world_position_m": [
+      2.5,
+      6.0,
+      0.0
+    ],
+    "envelope_m": {
+      "x": 2.0,
+      "y": 2.0,
+      "z": 2.2
+    },
+    "front_axis": "+Y",
+    "flow_axis": "+X",
+    "work_height_m": 0.9
+  },
+  "conventions": {
+    "units": "meters",
+    "up_axis": "Z",
+    "export_up_axis": "Y",
+    "offset_reference": "All component offset_m are [dx, dy, dz] relative to station.world_position at floor level; dz is absolute height. Every node uses offset_m (absolute) so parented sub-assemblies are not distorted by parent box scaling.",
+    "rotation_units": "degrees",
+    "root_object": "STATION_01_Loading_Root",
+    "root_type": "EMPTY",
+    "profile_section_m": 0.04,
+    "design_notes": "40x40 anodised aluminium extrusion frame on levelling feet; ESD laminate worktop; angled bin rail; powered roller outfeed with gearmotor; RAL-grey control cabinet; Festo-style FRL; igus-style energy chain. No visible fasteners on operator (+Y) show faces; service hardware on -X/rear."
+  },
+  "material_library": {
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    },
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "worktop_grey": {
+      "base_color": [
+        0.82,
+        0.83,
+        0.85,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.55,
+      "emission_strength": 0.0
+    },
+    "white_panel": {
+      "base_color": [
+        0.9,
+        0.9,
+        0.92,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "emission_strength": 0.0
+    },
+    "blue_accent": {
+      "base_color": [
+        0.1,
+        0.35,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.1,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "safety_yellow": {
+      "base_color": [
+        0.95,
+        0.8,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "emission_strength": 0.0
+    },
+    "warning_black": {
+      "base_color": [
+        0.03,
+        0.03,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "emission_strength": 0.0
+    },
+    "rubber_black": {
+      "base_color": [
+        0.05,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "emission_strength": 0.0
+    },
+    "cardboard": {
+      "base_color": [
+        0.58,
+        0.42,
+        0.26,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.85,
+      "emission_strength": 0.0
+    },
+    "wood_pallet": {
+      "base_color": [
+        0.55,
+        0.4,
+        0.24,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.75,
+      "emission_strength": 0.0
+    },
+    "screen_dark": {
+      "base_color": [
+        0.02,
+        0.02,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.2,
+      "emission_color": [
+        0.1,
+        0.35,
+        0.55,
+        1.0
+      ],
+      "emission_strength": 1.0
+    },
+    "led_red": {
+      "base_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.8,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_amber": {
+      "base_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.95,
+        0.63,
+        0.05,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_green": {
+      "base_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.4,
+      "emission_color": [
+        0.05,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "emission_strength": 3.0
+    },
+    "led_white": {
+      "base_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.3,
+      "emission_color": [
+        0.95,
+        0.96,
+        1.0,
+        1.0
+      ],
+      "emission_strength": 2.5
+    },
+    "glass_window": {
+      "base_color": [
+        0.6,
+        0.7,
+        0.8,
+        0.22
+      ],
+      "metallic": 0.0,
+      "roughness": 0.1,
+      "alpha": 0.22,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "table_frame": {
+      "naming": "COLLIDER_Loading_Table",
+      "collider": "static",
+      "unity_tag": "Table",
+      "worktop": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.6,
+          0.8,
+          0.05
+        ],
+        "offset_m": [
+          -0.3,
+          -0.6,
+          0.875
+        ],
+        "bevel_m": 0.008,
+        "bevel_segments": 2,
+        "material": "worktop_grey",
+        "collider": "static",
+        "unity_tag": "Table"
+      },
+      "worktop_stiffener": {
+        "naming": "STATION_01_Loading_TopStiffener",
+        "primitive": "box",
+        "dimensions_m": [
+          1.5,
+          0.7,
+          0.03
+        ],
+        "offset_m": [
+          -0.3,
+          -0.6,
+          0.835
+        ],
+        "material": "metal_dark"
+      },
+      "apron_front": {
+        "naming": "STATION_01_Loading_ApronFront",
+        "primitive": "box",
+        "dimensions_m": [
+          1.6,
+          0.025,
+          0.07
+        ],
+        "offset_m": [
+          -0.3,
+          -0.205,
+          0.835
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_light"
+      },
+      "legs": {
+        "naming_pattern": "STATION_01_Loading_TableLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.86
+        ],
+        "material": "metal_light",
+        "collider": "static",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -1.06,
+            -0.94,
+            0.43
+          ],
+          [
+            0.46,
+            -0.94,
+            0.43
+          ],
+          [
+            -1.06,
+            -0.26,
+            0.43
+          ],
+          [
+            0.46,
+            -0.26,
+            0.43
+          ]
+        ]
+      },
+      "top_rail_x": {
+        "naming_pattern": "STATION_01_Loading_TopRailX_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.52,
+          0.04,
+          0.04
+        ],
+        "material": "metal_light",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -0.3,
+            -0.94,
+            0.84
+          ],
+          [
+            -0.3,
+            -0.26,
+            0.84
+          ]
+        ]
+      },
+      "top_rail_y": {
+        "naming_pattern": "STATION_01_Loading_TopRailY_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.64,
+          0.04
+        ],
+        "material": "metal_light",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -1.06,
+            -0.6,
+            0.84
+          ],
+          [
+            0.46,
+            -0.6,
+            0.84
+          ]
+        ]
+      },
+      "bottom_rail_x_back": {
+        "naming": "STATION_01_Loading_BottomRailX",
+        "primitive": "box",
+        "dimensions_m": [
+          1.52,
+          0.04,
+          0.04
+        ],
+        "material": "metal_light",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offset_m": [
+          -0.3,
+          -0.94,
+          0.16
+        ]
+      },
+      "bottom_rail_y": {
+        "naming_pattern": "STATION_01_Loading_BottomRailY_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.64,
+          0.04
+        ],
+        "material": "metal_light",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -1.06,
+            -0.6,
+            0.16
+          ],
+          [
+            0.46,
+            -0.6,
+            0.16
+          ]
+        ]
+      },
+      "corner_brackets": {
+        "naming_pattern": "STATION_01_Loading_Bracket_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.05
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.008,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -1.03,
+            -0.91,
+            0.8
+          ],
+          [
+            0.43,
+            -0.91,
+            0.8
+          ],
+          [
+            -1.03,
+            -0.29,
+            0.8
+          ],
+          [
+            0.43,
+            -0.29,
+            0.8
+          ]
+        ]
+      },
+      "service_bolts": {
+        "naming_pattern": "STATION_01_Loading_Bolt_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.008,
+        "depth_m": 0.006,
+        "vertices": 6,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.06,
+            -0.965,
+            0.8
+          ],
+          [
+            0.46,
+            -0.965,
+            0.8
+          ],
+          [
+            -1.06,
+            -0.965,
+            0.2
+          ],
+          [
+            0.46,
+            -0.965,
+            0.2
+          ]
+        ]
+      }
+    },
+    "levelling_feet": {
+      "base": {
+        "naming_pattern": "STATION_01_Loading_Foot_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.045,
+        "depth_m": 0.03,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -1.06,
+            -0.94,
+            0.015
+          ],
+          [
+            0.46,
+            -0.94,
+            0.015
+          ],
+          [
+            -1.06,
+            -0.26,
+            0.015
+          ],
+          [
+            0.46,
+            -0.26,
+            0.015
+          ]
+        ]
+      },
+      "hex_nut": {
+        "naming_pattern": "STATION_01_Loading_FootNut_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.022,
+        "depth_m": 0.028,
+        "vertices": 6,
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.06,
+            -0.94,
+            0.045
+          ],
+          [
+            0.46,
+            -0.94,
+            0.045
+          ],
+          [
+            -1.06,
+            -0.26,
+            0.045
+          ],
+          [
+            0.46,
+            -0.26,
+            0.045
+          ]
+        ]
+      },
+      "spindle": {
+        "naming_pattern": "STATION_01_Loading_FootSpindle_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.012,
+        "depth_m": 0.1,
+        "vertices": 8,
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -1.06,
+            -0.94,
+            0.09
+          ],
+          [
+            0.46,
+            -0.94,
+            0.09
+          ],
+          [
+            -1.06,
+            -0.26,
+            0.09
+          ],
+          [
+            0.46,
+            -0.26,
+            0.09
+          ]
+        ]
+      }
+    },
+    "uprights": {
+      "naming_pattern": "STATION_01_Loading_Upright_{i}",
+      "primitive": "box",
+      "count": 2,
+      "dimensions_m": [
+        0.04,
+        0.04,
+        0.8
+      ],
+      "material": "metal_light",
+      "collider": "static",
+      "bevel_m": 0.004,
+      "bevel_segments": 1,
+      "offsets_m": [
+        [
+          -1.0,
+          -0.92,
+          1.26
+        ],
+        [
+          0.4,
+          -0.92,
+          1.26
+        ]
+      ]
+    },
+    "upright_caps": {
+      "naming_pattern": "STATION_01_Loading_EndCap_{i}",
+      "primitive": "box",
+      "count": 2,
+      "dimensions_m": [
+        0.044,
+        0.044,
+        0.006
+      ],
+      "material": "warning_black",
+      "offsets_m": [
+        [
+          -1.0,
+          -0.92,
+          1.663
+        ],
+        [
+          0.4,
+          -0.92,
+          1.663
+        ]
+      ]
+    },
+    "back_rail": {
+      "naming": "STATION_01_Loading_BackRail",
+      "primitive": "box",
+      "dimensions_m": [
+        1.44,
+        0.04,
+        0.04
+      ],
+      "offset_m": [
+        -0.3,
+        -0.92,
+        1.62
+      ],
+      "material": "metal_light",
+      "bevel_m": 0.004,
+      "bevel_segments": 1
+    },
+    "bin_shelf": {
+      "naming": "STATION_01_Loading_BinShelf",
+      "plate": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.44,
+          0.26,
+          0.02
+        ],
+        "offset_m": [
+          -0.3,
+          -0.8,
+          1.1
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_light"
+      },
+      "brackets": {
+        "naming_pattern": "STATION_01_Loading_ShelfBracket_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.02,
+          0.18,
+          0.12
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.98,
+            -0.85,
+            1.06
+          ],
+          [
+            0.38,
+            -0.85,
+            1.06
+          ]
+        ]
+      }
+    },
+    "parts_bins": {
+      "bin_body": {
+        "naming_pattern": "STATION_01_Loading_Bin_{i}",
+        "primitive": "box",
+        "count": 5,
+        "dimensions_m": [
+          0.24,
+          0.16,
+          0.13
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "white_panel",
+        "collider": "static",
+        "start_offset_m": [
+          -0.9,
+          -0.8,
+          1.18
+        ],
+        "step_m": [
+          0.3,
+          0.0,
+          0.0
+        ]
+      },
+      "bin_front": {
+        "naming_pattern": "STATION_01_Loading_BinFront_{i}",
+        "primitive": "box",
+        "count": 5,
+        "dimensions_m": [
+          0.24,
+          0.02,
+          0.06
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent",
+        "start_offset_m": [
+          -0.9,
+          -0.875,
+          1.145
+        ],
+        "step_m": [
+          0.3,
+          0.0,
+          0.0
+        ]
+      },
+      "kanban_card": {
+        "naming_pattern": "STATION_01_Loading_BinKanban_{i}",
+        "primitive": "box",
+        "count": 5,
+        "dimensions_m": [
+          0.11,
+          0.004,
+          0.05
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "white_panel",
+        "start_offset_m": [
+          -0.9,
+          -0.888,
+          1.15
+        ],
+        "step_m": [
+          0.3,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "kit_boxes": {
+      "naming_pattern": "PHYS_Loading_Box_{i}",
+      "primitive": "box",
+      "count": 4,
+      "dimensions_m": [
+        0.3,
+        0.24,
+        0.14
+      ],
+      "bevel_m": 0.006,
+      "bevel_segments": 1,
+      "material": "cardboard",
+      "rigidbody": {
+        "enabled": true,
+        "mass_kg": 0.5,
+        "kinematic": false
+      },
+      "unity_tag": "Box",
+      "offsets_m": [
+        [
+          -0.02,
+          -0.72,
+          0.965
+        ],
+        [
+          0.3,
+          -0.72,
+          0.965
+        ],
+        [
+          -0.02,
+          -0.45,
+          0.965
+        ],
+        [
+          0.3,
+          -0.45,
+          0.965
+        ]
+      ]
+    },
+    "pallet_zone": {
+      "slab": {
+        "naming": "STATION_01_Loading_PalletZone",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.9,
+          1.3,
+          0.004
+        ],
+        "offset_m": [
+          0.05,
+          0.62,
+          0.003
+        ],
+        "material": "safety_yellow",
+        "collider": "static",
+        "unity_tag": "FloorMarking"
+      },
+      "edge_x": {
+        "naming_pattern": "STATION_01_Loading_PalletZoneEdgeX_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.9,
+          0.06,
+          0.006
+        ],
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            0.05,
+            -0.01,
+            0.006
+          ],
+          [
+            0.05,
+            1.25,
+            0.006
+          ]
+        ]
+      },
+      "edge_y": {
+        "naming_pattern": "STATION_01_Loading_PalletZoneEdgeY_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.06,
+          1.3,
+          0.006
+        ],
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            -0.9,
+            0.62,
+            0.006
+          ],
+          [
+            1.0,
+            0.62,
+            0.006
+          ]
+        ]
+      }
+    },
+    "pallets": {
+      "deck": {
+        "naming_pattern": "STATION_01_Loading_Pallet_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.9,
+          0.75,
+          0.022
+        ],
+        "material": "wood_pallet",
+        "collider": "static",
+        "unity_tag": "Pallet",
+        "offsets_m": [
+          [
+            -0.42,
+            0.55,
+            0.104
+          ],
+          [
+            0.52,
+            0.55,
+            0.104
+          ]
+        ]
+      },
+      "runners": {
+        "naming_pattern": "STATION_01_Loading_PalletRunner_{i}",
+        "primitive": "box",
+        "count": 6,
+        "dimensions_m": [
+          0.9,
+          0.1,
+          0.038
+        ],
+        "material": "wood_pallet",
+        "offsets_m": [
+          [
+            -0.42,
+            0.24,
+            0.019
+          ],
+          [
+            -0.42,
+            0.55,
+            0.019
+          ],
+          [
+            -0.42,
+            0.86,
+            0.019
+          ],
+          [
+            0.52,
+            0.24,
+            0.019
+          ],
+          [
+            0.52,
+            0.55,
+            0.019
+          ],
+          [
+            0.52,
+            0.86,
+            0.019
+          ]
+        ]
+      },
+      "blocks": {
+        "naming_pattern": "STATION_01_Loading_PalletBlock_{i}",
+        "primitive": "box",
+        "count": 6,
+        "dimensions_m": [
+          0.1,
+          0.75,
+          0.055
+        ],
+        "material": "wood_pallet",
+        "offsets_m": [
+          [
+            -0.8,
+            0.55,
+            0.066
+          ],
+          [
+            -0.42,
+            0.55,
+            0.066
+          ],
+          [
+            -0.04,
+            0.55,
+            0.066
+          ],
+          [
+            0.14,
+            0.55,
+            0.066
+          ],
+          [
+            0.52,
+            0.55,
+            0.066
+          ],
+          [
+            0.9,
+            0.55,
+            0.066
+          ]
+        ]
+      }
+    },
+    "bulk_boxes": {
+      "naming_pattern": "STATION_01_Loading_BulkBox_{i}",
+      "primitive": "box",
+      "count": 5,
+      "dimensions_m": [
+        0.34,
+        0.3,
+        0.24
+      ],
+      "bevel_m": 0.006,
+      "bevel_segments": 1,
+      "material": "cardboard",
+      "collider": "static",
+      "unity_tag": "Stock",
+      "offsets_m": [
+        [
+          -0.54,
+          0.44,
+          0.235
+        ],
+        [
+          -0.2,
+          0.44,
+          0.235
+        ],
+        [
+          -0.54,
+          0.68,
+          0.235
+        ],
+        [
+          -0.2,
+          0.68,
+          0.235
+        ],
+        [
+          -0.37,
+          0.56,
+          0.475
+        ]
+      ]
+    },
+    "conveyor_output": {
+      "belt_plane": {
+        "naming": "CONVEYOR_Loading_Output",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.24,
+          0.52,
+          0.012
+        ],
+        "offset_m": [
+          1.15,
+          0.0,
+          0.418
+        ],
+        "material": "rubber_black",
+        "collider": "static",
+        "unity_tag": "Conveyor",
+        "rigidbody": {
+          "enabled": true,
+          "mass_kg": 0.0,
+          "kinematic": true
+        },
+        "belt_speed_mps": 0.15,
+        "connects_to": "S02"
+      },
+      "frame_tie": {
+        "naming": "CONVEYOR_Loading_Output_Frame",
+        "primitive": "box",
+        "dimensions_m": [
+          1.24,
+          0.58,
+          0.04
+        ],
+        "offset_m": [
+          1.15,
+          0.0,
+          0.3
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      },
+      "side_frames": {
+        "naming_pattern": "STATION_01_Loading_ConvSideFrame_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.24,
+          0.045,
+          0.12
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            1.15,
+            -0.28,
+            0.36
+          ],
+          [
+            1.15,
+            0.28,
+            0.36
+          ]
+        ]
+      },
+      "rollers": {
+        "naming_pattern": "STATION_01_Loading_ConvRoller_{i}",
+        "primitive": "cylinder",
+        "count": 10,
+        "radius_m": 0.024,
+        "depth_m": 0.54,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "metal_light",
+        "start_offset_m": [
+          0.61,
+          0.0,
+          0.398
+        ],
+        "step_m": [
+          0.12,
+          0.0,
+          0.0
+        ]
+      },
+      "legs": {
+        "naming_pattern": "STATION_01_Loading_ConvLeg_{i}",
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.3
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            0.63,
+            -0.26,
+            0.15
+          ],
+          [
+            1.67,
+            -0.26,
+            0.15
+          ],
+          [
+            0.63,
+            0.26,
+            0.15
+          ],
+          [
+            1.67,
+            0.26,
+            0.15
+          ]
+        ]
+      },
+      "leg_feet": {
+        "naming_pattern": "STATION_01_Loading_ConvFoot_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.03,
+        "depth_m": 0.02,
+        "vertices": 12,
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            0.63,
+            -0.26,
+            0.01
+          ],
+          [
+            1.67,
+            -0.26,
+            0.01
+          ],
+          [
+            0.63,
+            0.26,
+            0.01
+          ],
+          [
+            1.67,
+            0.26,
+            0.01
+          ]
+        ]
+      },
+      "drive_gearbox": {
+        "naming": "STATION_01_Loading_ConvDrive",
+        "primitive": "box",
+        "dimensions_m": [
+          0.13,
+          0.11,
+          0.13
+        ],
+        "offset_m": [
+          1.66,
+          0.2,
+          0.3
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.006,
+        "bevel_segments": 1
+      },
+      "drive_motor": {
+        "naming": "STATION_01_Loading_ConvMotor",
+        "primitive": "cylinder",
+        "radius_m": 0.05,
+        "depth_m": 0.15,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offset_m": [
+          1.66,
+          0.33,
+          0.3
+        ]
+      },
+      "drive_terminal": {
+        "naming": "STATION_01_Loading_ConvDriveTerm",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          1.66,
+          0.11,
+          0.36
+        ],
+        "material": "blue_accent"
+      },
+      "side_guard": {
+        "naming": "STATION_01_Loading_ConvGuard",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.58,
+          0.16
+        ],
+        "offset_m": [
+          0.54,
+          0.0,
+          0.5
+        ],
+        "material": "metal_light",
+        "bevel_m": 0.006,
+        "bevel_segments": 1
+      }
+    },
+    "control_cabinet": {
+      "naming": "STATION_01_Loading_Cabinet",
+      "collider": "static",
+      "unity_tag": "Cabinet",
+      "body": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.46,
+          0.4,
+          0.8
+        ],
+        "offset_m": [
+          -1.34,
+          -0.55,
+          0.42
+        ],
+        "bevel_m": 0.008,
+        "bevel_segments": 2,
+        "material": "metal_light",
+        "collider": "static",
+        "unity_tag": "Cabinet"
+      },
+      "door": {
+        "naming": "STATION_01_Loading_CabinetDoor",
+        "primitive": "box",
+        "dimensions_m": [
+          0.42,
+          0.02,
+          0.72
+        ],
+        "offset_m": [
+          -1.34,
+          -0.345,
+          0.44
+        ],
+        "material": "glass_window"
+      },
+      "handle": {
+        "naming": "STATION_01_Loading_CabinetHandle",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.035,
+          0.12
+        ],
+        "offset_m": [
+          -1.16,
+          -0.33,
+          0.44
+        ],
+        "material": "metal_dark"
+      },
+      "hinges": {
+        "naming_pattern": "STATION_01_Loading_CabinetHinge_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.012,
+        "depth_m": 0.05,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.55,
+            -0.345,
+            0.2
+          ],
+          [
+            -1.55,
+            -0.345,
+            0.68
+          ]
+        ]
+      },
+      "gland_plate": {
+        "naming": "STATION_01_Loading_CabinetGland",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.02,
+          0.06
+        ],
+        "offset_m": [
+          -1.34,
+          -0.345,
+          0.1
+        ],
+        "material": "warning_black"
+      },
+      "vents": {
+        "naming_pattern": "STATION_01_Loading_CabinetVent_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.22,
+          0.006,
+          0.008
+        ],
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            -1.34,
+            -0.336,
+            0.6
+          ],
+          [
+            -1.34,
+            -0.336,
+            0.63
+          ],
+          [
+            -1.34,
+            -0.336,
+            0.66
+          ]
+        ]
+      },
+      "power_led": {
+        "naming": "STATION_01_Loading_CabinetPowerLed",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 0.012,
+        "vertices": 10,
+        "axis": "Y",
+        "material": "led_green",
+        "offset_m": [
+          -1.22,
+          -0.336,
+          0.74
+        ]
+      }
+    },
+    "hmi": {
+      "naming": "STATION_01_Loading_HMI",
+      "unity_tag": "HMI",
+      "arm": {
+        "naming": "STATION_01_Loading_HMI_Arm",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.34,
+          0.04
+        ],
+        "offset_m": [
+          0.3,
+          -0.74,
+          1.35
+        ],
+        "material": "metal_dark"
+      },
+      "body": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.3,
+          0.05,
+          0.22
+        ],
+        "offset_m": [
+          0.18,
+          -0.57,
+          1.35
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark",
+        "collider": "static",
+        "unity_tag": "HMI"
+      },
+      "screen": {
+        "naming": "STATION_01_Loading_HMI_Screen",
+        "primitive": "box",
+        "dimensions_m": [
+          0.26,
+          0.01,
+          0.15
+        ],
+        "offset_m": [
+          0.18,
+          -0.548,
+          1.365
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "material": "screen_dark"
+      },
+      "buttons": {
+        "naming": "STATION_01_Loading_HMI_Buttons",
+        "primitive": "box",
+        "dimensions_m": [
+          0.26,
+          0.01,
+          0.03
+        ],
+        "offset_m": [
+          0.18,
+          -0.545,
+          1.27
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "emergency_stop": {
+      "naming": "STATION_01_Loading_EStop",
+      "unity_tag": "EmergencyStop",
+      "plate": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.13,
+          0.02,
+          0.13
+        ],
+        "offset_m": [
+          -0.8,
+          -0.185,
+          0.98
+        ],
+        "material": "safety_yellow",
+        "unity_tag": "EmergencyStop"
+      },
+      "collar": {
+        "naming": "STATION_01_Loading_EStop_Collar",
+        "primitive": "cylinder",
+        "radius_m": 0.04,
+        "depth_m": 0.02,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "warning_black",
+        "offset_m": [
+          -0.8,
+          -0.17,
+          0.98
+        ]
+      },
+      "button": {
+        "naming": "STATION_01_Loading_EStop_Button",
+        "primitive": "cylinder",
+        "radius_m": 0.032,
+        "depth_m": 0.03,
+        "vertices": 16,
+        "axis": "Y",
+        "material": "led_red",
+        "offset_m": [
+          -0.8,
+          -0.155,
+          0.98
+        ]
+      }
+    },
+    "stack_light": {
+      "naming": "STATION_01_Loading_StackLight",
+      "bracket": {
+        "naming": "STATION_01_Loading_StackLight_Bracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.03
+        ],
+        "offset_m": [
+          0.4,
+          -0.92,
+          1.665
+        ],
+        "material": "metal_dark"
+      },
+      "pole": {
+        "primitive": "cylinder",
+        "primary": true,
+        "radius_m": 0.014,
+        "depth_m": 0.2,
+        "vertices": 12,
+        "material": "metal_dark",
+        "offset_m": [
+          0.4,
+          -0.92,
+          1.78
+        ]
+      },
+      "segments": {
+        "naming_pattern": "STATION_01_Loading_StackLight_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.032,
+        "segment_height_m": 0.06,
+        "vertices": 16,
+        "material_cycle": [
+          "led_red",
+          "led_amber",
+          "led_green"
+        ],
+        "start_offset_m": [
+          0.4,
+          -0.92,
+          1.91
+        ],
+        "step_m": [
+          0.0,
+          0.0,
+          0.06
+        ]
+      },
+      "dome": {
+        "naming": "STATION_01_Loading_StackLight_Dome",
+        "primitive": "cylinder",
+        "radius_m": 0.032,
+        "depth_m": 0.025,
+        "vertices": 16,
+        "material": "warning_black",
+        "offset_m": [
+          0.4,
+          -0.92,
+          2.005
+        ]
+      }
+    },
+    "task_light": {
+      "naming": "STATION_01_Loading_TaskLight",
+      "fixture": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.2,
+          0.06,
+          0.04
+        ],
+        "offset_m": [
+          -0.3,
+          -0.71,
+          1.02
+        ],
+        "tilt_deg": [
+          -32.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_light"
+      },
+      "emitter": {
+        "naming": "STATION_01_Loading_TaskLight_Emitter",
+        "primitive": "box",
+        "dimensions_m": [
+          1.16,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -0.3,
+          -0.745,
+          1.005
+        ],
+        "tilt_deg": [
+          -32.0,
+          0.0,
+          0.0
+        ],
+        "material": "led_white"
+      },
+      "review_light": {
+        "naming": "STATION_01_Loading_TaskLight_Review",
+        "type": "AREA",
+        "energy_w": 80.0,
+        "size_m": 1.0,
+        "offset_m": [
+          -0.3,
+          -0.55,
+          1.55
+        ],
+        "export_to_glb": false
+      }
+    },
+    "pneumatics": {
+      "naming": "STATION_01_Loading_FRL",
+      "mount_rail": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.32,
+          0.03,
+          0.03
+        ],
+        "offset_m": [
+          -0.9,
+          -0.34,
+          0.58
+        ],
+        "material": "metal_dark"
+      },
+      "bodies": {
+        "naming_pattern": "STATION_01_Loading_FRL_Body_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.028,
+        "depth_m": 0.1,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "metal_light",
+        "start_offset_m": [
+          -1.0,
+          -0.34,
+          0.51
+        ],
+        "step_m": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "bowls": {
+        "naming_pattern": "STATION_01_Loading_FRL_Bowl_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.022,
+        "depth_m": 0.05,
+        "vertices": 12,
+        "axis": "Z",
+        "material": "screen_dark",
+        "start_offset_m": [
+          -1.0,
+          -0.34,
+          0.445
+        ],
+        "step_m": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "knob": {
+        "naming": "STATION_01_Loading_FRL_Knob",
+        "primitive": "cylinder",
+        "radius_m": 0.016,
+        "depth_m": 0.02,
+        "vertices": 10,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -0.9,
+          -0.34,
+          0.575
+        ]
+      },
+      "gauge": {
+        "naming": "STATION_01_Loading_FRL_Gauge",
+        "primitive": "cylinder",
+        "radius_m": 0.022,
+        "depth_m": 0.012,
+        "vertices": 12,
+        "axis": "Y",
+        "material": "white_panel",
+        "offset_m": [
+          -0.8,
+          -0.3,
+          0.55
+        ]
+      },
+      "air_lines": {
+        "naming_pattern": "STATION_01_Loading_AirLine_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.007,
+        "depth_m": 0.24,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offsets_m": [
+          [
+            -1.0,
+            -0.3,
+            0.36
+          ],
+          [
+            -0.8,
+            -0.3,
+            0.42
+          ]
+        ]
+      }
+    },
+    "cable_management": {
+      "naming": "STATION_01_Loading_CableChain",
+      "duct": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.66
+        ],
+        "offset_m": [
+          -1.06,
+          -0.9,
+          0.5
+        ],
+        "material": "metal_dark"
+      },
+      "links": {
+        "naming_pattern": "STATION_01_Loading_CableLink_{i}",
+        "primitive": "box",
+        "count": 6,
+        "dimensions_m": [
+          0.05,
+          0.06,
+          0.04
+        ],
+        "material": "rubber_black",
+        "offsets_m": [
+          [
+            -1.12,
+            -0.9,
+            0.3
+          ],
+          [
+            -1.12,
+            -0.9,
+            0.37
+          ],
+          [
+            -1.12,
+            -0.9,
+            0.44
+          ],
+          [
+            -1.12,
+            -0.9,
+            0.51
+          ],
+          [
+            -1.12,
+            -0.9,
+            0.58
+          ],
+          [
+            -1.12,
+            -0.9,
+            0.65
+          ]
+        ]
+      }
+    },
+    "structural_supports": {
+      "label_rail": {
+        "naming": "STATION_01_Loading_LabelRail",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.52,
+          0.03,
+          0.05
+        ],
+        "offset_m": [
+          -0.3,
+          -0.2,
+          0.6
+        ],
+        "bevel_m": 0.004,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "upright_base_gussets": {
+        "naming_pattern": "STATION_01_Loading_UprightBaseGusset_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.06,
+          0.07,
+          0.1
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -1.0,
+            -0.9,
+            0.9
+          ],
+          [
+            0.4,
+            -0.9,
+            0.9
+          ]
+        ]
+      },
+      "backrail_gussets": {
+        "naming_pattern": "STATION_01_Loading_BackRailGusset_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.05,
+          0.06,
+          0.08
+        ],
+        "material": "metal_dark",
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "offsets_m": [
+          [
+            -1.0,
+            -0.92,
+            1.6
+          ],
+          [
+            0.4,
+            -0.92,
+            1.6
+          ]
+        ]
+      },
+      "hmi_clamp": {
+        "naming": "STATION_01_Loading_HMI_Clamp",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.07,
+          0.06
+        ],
+        "offset_m": [
+          0.4,
+          -0.92,
+          1.35
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "hmi_mount": {
+        "naming": "STATION_01_Loading_HMI_Mount",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.05,
+          0.05
+        ],
+        "offset_m": [
+          0.35,
+          -0.9,
+          1.35
+        ],
+        "material": "metal_dark"
+      },
+      "tasklight_brackets": {
+        "naming_pattern": "STATION_01_Loading_TaskLightBracket_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.03,
+          0.18,
+          0.1
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.85,
+            -0.755,
+            1.06
+          ],
+          [
+            0.25,
+            -0.755,
+            1.06
+          ]
+        ]
+      },
+      "frl_mount_plate": {
+        "naming": "STATION_01_Loading_FRL_MountPlate",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.16,
+          0.05
+        ],
+        "offset_m": [
+          -1.06,
+          -0.3,
+          0.58
+        ],
+        "material": "metal_dark"
+      },
+      "frl_hanger": {
+        "naming": "STATION_01_Loading_FRL_Hanger",
+        "primitive": "box",
+        "dimensions_m": [
+          0.04,
+          0.05,
+          0.3
+        ],
+        "offset_m": [
+          -0.76,
+          -0.34,
+          0.72
+        ],
+        "material": "metal_dark"
+      },
+      "frl_clamps": {
+        "naming_pattern": "STATION_01_Loading_FRL_Clamp_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.055,
+          0.05,
+          0.02
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.0,
+            -0.34,
+            0.57
+          ],
+          [
+            -0.9,
+            -0.34,
+            0.57
+          ],
+          [
+            -0.8,
+            -0.34,
+            0.57
+          ]
+        ]
+      },
+      "cabinet_plinth": {
+        "naming": "STATION_01_Loading_CabinetPlinth",
+        "primitive": "box",
+        "dimensions_m": [
+          0.44,
+          0.38,
+          0.05
+        ],
+        "offset_m": [
+          -1.34,
+          -0.55,
+          0.03
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "cabinet_fix_bracket": {
+        "naming": "STATION_01_Loading_CabinetFixBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.06,
+          0.05
+        ],
+        "offset_m": [
+          -1.085,
+          -0.58,
+          0.2
+        ],
+        "material": "metal_dark"
+      },
+      "estop_mount": {
+        "naming": "STATION_01_Loading_EStop_Mount",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.15
+        ],
+        "offset_m": [
+          -0.8,
+          -0.205,
+          0.885
+        ],
+        "material": "metal_dark"
+      },
+      "conv_drive_mount": {
+        "naming": "STATION_01_Loading_ConvDriveMount",
+        "primitive": "box",
+        "dimensions_m": [
+          0.12,
+          0.11,
+          0.12
+        ],
+        "offset_m": [
+          1.66,
+          0.26,
+          0.32
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "conv_guard_brackets": {
+        "naming_pattern": "STATION_01_Loading_ConvGuardBracket_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.05,
+          0.06,
+          0.1
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            0.55,
+            -0.27,
+            0.44
+          ],
+          [
+            0.55,
+            0.27,
+            0.44
+          ]
+        ]
+      },
+      "shelf_stop_rail": {
+        "naming": "STATION_01_Loading_ShelfStopRail",
+        "primitive": "box",
+        "dimensions_m": [
+          1.44,
+          0.025,
+          0.03
+        ],
+        "offset_m": [
+          -0.3,
+          -0.67,
+          1.06
+        ],
+        "tilt_deg": [
+          -18.0,
+          0.0,
+          0.0
+        ],
+        "material": "metal_dark"
+      },
+      "cable_clips": {
+        "naming_pattern": "STATION_01_Loading_CableClip_{i}",
+        "primitive": "box",
+        "count": 3,
+        "dimensions_m": [
+          0.06,
+          0.05,
+          0.025
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.06,
+            -0.925,
+            0.35
+          ],
+          [
+            -1.06,
+            -0.925,
+            0.52
+          ],
+          [
+            -1.06,
+            -0.925,
+            0.69
+          ]
+        ]
+      },
+      "joint_bolts": {
+        "naming_pattern": "STATION_01_Loading_JointBolt_{i}",
+        "primitive": "cylinder",
+        "count": 8,
+        "radius_m": 0.008,
+        "depth_m": 0.008,
+        "vertices": 6,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.0,
+            -0.865,
+            0.92
+          ],
+          [
+            0.4,
+            -0.865,
+            0.92
+          ],
+          [
+            -1.0,
+            -0.955,
+            1.6
+          ],
+          [
+            0.4,
+            -0.955,
+            1.6
+          ],
+          [
+            -1.02,
+            -0.58,
+            0.2
+          ],
+          [
+            1.66,
+            0.205,
+            0.32
+          ],
+          [
+            0.55,
+            -0.305,
+            0.44
+          ],
+          [
+            0.55,
+            0.235,
+            0.44
+          ]
+        ]
+      }
+    },
+    "machine_services": {
+      "main_switch": {
+        "naming": "STATION_01_Loading_MainSwitch",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.1,
+          0.012,
+          0.12
+        ],
+        "offset_m": [
+          -1.44,
+          -0.362,
+          0.62
+        ],
+        "material": "safety_yellow",
+        "knob": {
+          "naming": "STATION_01_Loading_MainSwitch_Knob",
+          "primitive": "cylinder",
+          "radius_m": 0.028,
+          "depth_m": 0.035,
+          "vertices": 12,
+          "axis": "Y",
+          "material": "warning_black",
+          "offset_m": [
+            -1.44,
+            -0.385,
+            0.62
+          ]
+        },
+        "lever": {
+          "naming": "STATION_01_Loading_MainSwitch_Lever",
+          "primitive": "box",
+          "dimensions_m": [
+            0.016,
+            0.02,
+            0.07
+          ],
+          "offset_m": [
+            -1.44,
+            -0.4,
+            0.655
+          ],
+          "material": "warning_black"
+        }
+      },
+      "power_infeed": {
+        "naming": "STATION_01_Loading_PowerInfeed",
+        "primitive": "cylinder",
+        "primary": true,
+        "radius_m": 0.018,
+        "depth_m": 0.16,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          -1.36,
+          -0.345,
+          0.07
+        ],
+        "floor_run": {
+          "naming": "STATION_01_Loading_PowerInfeed_Floor",
+          "primitive": "cylinder",
+          "radius_m": 0.018,
+          "depth_m": 0.32,
+          "vertices": 8,
+          "axis": "X",
+          "material": "rubber_black",
+          "offset_m": [
+            -1.52,
+            -0.345,
+            0.02
+          ]
+        }
+      },
+      "rear_cable_duct": {
+        "naming": "STATION_01_Loading_RearCableDuct",
+        "primitive": "box",
+        "dimensions_m": [
+          1.5,
+          0.05,
+          0.07
+        ],
+        "offset_m": [
+          -0.3,
+          -0.965,
+          0.3
+        ],
+        "material": "metal_dark"
+      },
+      "upright_cable_r": {
+        "naming": "STATION_01_Loading_UprightCableR",
+        "primitive": "cylinder",
+        "radius_m": 0.009,
+        "depth_m": 0.9,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          0.42,
+          -0.955,
+          0.95
+        ]
+      },
+      "upright_cable_l": {
+        "naming": "STATION_01_Loading_UprightCableL",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.55,
+        "vertices": 8,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          -0.98,
+          -0.955,
+          0.8
+        ]
+      },
+      "duct_to_cabinet": {
+        "naming": "STATION_01_Loading_DuctToCabinet",
+        "primitive": "cylinder",
+        "radius_m": 0.014,
+        "depth_m": 0.3,
+        "vertices": 8,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offset_m": [
+          -1.1,
+          -0.86,
+          0.3
+        ]
+      },
+      "estop_backbox": {
+        "naming": "STATION_01_Loading_EStop_BackBox",
+        "primitive": "box",
+        "dimensions_m": [
+          0.09,
+          0.07,
+          0.09
+        ],
+        "offset_m": [
+          -0.8,
+          -0.24,
+          0.98
+        ],
+        "material": "metal_dark",
+        "estop_cable": {
+          "naming": "STATION_01_Loading_EStop_Cable",
+          "primitive": "cylinder",
+          "radius_m": 0.008,
+          "depth_m": 0.34,
+          "vertices": 6,
+          "axis": "Z",
+          "material": "rubber_black",
+          "offset_m": [
+            -0.8,
+            -0.27,
+            0.8
+          ]
+        }
+      },
+      "air_inlet_valve": {
+        "naming": "STATION_01_Loading_AirInletValve",
+        "primitive": "cylinder",
+        "primary": true,
+        "radius_m": 0.02,
+        "depth_m": 0.07,
+        "vertices": 10,
+        "axis": "X",
+        "material": "metal_light",
+        "offset_m": [
+          -1.11,
+          -0.34,
+          0.56
+        ],
+        "valve_lever": {
+          "naming": "STATION_01_Loading_AirInletValve_Lever",
+          "primitive": "box",
+          "dimensions_m": [
+            0.015,
+            0.06,
+            0.015
+          ],
+          "offset_m": [
+            -1.11,
+            -0.34,
+            0.6
+          ],
+          "material": "blue_accent"
+        },
+        "inlet_fitting": {
+          "naming": "STATION_01_Loading_AirInletFitting",
+          "primitive": "box",
+          "dimensions_m": [
+            0.035,
+            0.035,
+            0.035
+          ],
+          "offset_m": [
+            -1.06,
+            -0.34,
+            0.56
+          ],
+          "material": "metal_dark"
+        }
+      },
+      "air_supply_line": {
+        "naming": "STATION_01_Loading_AirSupplyLine",
+        "primitive": "cylinder",
+        "radius_m": 0.009,
+        "depth_m": 0.44,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "blue_accent",
+        "offset_m": [
+          -1.13,
+          -0.34,
+          0.3
+        ]
+      },
+      "pneu_valve_block": {
+        "naming": "STATION_01_Loading_ValveBlock",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.07,
+          0.11
+        ],
+        "offset_m": [
+          -0.45,
+          -0.9,
+          0.34
+        ],
+        "material": "metal_dark",
+        "solenoid": {
+          "naming": "STATION_01_Loading_ValveSolenoid",
+          "primitive": "box",
+          "dimensions_m": [
+            0.03,
+            0.05,
+            0.035
+          ],
+          "offset_m": [
+            -0.45,
+            -0.9,
+            0.41
+          ],
+          "material": "blue_accent"
+        }
+      },
+      "conv_stopper": {
+        "naming": "STATION_01_Loading_ConvStopper",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.07,
+          0.12
+        ],
+        "offset_m": [
+          1.45,
+          0.0,
+          0.4
+        ],
+        "material": "metal_dark",
+        "stopper_blade": {
+          "naming": "STATION_01_Loading_ConvStopperBlade",
+          "primitive": "cylinder",
+          "radius_m": 0.009,
+          "depth_m": 0.09,
+          "vertices": 8,
+          "axis": "Z",
+          "material": "metal_light",
+          "offset_m": [
+            1.45,
+            0.0,
+            0.48
+          ]
+        }
+      },
+      "conv_drive_cover": {
+        "naming": "STATION_01_Loading_ConvDriveCover",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.14,
+          0.13
+        ],
+        "offset_m": [
+          1.7,
+          0.23,
+          0.41
+        ],
+        "bevel_m": 0.006,
+        "bevel_segments": 1,
+        "material": "metal_dark"
+      },
+      "conv_motor_cable": {
+        "naming": "STATION_01_Loading_ConvMotorCable",
+        "primitive": "cylinder",
+        "radius_m": 0.01,
+        "depth_m": 0.34,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          1.66,
+          0.11,
+          0.19
+        ]
+      },
+      "conv_motor_conduit": {
+        "naming": "STATION_01_Loading_ConvMotorConduit",
+        "primitive": "cylinder",
+        "radius_m": 0.012,
+        "depth_m": 1.0,
+        "vertices": 6,
+        "axis": "X",
+        "material": "metal_dark",
+        "offset_m": [
+          1.1,
+          0.12,
+          0.03
+        ]
+      },
+      "esd_ground_stud": {
+        "naming": "STATION_01_Loading_ESDGroundStud",
+        "primitive": "cylinder",
+        "radius_m": 0.008,
+        "depth_m": 0.02,
+        "vertices": 8,
+        "axis": "Y",
+        "material": "metal_light",
+        "offset_m": [
+          -1.06,
+          -0.22,
+          0.3
+        ],
+        "ground_wire": {
+          "naming": "STATION_01_Loading_ESDGroundWire",
+          "primitive": "cylinder",
+          "radius_m": 0.004,
+          "depth_m": 0.24,
+          "vertices": 6,
+          "axis": "Z",
+          "material": "safety_yellow",
+          "offset_m": [
+            -1.06,
+            -0.235,
+            0.42
+          ]
+        }
+      }
+    },
+    "floor_markings": {
+      "safety_stripe": {
+        "naming": "STATION_01_Loading_SafetyStripe",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          2.1,
+          0.1,
+          0.006
+        ],
+        "offset_m": [
+          0.1,
+          1.42,
+          0.004
+        ],
+        "material": "safety_yellow",
+        "collider": "static",
+        "unity_tag": "FloorMarking"
+      },
+      "work_zone_x": {
+        "naming_pattern": "STATION_01_Loading_WorkZoneX_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.7,
+          0.05,
+          0.005
+        ],
+        "material": "safety_yellow",
+        "unity_tag": "FloorMarking",
+        "offsets_m": [
+          [
+            -0.3,
+            -0.02,
+            0.004
+          ],
+          [
+            -0.3,
+            0.3,
+            0.004
+          ]
+        ]
+      },
+      "operator_mat": {
+        "naming": "STATION_01_Loading_OperatorMat",
+        "primitive": "box",
+        "dimensions_m": [
+          1.1,
+          0.55,
+          0.01
+        ],
+        "offset_m": [
+          -0.3,
+          0.12,
+          0.006
+        ],
+        "material": "rubber_black",
+        "unity_tag": "FloorMarking"
+      }
+    },
+    "labels": {
+      "id_plate": {
+        "naming": "STATION_01_Loading_IDPlate",
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          0.28,
+          0.008,
+          0.08
+        ],
+        "offset_m": [
+          -0.3,
+          -0.192,
+          0.6
+        ],
+        "material": "metal_light",
+        "id_text": {
+          "naming": "STATION_01_Loading_IDText",
+          "primitive": "text_mesh",
+          "text": "S01 · LOADING",
+          "size_m": 0.045,
+          "offset_m": [
+            -0.3,
+            -0.198,
+            0.6
+          ],
+          "rotation_deg": [
+            90.0,
+            0.0,
+            180.0
+          ],
+          "material": "warning_black"
+        }
+      },
+      "brand_badge": {
+        "naming": "STATION_01_Loading_BrandBadge",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.008,
+          0.05
+        ],
+        "offset_m": [
+          0.3,
+          -0.192,
+          0.6
+        ],
+        "material": "blue_accent",
+        "brand_text": {
+          "naming": "STATION_01_Loading_BrandText",
+          "primitive": "text_mesh",
+          "text": "VEKIFAB",
+          "size_m": 0.028,
+          "offset_m": [
+            0.3,
+            -0.198,
+            0.6
+          ],
+          "rotation_deg": [
+            90.0,
+            0.0,
+            180.0
+          ],
+          "material": "white_panel"
+        }
+      },
+      "flow_arrow": {
+        "naming": "STATION_01_Loading_FlowArrow",
+        "primitive": "box",
+        "dimensions_m": [
+          0.16,
+          0.006,
+          0.1
+        ],
+        "offset_m": [
+          0.54,
+          -0.2,
+          0.52
+        ],
+        "material": "safety_yellow",
+        "arrow_text": {
+          "naming": "STATION_01_Loading_FlowText",
+          "primitive": "text_mesh",
+          "text": "→ S02",
+          "size_m": 0.05,
+          "offset_m": [
+            0.54,
+            -0.21,
+            0.52
+          ],
+          "rotation_deg": [
+            90.0,
+            0.0,
+            180.0
+          ],
+          "material": "warning_black"
+        }
+      },
+      "pinch_sticker": {
+        "naming": "STATION_01_Loading_PinchSticker",
+        "primitive": "box",
+        "dimensions_m": [
+          0.07,
+          0.006,
+          0.07
+        ],
+        "offset_m": [
+          0.54,
+          0.2,
+          0.52
+        ],
+        "material": "safety_yellow",
+        "pinch_text": {
+          "naming": "STATION_01_Loading_PinchText",
+          "primitive": "text_mesh",
+          "text": "!",
+          "size_m": 0.05,
+          "offset_m": [
+            0.54,
+            0.19,
+            0.52
+          ],
+          "rotation_deg": [
+            90.0,
+            0.0,
+            180.0
+          ],
+          "material": "warning_black"
+        }
+      },
+      "voltage_label": {
+        "naming": "STATION_01_Loading_VoltageLabel",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.006,
+          0.06
+        ],
+        "offset_m": [
+          -1.2,
+          -0.336,
+          0.58
+        ],
+        "material": "safety_yellow",
+        "volt_text": {
+          "naming": "STATION_01_Loading_VoltageText",
+          "primitive": "text_mesh",
+          "text": "⚡",
+          "size_m": 0.04,
+          "offset_m": [
+            -1.2,
+            -0.342,
+            0.58
+          ],
+          "rotation_deg": [
+            90.0,
+            0.0,
+            180.0
+          ],
+          "material": "warning_black"
+        }
+      },
+      "esd_text": {
+        "naming": "STATION_01_Loading_ESDLabel",
+        "primitive": "text_mesh",
+        "text": "ESD",
+        "size_m": 0.035,
+        "offset_m": [
+          0.4,
+          -0.3,
+          0.901
+        ],
+        "rotation_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent"
+      }
+    },
+    "cabinet_din": {
+      "din_rail": {
+        "naming": "STATION_01_Loading_DinRail",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.34,
+          -0.44,
+          0.62
+        ],
+        "material": "metal_dark"
+      },
+      "din_rail_2": {
+        "naming": "STATION_01_Loading_DinRail2",
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.34,
+          -0.44,
+          0.4
+        ],
+        "material": "metal_dark"
+      },
+      "psu": {
+        "naming": "STATION_01_Loading_DinPSU",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.06,
+          0.11
+        ],
+        "offset_m": [
+          -1.46,
+          -0.44,
+          0.6
+        ],
+        "material": "metal_light",
+        "psuled": {
+          "naming": "STATION_01_Loading_DinPSULed",
+          "primitive": "cylinder",
+          "radius_m": 0.006,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -1.46,
+            -0.475,
+            0.63
+          ],
+          "material": "led_green"
+        }
+      },
+      "plc": {
+        "naming": "STATION_01_Loading_DinPLC",
+        "primitive": "box",
+        "dimensions_m": [
+          0.1,
+          0.07,
+          0.13
+        ],
+        "offset_m": [
+          -1.3,
+          -0.44,
+          0.55
+        ],
+        "material": "metal_dark",
+        "plcaccent": {
+          "naming": "STATION_01_Loading_DinPLCAccent",
+          "primitive": "box",
+          "dimensions_m": [
+            0.1,
+            0.006,
+            0.02
+          ],
+          "offset_m": [
+            -1.3,
+            -0.476,
+            0.55
+          ],
+          "material": "blue_accent"
+        },
+        "plcled": {
+          "naming": "STATION_01_Loading_DinPLCLed",
+          "primitive": "cylinder",
+          "radius_m": 0.006,
+          "depth_m": 0.008,
+          "vertices": 8,
+          "axis": "Y",
+          "offset_m": [
+            -1.27,
+            -0.476,
+            0.6
+          ],
+          "material": "led_green"
+        }
+      },
+      "mcb": {
+        "naming_pattern": "STATION_01_Loading_DinMCB_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.03,
+          0.045,
+          0.06
+        ],
+        "material": "warning_black",
+        "start_offset_m": [
+          -1.22,
+          -0.44,
+          0.62
+        ],
+        "step_m": [
+          0.036,
+          0.0,
+          0.0
+        ]
+      },
+      "terminals": {
+        "naming_pattern": "STATION_01_Loading_DinTerminal_{i}",
+        "primitive": "box",
+        "count": 6,
+        "dimensions_m": [
+          0.012,
+          0.045,
+          0.05
+        ],
+        "material": "metal_light",
+        "start_offset_m": [
+          -1.44,
+          -0.44,
+          0.4
+        ],
+        "step_m": [
+          0.03,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "conveyor_premium": {
+      "bearings": {
+        "naming_pattern": "STATION_01_Loading_ConvBearing_{i}",
+        "primary": true,
+        "primitive": "box",
+        "count": 4,
+        "dimensions_m": [
+          0.05,
+          0.05,
+          0.06
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            0.61,
+            -0.27,
+            0.398
+          ],
+          [
+            0.61,
+            0.27,
+            0.398
+          ],
+          [
+            1.69,
+            -0.27,
+            0.398
+          ],
+          [
+            1.69,
+            0.27,
+            0.398
+          ]
+        ]
+      },
+      "guides": {
+        "naming_pattern": "STATION_01_Loading_ConvGuide_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          1.15,
+          0.02,
+          0.04
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            1.15,
+            -0.22,
+            0.448
+          ],
+          [
+            1.15,
+            0.22,
+            0.448
+          ]
+        ]
+      },
+      "scanner_body": {
+        "naming": "STATION_01_Loading_BarcodeScanner",
+        "primitive": "box",
+        "dimensions_m": [
+          0.08,
+          0.1,
+          0.06
+        ],
+        "offset_m": [
+          0.6,
+          0.3,
+          0.6
+        ],
+        "material": "metal_dark",
+        "unity_tag": "Scanner",
+        "bevel_m": 0.004,
+        "bevel_segments": 1
+      },
+      "scanner_window": {
+        "naming": "STATION_01_Loading_ScannerWindow",
+        "primitive": "box",
+        "dimensions_m": [
+          0.06,
+          0.006,
+          0.04
+        ],
+        "offset_m": [
+          0.6,
+          0.245,
+          0.6
+        ],
+        "material": "led_red"
+      },
+      "scanner_bracket": {
+        "naming": "STATION_01_Loading_ScannerBracket",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.08,
+          0.22
+        ],
+        "offset_m": [
+          0.62,
+          0.34,
+          0.5
+        ],
+        "material": "metal_dark"
+      },
+      "scanner_beam": {
+        "naming": "STATION_01_Loading_ScannerBeam",
+        "primitive": "box",
+        "dimensions_m": [
+          0.003,
+          0.18,
+          0.003
+        ],
+        "offset_m": [
+          0.6,
+          0.16,
+          0.55
+        ],
+        "material": "led_red",
+        "hide_render": true,
+        "unity_tag": "ScanBeam"
+      },
+      "scanner_cable": {
+        "naming": "STATION_01_Loading_ScannerCable",
+        "primitive": "cylinder",
+        "radius_m": 0.006,
+        "depth_m": 0.18,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "rubber_black",
+        "offset_m": [
+          0.62,
+          0.36,
+          0.45
+        ]
+      }
+    },
+    "pallet_handling": {
+      "sensor_posts": {
+        "naming_pattern": "STATION_01_Loading_PalletSensorPost_{i}",
+        "primary": true,
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.04,
+          0.26
+        ],
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -0.6,
+            -0.02,
+            0.13
+          ],
+          [
+            0.7,
+            -0.02,
+            0.13
+          ]
+        ]
+      },
+      "sensor_heads": {
+        "naming_pattern": "STATION_01_Loading_PalletSensor_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.05,
+          0.06,
+          0.07
+        ],
+        "material": "metal_dark",
+        "unity_tag": "Sensor",
+        "offsets_m": [
+          [
+            -0.6,
+            -0.02,
+            0.28
+          ],
+          [
+            0.7,
+            -0.02,
+            0.28
+          ]
+        ]
+      },
+      "sensor_leds": {
+        "naming_pattern": "STATION_01_Loading_PalletSensorLed_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.008,
+        "depth_m": 0.01,
+        "vertices": 8,
+        "axis": "Y",
+        "material": "led_red",
+        "offsets_m": [
+          [
+            -0.6,
+            -0.055,
+            0.28
+          ],
+          [
+            0.7,
+            -0.055,
+            0.28
+          ]
+        ]
+      },
+      "reflectors": {
+        "naming_pattern": "STATION_01_Loading_PalletReflector_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.04,
+          0.03,
+          0.07
+        ],
+        "material": "metal_light",
+        "offsets_m": [
+          [
+            -0.6,
+            1.24,
+            0.28
+          ],
+          [
+            0.7,
+            1.24,
+            0.28
+          ]
+        ]
+      },
+      "transport_labels": {
+        "naming_pattern": "STATION_01_Loading_TransportLabel_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.14,
+          0.004,
+          0.08
+        ],
+        "material": "white_panel",
+        "offsets_m": [
+          [
+            -0.2,
+            0.288,
+            0.235
+          ],
+          [
+            -0.37,
+            0.408,
+            0.475
+          ]
+        ]
+      },
+      "barcodes": {
+        "naming_pattern": "STATION_01_Loading_TransportBarcode_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.1,
+          0.005,
+          0.025
+        ],
+        "material": "warning_black",
+        "offsets_m": [
+          [
+            -0.2,
+            0.286,
+            0.245
+          ],
+          [
+            -0.37,
+            0.406,
+            0.485
+          ]
+        ]
+      },
+      "arrival_zone": {
+        "naming": "STATION_01_Loading_PalletArrivalZone",
+        "primitive": "box",
+        "dimensions_m": [
+          1.4,
+          1.0,
+          0.5
+        ],
+        "offset_m": [
+          0.05,
+          0.55,
+          0.3
+        ],
+        "is_trigger": true,
+        "display": "wire",
+        "hide_render": true,
+        "unity_tag": "PalletArrival"
+      }
+    },
+    "hmi_ui": {
+      "header_bar": {
+        "naming": "STATION_01_Loading_HMIHeaderBar",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.24,
+          0.008,
+          0.025
+        ],
+        "offset_m": [
+          0.18,
+          -0.545,
+          1.43
+        ],
+        "tilt_deg": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "material": "blue_accent"
+      },
+      "title": {
+        "naming": "STATION_01_Loading_HMITitle",
+        "primitive": "text_mesh",
+        "text": "LOADING  S01",
+        "size_m": 0.017,
+        "world_position_m": [
+          2.68,
+          5.44,
+          1.42
+        ],
+        "rotation_deg": [
+          80,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      },
+      "status": {
+        "naming": "STATION_01_Loading_HMIStatus",
+        "primitive": "text_mesh",
+        "text": "READY",
+        "size_m": 0.038,
+        "world_position_m": [
+          2.68,
+          5.447,
+          1.37
+        ],
+        "rotation_deg": [
+          80,
+          0,
+          180
+        ],
+        "material": "led_green"
+      },
+      "count": {
+        "naming": "STATION_01_Loading_HMICount",
+        "primitive": "text_mesh",
+        "text": "KITS 128 / 200",
+        "size_m": 0.018,
+        "world_position_m": [
+          2.68,
+          5.45,
+          1.31
+        ],
+        "rotation_deg": [
+          80,
+          0,
+          180
+        ],
+        "material": "white_panel"
+      }
+    },
+    "grounding_maintenance": {
+      "ground_bar": {
+        "naming": "STATION_01_Loading_GroundBar",
+        "primary": true,
+        "primitive": "box",
+        "dimensions_m": [
+          0.2,
+          0.02,
+          0.02
+        ],
+        "offset_m": [
+          -1.34,
+          -0.355,
+          0.15
+        ],
+        "material": "metal_light"
+      },
+      "ground_braid": {
+        "naming_pattern": "STATION_01_Loading_GroundBraid_{i}",
+        "primitive": "cylinder",
+        "count": 2,
+        "radius_m": 0.005,
+        "depth_m": 0.14,
+        "vertices": 6,
+        "axis": "Z",
+        "material": "safety_yellow",
+        "offsets_m": [
+          [
+            -1.4,
+            -0.355,
+            0.09
+          ],
+          [
+            -1.28,
+            -0.355,
+            0.09
+          ]
+        ]
+      },
+      "ground_symbol": {
+        "naming": "STATION_01_Loading_GroundSymbol",
+        "primitive": "box",
+        "dimensions_m": [
+          0.03,
+          0.005,
+          0.03
+        ],
+        "offset_m": [
+          -1.34,
+          -0.345,
+          0.22
+        ],
+        "material": "safety_yellow"
+      },
+      "maint_labels": {
+        "naming_pattern": "STATION_01_Loading_MaintLabel_{i}",
+        "primitive": "box",
+        "count": 2,
+        "dimensions_m": [
+          0.05,
+          0.005,
+          0.03
+        ],
+        "material": "safety_yellow",
+        "offsets_m": [
+          [
+            -1.2,
+            -0.345,
+            0.3
+          ],
+          [
+            1.15,
+            -0.29,
+            0.44
+          ]
+        ]
+      },
+      "quick_release": {
+        "naming_pattern": "STATION_01_Loading_QuickRelease_{i}",
+        "primitive": "cylinder",
+        "count": 4,
+        "radius_m": 0.012,
+        "depth_m": 0.014,
+        "vertices": 8,
+        "axis": "Y",
+        "material": "metal_dark",
+        "offsets_m": [
+          [
+            -1.52,
+            -0.346,
+            0.15
+          ],
+          [
+            -1.16,
+            -0.346,
+            0.15
+          ],
+          [
+            -1.52,
+            -0.346,
+            0.73
+          ],
+          [
+            -1.16,
+            -0.346,
+            0.73
+          ]
+        ]
+      }
+    },
+    "info_panel": {
+      "naming": "INFO_Loading_Panel",
+      "unity_tag": "InfoPanel",
+      "board": {
+        "primitive": "box",
+        "primary": true,
+        "dimensions_m": [
+          1.2,
+          0.05,
+          0.7
+        ],
+        "world_position_m": [
+          2.5,
+          8.6,
+          1.6
+        ],
+        "rotation_deg": [
+          0.0,
+          0.0,
+          180.0
+        ],
+        "bevel_m": 0.02,
+        "bevel_segments": 2,
+        "material": "white_panel",
+        "collider": "static",
+        "unity_tag": "InfoPanel"
+      },
+      "post": {
+        "naming": "INFO_Loading_Panel_Post",
+        "primitive": "box",
+        "dimensions_m": [
+          0.05,
+          0.05,
+          1.28
+        ],
+        "world_position_m": [
+          2.5,
+          8.62,
+          0.64
+        ],
+        "material": "metal_dark"
+      },
+      "post_foot": {
+        "naming": "INFO_Loading_Panel_Foot",
+        "primitive": "box",
+        "dimensions_m": [
+          0.22,
+          0.22,
+          0.02
+        ],
+        "world_position_m": [
+          2.5,
+          8.62,
+          0.01
+        ],
+        "material": "metal_dark"
+      },
+      "title": {
+        "naming": "INFO_Loading_Panel_Title",
+        "primitive": "text_mesh",
+        "text": "S01 · Loading",
+        "size_m": 0.13,
+        "world_position_m": [
+          2.5,
+          8.64,
+          1.82
+        ],
+        "rotation_deg": [
+          90.0,
+          0.0,
+          180.0
+        ],
+        "material": "warning_black"
+      },
+      "body": {
+        "naming": "INFO_Loading_Panel_Body",
+        "primitive": "text_mesh",
+        "text": "Loading Station: incoming components are kitted onto trays and released onto the line.",
+        "size_m": 0.06,
+        "wrap_chars": 28,
+        "world_position_m": [
+          2.5,
+          8.64,
+          1.5
+        ],
+        "rotation_deg": [
+          90.0,
+          0.0,
+          180.0
+        ],
+        "material": "warning_black"
+      }
+    },
+    "trigger_zone": {
+      "naming": "TRIGGER_Info_Loading",
+      "unity_tag": "Trigger",
+      "is_trigger": true,
+      "primitive": "box",
+      "dimensions_m": [
+        2.2,
+        1.6,
+        2.2
+      ],
+      "world_position_m": [
+        2.5,
+        9.3,
+        1.1
+      ],
+      "display": "wire",
+      "hide_render": true
+    }
+  }
+}

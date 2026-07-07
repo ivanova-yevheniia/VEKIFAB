@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "station": "S02",
+  "type": "assisted_assembly_station",
+  "complexity_scale": ["trivial", "low", "medium", "high"],
+  "parameters_ref": "assembly_station_parameters.json",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": ["STATION_02_Assembly_Root"],
+      "geometry": { "primitive": "empty", "type": "PLAIN_AXES", "at": "station.world_position_m" },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_workbench",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["COLLIDER_Assembly_Workbench", "STATION_02_Assembly_Leg_1..4", "STATION_02_Assembly_Foot_1..4", "STATION_02_Assembly_LowerShelf"],
+      "geometry": { "source": "components.workbench", "primitives": ["box", "box", "cylinder"] },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["metal_dark", "metal_light", "rubber_black"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_tool_rack",
+      "parent": "COLLIDER_Assembly_Workbench",
+      "children": ["STATION_02_Assembly_ToolRack", "STATION_02_Assembly_Tool_1..4"],
+      "geometry": { "source": "components.tool_rack", "primitives": ["box"] },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": ["blue_accent", "metal_dark"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_040_parts_bins",
+      "parent": "COLLIDER_Assembly_Workbench",
+      "children": ["STATION_02_Assembly_Bin_1..4"],
+      "geometry": { "source": "components.parts_bins", "primitives": ["box"], "layout": "linear_start_step" },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": ["blue_accent", "safety_yellow", "white_panel"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_050_assembly_fixture",
+      "parent": "COLLIDER_Assembly_Workbench",
+      "children": ["STATION_02_Assembly_Fixture", "STATION_02_Assembly_FixturePost_1..2"],
+      "geometry": { "source": "components.assembly_fixture", "primitives": ["box", "cylinder"] },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": ["metal_dark", "metal_light"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_060_pump_mockups",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["PHYS_Assembly_Part_1..4"],
+      "geometry": { "source": "components.pump_1..4", "primitives": ["box", "box", "cylinder"], "note": "semi-assembled and assembled pump mockups" },
+      "dependencies": ["op_050_assembly_fixture"],
+      "required_materials": ["white_panel", "screen_dark", "blue_accent"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_070_hmi",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_HMI", "STATION_02_Assembly_HMIPole"],
+      "geometry": { "source": "components.hmi", "primitives": ["box", "cylinder"] },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": ["screen_dark", "metal_dark"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_080_task_light",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_TaskLight", "STATION_02_Assembly_TaskLight_Emitter"],
+      "geometry": { "source": "components.task_light", "primitives": ["box"], "adds_review_light": true },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": ["metal_light", "led_white"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_090_operator_zone",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_OperatorZone"],
+      "geometry": { "source": "components.operator_zone", "primitives": ["box"] },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["safety_yellow"],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_100_input_transfer",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["CONVEYOR_Assembly_Input", "CONVEYOR_Assembly_Input_Frame"],
+      "geometry": { "source": "components.input_transfer", "primitives": ["box"] },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["rubber_black", "metal_dark"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_110_output_transfer",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["CONVEYOR_Assembly_Output", "CONVEYOR_Assembly_Output_Frame"],
+      "geometry": { "source": "components.output_transfer", "primitives": ["box"] },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["rubber_black", "metal_dark"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_120_emergency_stop",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_EStop", "STATION_02_Assembly_EStop_Button"],
+      "geometry": { "source": "components.emergency_stop", "primitives": ["box", "cylinder"] },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": ["safety_yellow", "led_red"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_130_labels",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_Label_StationID", "STATION_02_Assembly_Label_FlowArrow"],
+      "geometry": { "source": "components.labels", "primitives": ["text_mesh"], "note": "text objects are converted to mesh for glTF export" },
+      "dependencies": ["op_020_workbench", "op_110_output_transfer"],
+      "required_materials": ["warning_black"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_140_info_panel",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["INFO_Assembly_Panel", "INFO_Assembly_Panel_Title", "INFO_Assembly_Panel_Body"],
+      "geometry": { "source": "components.info_panel", "primitives": ["box", "text_mesh"], "faces": "+Y" },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["white_panel", "warning_black"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_150_trigger_zone",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["TRIGGER_Info_Assembly"],
+      "geometry": { "source": "components.trigger_zone", "primitives": ["box"], "display": "wire", "hide_render": true },
+      "dependencies": ["op_140_info_panel"],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_230_bin_detail",
+      "parent": "COLLIDER_Assembly_Workbench",
+      "children": ["STATION_02_Assembly_BinShelf"],
+      "geometry": { "source": "components.bin_detail", "note": "hero: angled bin shelf, Kanban cards, pick-to-light indicators" },
+      "dependencies": ["op_040_parts_bins"],
+      "required_materials": [], "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_231_output_tray",
+      "parent": "COLLIDER_Assembly_Workbench",
+      "children": ["STATION_02_Assembly_FinishedTray"],
+      "geometry": { "source": "components.output_tray", "note": "hero: finished-product tray with dividers + a completed pump" },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": [], "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_232_cabinet",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_Cabinet"],
+      "geometry": { "source": "components.cabinet", "note": "hero: electrical cabinet + glass door revealing DIN rail, disconnect, PSU, PLC, modules" },
+      "dependencies": ["op_010_root"],
+      "required_materials": [], "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_233_hmi_ui",
+      "parent": "STATION_02_Assembly_HMI",
+      "children": ["STATION_02_Assembly_HMIBezel"],
+      "geometry": { "source": "components.hmi_ui", "note": "hero: live HMI — bezel, buttons, ASSISTED ASSEMBLY / STEP 3-7 / 0.8 Nm OK / PICK BIN 2" },
+      "dependencies": ["op_070_hmi"],
+      "required_materials": [], "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_234_documentation",
+      "parent": "STATION_02_Assembly_ToolRack",
+      "children": ["STATION_02_Assembly_DocHolder"],
+      "geometry": { "source": "components.documentation", "note": "hero: angled work-instruction holder with sheet, clip, diagram" },
+      "dependencies": ["op_030_tool_rack"],
+      "required_materials": [], "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_235_services",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_FRL"],
+      "geometry": { "source": "components.services", "note": "hero: FRL air prep, air lines to clamps, cable duct, HMI cable, foot-pedal clamp trigger + hose" },
+      "dependencies": ["op_210_fixture_detail", "op_232_cabinet"],
+      "required_materials": [], "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_236_stack_light",
+      "parent": "STATION_02_Assembly_Upright_2",
+      "children": ["STATION_02_Assembly_StackLightPole"],
+      "geometry": { "source": "components.stack_light", "note": "hero: station status stack light on the gantry upright" },
+      "dependencies": ["op_200_gantry"],
+      "required_materials": [], "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_237_ergonomics",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_OperatorMat"],
+      "geometry": { "source": "components.ergonomics", "note": "hero: anti-fatigue mat + worktop forearm rest" },
+      "dependencies": ["op_090_operator_zone"],
+      "required_materials": [], "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_238_interaction",
+      "parent": "STATION_02_Assembly_Root",
+      "children": ["STATION_02_Assembly_InteractionZone"],
+      "geometry": { "source": "components.interaction", "note": "Unity placeholder: operator interaction trigger volume" },
+      "dependencies": ["op_010_root"],
+      "required_materials": [], "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_200_gantry",
+      "parent": "COLLIDER_Assembly_Workbench",
+      "children": ["STATION_02_Assembly_GantryBeam", "STATION_02_Assembly_Upright_1..2"],
+      "geometry": { "source": "components.gantry", "note": "hero: overhead profile gantry carrying the task light + tool balancer (de-floats the light)" },
+      "dependencies": ["op_020_workbench"],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_210_fixture_detail",
+      "parent": "STATION_02_Assembly_Fixture",
+      "children": ["STATION_02_Assembly_FixturePlate"],
+      "geometry": { "source": "components.fixture_detail", "note": "hero: aluminium tooling plate + hole grid, locating pins, hardened bushings, precision nest, pneumatic toggle clamps" },
+      "dependencies": ["op_050_assembly_fixture"],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_220_assembly_tools",
+      "parent": "STATION_02_Assembly_GantryBeam",
+      "children": ["STATION_02_Assembly_ToolArm"],
+      "geometry": { "source": "components.assembly_tools", "note": "hero: suspended spring balancer + electric torque screwdriver (grip, collar, bit, cable), tool holsters, Unity screw-target" },
+      "dependencies": ["op_200_gantry", "op_210_fixture_detail"],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_160_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": { "action": "apply_tags_and_export", "tags": ["collider", "rigidbody", "is_trigger", "unity_tag"], "exports": ["blend", "glb", "screenshot"] },
+      "dependencies": [
+        "op_020_workbench", "op_030_tool_rack", "op_040_parts_bins",
+        "op_050_assembly_fixture", "op_060_pump_mockups", "op_070_hmi",
+        "op_080_task_light", "op_090_operator_zone", "op_100_input_transfer",
+        "op_110_output_transfer", "op_120_emergency_stop", "op_130_labels",
+        "op_140_info_panel", "op_150_trigger_zone"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    }
+  ]
+}

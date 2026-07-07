@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "roller_conveyor",
+    "name": "Roller Conveyor",
+    "version": "1.0.0",
+    "category": "material_handling",
+    "tags": [
+      "conveyor",
+      "roller",
+      "transport",
+      "transfer"
+    ]
+  },
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters": {
+    "length_m": {
+      "default": 1.0,
+      "range": "0.5-3.0",
+      "description": "Conveyor length."
+    },
+    "width_m": {
+      "default": 0.5,
+      "range": "0.3-0.8",
+      "description": "Roller width."
+    },
+    "belt_height_m": {
+      "default": 0.45,
+      "range": "0.3-0.9",
+      "description": "Roller top height."
+    },
+    "roller_count": {
+      "default": 8,
+      "range": "4-24",
+      "description": "Number of rollers."
+    }
+  },
+  "material_library": {
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "metal_light": {
+      "base_color": [
+        0.7,
+        0.72,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.35,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "frame": {
+      "naming": "CONV_Frame",
+      "primitive": "frame",
+      "dimensions_m": [
+        1.0,
+        0.06,
+        0.08
+      ],
+      "offset_m": [
+        0,
+        -0.28,
+        0.45
+      ],
+      "material": "metal_dark",
+      "collider": "static",
+      "unity_tag": "Conveyor",
+      "rail_far": {
+        "naming": "CONV_RailFar",
+        "primitive": "box",
+        "dimensions_m": [
+          1.0,
+          0.06,
+          0.08
+        ],
+        "offset_m": [
+          0,
+          0.28,
+          0.45
+        ],
+        "material": "metal_dark",
+        "collider": "static"
+      }
+    },
+    "rollers": {
+      "naming_pattern": "CONV_Roller_{i}",
+      "primitive": "roller",
+      "count": 8,
+      "radius_m": 0.025,
+      "depth_m": 0.5,
+      "vertices": 16,
+      "axis": "Y",
+      "material": "metal_light",
+      "start_offset_m": [
+        -0.44,
+        0,
+        0.47
+      ],
+      "step_m": [
+        0.125,
+        0,
+        0
+      ]
+    },
+    "legs": {
+      "naming_pattern": "CONV_Leg_{i}",
+      "primitive": "box",
+      "count": 4,
+      "dimensions_m": [
+        0.05,
+        0.05,
+        0.45
+      ],
+      "material": "metal_dark",
+      "collider": "static",
+      "offsets_m": [
+        [
+          -0.45,
+          -0.28,
+          0.225
+        ],
+        [
+          0.45,
+          -0.28,
+          0.225
+        ],
+        [
+          -0.45,
+          0.28,
+          0.225
+        ],
+        [
+          0.45,
+          0.28,
+          0.225
+        ]
+      ]
+    }
+  }
+}

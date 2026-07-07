@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": "S04",
+    "type": "vision_inspection_station",
+    "name": "STATION_S04_Vision",
+    "world_position_m": [
+      12.5,
+      6.12,
+      0.0
+    ],
+    "envelope_m": {
+      "x": 2.0,
+      "y": 2.0,
+      "z": 2.5
+    },
+    "front_axis": "+Y",
+    "flow_axis": "+X"
+  },
+  "instances": [
+    {
+      "instance_id": "S04_leg_1",
+      "asset_id": "aluminium_profile",
+      "position": [
+        -0.8,
+        -0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_04_Vision_Leg_1",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_leg_2",
+      "asset_id": "aluminium_profile",
+      "position": [
+        0.8,
+        -0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_04_Vision_Leg_2",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_leg_3",
+      "asset_id": "aluminium_profile",
+      "position": [
+        -0.8,
+        0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_04_Vision_Leg_3",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_leg_4",
+      "asset_id": "aluminium_profile",
+      "position": [
+        0.8,
+        0.6,
+        0.43
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "length_m": 0.86
+      },
+      "name_prefix": "STATION_04_Vision_Leg_4",
+      "socket_connections": [],
+      "unity_tags": [
+        "Frame"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_foot_1",
+      "asset_id": "adjustable_foot",
+      "position": [
+        -0.8,
+        -0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_Foot_1",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_foot_2",
+      "asset_id": "adjustable_foot",
+      "position": [
+        0.8,
+        -0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_Foot_2",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_foot_3",
+      "asset_id": "adjustable_foot",
+      "position": [
+        -0.8,
+        0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_Foot_3",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_foot_4",
+      "asset_id": "adjustable_foot",
+      "position": [
+        0.8,
+        0.6,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_Foot_4",
+      "socket_connections": [],
+      "unity_tags": [
+        "Foot"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_info_1",
+      "asset_id": "information_panel",
+      "position": [
+        0.0,
+        2.4,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {
+        "board_height_m": 1.6
+      },
+      "name_prefix": "INFO_Vision_Panel",
+      "socket_connections": [],
+      "unity_tags": [
+        "InfoPanel",
+        "Trigger"
+      ],
+      "physics_role": "trigger"
+    },
+    {
+      "instance_id": "S04_stack_1",
+      "asset_id": "stack_light",
+      "position": [
+        0.9,
+        -0.8,
+        1.9
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_StackLight",
+      "socket_connections": [],
+      "unity_tags": [
+        "StackLight"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_conv_in_1",
+      "asset_id": "roller_conveyor",
+      "position": [
+        -1.9,
+        0.0,
+        0.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "CONVEYOR_Vision_Input",
+      "socket_connections": [],
+      "unity_tags": [
+        "Conveyor"
+      ],
+      "physics_role": "kinematic"
+    },
+    {
+      "instance_id": "S04_conv_out_1",
+      "asset_id": "roller_conveyor",
+      "position": [
+        1.9,
+        0.0,
+        0.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "CONVEYOR_Vision_Output",
+      "socket_connections": [],
+      "unity_tags": [
+        "Conveyor"
+      ],
+      "physics_role": "kinematic"
+    },
+    {
+      "instance_id": "S04_estop_1",
+      "asset_id": "emergency_stop",
+      "position": [
+        -1.05,
+        -0.7,
+        1.15
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_EStop",
+      "socket_connections": [],
+      "unity_tags": [
+        "EmergencyStop"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_cabinet_1",
+      "asset_id": "electrical_cabinet",
+      "position": [
+        -1.2,
+        -0.5,
+        0.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_Cabinet",
+      "socket_connections": [],
+      "unity_tags": [
+        "Cabinet"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_task_1",
+      "asset_id": "task_light",
+      "position": [
+        0.0,
+        -0.55,
+        2.15
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_TaskLight",
+      "socket_connections": [],
+      "unity_tags": [
+        "TaskLight"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_scanner_1",
+      "asset_id": "barcode_scanner",
+      "position": [
+        0.0,
+        -0.5,
+        1.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_Scanner",
+      "socket_connections": [],
+      "unity_tags": [
+        "Sensor"
+      ],
+      "physics_role": "static"
+    },
+    {
+      "instance_id": "S04_hmi_1",
+      "asset_id": "hmi_panel",
+      "position": [
+        0.85,
+        -0.5,
+        1.3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "parameter_overrides": {},
+      "name_prefix": "STATION_04_Vision_HMI",
+      "socket_connections": [],
+      "unity_tags": [
+        "HMI"
+      ],
+      "physics_role": "static"
+    }
+  ]
+}

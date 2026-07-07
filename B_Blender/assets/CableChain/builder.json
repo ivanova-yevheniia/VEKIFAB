@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "cable_chain",
+    "name": "Cable Chain",
+    "version": "1.0.0"
+  },
+  "entry_object": "CHAIN_Link_1",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "fixed_end",
+      "at": "(-L/2,0,z)",
+      "axis": "-X",
+      "type": "anchor to frame"
+    },
+    {
+      "name": "moving_end",
+      "at": "(+L/2,0,z)",
+      "axis": "+X",
+      "type": "anchor to moving carriage"
+    }
+  ],
+  "collider": {
+    "type": "None (visual)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static",
+    "rigidbody": false
+  },
+  "lod": {
+    "importance": "low",
+    "note": "low"
+  },
+  "performance_budget": {
+    "target_tris": 300,
+    "max_tris": 600,
+    "materials": 1
+  },
+  "unity": {
+    "tags": [
+      "CableChain"
+    ],
+    "prefab_hint": "cable_chain"
+  }
+}

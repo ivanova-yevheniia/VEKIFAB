@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "station": "S01",
+  "type": "loading_station",
+  "units": "meters",
+  "minimum_clearances": {
+    "walkway_width_m": 1.2,
+    "walkway_keepout_world_y_m": 10.5,
+    "operator_zone_depth_m": 1.0,
+    "aisle_between_stations_m": 0.75,
+    "overhead_clearance_m": 2.2,
+    "component_to_component_gap_m": 0.02,
+    "conveyor_side_clearance_m": 0.1,
+    "station_envelope_margin_m": 0.05
+  },
+  "operator_ergonomics": {
+    "work_height_m": 0.90,
+    "work_height_tolerance_m": 0.05,
+    "comfortable_reach_radius_m": 0.5,
+    "max_reach_radius_m": 0.7,
+    "hmi_center_height_m": 1.35,
+    "hmi_tilt_deg": [-12.0, -8.0],
+    "toe_clearance_depth_m": 0.15,
+    "toe_clearance_height_m": 0.12,
+    "bin_presentation_tilt_deg": [-20.0, -15.0],
+    "standing_task": true,
+    "front_edge_min_bevel_m": 0.01
+  },
+  "maintenance_access": {
+    "cabinet_door_swing_deg": 110,
+    "cabinet_door_clearance_m": 0.6,
+    "service_side": "-X",
+    "clearance_behind_station_m": 0.4,
+    "removable_modules": ["control_panel_hmi", "conveyor_output", "parts_bins", "control_cabinet"],
+    "fastener_access": "operator-facing surfaces must present no serviceable fasteners; service fasteners on -X / rear"
+  },
+  "collision_constraints": {
+    "no_intrusion_zones_world": [
+      { "name": "walkway", "axis": "Y", "min_m": 9.7, "max_m": 11.3 }
+    ],
+    "station_bounding_box_world_m": { "min": [1.5, 4.9, 0.0], "max": [3.5, 7.1, 2.2] },
+    "collider_policy": "simplified box proxies only; never use the visual mesh as a collider",
+    "required_static_colliders": [
+      "COLLIDER_Loading_Table", "STATION_01_Loading_TableLeg_*",
+      "STATION_01_Loading_Cabinet", "STATION_01_Loading_Upright_*",
+      "STATION_01_Loading_Pallet_*", "STATION_01_Loading_PalletZone",
+      "CONVEYOR_Loading_Output_Frame", "STATION_01_Loading_SafetyStripe"
+    ],
+    "required_triggers": ["TRIGGER_Info_Loading"],
+    "rigidbody_objects": ["PHYS_Loading_Box_*"],
+    "floor_penetration_max_m": 0.0
+  },
+  "structural_realism": {
+    "min_panel_thickness_m": 0.02,
+    "min_frame_profile_m": 0.04,
+    "leg_count_min": 4,
+    "load_path": "worktop -> frame -> legs/feet -> floor",
+    "cantilever_max_m": 0.3,
+    "levelling_feet_required": true,
+    "corner_bracket_hint": true,
+    "all_structural_edges_beveled": true,
+    "bevel_range_m": [0.01, 0.03]
+  },
+  "service_access": {
+    "pneumatics": { "frl_reachable": true, "tubing_routed": true, "supply_side": "-X" },
+    "electrical": { "cabinet_accessible": true, "din_rail_hint": true, "gland_plate": true, "power_indicator_visible": true },
+    "cable_management": { "route": "cable_chain -> duct -> cabinet", "no_free_hanging_cables": true },
+    "e_stop_reachable_from_operator": true,
+    "e_stop_max_distance_from_operator_m": 0.8
+  }
+}

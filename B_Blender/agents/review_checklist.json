@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "title": "VEKIFAB WP B — Multi-Agent Station Review Checklist",
+  "scope": "Shared scoring rubric applied by every discipline agent to every station (S01–S07). Each agent scores ALL categories for context, but is only accountable for (and may only change the model on behalf of) the categories it owns.",
+  "scoring": {
+    "scale": [0, 5],
+    "levels": {
+      "0": "Absent / broken — the concern has no answer in the model.",
+      "1": "Present but wrong — reads as a placeholder or is non-conformant.",
+      "2": "Partial — some evidence, major gaps remain.",
+      "3": "Acceptable — believable but generic; a reviewer would note improvements.",
+      "4": "Good — production-plausible with only minor remarks.",
+      "5": "Excellent — indistinguishable from a real catalogue-built station."
+    },
+    "pass_threshold_per_category": 3,
+    "weight_note": "Weights are RELATIVE and normalized to their sum when computing a weighted total. Gate categories (type == 'gate', e.g. punch_list_status) carry weight 0 and act as pass/fail gates rather than weighted scores.",
+    "station_pass_rule": "No owned (non-gate) category below 3, no open blocker/critical/safety finding, punch_list_status has no open critical/major items, build passes with 0 errors, triangles <= 20000, and the Customer Representative decision is ACCEPT or ACCEPT_WITH_CONDITIONS."
+  },
+  "categories": [
+    {
+      "key": "industrial_realism",
+      "title": "Industrial Realism",
+      "description": "Does it read as real production equipment assembled from catalogue modules, not primitives? Silhouette communicates function at 1–3 m.",
+      "primary_owner": "08_industrial_designer",
+      "contributing_agents": ["01_mechanical_engineer", "10_cto_reviewer"],
+      "weight": 12
+    },
+    {
+      "key": "mechanical_integrity",
+      "title": "Mechanical Integrity",
+      "description": "Every part has a real load path to the floor. Nothing floats. Frames, brackets, gussets, mounts and feet are structurally logical.",
+      "primary_owner": "01_mechanical_engineer",
+      "contributing_agents": ["02_manufacturing_engineer", "05_maintenance_engineer"],
+      "weight": 12
+    },
+    {
+      "key": "manufacturability",
+      "title": "Manufacturability (DFM/DFA)",
+      "description": "Parts could be cut, folded, molded or purchased and then assembled. Standard sections, sane part count, real fasteners, no impossible geometry.",
+      "primary_owner": "02_manufacturing_engineer",
+      "contributing_agents": ["01_mechanical_engineer"],
+      "weight": 10
+    },
+    {
+      "key": "maintenance_access",
+      "title": "Maintenance Access & Serviceability",
+      "description": "Doors swing clear, modules are removable, service fasteners are on the service side, LOTO points exist, consumables are reachable.",
+      "primary_owner": "05_maintenance_engineer",
+      "contributing_agents": ["03_electrical_engineer", "04_pneumatic_engineer"],
+      "weight": 8
+    },
+    {
+      "key": "safety",
+      "title": "Safety Conformance",
+      "description": "E-stop reachable & correctly oriented, stack light present, guarding at pinch points, floor markings, warning labels, energy isolation (EN 60204-1 / ISO 13849 language).",
+      "primary_owner": "06_safety_engineer",
+      "contributing_agents": ["04_pneumatic_engineer", "03_electrical_engineer", "07_ergonomics_engineer"],
+      "weight": 12
+    },
+    {
+      "key": "ergonomics",
+      "title": "Ergonomics",
+      "description": "Work height, reach envelopes, HMI height/tilt, angled bin presentation, toe clearance, operator standing zone, anti-fatigue provisions.",
+      "primary_owner": "07_ergonomics_engineer",
+      "contributing_agents": ["09_factory_operator", "06_safety_engineer"],
+      "weight": 8
+    },
+    {
+      "key": "electrical_realism",
+      "title": "Electrical & Services Realism",
+      "description": "Cabinet, main disconnect, power infeed, routed cabling to every device, HMI/stack/e-stop wiring, pneumatic FRL + isolation. No dead-ended or unpowered devices.",
+      "primary_owner": "03_electrical_engineer",
+      "contributing_agents": ["04_pneumatic_engineer", "05_maintenance_engineer"],
+      "weight": 10
+    },
+    {
+      "key": "visual_consistency",
+      "title": "Visual Consistency",
+      "description": "Canonical palette only (<=16 materials), 60/30/10 colour budget, safety colours only where functional, consistent chamfers, consistent profile family across the line.",
+      "primary_owner": "08_industrial_designer",
+      "contributing_agents": ["10_cto_reviewer"],
+      "weight": 8
+    },
+    {
+      "key": "unity_readiness",
+      "title": "Unity Readiness",
+      "description": "Naming conventions, single station root, collider/rigidbody/trigger flags on the right objects, emissive materials for screens/LEDs, glb Y-up, custom-property extras, triangles <= 20k.",
+      "primary_owner": "10_cto_reviewer",
+      "contributing_agents": ["01_mechanical_engineer", "03_electrical_engineer"],
+      "weight": 10
+    },
+    {
+      "key": "presentation_quality",
+      "title": "Presentation Quality",
+      "description": "Would this pass as a Bosch internal demo / digital-twin showcase? Overall coherence, story reads ('material enters here'), labels legible, nothing distracting.",
+      "primary_owner": "10_cto_reviewer",
+      "contributing_agents": ["08_industrial_designer", "09_factory_operator"],
+      "weight": 10
+    },
+    {
+      "key": "integration_consistency",
+      "title": "Integration Consistency",
+      "description": "After all disciplines' edits, the station is one coherent machine: no subsystem broke another (guard vs reach, cable vs cover, bracket vs door swing), all cross-discipline conflicts resolved by the ladder, names/parenting/flags intact.",
+      "primary_owner": "11_integration_engineer",
+      "contributing_agents": ["01_mechanical_engineer", "06_safety_engineer", "10_cto_reviewer"],
+      "weight": 8
+    },
+    {
+      "key": "supplier_readiness",
+      "title": "Supplier Readiness",
+      "description": "Would this pass an external incoming-acceptance audit? Workmanship (no floating/orphan/off-palette parts), conformance to spec + style guide, completeness against the requirement.",
+      "primary_owner": "12_quality_assurance_inspector",
+      "contributing_agents": ["02_manufacturing_engineer", "10_cto_reviewer"],
+      "weight": 8
+    },
+    {
+      "key": "punch_list_status",
+      "title": "Punch List Status",
+      "description": "State of the QA punch list. GATE, not a quality score: 5 = no open items, 3 = only minor items open, 0 = open critical items. A station cannot PASS with any open critical or major item.",
+      "type": "gate",
+      "primary_owner": "12_quality_assurance_inspector",
+      "contributing_agents": ["11_integration_engineer"],
+      "weight": 0
+    },
+    {
+      "key": "customer_trust",
+      "title": "Customer Trust",
+      "description": "Does the finished station satisfy the customer requirement and read as trustworthy, premium and usable — equipment worth buying, not a demo prop?",
+      "primary_owner": "13_customer_representative",
+      "contributing_agents": ["08_industrial_designer", "10_cto_reviewer"],
+      "weight": 8
+    }
+  ],
+  "finding_severities": ["blocker", "major", "minor", "nit"],
+  "verdicts": ["PASS", "PASS_WITH_NOTES", "FAIL"],
+  "report_naming": "review_outputs/<NN>_<discipline>_<station_id>.md",
+  "report_sections": [
+    "header (reviewer, station, build stats, verdict)",
+    "scores table (all 10 categories, 0-5, with one-line justification)",
+    "findings (F-n, severity, observation, which of the five questions failed, decision)",
+    "changes applied this pass (exact JSON nodes / spec files touched)",
+    "build & validation result (objects, triangles, errors, warnings)",
+    "handoff notes to next agent"
+  ]
+}

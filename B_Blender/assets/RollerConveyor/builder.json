@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "roller_conveyor",
+    "name": "Roller Conveyor",
+    "version": "1.0.0"
+  },
+  "entry_object": "CONV_Frame",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "in",
+      "at": "(-L/2,0,belt)",
+      "axis": "-X",
+      "type": "upstream transfer"
+    },
+    {
+      "name": "out",
+      "at": "(+L/2,0,belt)",
+      "axis": "+X",
+      "type": "downstream transfer"
+    }
+  ],
+  "collider": {
+    "type": "Box (static frame) + Box (belt plane)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "kinematic_rollers",
+    "rigidbody": false,
+    "belt_speed_mps": 0.15
+  },
+  "lod": {
+    "importance": "medium",
+    "note": "medium (repeated along the line)"
+  },
+  "performance_budget": {
+    "target_tris": 1500,
+    "max_tris": 3000,
+    "materials": 2
+  },
+  "unity": {
+    "tags": [
+      "Conveyor"
+    ],
+    "prefab_hint": "roller_conveyor"
+  }
+}

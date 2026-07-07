@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "scope": "Reusable engineering rules every VEKIFAB WP B station must obey.",
+  "units_and_space": {
+    "units": "meters",
+    "up_axis_blender": "Z",
+    "up_axis_export": "Y",
+    "scale": 1.0,
+    "one_unit_equals_one_meter": true,
+    "front_axis": "+Y",
+    "flow_axis": "+X",
+    "station_origin": "floor footprint center"
+  },
+  "naming_conventions": {
+    "root_pattern": "STATION_{nn}_{Name}_Root",
+    "prefixes": {
+      "STATION_": "station part / root",
+      "CONVEYOR_": "conveyor segment",
+      "PHYS_": "renderable / movable physical geometry",
+      "COLLIDER_": "collision proxy",
+      "TRIGGER_": "non-blocking trigger volume",
+      "INFO_": "info / annotation object"
+    },
+    "case": "PascalCase for names, snake or index suffix for instances (_1, _2)",
+    "instance_suffix": "_{i}",
+    "no_spaces": true
+  },
+  "hierarchy_rules": {
+    "single_root_per_station": true,
+    "parent_all_parts_to_root": true,
+    "preserve_world_transform_on_parenting": true,
+    "matrix_parent_inverse_required": true,
+    "subassemblies_parent_locally": ["table+legs", "conveyor+frame+rollers", "panel+screen", "cabinet+door", "info_board+text"]
+  },
+  "material_rules": {
+    "max_shared_materials_per_line": 16,
+    "create_once_reuse": true,
+    "palette_keys": ["metal_light", "metal_dark", "worktop_grey", "white_panel", "blue_accent", "safety_yellow", "warning_black", "rubber_black", "cardboard", "wood_pallet", "screen_dark", "led_red", "led_amber", "led_green", "led_white"],
+    "color_budget_60_30_10": { "neutral_metal": 0.60, "dark_structure_and_worktop": 0.30, "accent": 0.10 },
+    "safety_colors_outside_budget": true,
+    "accent_max_surface_fraction": 0.15,
+    "emission_only_for": ["screens", "status_leds", "task_light"]
+  },
+  "safety_rules": {
+    "emergency_stop_required": true,
+    "e_stop_reachable_from_operator": true,
+    "status_stack_light_required": true,
+    "floor_markings_required": ["walkway_edge", "operator_or_work_zone"],
+    "safety_yellow_reserved_for_safety": true,
+    "guard_pinch_points": true,
+    "full_fence_only_for": ["robot_handling_cell"],
+    "no_sharp_exposed_profile_ends": true
+  },
+  "clearance_rules": {
+    "min_walkway_width_m": 1.2,
+    "min_operator_zone_depth_m": 1.0,
+    "min_overhead_clearance_m": 2.2,
+    "min_component_gap_m": 0.02,
+    "no_geometry_in_walkway": true,
+    "stay_within_station_envelope": true
+  },
+  "ergonomics_rules": {
+    "standing_work_height_m": 0.90,
+    "seated_work_height_m": 0.75,
+    "max_reach_radius_m": 0.7,
+    "hmi_height_range_m": [1.20, 1.45],
+    "toe_clearance_required": true,
+    "present_bins_angled": true
+  },
+  "structural_rules": {
+    "min_leg_count": 4,
+    "levelling_feet_required": true,
+    "min_panel_thickness_m": 0.02,
+    "min_frame_profile_m": 0.04,
+    "clear_load_path_required": true,
+    "max_cantilever_m": 0.3,
+    "bevel_all_structural_edges": true,
+    "bevel_range_m": [0.01, 0.03],
+    "shade_smooth_round_parts": true
+  },
+  "performance_rules": {
+    "max_triangles_per_station": 20000,
+    "target_triangles_per_station": 15000,
+    "cylinder_vertices": { "small_buttons_rollers": 12, "medium": 16, "large": 24, "max": 32 },
+    "bevel_segments_max": 2,
+    "no_subdivision_surface": true,
+    "instance_identical_parts": true,
+    "collider_is_simplified": true,
+    "texture_max_resolution_px": 512,
+    "atlas_labels": true
+  },
+  "export_rules": {
+    "format": "glb",
+    "up_axis": "Y",
+    "forward_axis": "-Z",
+    "apply_transforms": true,
+    "include_custom_properties_as_extras": true,
+    "custom_property_keys": ["unity_tag", "station_id", "station_type", "collider", "collider_type", "rigidbody", "mass", "kinematic", "is_trigger"],
+    "review_lights_excluded_from_export": true,
+    "pivot_at_footprint_center": true
+  },
+  "labelling_rules": {
+    "station_id_plate_required": true,
+    "flow_direction_arrow_required": true,
+    "text_objects_converted_to_mesh": true,
+    "font": "simple_sans_serif",
+    "min_contrast": "high",
+    "no_real_brand_logos": true,
+    "readable_distance_m": [1.0, 2.0]
+  },
+  "procedural_contract": {
+    "blender_role": "pure procedural renderer",
+    "no_hardcoded_geometry_values_in_code": true,
+    "all_dimensions_from": "parametric_specs/*_parameters.json",
+    "build_order_from": "parametric_specs/*_assembly.json",
+    "constraints_enforced_from": "parametric_specs/manufacturing_constraints.json",
+    "rules_enforced_from": "parametric_specs/industrial_rules.json"
+  }
+}

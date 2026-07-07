@@ -1,0 +1,628 @@
+{
+  "schema_version": "1.0",
+  "station": "S04",
+  "type": "vision_inspection_station",
+  "parameters_ref": "vision_inspection_parameters.json",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "STATION_04_VisionInspection_Root"
+      ],
+      "geometry": {
+        "primitive": "empty",
+        "at": "station.world_position_m"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_base",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "COLLIDER_Vision_Base"
+      ],
+      "geometry": {
+        "source": "components.base"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_legs",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_Leg_1"
+      ],
+      "geometry": {
+        "source": "components.legs"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_040_feet",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_Foot_1"
+      ],
+      "geometry": {
+        "source": "components.feet"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_050_conveyor_in",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "CONVEYOR_Vision_Input"
+      ],
+      "geometry": {
+        "source": "components.conveyor_in"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_060_conveyor_mid",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "CONVEYOR_Vision_Belt"
+      ],
+      "geometry": {
+        "source": "components.conveyor_mid"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_070_conveyor_out",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "CONVEYOR_Vision_Output"
+      ],
+      "geometry": {
+        "source": "components.conveyor_out"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_080_tunnel",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_TunnelTop"
+      ],
+      "geometry": {
+        "source": "components.tunnel"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_090_camera",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "CAMERA_AI_Inspection"
+      ],
+      "geometry": {
+        "source": "components.camera"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_100_ring_light",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_RingLight"
+      ],
+      "geometry": {
+        "source": "components.ring_light"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_110_product_1",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "PHYS_Vision_Product_1"
+      ],
+      "geometry": {
+        "source": "components.product_1"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_120_product_2",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "PHYS_Vision_Product_2"
+      ],
+      "geometry": {
+        "source": "components.product_2"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_130_reject_bin",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_RejectBin"
+      ],
+      "geometry": {
+        "source": "components.reject_bin"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_140_hmi",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_HMI"
+      ],
+      "geometry": {
+        "source": "components.hmi"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_150_stack_light",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_StackLightPole"
+      ],
+      "geometry": {
+        "source": "components.stack_light"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_160_emergency_stop",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_EStop"
+      ],
+      "geometry": {
+        "source": "components.emergency_stop"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_170_cabinet",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_Cabinet"
+      ],
+      "geometry": {
+        "source": "components.cabinet"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_180_info_panel",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "INFO_Vision_Panel"
+      ],
+      "geometry": {
+        "source": "components.info_panel"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_190_info_trigger",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "TRIGGER_Info_Vision"
+      ],
+      "geometry": {
+        "source": "components.info_trigger"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_211_ergonomics",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_OperatorMat"
+      ],
+      "geometry": {
+        "source": "components.ergonomics",
+        "note": "07 ergonomics: anti-fatigue operator mat in the +Y standing zone"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_212_industrial_design",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_WindowAccent"
+      ],
+      "geometry": {
+        "source": "components.industrial_design",
+        "note": "08 industrial designer: restrained blue product-family accents (window trim, camera band, tunnel trim)"
+      },
+      "dependencies": [
+        "op_080_tunnel",
+        "op_090_camera"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_210_safety_systems",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_Andon"
+      ],
+      "geometry": {
+        "source": "components.safety_systems",
+        "note": "06 safety: PASS/FAIL andon beacon, drive guard, floor markings (walkway/work/reject zones), voltage + reject hazard stickers; e-stop button relocated + reoriented to face operator"
+      },
+      "dependencies": [
+        "op_160_emergency_stop",
+        "op_080_tunnel"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_209_service_access",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_ServiceHatch"
+      ],
+      "geometry": {
+        "source": "components.service_access",
+        "note": "05 maintenance: hinged camera-service hatch, inspection-window frame, disconnect lockout hasp"
+      },
+      "dependencies": [
+        "op_080_tunnel"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_208_pneumatic_reject",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_RejectPusher"
+      ],
+      "geometry": {
+        "source": "components.pneumatic_reject",
+        "note": "04 pneumatic: air-cylinder reject pusher + paddle + chute to bin, FRL prep, manual isolation valve (LOTO), solenoid, tubing"
+      },
+      "dependencies": [
+        "op_130_reject_bin"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_207_electrical",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_MainSwitch"
+      ],
+      "geometry": {
+        "source": "components.electrical",
+        "note": "03 electrical: main disconnect, cable duct + camera/ring/HMI cables to cabinet, entry/exit photo-eye sensors, vision controller"
+      },
+      "dependencies": [
+        "op_170_cabinet"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_205_conveyor_detail",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_ConvSideFrame_1"
+      ],
+      "geometry": {
+        "source": "components.conveyor_detail",
+        "note": "02 manufacturing: belt side frames, product guide rails, 4 rollers, drive gearmotor + coupling"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_206_vision_head",
+      "parent": "CAMERA_AI_Inspection",
+      "children": [
+        "STATION_04_VisionInspection_CameraHeatSink"
+      ],
+      "geometry": {
+        "source": "components.vision_head",
+        "note": "02 manufacturing: enlarged camera + heat sink, M12 connector, lens hood, second view camera, tunnel corner gussets"
+      },
+      "dependencies": [
+        "op_090_camera"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_226_hmi_ui",
+      "parent": "STATION_04_VisionInspection_HMI",
+      "children": [
+        "STATION_04_VisionInspection_HMIHeaderBar"
+      ],
+      "geometry": {
+        "source": "components.hmi_ui",
+        "note": "premium: live HMI UI — title, PASS, 99.7% confidence + bar, YOLOv11 model, 2.1s cycle"
+      },
+      "dependencies": [
+        "op_140_hmi"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_227_ai_visuals",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_AIHeatmap"
+      ],
+      "geometry": {
+        "source": "components.ai_visuals",
+        "note": "premium: hidden/transparent AI-demo placeholders (heatmap, laser line, crosshair, bounding box) for Unity to animate"
+      },
+      "dependencies": [
+        "op_110_product_1"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_228_maintenance_detail",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_QuickRelease_1"
+      ],
+      "geometry": {
+        "source": "components.maintenance_detail",
+        "note": "premium: quarter-turn quick-release fasteners + LOTO/service/drive maintenance labels"
+      },
+      "dependencies": [
+        "op_209_service_access"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_220_camera_detail",
+      "parent": "CAMERA_AI_Inspection",
+      "children": [
+        "STATION_04_VisionInspection_CameraFocusRing"
+      ],
+      "geometry": {
+        "source": "components.camera_detail",
+        "note": "premium: smart-camera housing detail — fins, focus ring, front glass, PWR/LINK/TRIG LEDs, M12+RJ45+gland, slotted bracket, jumper cable"
+      },
+      "dependencies": [
+        "op_090_camera"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_221_tunnel_detail",
+      "parent": "STATION_04_VisionInspection_TunnelTop",
+      "children": [
+        "STATION_04_VisionInspection_TunnelRoofDoor"
+      ],
+      "geometry": {
+        "source": "components.tunnel_detail",
+        "note": "premium: roof service door + hinges, black matte liners, window gasket, feed-through, captive screws"
+      },
+      "dependencies": [
+        "op_080_tunnel"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_222_reject_detail",
+      "parent": "STATION_04_VisionInspection_RejectPusher",
+      "children": [
+        "STATION_04_VisionInspection_RejectClevis"
+      ],
+      "geometry": {
+        "source": "components.reject_detail",
+        "note": "premium: clevis+pin, mount bracket, adjustable stop+nut, shock absorber, finger, guide, proximity sensor+LED+cable, tube"
+      },
+      "dependencies": [
+        "op_208_pneumatic_reject"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_223_conveyor_premium",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_ConvMotorPlate"
+      ],
+      "geometry": {
+        "source": "components.conveyor_premium",
+        "note": "premium: bearing housings, guide brackets, tracking bolts, take-up blocks, drive cover, inspection cover+screws, motor plate+cable"
+      },
+      "dependencies": [
+        "op_205_conveyor_detail"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_224_electrical_din",
+      "parent": "STATION_04_VisionInspection_Cabinet",
+      "children": [
+        "STATION_04_VisionInspection_DinRail"
+      ],
+      "geometry": {
+        "source": "components.electrical_din",
+        "note": "premium: DIN rails, main switch module, 24V PSU, MCBs, terminal blocks, vision PC — visible through the glass cabinet door"
+      },
+      "dependencies": [
+        "op_170_cabinet",
+        "op_207_electrical"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_225_sensor_system",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_TriggerSensor"
+      ],
+      "geometry": {
+        "source": "components.sensor_system",
+        "note": "premium: inspection trigger sensor + through-beam reflectors + brackets + cables for entry/trigger/exit"
+      },
+      "dependencies": [
+        "op_207_electrical"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_200_mech_supports",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_CameraRail"
+      ],
+      "geometry": {
+        "source": "components.mech_supports",
+        "note": "01 mechanical: conveyor end legs+feet, camera cross-rail+bracket, ring-light arms, e-stop pedestal, pole feet"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_260_flow_arrow",
+      "parent": "STATION_04_VisionInspection_Root",
+      "children": [
+        "STATION_04_VisionInspection_FlowArrow"
+      ],
+      "geometry": {
+        "source": "components.flow_arrow"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_999_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags_and_export"
+      },
+      "dependencies": [
+        "op_020_base",
+        "op_030_legs",
+        "op_040_feet",
+        "op_050_conveyor_in",
+        "op_060_conveyor_mid",
+        "op_070_conveyor_out",
+        "op_080_tunnel",
+        "op_090_camera",
+        "op_100_ring_light",
+        "op_110_product_1",
+        "op_120_product_2",
+        "op_130_reject_bin",
+        "op_140_hmi",
+        "op_150_stack_light",
+        "op_160_emergency_stop",
+        "op_170_cabinet",
+        "op_180_info_panel",
+        "op_190_info_trigger"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    }
+  ]
+}

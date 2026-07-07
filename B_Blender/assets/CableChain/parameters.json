@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "cable_chain",
+    "name": "Cable Chain",
+    "version": "1.0.0",
+    "category": "cable_management",
+    "tags": [
+      "cable",
+      "energy-chain",
+      "drag-chain",
+      "routing"
+    ]
+  },
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters": {
+    "length_m": {
+      "default": 0.5,
+      "range": "0.2-3.0",
+      "description": "Chain run length."
+    },
+    "link_count": {
+      "default": 10,
+      "range": "4-60",
+      "description": "Number of links."
+    }
+  },
+  "material_library": {
+    "rubber_black": {
+      "base_color": [
+        0.05,
+        0.05,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "links": {
+      "naming_pattern": "CHAIN_Link_{i}",
+      "primitive": "box",
+      "count": 10,
+      "dimensions_m": [
+        0.05,
+        0.06,
+        0.04
+      ],
+      "material": "rubber_black",
+      "start_offset_m": [
+        -0.225,
+        0,
+        0.1
+      ],
+      "step_m": [
+        0.05,
+        0,
+        0
+      ]
+    }
+  }
+}

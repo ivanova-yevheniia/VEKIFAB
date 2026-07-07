@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Blender backups / temp
+*.blend1
+*.blend2
+*.blend@
+
+# OS
+Thumbs.db
+.DS_Store

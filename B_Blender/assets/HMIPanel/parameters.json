@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "hmi_panel",
+    "name": "HMI Panel",
+    "version": "1.0.0",
+    "category": "control",
+    "tags": [
+      "hmi",
+      "touchscreen",
+      "control",
+      "guidance"
+    ]
+  },
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters": {
+    "diagonal_in": {
+      "default": 19,
+      "range": "10-24",
+      "description": "Screen diagonal (inches)."
+    },
+    "tilt_deg": {
+      "default": -12,
+      "range": "-20 to 0",
+      "description": "Forward tilt."
+    }
+  },
+  "material_library": {
+    "screen_dark": {
+      "base_color": [
+        0.02,
+        0.02,
+        0.03,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.2,
+      "emission_color": [
+        0.1,
+        0.35,
+        0.55,
+        1.0
+      ],
+      "emission_strength": 1.0
+    },
+    "metal_dark": {
+      "base_color": [
+        0.15,
+        0.15,
+        0.17,
+        1.0
+      ],
+      "metallic": 0.9,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    },
+    "blue_accent": {
+      "base_color": [
+        0.1,
+        0.35,
+        0.75,
+        1.0
+      ],
+      "metallic": 0.1,
+      "roughness": 0.4,
+      "emission_strength": 0.0
+    }
+  },
+  "components": {
+    "screen": {
+      "naming": "HMI_Screen",
+      "primitive": "panel",
+      "dimensions_m": [
+        0.3,
+        0.03,
+        0.22
+      ],
+      "offset_m": [
+        0,
+        0,
+        0
+      ],
+      "material": "screen_dark",
+      "collider": "static",
+      "unity_tag": "HMI",
+      "bezel": {
+        "naming": "HMI_Bezel",
+        "primitive": "box",
+        "dimensions_m": [
+          0.34,
+          0.02,
+          0.26
+        ],
+        "offset_from_parent_m": [
+          0,
+          0.01,
+          0
+        ],
+        "material": "metal_dark"
+      },
+      "buttons": {
+        "naming_pattern": "HMI_Button_{i}",
+        "primitive": "cylinder",
+        "count": 3,
+        "radius_m": 0.012,
+        "depth_m": 0.01,
+        "vertices": 12,
+        "axis": "Y",
+        "material": "blue_accent",
+        "offsets_m": [
+          [
+            -0.1,
+            -0.017,
+            -0.14
+          ],
+          [
+            0,
+            -0.017,
+            -0.14
+          ],
+          [
+            0.1,
+            -0.017,
+            -0.14
+          ]
+        ]
+      }
+    }
+  }
+}

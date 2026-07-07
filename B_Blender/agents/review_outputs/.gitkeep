@@ -1,0 +1,3 @@
+# Review reports are written here by each agent as:
+#   review_outputs/<NN>_<discipline>_<station_id>.md
+# e.g. review_outputs/01_mechanical_S01.md

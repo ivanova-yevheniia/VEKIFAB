@@ -1,0 +1,34 @@
+{
+  "customer": {
+    "name": "VoltEdge"
+  },
+  "product": {
+    "name": "Battery Controller",
+    "target_cycle_time_s": 45
+  },
+  "daily_output": {
+    "target_units_per_day": 1500,
+    "shift_hours": 8,
+    "shifts_per_day": 1
+  },
+  "automation_level": {
+    "level": "full"
+  },
+  "available_area_m": {
+    "length_x": 40,
+    "width_y": 25
+  },
+  "workers": {
+    "total": 8
+  },
+  "quality_control": {
+    "methods": [
+      "optical",
+      "functional"
+    ],
+    "regulated": true
+  },
+  "constraints": {
+    "budget": "high"
+  }
+}

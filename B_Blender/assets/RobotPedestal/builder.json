@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "robot_pedestal",
+    "name": "Robot Pedestal",
+    "version": "1.0.0"
+  },
+  "entry_object": "ROBOTPEDESTAL_Body",
+  "local_origin_m": [
+    0,
+    0,
+    0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0,
+      0,
+      0
+    ],
+    "rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "mount_socket",
+      "at": "(0,0,0)",
+      "axis": "-Z",
+      "type": "attach to parent link"
+    },
+    {
+      "name": "tool_socket",
+      "node": "pedestal",
+      "type": "attach next asset"
+    }
+  ],
+  "collider": {
+    "type": "Box (static)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "kinematic_link",
+    "rigidbody": false
+  },
+  "lod": {
+    "importance": "medium",
+    "note": "medium"
+  },
+  "performance_budget": {
+    "target_tris": 40,
+    "max_tris": 80,
+    "materials": 1
+  },
+  "unity": {
+    "tags": [
+      "Robot"
+    ],
+    "prefab_hint": "robot_pedestal"
+  },
+  "assembler": {
+    "join_offset_m": [
+      0,
+      0,
+      0
+    ],
+    "tool_node": "pedestal",
+    "entry_key": "pedestal"
+  }
+}

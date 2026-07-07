@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "stack_light",
+    "name": "Stack Light",
+    "version": "1.0.0"
+  },
+  "entry_object": "STACK_Base",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "mount",
+      "at": "(0,0,0)",
+      "axis": "+Z",
+      "type": "mounts on frame top / pole"
+    }
+  ],
+  "collider": {
+    "type": "Box (static)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "static",
+    "rigidbody": false,
+    "emissive": true
+  },
+  "lod": {
+    "importance": "low",
+    "note": "low"
+  },
+  "performance_budget": {
+    "target_tris": 500,
+    "max_tris": 800,
+    "materials": 5
+  },
+  "unity": {
+    "tags": [
+      "StackLight"
+    ],
+    "prefab_hint": "stack_light"
+  }
+}

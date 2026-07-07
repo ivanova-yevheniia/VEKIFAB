@@ -1,0 +1,327 @@
+{
+  "schema_version": "2.0",
+  "station": "S01",
+  "type": "loading_station",
+  "complexity_scale": ["trivial", "low", "medium", "high"],
+  "parameters_ref": "loading_station_parameters.json",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": ["STATION_01_Loading_Root"],
+      "geometry": { "primitive": "empty", "type": "PLAIN_AXES", "at": "station.world_position_m" },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_table_frame",
+      "parent": "STATION_01_Loading_Root",
+      "children": [
+        "COLLIDER_Loading_Table", "STATION_01_Loading_TopStiffener",
+        "STATION_01_Loading_ApronFront", "STATION_01_Loading_TableLeg_1..4",
+        "STATION_01_Loading_TopRailX_1..2", "STATION_01_Loading_TopRailY_1..2",
+        "STATION_01_Loading_BottomRailX", "STATION_01_Loading_BottomRailY_1..2",
+        "STATION_01_Loading_Bracket_1..4", "STATION_01_Loading_Bolt_1..4"
+      ],
+      "geometry": { "source": "components.table_frame", "primitives": ["box", "cylinder"], "note": "40x40 profile frame + reinforced worktop + cast corner brackets" },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["worktop_grey", "metal_light", "metal_dark"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_030_levelling_feet",
+      "parent": "STATION_01_Loading_TableLeg_1",
+      "children": ["STATION_01_Loading_Foot_1..4", "STATION_01_Loading_FootNut_1..4", "STATION_01_Loading_FootSpindle_1..4"],
+      "geometry": { "source": "components.levelling_feet", "primitives": ["cylinder"], "note": "anti-vibration pad + hex adjuster + threaded spindle" },
+      "dependencies": ["op_020_table_frame"],
+      "required_materials": ["rubber_black", "metal_dark", "metal_light"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_040_uprights_rail",
+      "parent": "COLLIDER_Loading_Table",
+      "children": ["STATION_01_Loading_Upright_1..2", "STATION_01_Loading_EndCap_1..2", "STATION_01_Loading_BackRail"],
+      "geometry": { "source": "components.uprights + components.upright_caps + components.back_rail", "primitives": ["box"] },
+      "dependencies": ["op_020_table_frame"],
+      "required_materials": ["metal_light", "warning_black"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_050_bin_shelf",
+      "parent": "STATION_01_Loading_BackRail",
+      "children": ["STATION_01_Loading_BinShelf", "STATION_01_Loading_ShelfBracket_1..2"],
+      "geometry": { "source": "components.bin_shelf", "primitives": ["box"], "tilt": "-18deg" },
+      "dependencies": ["op_040_uprights_rail"],
+      "required_materials": ["metal_light", "metal_dark"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_060_parts_bins",
+      "parent": "STATION_01_Loading_BinShelf",
+      "children": ["STATION_01_Loading_Bin_1..5", "STATION_01_Loading_BinFront_1..5", "STATION_01_Loading_BinKanban_1..5"],
+      "geometry": { "source": "components.parts_bins", "primitives": ["box"], "layout": "linear_start_step" },
+      "dependencies": ["op_050_bin_shelf"],
+      "required_materials": ["white_panel", "blue_accent"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_070_kit_boxes",
+      "parent": "COLLIDER_Loading_Table",
+      "children": ["PHYS_Loading_Box_1..4"],
+      "geometry": { "source": "components.kit_boxes", "primitives": ["box"] },
+      "dependencies": ["op_020_table_frame"],
+      "required_materials": ["cardboard"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_080_pallet_zone",
+      "parent": "STATION_01_Loading_Root",
+      "children": ["STATION_01_Loading_PalletZone", "STATION_01_Loading_PalletZoneEdgeX_1..2", "STATION_01_Loading_PalletZoneEdgeY_1..2"],
+      "geometry": { "source": "components.pallet_zone", "primitives": ["box"] },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["safety_yellow", "warning_black"],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_090_pallets",
+      "parent": "STATION_01_Loading_Root",
+      "children": ["STATION_01_Loading_Pallet_1..2", "STATION_01_Loading_PalletRunner_1..6", "STATION_01_Loading_PalletBlock_1..6"],
+      "geometry": { "source": "components.pallets", "primitives": ["box"], "note": "EUR-style block pallet: deck + runners + blocks" },
+      "dependencies": ["op_080_pallet_zone"],
+      "required_materials": ["wood_pallet"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_100_bulk_boxes",
+      "parent": "STATION_01_Loading_Pallet_1",
+      "children": ["STATION_01_Loading_BulkBox_1..5"],
+      "geometry": { "source": "components.bulk_boxes", "primitives": ["box"], "note": "incoming stock staged on the first pallet" },
+      "dependencies": ["op_090_pallets"],
+      "required_materials": ["cardboard"],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_110_conveyor_output",
+      "parent": "STATION_01_Loading_Root",
+      "children": [
+        "CONVEYOR_Loading_Output", "CONVEYOR_Loading_Output_Frame",
+        "STATION_01_Loading_ConvSideFrame_1..2", "STATION_01_Loading_ConvRoller_1..10",
+        "STATION_01_Loading_ConvLeg_1..4", "STATION_01_Loading_ConvFoot_1..4",
+        "STATION_01_Loading_ConvDrive", "STATION_01_Loading_ConvMotor",
+        "STATION_01_Loading_ConvDriveTerm", "STATION_01_Loading_ConvGuard"
+      ],
+      "geometry": { "source": "components.conveyor_output", "primitives": ["box", "cylinder"], "note": "powered roller outfeed with gearmotor, legs and pinch guard; flow +X to S02" },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["rubber_black", "metal_dark", "metal_light", "blue_accent"],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_120_control_cabinet",
+      "parent": "STATION_01_Loading_Root",
+      "children": [
+        "STATION_01_Loading_Cabinet", "STATION_01_Loading_CabinetDoor",
+        "STATION_01_Loading_CabinetHandle", "STATION_01_Loading_CabinetHinge_1..2",
+        "STATION_01_Loading_CabinetGland", "STATION_01_Loading_CabinetVent_1..3",
+        "STATION_01_Loading_CabinetPowerLed"
+      ],
+      "geometry": { "source": "components.control_cabinet", "primitives": ["box", "cylinder"], "note": "RAL-grey enclosure, hinged door, gland plate, vents, power-on LED" },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["metal_light", "metal_dark", "warning_black", "led_green"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_130_hmi",
+      "parent": "STATION_01_Loading_Upright_2",
+      "children": ["STATION_01_Loading_HMI", "STATION_01_Loading_HMI_Arm", "STATION_01_Loading_HMI_Screen", "STATION_01_Loading_HMI_Buttons"],
+      "geometry": { "source": "components.hmi", "primitives": ["box"], "note": "arm-mounted touch panel, tilted -10deg to operator" },
+      "dependencies": ["op_040_uprights_rail"],
+      "required_materials": ["metal_dark", "screen_dark", "blue_accent"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_140_emergency_stop",
+      "parent": "STATION_01_Loading_ApronFront",
+      "children": ["STATION_01_Loading_EStop", "STATION_01_Loading_EStop_Collar", "STATION_01_Loading_EStop_Button"],
+      "geometry": { "source": "components.emergency_stop", "primitives": ["box", "cylinder"], "note": "reachable from operator; on the front apron" },
+      "dependencies": ["op_020_table_frame"],
+      "required_materials": ["safety_yellow", "warning_black", "led_red"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_150_stack_light",
+      "parent": "STATION_01_Loading_Upright_2",
+      "children": ["STATION_01_Loading_StackLight", "STATION_01_Loading_StackLight_Bracket", "STATION_01_Loading_StackLight_red", "STATION_01_Loading_StackLight_amber", "STATION_01_Loading_StackLight_green", "STATION_01_Loading_StackLight_Dome"],
+      "geometry": { "source": "components.stack_light", "primitives": ["cylinder"], "layout": "vertical_stack" },
+      "dependencies": ["op_040_uprights_rail"],
+      "required_materials": ["metal_dark", "led_red", "led_amber", "led_green", "warning_black"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_160_task_light",
+      "parent": "STATION_01_Loading_BackRail",
+      "children": ["STATION_01_Loading_TaskLight", "STATION_01_Loading_TaskLight_Emitter"],
+      "geometry": { "source": "components.task_light", "primitives": ["box"], "adds_review_light": true },
+      "dependencies": ["op_040_uprights_rail"],
+      "required_materials": ["metal_light", "led_white"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_170_pneumatics",
+      "parent": "STATION_01_Loading_TableLeg_3",
+      "children": ["STATION_01_Loading_FRL", "STATION_01_Loading_FRL_Body_1..3", "STATION_01_Loading_FRL_Bowl_1..3", "STATION_01_Loading_FRL_Knob", "STATION_01_Loading_FRL_Gauge", "STATION_01_Loading_AirLine_1..2"],
+      "geometry": { "source": "components.pneumatics", "primitives": ["box", "cylinder"], "note": "Festo-style FRL cluster at knee height, supply side -X" },
+      "dependencies": ["op_020_table_frame"],
+      "required_materials": ["metal_dark", "metal_light", "screen_dark", "blue_accent", "white_panel"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_180_cable_management",
+      "parent": "STATION_01_Loading_Cabinet",
+      "children": ["STATION_01_Loading_CableChain", "STATION_01_Loading_CableLink_1..6"],
+      "geometry": { "source": "components.cable_management", "primitives": ["box"], "note": "energy chain -> duct -> cabinet; no free-hanging cable" },
+      "dependencies": ["op_120_control_cabinet"],
+      "required_materials": ["metal_dark", "rubber_black"],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_185_structural_supports",
+      "parent": "STATION_01_Loading_Root",
+      "children": [
+        "STATION_01_Loading_LabelRail", "STATION_01_Loading_UprightBaseGusset_1..2",
+        "STATION_01_Loading_BackRailGusset_1..2", "STATION_01_Loading_HMI_Clamp",
+        "STATION_01_Loading_HMI_Mount", "STATION_01_Loading_TaskLightBracket_1..2",
+        "STATION_01_Loading_FRL_MountPlate", "STATION_01_Loading_FRL_Hanger",
+        "STATION_01_Loading_FRL_Clamp_1..3", "STATION_01_Loading_CabinetPlinth",
+        "STATION_01_Loading_CabinetFixBracket", "STATION_01_Loading_EStop_Mount",
+        "STATION_01_Loading_ConvDriveMount", "STATION_01_Loading_ConvGuardBracket_1..2",
+        "STATION_01_Loading_ShelfStopRail", "STATION_01_Loading_CableClip_1..3",
+        "STATION_01_Loading_JointBolt_1..8"
+      ],
+      "geometry": { "source": "components.structural_supports", "primitives": ["box", "cylinder"], "note": "mounting hardware: brackets, gussets, plates, support rail, clamps, pipe clamps, cable clips, bolts — every carried part gets a real load path to the frame" },
+      "dependencies": ["op_040_uprights_rail", "op_050_bin_shelf", "op_110_conveyor_output", "op_120_control_cabinet", "op_130_hmi", "op_140_emergency_stop", "op_160_task_light", "op_170_pneumatics", "op_200_labels"],
+      "required_materials": ["metal_dark"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_186_machine_services",
+      "parent": "STATION_01_Loading_Root",
+      "children": [
+        "STATION_01_Loading_MainSwitch", "STATION_01_Loading_MainSwitch_Knob",
+        "STATION_01_Loading_MainSwitch_Lever", "STATION_01_Loading_PowerInfeed",
+        "STATION_01_Loading_PowerInfeed_Floor", "STATION_01_Loading_RearCableDuct",
+        "STATION_01_Loading_UprightCableR", "STATION_01_Loading_UprightCableL",
+        "STATION_01_Loading_DuctToCabinet", "STATION_01_Loading_EStop_BackBox",
+        "STATION_01_Loading_EStop_Cable", "STATION_01_Loading_AirInletValve",
+        "STATION_01_Loading_AirInletValve_Lever", "STATION_01_Loading_AirInletFitting",
+        "STATION_01_Loading_AirSupplyLine", "STATION_01_Loading_ValveBlock",
+        "STATION_01_Loading_ValveSolenoid", "STATION_01_Loading_ConvStopper",
+        "STATION_01_Loading_ConvStopperBlade", "STATION_01_Loading_ConvDriveCover",
+        "STATION_01_Loading_ConvMotorCable", "STATION_01_Loading_ConvMotorConduit",
+        "STATION_01_Loading_ESDGroundStud", "STATION_01_Loading_ESDGroundWire"
+      ],
+      "geometry": { "source": "components.machine_services", "primitives": ["box", "cylinder"], "note": "energy + control infrastructure: main disconnect (EN 60204-1), power infeed, wiring duct/cable runs, e-stop back box + wiring, pneumatic isolation valve, solenoid + outfeed stopper, conveyor drive transmission cover + motor power cable, ESD earth bonding" },
+      "dependencies": ["op_110_conveyor_output", "op_120_control_cabinet", "op_140_emergency_stop", "op_170_pneumatics", "op_180_cable_management", "op_185_structural_supports"],
+      "required_materials": ["safety_yellow", "warning_black", "rubber_black", "metal_dark", "metal_light", "blue_accent"],
+      "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_190_floor_markings",
+      "parent": "STATION_01_Loading_Root",
+      "children": ["STATION_01_Loading_SafetyStripe", "STATION_01_Loading_WorkZoneX_1..2", "STATION_01_Loading_OperatorMat"],
+      "geometry": { "source": "components.floor_markings", "primitives": ["box"] },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["safety_yellow", "rubber_black"],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_200_labels",
+      "parent": "STATION_01_Loading_Root",
+      "children": [
+        "STATION_01_Loading_IDPlate", "STATION_01_Loading_BrandBadge",
+        "STATION_01_Loading_FlowArrow", "STATION_01_Loading_PinchSticker",
+        "STATION_01_Loading_VoltageLabel", "STATION_01_Loading_ESDLabel"
+      ],
+      "geometry": { "source": "components.labels", "primitives": ["box", "text_mesh"], "note": "ID plate, brand badge, flow arrow, pinch + voltage stickers, ESD mark; text converted to mesh for glTF" },
+      "dependencies": ["op_020_table_frame", "op_110_conveyor_output", "op_120_control_cabinet"],
+      "required_materials": ["metal_light", "blue_accent", "safety_yellow", "warning_black", "white_panel"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_210_info_panel",
+      "parent": "STATION_01_Loading_Root",
+      "children": ["INFO_Loading_Panel", "INFO_Loading_Panel_Post", "INFO_Loading_Panel_Foot", "INFO_Loading_Panel_Title", "INFO_Loading_Panel_Body"],
+      "geometry": { "source": "components.info_panel", "primitives": ["box", "text_mesh"], "faces": "+Y" },
+      "dependencies": ["op_010_root"],
+      "required_materials": ["white_panel", "metal_dark", "warning_black"],
+      "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_220_trigger_zone",
+      "parent": "STATION_01_Loading_Root",
+      "children": ["TRIGGER_Info_Loading"],
+      "geometry": { "source": "components.trigger_zone", "primitives": ["box"], "display": "wire", "hide_render": true },
+      "dependencies": ["op_210_info_panel"],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_240_cabinet_din",
+      "parent": "STATION_01_Loading_Cabinet",
+      "children": ["STATION_01_Loading_DinRail"],
+      "geometry": { "source": "components.cabinet_din", "note": "hero: DIN rail interior (PSU, PLC, MCBs, terminals) visible through the glass cabinet door" },
+      "dependencies": ["op_120_control_cabinet"],
+      "required_materials": [], "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_241_conveyor_premium",
+      "parent": "CONVEYOR_Loading_Output",
+      "children": ["STATION_01_Loading_ConvBearing_1"],
+      "geometry": { "source": "components.conveyor_premium", "note": "hero: pillow-block bearings, product guides, pneumatic stopper, fixed barcode scanner + red window/beam" },
+      "dependencies": ["op_110_conveyor_output"],
+      "required_materials": [], "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_242_pallet_handling",
+      "parent": "STATION_01_Loading_Root",
+      "children": ["STATION_01_Loading_PalletSensorPost_1"],
+      "geometry": { "source": "components.pallet_handling", "note": "hero: pallet-presence photo-eyes (LED + reflector), transport labels/barcodes, Unity pallet-arrival trigger" },
+      "dependencies": ["op_080_pallet_zone", "op_090_pallets"],
+      "required_materials": [], "estimated_complexity": "high"
+    },
+    {
+      "operation_id": "op_243_hmi_ui",
+      "parent": "STATION_01_Loading_HMI",
+      "children": ["STATION_01_Loading_HMIHeaderBar"],
+      "geometry": { "source": "components.hmi_ui", "note": "hero: live HMI — LOADING S01 / READY / KITS 128 / 200" },
+      "dependencies": ["op_130_hmi"],
+      "required_materials": [], "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_244_grounding_maintenance",
+      "parent": "STATION_01_Loading_Cabinet",
+      "children": ["STATION_01_Loading_GroundBar"],
+      "geometry": { "source": "components.grounding_maintenance", "note": "hero: earth bus bar + green/yellow braids + ground symbol, maintenance labels, quarter-turn quick-release fasteners" },
+      "dependencies": ["op_120_control_cabinet"],
+      "required_materials": [], "estimated_complexity": "medium"
+    },
+    {
+      "operation_id": "op_230_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": { "action": "apply_tags_and_export", "tags": ["collider", "rigidbody", "is_trigger", "unity_tag"], "exports": ["blend", "glb", "screenshot"] },
+      "dependencies": [
+        "op_020_table_frame", "op_030_levelling_feet", "op_040_uprights_rail",
+        "op_050_bin_shelf", "op_060_parts_bins", "op_070_kit_boxes",
+        "op_080_pallet_zone", "op_090_pallets", "op_100_bulk_boxes",
+        "op_110_conveyor_output", "op_120_control_cabinet", "op_130_hmi",
+        "op_140_emergency_stop", "op_150_stack_light", "op_160_task_light",
+        "op_170_pneumatics", "op_180_cable_management", "op_185_structural_supports",
+        "op_186_machine_services", "op_190_floor_markings", "op_200_labels",
+        "op_210_info_panel", "op_220_trigger_zone"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "low"
+    }
+  ]
+}

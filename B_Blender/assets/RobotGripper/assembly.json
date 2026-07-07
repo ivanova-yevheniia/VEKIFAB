@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "asset": "robot_gripper",
+  "category": "robotics",
+  "operations": [
+    {
+      "operation_id": "op_010_root",
+      "parent": null,
+      "children": [
+        "ROBOTGRIPPER_Palm"
+      ],
+      "geometry": {
+        "note": "asset entry"
+      },
+      "dependencies": [],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    },
+    {
+      "operation_id": "op_020_build",
+      "parent": "ROBOTGRIPPER_Palm",
+      "children": [
+        "ROBOTGRIPPER_FingerA",
+        "ROBOTGRIPPER_FingerB"
+      ],
+      "geometry": {
+        "source": "parameters.components"
+      },
+      "dependencies": [
+        "op_010_root"
+      ],
+      "required_materials": [
+        "white_panel",
+        "metal_dark"
+      ],
+      "estimated_complexity": "low"
+    },
+    {
+      "operation_id": "op_030_finalize",
+      "parent": null,
+      "children": [],
+      "geometry": {
+        "action": "apply_unity_tags"
+      },
+      "dependencies": [
+        "op_020_build"
+      ],
+      "required_materials": [],
+      "estimated_complexity": "trivial"
+    }
+  ]
+}

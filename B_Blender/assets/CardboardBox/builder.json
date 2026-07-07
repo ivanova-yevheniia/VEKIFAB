@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "asset": {
+    "id": "cardboard_box",
+    "name": "Cardboard Box",
+    "version": "1.0.0"
+  },
+  "entry_object": "BOX_Body",
+  "local_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "parameters_ref": "parameters.json",
+  "assembly_ref": "assembly.json",
+  "design_ref": "design.md",
+  "default_transform": {
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "connections": [
+    {
+      "name": "base",
+      "at": "(0,0,0)",
+      "axis": "-Z",
+      "type": "stacks / rides on conveyor"
+    }
+  ],
+  "collider": {
+    "type": "Box (dynamic)",
+    "mode": "generated_from_component_flags"
+  },
+  "physics": {
+    "type": "dynamic",
+    "rigidbody": true,
+    "mass_kg": 0.6,
+    "kinematic": false
+  },
+  "lod": {
+    "importance": "low",
+    "note": "low"
+  },
+  "performance_budget": {
+    "target_tris": 60,
+    "max_tris": 120,
+    "materials": 1
+  },
+  "unity": {
+    "tags": [
+      "Box"
+    ],
+    "prefab_hint": "cardboard_box"
+  }
+}

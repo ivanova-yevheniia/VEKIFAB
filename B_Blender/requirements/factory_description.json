@@ -1,0 +1,596 @@
+{
+  "schema_version": "0.3",
+  "scene": {
+    "name": "Infusion_Pump_MF-IP-100_Line",
+    "description": "Positioned station instances generated from the planned line.",
+    "product": "Infusion Pump MF-IP-100",
+    "generator": "planning/plan_to_factory_description.py",
+    "coordinate_system": "Z-up (Blender). Export converts to Y-up for Unity.",
+    "flow_direction": "+X"
+  },
+  "unit_system": {
+    "units": "meters",
+    "scale": 1.0
+  },
+  "factory_floor": {
+    "size_m": {
+      "x": 25.0,
+      "y": 18.0
+    },
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "line_y_m": 6.12,
+    "walkway_y_m": 10.44
+  },
+  "stations": [
+    {
+      "id": "S01",
+      "type": "loading_station",
+      "name": "STATION_S01_Loading",
+      "position": [
+        2.5,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "prefab": "loading_station.glb",
+      "info_panel": "INFO_Loading_Panel",
+      "trigger": "TRIGGER_Info_Loading",
+      "reasoning_key": "S01"
+    },
+    {
+      "id": "S02A",
+      "type": "assisted_assembly_station",
+      "name": "STATION_S02A_Assembly",
+      "position": [
+        5.83,
+        4.82,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 2.5,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "prefab": "assembly_station.glb",
+      "info_panel": "INFO_Assembly_Panel_A",
+      "trigger": "TRIGGER_Info_Assembly_A",
+      "reasoning_key": "S02",
+      "parallel_group": "S02"
+    },
+    {
+      "id": "S02B",
+      "type": "assisted_assembly_station",
+      "name": "STATION_S02B_Assembly",
+      "position": [
+        5.83,
+        7.42,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 2.5,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "prefab": "assembly_station.glb",
+      "info_panel": "INFO_Assembly_Panel_B",
+      "trigger": "TRIGGER_Info_Assembly_B",
+      "reasoning_key": "S02",
+      "parallel_group": "S02"
+    },
+    {
+      "id": "S03",
+      "type": "robot_handling_cell",
+      "name": "STATION_S03_RobotCell",
+      "position": [
+        9.17,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 3.0,
+        "y": 3.0,
+        "z": 2.5
+      },
+      "prefab": "robot_cell.glb",
+      "info_panel": "INFO_RobotCell_Panel",
+      "trigger": "TRIGGER_Info_RobotCell",
+      "reasoning_key": "S03"
+    },
+    {
+      "id": "S04",
+      "type": "vision_inspection_station",
+      "name": "STATION_S04_Vision",
+      "position": [
+        12.5,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.5
+      },
+      "prefab": "vision_inspection.glb",
+      "info_panel": "INFO_Vision_Panel",
+      "trigger": "TRIGGER_Info_Vision",
+      "reasoning_key": "S04"
+    },
+    {
+      "id": "S05",
+      "type": "functional_test_station",
+      "name": "STATION_S05_FunctionalTest",
+      "position": [
+        15.83,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "prefab": "functional_test_station.glb",
+      "info_panel": "INFO_FunctionalTest_Panel",
+      "trigger": "TRIGGER_Info_FunctionalTest",
+      "reasoning_key": "S05"
+    },
+    {
+      "id": "S06",
+      "type": "packaging_station",
+      "name": "STATION_S06_Packaging",
+      "position": [
+        19.17,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 2.5,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "prefab": "packaging_station.glb",
+      "info_panel": "INFO_Packaging_Panel",
+      "trigger": "TRIGGER_Info_Packaging",
+      "reasoning_key": "S06"
+    },
+    {
+      "id": "S07",
+      "type": "finished_goods_storage",
+      "name": "STATION_S07_Storage",
+      "position": [
+        22.5,
+        6.12,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_m": {
+        "x": 3.5,
+        "y": 3.5,
+        "z": 3.0
+      },
+      "prefab": "storage_station.glb",
+      "info_panel": "INFO_Storage_Panel",
+      "trigger": "TRIGGER_Info_Storage",
+      "reasoning_key": "S07"
+    }
+  ],
+  "conveyors": [
+    {
+      "id": "C01",
+      "name": "CONVEYOR_S01_S02A",
+      "from": "S01",
+      "to": "S02A",
+      "start": [
+        3.5,
+        6.12,
+        0.4
+      ],
+      "end": [
+        4.83,
+        4.82,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    },
+    {
+      "id": "C02",
+      "name": "CONVEYOR_S01_S02B",
+      "from": "S01",
+      "to": "S02B",
+      "start": [
+        3.5,
+        6.12,
+        0.4
+      ],
+      "end": [
+        4.83,
+        7.42,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    },
+    {
+      "id": "C03",
+      "name": "CONVEYOR_S02A_S03",
+      "from": "S02A",
+      "to": "S03",
+      "start": [
+        6.83,
+        4.82,
+        0.4
+      ],
+      "end": [
+        8.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    },
+    {
+      "id": "C04",
+      "name": "CONVEYOR_S02B_S03",
+      "from": "S02B",
+      "to": "S03",
+      "start": [
+        6.83,
+        7.42,
+        0.4
+      ],
+      "end": [
+        8.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    },
+    {
+      "id": "C05",
+      "name": "CONVEYOR_S03_S04",
+      "from": "S03",
+      "to": "S04",
+      "start": [
+        10.17,
+        6.12,
+        0.4
+      ],
+      "end": [
+        11.5,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    },
+    {
+      "id": "C06",
+      "name": "CONVEYOR_S04_S05",
+      "from": "S04",
+      "to": "S05",
+      "start": [
+        13.5,
+        6.12,
+        0.4
+      ],
+      "end": [
+        14.83,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    },
+    {
+      "id": "C07",
+      "name": "CONVEYOR_S05_S06",
+      "from": "S05",
+      "to": "S06",
+      "start": [
+        16.83,
+        6.12,
+        0.4
+      ],
+      "end": [
+        18.17,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    },
+    {
+      "id": "C08",
+      "name": "CONVEYOR_S06_S07",
+      "from": "S06",
+      "to": "S07",
+      "start": [
+        20.17,
+        6.12,
+        0.4
+      ],
+      "end": [
+        21.5,
+        6.12,
+        0.4
+      ],
+      "width_m": 0.6,
+      "height_m": 0.4,
+      "belt_speed_mps": 0.15,
+      "kinematic": true
+    }
+  ],
+  "avatar_walkway": {
+    "name": "PATH_AvatarWalkway",
+    "width_m": 1.6,
+    "waypoints": [
+      {
+        "id": "W00",
+        "role": "entry",
+        "position": [
+          1.5,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W01",
+        "role": "inspect",
+        "station": "S01",
+        "position": [
+          2.5,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W02",
+        "role": "inspect",
+        "station": "S02A",
+        "position": [
+          5.83,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W03",
+        "role": "inspect",
+        "station": "S03",
+        "position": [
+          9.17,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W04",
+        "role": "inspect",
+        "station": "S04",
+        "position": [
+          12.5,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W05",
+        "role": "inspect",
+        "station": "S05",
+        "position": [
+          15.83,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W06",
+        "role": "inspect",
+        "station": "S06",
+        "position": [
+          19.17,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W07",
+        "role": "inspect",
+        "station": "S07",
+        "position": [
+          22.5,
+          10.44,
+          0.0
+        ]
+      },
+      {
+        "id": "W99",
+        "role": "exit",
+        "position": [
+          23.5,
+          10.44,
+          0.0
+        ]
+      }
+    ]
+  },
+  "info_panels": [
+    {
+      "id": "IP_S01",
+      "station": "S01",
+      "name": "INFO_Loading_Panel",
+      "position": [
+        2.5,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S02A",
+      "station": "S02A",
+      "name": "INFO_Assembly_Panel_A",
+      "position": [
+        5.83,
+        7.42,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S02B",
+      "station": "S02B",
+      "name": "INFO_Assembly_Panel_B",
+      "position": [
+        5.83,
+        8.94,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S03",
+      "station": "S03",
+      "name": "INFO_RobotCell_Panel",
+      "position": [
+        9.17,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S04",
+      "station": "S04",
+      "name": "INFO_Vision_Panel",
+      "position": [
+        12.5,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S05",
+      "station": "S05",
+      "name": "INFO_FunctionalTest_Panel",
+      "position": [
+        15.83,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S06",
+      "station": "S06",
+      "name": "INFO_Packaging_Panel",
+      "position": [
+        19.17,
+        8.72,
+        1.6
+      ]
+    },
+    {
+      "id": "IP_S07",
+      "station": "S07",
+      "name": "INFO_Storage_Panel",
+      "position": [
+        22.5,
+        8.72,
+        1.6
+      ]
+    }
+  ],
+  "safety_zones": [
+    {
+      "id": "F_S03",
+      "name": "STATION_S03_RobotCell_Fence",
+      "station": "S03",
+      "type": "robot_cell_fence",
+      "area_min": [
+        7.77,
+        4.72,
+        0.0
+      ],
+      "area_max": [
+        10.57,
+        7.52,
+        0.0
+      ],
+      "height_m": 2.0,
+      "access_gate": {
+        "side": "+Y",
+        "center": [
+          9.17,
+          7.52,
+          0.0
+        ],
+        "width_m": 1.0,
+        "interlocked": true
+      }
+    }
+  ],
+  "export_settings": {
+    "mode": "per_station_prefab",
+    "up_axis": "Y",
+    "note": "Blender exports individual station GLBs; Unity assembles the line."
+  }
+}
