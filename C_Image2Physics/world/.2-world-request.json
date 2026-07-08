@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "kind": "world",
+  "provider": "world-labs",
+  "endpoint": "https://api.worldlabs.ai/marble/v1",
+  "model": "marble-1.1",
+  "index": 2,
+  "status": "completed",
+  "request_id": "91decabb-0438-4642-b2de-685f32cf48f8",
+  "submitted_at": "2026-07-08T05:32:37.265Z",
+  "prompt": "A long, empty-of-people industrial production hall with an exposed dark blue-gray steel I-beam column and diagonal wind-bracing frame supporting a corrugated metal roof with translucent skylight strips running the length of the ceiling. Two yellow overhead bridge cranes, marked 'DEMAG' and rated 25t, span the width of the hall on rails mounted to the steel columns, each carrying a blue and orange hoist trolley with a hook block suspended beneath. Rows of rectangular fluorescent ceiling panels run in parallel lines down the length of the hall, providing even bright overhead light supplemented by natural daylight from tall white-framed windows lining both side walls and from the roof skylights, with low contrast and minimal shadows. The floor is polished gray concrete with faint reflections. At the far end, glazed sections and doors reveal daylight, distant trees, buildings, and a hillside outside. On the left side, partway down the hall, a raised steel mezzanine platform with white handrails is mounted against the wall, reached by an angled steel staircase with red-striped step edges. The air is clean with no fog, dust, haze, or smoke; a faint reverberant, cavernous acoustic quality typical of a large empty industrial hall. Photorealistic industrial architectural photography.",
+  "input_files": [
+    "worlds/produktionshalle/source/0-produktionshalle.jpg"
+  ],
+  "output_files": [
+    "worlds/produktionshalle/output/world/2-world.json"
+  ],
+  "downloaded_files": [
+    "worlds/produktionshalle/output/world/2-world-plate.jpg",
+    "worlds/produktionshalle/output/world/2-world.glb",
+    "worlds/produktionshalle/output/world/2-world-pano.png",
+    "worlds/produktionshalle/output/world/2-world-thumbnail.webp",
+    "worlds/produktionshalle/output/world/2-world-500k.spz",
+    "worlds/produktionshalle/output/world/2-world-100k.spz",
+    "worlds/produktionshalle/output/world/2-world-150k.spz",
+    "worlds/produktionshalle/output/world/2-world-full_res.spz"
+  ],
+  "request": {
+    "display_name": "produktionshalle",
+    "model": "marble-1.1",
+    "world_prompt": {
+      "type": "image",
+      "image_prompt": {
+        "source": "data_base64",
+        "data_base64": "[stripped]",
+        "extension": "jpg",
+        "mime_type": "image/jpeg"
+      },
+      "text_prompt": "A long, empty-of-people industrial production hall with an exposed dark blue-gray steel I-beam column and diagonal wind-bracing frame supporting a corrugated metal roof with translucent skylight strips running the length of the ceiling. Two yellow overhead bridge cranes, marked 'DEMAG' and rated 25t, span the width of the hall on rails mounted to the steel columns, each carrying a blue and orange hoist trolley with a hook block suspended beneath. Rows of rectangular fluorescent ceiling panels run in parallel lines down the length of the hall, providing even bright overhead light supplemented by natural daylight from tall white-framed windows lining both side walls and from the roof skylights, with low contrast and minimal shadows. The floor is polished gray concrete with faint reflections. At the far end, glazed sections and doors reveal daylight, distant trees, buildings, and a hillside outside. On the left side, partway down the hall, a raised steel mezzanine platform with white handrails is mounted against the wall, reached by an angled steel staircase with red-striped step edges. The air is clean with no fog, dust, haze, or smoke; a faint reverberant, cavernous acoustic quality typical of a large empty industrial hall. Photorealistic industrial architectural photography."
+    }
+  },
+  "completed_at": "2026-07-08T05:43:29.253Z",
+  "result": {
+    "operation_id": "91decabb-0438-4642-b2de-685f32cf48f8",
+    "created_at": "2026-07-08T05:32:43Z",
+    "updated_at": "2026-07-08T05:42:56Z",
+    "expires_at": "2026-07-08T08:32:43Z",
+    "done": true,
+    "error": null,
+    "metadata": {
+      "progress": {
+        "status": "SUCCEEDED",
+        "description": "World generation completed successfully"
+      },
+      "world_id": "c8b6ef27-5233-4f00-a5fc-c2280f7204c4",
+      "operation_type": "world_generation",
+      "public_model_name": "marble-1.1"
+    },
+    "response": {
+      "world_id": "c8b6ef27-5233-4f00-a5fc-c2280f7204c4",
+      "display_name": "",
+      "tags": null,
+      "assets": {
+        "mesh": {
+          "collider_mesh_url": "https://cdn.marble.worldlabs.ai/c8b6ef27-5233-4f00-a5fc-c2280f7204c4/a0744686.glb"
+        },
+        "imagery": {
+          "pano_url": "https://cdn.marble.worldlabs.ai/c8b6ef27-5233-4f00-a5fc-c2280f7204c4/756602fd-e2ae-4c8e-8707-a9eaf5b36fcd_panos/rgb_0.png"
+        },
+        "splats": {
+          "spz_urls": {
+            "500k": "https://cdn.marble.worldlabs.ai/c8b6ef27-5233-4f00-a5fc-c2280f7204c4/bd2e8603-288e-435c-9939-84e28ce38818_ceramic_500k.spz",
+            "100k": "https://cdn.marble.worldlabs.ai/c8b6ef27-5233-4f00-a5fc-c2280f7204c4/095c5401-5e2d-4ed9-9316-6336a93e6224_dust_100k.spz",
+            "150k": "https://cdn.marble.worldlabs.ai/c8b6ef27-5233-4f00-a5fc-c2280f7204c4/15d35918-4e5f-4841-888b-3004a16f12e6_ceramic_150k.spz",
+            "full_res": "https://cdn.marble.worldlabs.ai/c8b6ef27-5233-4f00-a5fc-c2280f7204c4/6f3dfbf3-a607-4391-a0eb-e52cb386045e_ceramic.spz"
+          },
+          "semantics_metadata": {
+            "metric_scale_factor": 0.9766439,
+            "ground_plane_offset": 0.59404075
+          }
+        },
+        "thumbnail_url": "https://cdn.marble.worldlabs.ai/c8b6ef27-5233-4f00-a5fc-c2280f7204c4/e9ab144f-3214-4ee3-924c-8b141b8d4c0b_sand_mpi/thumbnail.webp",
+        "caption": "The scene is an expansive industrial production hall, captured in a photorealistic architectural style, conveying a clean and professional industrial environment. The overall tone is one of structured efficiency and spaciousness, emphasized by the precise lines and ample illumination. The hall is characterized by a long, empty space with a polished gray concrete floor that exhibits faint reflections, stretching uniformly throughout the entire area. Exposed dark blue-gray steel I-beam columns and diagonal wind-bracing frames meticulously support a corrugated metal roof, which is integrated with translucent skylight strips extending the full length of the ceiling, allowing abundant natural light to penetrate. Two yellow overhead bridge cranes, emblazoned with the 'DEMAG' logo and rated for 25 tons, traverse the width of the hall on rails that are securely mounted to the steel columns. Each crane precisely carries a blue and orange hoist trolley, from which a hook block is suspended, ready for lifting operations. Rows of rectangular fluorescent ceiling panels are arranged in parallel lines along the length of the hall, providing a consistent, bright overhead light that perfectly supplements the natural daylight streaming in from tall white-framed windows lining both side walls and the roof skylights, resulting in a low-contrast environment with minimal shadows. At the far end of the hall, glazed sections and doors offer views revealing daylight, distant trees, other buildings, and a hillside, connecting the internal industrial space to the external natural and urban landscape. On the left side of the hall, approximately midway down its length, a raised steel mezzanine platform with white handrails is firmly mounted against the wall, accessible via an angled steel staircase featuring red-striped step edges. The air within the hall is impeccably clean, devoid of any fog, dust, haze, or smoke, contributing to a faint reverberant, cavernous acoustic quality typical of such a large, empty industrial space. The 360 scene is faultless."
+      },
+      "created_at": null,
+      "updated_at": null,
+      "permission": {
+        "public": false,
+        "allowed_readers": [],
+        "allowed_writers": [],
+        "allow_id_access": false
+      },
+      "world_prompt": null,
+      "world_marble_url": "https://marble.worldlabs.ai/world/c8b6ef27-5233-4f00-a5fc-c2280f7204c4",
+      "model": null
+    },
+    "cost": {
+      "total_credits": 1580,
+      "line_items": [
+        {
+          "name": "Pano generation (image, non-pano)",
+          "credits": 80
+        },
+        {
+          "name": "World generation",
+          "credits": 1500
+        }
+      ]
+    }
+  }
+}

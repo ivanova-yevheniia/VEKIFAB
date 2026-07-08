@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "world",
+  "provider": "world-labs",
+  "endpoint": "https://api.worldlabs.ai/marble/v1",
+  "model": "marble-1.1",
+  "index": 0,
+  "status": "failed",
+  "request_id": "4808c4ed-e959-45c9-adc2-3c8c4e4dde7c",
+  "submitted_at": "2026-07-08T05:26:08.757Z",
+  "prompt": "A long, empty-of-people industrial production hall with an exposed dark blue-gray steel I-beam column and diagonal wind-bracing frame supporting a corrugated metal roof with translucent skylight strips running the length of the ceiling. Two yellow overhead bridge cranes, marked 'DEMAG' and rated 25t, span the width of the hall on rails mounted to the steel columns, each carrying a blue and orange hoist trolley with a hook block suspended beneath. Rows of rectangular fluorescent ceiling panels run in parallel lines down the length of the hall, providing even bright overhead light supplemented by natural daylight from tall white-framed windows lining both side walls and from the roof skylights, with low contrast and minimal shadows. The floor is polished gray concrete with faint reflections. At the far end, glazed sections and doors reveal daylight, distant trees, buildings, and a hillside outside. On the left side, partway down the hall, a raised steel mezzanine platform with white handrails is mounted against the wall, reached by an angled steel staircase with red-striped step edges. The air is clean with no fog, dust, haze, or smoke; a faint reverberant, cavernous acoustic quality typical of a large empty industrial hall. Photorealistic industrial architectural photography.",
+  "input_files": [
+    "worlds/produktionshalle/source/0-produktionshalle.jpg"
+  ],
+  "output_files": [],
+  "downloaded_files": [],
+  "request": {
+    "display_name": "produktionshalle",
+    "model": "marble-1.1",
+    "world_prompt": {
+      "type": "image",
+      "image_prompt": {
+        "source": "data_base64",
+        "data_base64": "[stripped]",
+        "extension": "jpg",
+        "mime_type": "image/jpeg"
+      },
+      "text_prompt": "A long, empty-of-people industrial production hall with an exposed dark blue-gray steel I-beam column and diagonal wind-bracing frame supporting a corrugated metal roof with translucent skylight strips running the length of the ceiling. Two yellow overhead bridge cranes, marked 'DEMAG' and rated 25t, span the width of the hall on rails mounted to the steel columns, each carrying a blue and orange hoist trolley with a hook block suspended beneath. Rows of rectangular fluorescent ceiling panels run in parallel lines down the length of the hall, providing even bright overhead light supplemented by natural daylight from tall white-framed windows lining both side walls and from the roof skylights, with low contrast and minimal shadows. The floor is polished gray concrete with faint reflections. At the far end, glazed sections and doors reveal daylight, distant trees, buildings, and a hillside outside. On the left side, partway down the hall, a raised steel mezzanine platform with white handrails is mounted against the wall, reached by an angled steel staircase with red-striped step edges. The air is clean with no fog, dust, haze, or smoke; a faint reverberant, cavernous acoustic quality typical of a large empty industrial hall. Photorealistic industrial architectural photography."
+    }
+  },
+  "completed_at": "2026-07-08T05:28:38.980Z",
+  "result": {
+    "operation_id": "4808c4ed-e959-45c9-adc2-3c8c4e4dde7c",
+    "created_at": "2026-07-08T05:26:15Z",
+    "updated_at": "2026-07-08T05:28:38Z",
+    "expires_at": "2026-07-08T08:26:14Z",
+    "done": true,
+    "error": {
+      "code": 500,
+      "message": "An error has happened, please retry it."
+    },
+    "metadata": {
+      "progress": {
+        "status": "FAILED",
+        "description": "The operation failed. Please try again."
+      },
+      "world_id": "5cb35235-7fc1-4db9-85f9-94b7a48ab911",
+      "operation_type": "world_generation",
+      "public_model_name": "marble-1.1"
+    },
+    "response": null,
+    "cost": null
+  },
+  "error": {
+    "code": 500,
+    "message": "An error has happened, please retry it."
+  }
+}
