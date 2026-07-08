@@ -39,8 +39,8 @@ Zuordnung zur Aufgabenstellung – Szenario **„KI Fabrikplaner"**
 | ToDo | Verantwortlich | Zugehöriges WP | Konkrete Aufgabe |
 |----|-----------------|-------------------|-------------------|
 | 1 | Jenny | B | Werkzeugmaschinen mit Claude in Blender (requirements.json ergänzen) |
-| 2 | Yannic | C | Fertigungshalle (leer) mit image-blast und Claude (requirements.json ergänzen) |
+| 2 | Yannic | C | Fertigungshalle (leer) mit image-blast und Claude (requirements.json ergänzen), Gaussian Splat in Unreal Engin Laden und Projekt exportieren |
 | 3 | Chris | A | Beliebigen Avatar erstellen (Tools aus Aufgabenstellung) |
-| 4 | Y, **J**, C | D | Unity-Szenario erstellen |
+| 4 | Y, **J**, C | D | UnrealEngine-Szenario erstellen |
 | 5 | Y, J, C | E | Plain White jeder macht seine Folien wo er sein WP beschreibt |
 | 6 | C | E | CoPilot einheitliche umformatierung |
