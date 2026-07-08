@@ -43,4 +43,4 @@ Zuordnung zur Aufgabenstellung – Szenario **„KI Fabrikplaner"**
 | 3 | Chris | A | Beliebigen Avatar erstellen (Tools aus Aufgabenstellung) |
 | 4 | Y, **J**, C | D | Unity-Szenario erstellen |
 | 5 | Y, J, C | E | Plain White jeder macht seine Folien wo er sein WP beschreibt |
-| 6 | C | E | CoPilot eionheitliche umformatierung |
+| 6 | C | E | CoPilot einheitliche umformatierung |
