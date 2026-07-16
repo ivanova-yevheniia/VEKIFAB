@@ -9,6 +9,8 @@ venv/
 *.blend1
 *.blend2
 *.blend@
+*.mp4
+*.ply
 
 # OS
 Thumbs.db
